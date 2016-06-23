@@ -43,9 +43,9 @@ if (empty($_POST) === false) {
 			}
 			?>
 			</select>		
-			<input type="text" name="title" value="" placeholder="Title"><br />
-			<textarea name="text" id="area1" cols="75" rows="10" placeholder="Contents..." style="width: 100%"></textarea><br />
-			<input type="submit" value="Create News">
+			<input type="text" name="title" value="" placeholder="Title"><br/>
+			<textarea name="text" id="area1" cols="75" rows="10" placeholder="Contents..." style="width: 100%"></textarea><br/>
+			<input type="submit" value="Create News" class="btn btn-primary btn-xs">
 		</form>
 
 		<?php
@@ -85,7 +85,7 @@ if (empty($_POST) === false) {
 			<input type="hidden" name="option" value="s!<?php echo $id; ?>">
 			<input type="text" name="title" value="<?php echo $edit['title']; ?>"><br />
 			<textarea name="text" cols="75" rows="10" style="width: 100%"><?php echo $edit['text']; ?></textarea><br />
-			<input type="submit" value="Save Changes">
+			<input type="submit" value="Save Changes" class="btn btn-primary btn-xs">
 		</form>
 		<br>
 		<p>
@@ -103,16 +103,19 @@ if (empty($_POST) === false) {
 }
 
 ?>
+<br>
 <form action="" method="post">
 	<input type="hidden" name="option" value="a!0">
-	<input type="submit" value="Create new article">
+	<button type="submit" class="btn btn-default btn-md">Create new article <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+</button>
 </form>
+<br>
 <?php
 // pre stuff
 $news = fetchAllNews();
 if ($news !== false) {
 	?>
-	<table id="news">
+	<table id="news" class="table table-striped table-hover">
 		<tr class="yellow">
 			<td>Date</td>
 			<td>By</td>
@@ -131,7 +134,7 @@ if ($news !== false) {
 			?>
 			<form action="" method="post">
 				<input type="hidden" name="option" value="e!<?php echo $n['id']; ?>">
-				<input type="submit" value="Edit">
+				<input type="submit" value="Edit" class="btn btn-primary btn-xs">
 			</form>
 			<?php
 			echo '</td>';
@@ -140,7 +143,7 @@ if ($news !== false) {
 			?>
 			<form action="" method="post">
 				<input type="hidden" name="option" value="d!<?php echo $n['id']; ?>">
-				<input type="submit" value="Delete">
+				<input type="submit" value="Delete" class="btn btn-danger btn-xs">
 			</form>
 			<?php
 			echo '</td>';

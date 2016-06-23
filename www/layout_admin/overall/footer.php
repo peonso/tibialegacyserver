@@ -5,7 +5,7 @@
 	
 	<div class="container">
 		<div class="footer">
-			<h6>© 2013 <?php echo $config['site_title'];?>. All rights reserved. Engine by <a href="#">ZnoteAAC</a>.</h6>
+			<h6>© <?php echo $config['site_title']; ?>. <a href="credits.php">Credits</a>.</h6>
 		</div>
 	</div> <!-- /container -->
 	

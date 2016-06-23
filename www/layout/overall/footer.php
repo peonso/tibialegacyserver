@@ -9,7 +9,7 @@
 					</table>
 					
 					<div align="center" style="font-face:verdana;font-size:10px">
-					<a href="credits.php">Credits</a>. © <?php echo $config['site_title']; ?>.<!--
+					© <?php echo $config['site_title']; ?>. <a href="credits.php">Credits</a>.<!--
 					<?php 
 						$time = microtime();
 						$time = explode(' ', $time);

@@ -26,7 +26,7 @@
   
   	<div class="container">
         <div class="titleheader">
-			<img class="img-responsive img-border-left" src="layout_admin/images/logo.png" alt="">
+			<img  src="layout_admin/images/logo.png" alt=""><img  src="layout_admin/images/admin.png" align="right" alt="">
             <div class="clearfix"></div>
         </div>
 	</div>

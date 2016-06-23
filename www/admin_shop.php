@@ -38,7 +38,7 @@ $items = getItemList();
 <?php
 $orders = mysql_select_multi("SELECT `id`, `account_id`, `type`, `itemid`, `count`, `points`, `time` FROM `znote_shop_logs` ORDER BY `id` DESC;");
 ?>
-<h2>Order History</h2>
+<h3>Order History</h3>
 <p>This list contains all transactions bought in the shop.</p>
 <table class="table table-striped table-hover">
 	<tr>

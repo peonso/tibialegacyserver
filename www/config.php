@@ -534,7 +534,7 @@
 	// Giving some bonus points for higher donations will tempt users to donate more.
 	$config['paypal_prices'] = array(
 	//	price => points,
-		1 => 45, // -10% bonus
+		1 => 9, // -10% bonus
 		10 => 100, // 0% bonus
 		15 => 165, // +10% bonus
 		20 => 240, // +20% bonus
