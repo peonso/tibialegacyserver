@@ -2,6 +2,19 @@
 require_once 'engine/init.php';
 logged_in_redirect();
 include 'layout/overall/header.php'; 
+?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_creacc.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 
 if (empty($_POST) === false) {
 	// $_POST['']
@@ -84,9 +97,6 @@ if (empty($_POST) === false) {
 	}
 }
 
-?>
-<h1>Register Account</h1>
-<?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
 	echo 'Congratulations! Your account has been created. You may now login to create a character.';
 } else {
@@ -114,63 +124,44 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		echo '</b></font>';
 	}
 ?>
-	<form action="" method="post">
-		<ul>
-			<li>
+	<table>
+	<tr><td>Account Creation</td></tr>
+				<tr class="darkborder"><td>
+		<form action="" method="post">
 				Account Number:<br>
-				<input type="text" name="username">
-			</li>
-			<li>
+				<input type="text" name="username" placeholder=" 6 - 8 numbers"><br>
 				Password:<br>
-				<input type="password" name="password">
-			</li>
-			<li>
+				<input type="password" name="password" placeholder=" 6 - 32 characters long"><br>
 				Password again:<br>
-				<input type="password" name="password_again">
-			</li>
-			<li>
+				<input type="password" name="password_again" placeholder=" 6 - 32 characters long"><br>
 				Email:<br>
-				<input type="text" name="email">
-			</li>
+				<input type="text" name="email"><br>
 			<?php
 			if ($config['use_captcha']) {
 				?>
-				<li>
-					<b>Write the image symbols in the text field to verify that you are a human:</b>
+
+					<b>Write the image symbols in the text field to verify that you are a human:</b><br>
 					<img id="captcha" src="captcha/securimage_show.php" alt="CAPTCHA Image" /><br>
-					<input type="text" name="captcha_code" size="10" maxlength="6" />
+					<input type="text" name="captcha_code" size="10" maxlength="6" /><br>
 					<a href="#" onclick="document.getElementById('captcha').src = 'captcha/securimage_show.php?' + Math.random(); return false">[ Different Image ]</a><br><br>
-				</li>
+
 				<?php
 			}
-			?>
-			<li>
-				<h2>Server Rules</h2>
-				<p>The golden rule: Have fun.</p>
-				<p>If you get pwn3d, don't hate the game.</p>
-				<p>No <a href='http://en.wikipedia.org/wiki/Cheating' target="_blank">cheating</a> allowed.</p>
-				<p>No <a href='http://en.wikipedia.org/wiki/Internet_bot' target="_blank">botting</a> allowed.</p>
-				<p>The staff can delete, ban, do whatever they want with your account and your <br>
-					submitted information. (Including exposing and logging your IP).</p>
-				<p></p>
-			</li>
-			<li>
+			?><table>
+				<tr class="lightborder"><td style="font-weight:normal;"><?php echo $config['server_rules']; ?></td></tr></table><br>
 				Do you agree to follow the server rules?<br>
 				<select name="selected">
-				  <option value="0">Umh...</option>
 				  <option value="1">Yes.</option>
-				  <option value="2">No.</option>
-				</select>
-			</li>
+				  <option value="2" selected>No.</option>
+				</select><br><br>
 			<?php
 				/* Form file */
 				Token::create();
 			?>
-			<li>
 				<input type="submit" value="Create Account">
-			</li>
-		</ul>
-	</form>
+						</form>
+			</td></tr>
+	</table>
 <?php 
 }
 include 'layout/overall/footer.php';

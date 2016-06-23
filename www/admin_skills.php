@@ -1,6 +1,11 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; 
+<?php
+require_once 'engine/init.php';
+include 'layout_admin/overall/header.php'; 
 protect_page();
 admin_only($user_data);
+?>
+	<h2>Set Character Skills</h2>
+<?php
 // start
 
 // PREP: Create a function that echos player skills
@@ -90,6 +95,7 @@ if ($name !== false) {
 			$player = mysql_select_single("SELECT `maglevel`, `level`, `vocation` FROM `players` WHERE `id`='$pid' LIMIT 1;");
 			$skills[] = array('value' => $player['maglevel']);
 			$skills[] = array('value' => $player['level']);
+			$skills[] = array('value' => $player['vocation']);
 		} else {
 			$player = mysql_select_single("SELECT `skill_fist`, `skill_club`, `skill_sword`, `skill_axe`, `skill_dist`, `skill_shielding`, `skill_fishing`, `maglevel`, `level`, `vocation` FROM `players` WHERE `id`='$pid' LIMIT 1;");
 			$skills = array(
@@ -127,7 +133,7 @@ if ($name !== false) {
 					$vocations = $config['vocations'];
 					foreach ($vocations as $vid => $vname) {
 						?>
-						<option value="<?php echo $vid; ?>" <?php if ($vid == $player['vocation']) echo "selected"?> ><?php echo $vname; ?></option>
+						<option value="<?php echo $vid; ?>" <?php if ($vid == playerSkill($skills, 9)) echo "selected"?> ><?php echo $vname; ?></option>
 						<?php
 					}
 					?>
@@ -184,4 +190,4 @@ if ($name !== false) {
 </form>
 <?php
 // end
- include 'layout/overall/footer.php'; ?>
+ include 'layout_admin/overall/footer.php'; ?>

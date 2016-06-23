@@ -1,6 +1,18 @@
 <?php require_once 'engine/init.php'; include 'layout/overall/header.php'; ?>
 
-<h1>Znote AAC</h1>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_credits.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+
+<h1>.:: Znote AAC ::.</h1>
 <p>This website is powered by the Znote AAC engine.</p>
 
 <h2>Developers:</h2>

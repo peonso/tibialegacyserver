@@ -1,8 +1,19 @@
 <?php require_once 'engine/init.php';
 if ($config['require_login']['guilds']) protect_page();
-$isOtx = ($config['CustomVersion'] == 'OTX') ? true : false;
 include 'layout/overall/header.php';
-
+?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_guilds.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 if (user_logged_in() === true) {
 	
 	// fetch data
@@ -21,28 +32,29 @@ if (user_logged_in() === true) {
 
 if (empty($_GET['name'])) {
 // Display the guild list
-?>
 
-<h1>Guild List:</h1>
-<?php
 //data_dump($guild, false, "guild data");
-if ($config['TFSVersion'] != 'TFS_10') $guilds = mysql_select_multi("SELECT `t`.`id`, `t`.`name`, `t`.`creationdate`, (SELECT count(p.rank_id) FROM players AS p LEFT JOIN guild_ranks AS gr ON gr.id = p.rank_id WHERE gr.guild_id =`t`.`id`) AS `total` FROM `guilds` as `t` ORDER BY `t`.`name`;");
-else $guilds = mysql_select_multi("SELECT `id`, `name`, `creationdate`, (SELECT COUNT('guild_id') FROM `guild_membership` WHERE `guild_id`=`id`) AS `total` FROM `guilds` ORDER BY `name`;");
+if ($config['TFSVersion'] != 'TFS_10') $guilds = mysql_select_multi("SELECT `t`.`id`, `t`.`name`, `t`.`creationdate`, `t`.`motd`, (SELECT count(p.rank_id) FROM players AS p LEFT JOIN guild_ranks AS gr ON gr.id = p.rank_id WHERE gr.guild_id =`t`.`id`) AS `total` FROM `guilds` as `t` ORDER BY `t`.`name`;");
+else $guilds = mysql_select_multi("SELECT `id`, `name`, `creationdate`, `motd`, (SELECT COUNT('guild_id') FROM `guild_membership` WHERE `guild_id`=`id`) AS `total` FROM `guilds` ORDER BY `name`;");
 
 if ($guilds !== false) {
 ?>
 <table id="guildsTable" class="table table-striped table-hover">
 	<tr class="yellow">
-		<th>Guild name:</th>
-		<th>Members:</th>
-		<th>Founded:</th>
+			<th width="50px">Logo</th>
+		<th>Guild Name</th>
+		<th width="10%">Members</th>
+		<th width="30%">Founded</th>
 	</tr>
 		<?php
 		foreach ($guilds as $guild) {
 			if ($guild['total'] >= 1) {
 				$url = url("guilds.php?name=". $guild['name']);
-				echo '<tr class="special" onclick="javascript:window.location.href=\'' . $url . '\'">';
-				echo '<td>'. $guild['name'] .'</td>';
+				echo '<tr>';
+				echo '<td><img style="max-width: 64px; max-height: 64px;" src="';
+				echo logo_exists($guild['name']);
+				echo '"/></td>';
+				echo '<td> <a href="' . $url . '">'. $guild['name'] .'</a><br>'. $guild['motd'] .'</td>';
 				echo '<td>'. $guild['total'] .'</td>';
 				echo '<td>'. getClock($guild['creationdate'], true) .'</td>';
 				echo '</tr>';
@@ -102,10 +114,10 @@ if (user_logged_in() === true) {
 	
 	
 	<!-- FORMS TO CREATE GUILD-->
-	<form action="" method="post">
-		<ul>
-			<li>
-				Create Guild:<br>
+	<table>
+		<tr><td>Create Guild</td></tr>
+		<tr><td>
+			<form action="" method="post">
 				<select name="selected_char">
 				<?php
 				for ($i = 0; $i < $char_count; $i++) {
@@ -113,15 +125,14 @@ if (user_logged_in() === true) {
 				}
 				?>
 				</select>
-				<input type="text" name="guild_name">
+				<input type="text" name="guild_name" placeholder=" guild name">
 				
 				<input type="submit" value="Create Guild">
-			</li>
-		</ul>
-	</form>
-	
+			</form>
+		</td></tr>
+	</table>
 	<?php
-} else echo 'You need to be logged in to create guilds.';
+} else echo '<p>You need to <a href="sub.php?page=login">log in</a> to create guilds.</p>';
 ?>
 <!-- end user-->
 
@@ -174,62 +185,66 @@ if (user_logged_in() === true) {
 
 <div id="guildTitleDiv">
 	<?php echo (isset($_GET['error'])) ? "<font size='5' color='red'>".sanitize($_GET['error'])."</font><br><br>" : ""; ?>
-	<?php if ($config['use_guild_logos']): ?>
-	<div id="guildImageDiv" style="float: left; margin-right: 10px;">
-		<img style="max-width: 100px; max-height: 100px;" src="<?php logo_exists(sanitize($_GET['name'])); ?>"></img>
-	</div>
-	<?php endif; ?>
 	<div id="guildDescription">
-		<h1>Guild: <?php echo sanitize($_GET['name']); ?></h1>
-		<p><?php echo $guild['motd']; ?></p>
+		<table class="transborder"><tbody>
+		<tr>
+			<td width="64px"><img style="max-width: 64px; max-height: 64px;" src="<?php logo_exists(sanitize($_GET['name'])); ?>"/></td>
+			<td><center><h1><?php echo sanitize($_GET['name']); ?></h1></center></td>
+			<td width="64px"><img style="max-width: 64px; max-height: 64px;" src="<?php logo_exists(sanitize($_GET['name'])); ?>"/></td>
+		</tr>
+		</tbody></table>
+				<p><?php echo $guild['motd']; ?></p>
+				<p>The guild was founded on <?php echo $config['site_title'];?>  on <?php echo date("M d Y",$guild['creationdate']);?>.</p>
 	</div>
 </div>
 <table id="guildViewTable" class="table table-striped">
 	<tr class="yellow">
-		<th>Rank:</th>
-		<th>Name:</th>
-		<th>Level:</th>
-		<th>Vocation:</th>
-		<th>Status:</th>
+		<td colspan="4">Guild Members</td>
+	</tr>
+	<tr class="darkborder" style="font-weight:bold;">
+		<td width="25%">Rank</td>
+		<td>Name and Title</td>
+		<td width="8%">Level</td>
+		<td>Vocation</td>
 	</tr>
 		<?php
-		if ($config['TFSVersion'] == 'TFS_10') {
-			$onlinelist = array();
-			$gplayers = array();
-			foreach ($players as $player) {
-				$gplayers[] = $player['id'];
-			}
-			$gplayers = join(',',$gplayers);
-			$onlinequery = mysql_select_multi("SELECT `player_id` FROM `players_online` WHERE `player_id` IN ($gplayers);");
-			if ($onlinequery !== false) foreach ($onlinequery as $online) {
-				$onlinelist[] = $online['player_id'];
-			}
-		}
 		//data_dump($players, false, "Data");
 		foreach ($players as $player) {
-			if ($config['TFSVersion'] !== 'TFS_10') {
-				$chardata['online'] = $player['online'];
-			} else $chardata['online'] = (in_array($player['id'], $onlinelist)) ? 1 : 0;
-			echo '<tr>';
+			if ($rankcolor !== true && $rankcolor !== false) {
+				$checkname = $player['rank_name'];
+				$rankcolor = true;
+			} 
+			elseif ($player['rank_name'] !== $checkname) {
+				$checkname = $player['rank_name'];
+				if ($rankcolor === true) {
+					$rankcolor = false;
+				} else { 
+				$rankcolor = true;
+				}
+			}
+			if ($rankcolor === true) {
+			echo '<tr class="lightborder">';
+			} else echo '<tr class="darkborder">';
 			echo '<td>'. $player['rank_name'] .'</td>';
-			echo '<td><a href="characterprofile.php?name='. $player['name'] .'">'. $player['name'] .'</a></td>';
+			echo '<td><a href="characterprofile.php?name='. $player['name'] .'">'. $player['name'] .'</a>';
+			if (!empty($player['guildnick'])) {
+				echo ' ('. $player['guildnick'] .')';
+			}
+			echo '</td>';
 			echo '<td>'. $player['level'] .'</td>';
 			echo '<td>'. $config['vocations'][$player['vocation']] .'</td>';
-			if ($chardata['online'] == 1) echo '<td> <b><font color="green"> Online </font></b></td>';
-			else echo '<td> Offline </td>';
 			echo '</tr>';
 		}
 		?>
 </table>
 
 <?php if ($inv_count > 0) { ?>
-<h3>Invited characters</h3>
 <table>
 	<tr class="yellow">
-		<td>Name:</td>
+		<td>Invited characters</td>
 		<?php 
 		if ($highest_access == 2 || $highest_access == 3) {
-			echo '<td>Remove:</td>';
+			echo '<td>Remove Invitation</td>';
 		}
 		// Shuffle through visitor characters
 		for ($i = 0; $i < $char_count; $i++) {
@@ -340,7 +355,28 @@ if (user_logged_in() === true) {
 	
 if ($highest_access >= 2) {
 	// Guild leader stuff
-	
+
+	// Change Guild Nick
+	if (!empty($_POST['player_guildnick'])) {
+		$p_cid = user_character_id($_POST['player_guildnick']);
+		$p_guild = get_player_guild_data($p_cid);
+			//The MAGIC!!!
+		if (preg_match("/^[a-zA-Z_ ]+$/", $_POST['guildnick']) || empty($_POST['guildnick'])) {	
+			// Only allow normal symbols as guild name
+			$p_nick = sanitize($_POST['guildnick']);
+			if ($p_guild['guild_id'] == $gid) {
+				/*if ($config['TFSVersion'] !== 'TFS_10') $chardata = user_character_data($p_cid, 'online');
+				else $chardata['online'] = (user_is_online_10($p_cid)) ? 1 : 0;
+				if ($chardata['online'] == 0) {*/
+					if ($config['TFSVersion'] !== 'TFS_10') update_player_guildnick($p_cid, $p_nick);
+					else update_player_guildnick_10($p_cid, $p_nick);
+					header('Location: guilds.php?name='. $_GET['name']);
+					exit();
+				/*} else echo '<font color="red" size="4">Character not offline.</font>';*/
+			}		
+		} else echo '<font color="red" size="4">Character guild nick may only contain a-z, A-Z and spaces.</font>';
+	}
+
 	// Promote character to guild position
 	if (!empty($_POST['promote_character']) && !empty($_POST['promote_position'])) {
 		// Verify that promoted character is from this guild.
@@ -558,18 +594,20 @@ if ($highest_access >= 2) {
 	$ranks = get_guild_rank_data($gid);
 	?>
 		<!-- Form to create guild -->
+		<table>
+			<tr><td>Guild Management</td></tr>
 		<?php
 			if ($config['forum']['guildboard'] === true && $config['forum']['enabled'] === true) {
 				$forumExist = mysql_select_single("SELECT `id` FROM `znote_forum` WHERE `guild_id`='$gid' LIMIT 1;");
 				if ($forumExist === false) {
 					?>
-					<form action="" method="post">
-						<ul>
-							<li>Create forum guild board:<br>
+					<tr><td>
+						<form action="" method="post">
+							Create forum guild board:
 							<input type="hidden" name="forumGuildId" value="<?php echo $gid; ?>">
 							<input type="submit" value="Create Guild Board">
-						</ul>
-					</form>
+						</form>
+					</td></tr>
 					<?php
 				}
 			}
@@ -579,15 +617,13 @@ if ($highest_access >= 2) {
 		?>
 
 			<!-- form to upload guild logo -->
-			<form action="" method="post" enctype="multipart/form-data">
-				<ul>
-					<li>Upload guild logo [.gif images only, 100x100px size]:<br>
+			<tr><td>
+				<form action="" method="post" enctype="multipart/form-data">
+					Upload guild logo [.gif images only, 100x100px size]:<br>
 						<input type="file" name="file" id="file" accept="image/gif">
 						<input type="submit" name="submit" value="Upload guild logo">
-					</li>
-				</ul>
-			</form>
-
+				</form>
+			</td></tr>
 		<?php 
 
 			if (!empty($_FILES['file'])) {
@@ -599,29 +635,50 @@ if ($highest_access >= 2) {
 
 		} ?>
 		<!-- forms to invite character -->
-		<form action="" method="post">
-			<ul>
-				<li>Invite Character to guild:<br>
+		<tr><td>
+			<form action="" method="post">
+				Invite Character to guild:<br>
 					<input type="text" name="invite" placeholder="Character name">
 					<input type="submit" value="Invite Character">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</td></tr>
 		<!-- Guild message of the day motd -->
-		<form action="" method="post">
-			<ul>
-				<li>Change guild message:</li>
-				<li>
+		<tr><td>
+			<form action="" method="post">
+				Change guild message:<br>
 					<textarea name="motd" placeholder="Guild Message" cols="50" rows="3"><?php echo $guild['motd']; ?></textarea><br>
 					<input type="submit" value="Update guild message">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</td></tr>
+		<!-- FORMS TO CHANGE GUILD NICK -->
+		<tr><td>
+			<form action="" method="post">
+					Change Guild Nick:<br>
+					<select name="player_guildnick">
+					<?php
+					//$gid = get_guild_id($_GET['name']);
+					//$players = get_guild_players($gid);
+					foreach ($players as $player) {
+						$pl_data = get_player_guild_data(user_character_id($player['name']));
+						if ($pl_data['rank_level'] != 3) {
+							echo '<option value="'. $player['name'] .'">'. $player['name'] .'</option>'; 
+						} else {
+							if ($highest_access == 3) {
+								echo '<option value="'. $player['name'] .'">'. $player['name'] .'</option>'; 
+							}
+						}
+					}
+					?>
+					</select>
+					<input type="text" name="guildnick" maxlength="15" placeholder="leave blank to erase">
+					<input type="submit" value="Change Nick">
+			</form>
+		</td></tr>
+		<!-- END FORMS TO CHANGE GUILD NICK -->
 		<?php if ($members > 1) { ?>
 		<!-- FORMS TO PROMOTE CHARACTER-->
-		<form action="" method="post">
-			<ul>
-				<li>
+		<tr><td>
+			<form action="" method="post">
 					Promote Character:<br>
 					<select name="promote_character">
 					<?php
@@ -630,7 +687,13 @@ if ($highest_access >= 2) {
 					foreach ($players as $player) {
 						$pl_data = get_player_guild_data(user_character_id($player['name']));
 						if ($pl_data['rank_level'] != 3) {
+							if ($pl_data['rank_level'] != 2) {
 							echo '<option value="'. $player['name'] .'">'. $player['name'] .'</option>'; 
+							} else {
+								if ($highest_access == 3) {
+									echo '<option value="'. $player['name'] .'">'. $player['name'] .'</option>'; 
+								}
+							}
 						}	
 					}
 					?>
@@ -651,13 +714,11 @@ if ($highest_access >= 2) {
 						?>
 					</select>
 					<input type="submit" value="Promote Member">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</td></tr>
 		<!-- Remove member from guild -->
-		<form action="" method="post">
-			<ul>
-				<li>
+		<tr><td>
+			<form action="" method="post">
 					Kick member from guild:<br>
 					<select name="remove_member">
 					<?php
@@ -674,16 +735,15 @@ if ($highest_access >= 2) {
 					?>
 					</select>
 					<input type="submit" value="Remove member">
-				</li>
-			</ul>
-		</form>
-		<?php } ?>
-		<br><br>
-		<?php if ($highest_access == 3) { ?>
+			</form>
+		</td></tr>
+		<?php } 
+		/* only leader */
+		if ($highest_access == 3) { ?>
 		<!-- forms to change rank titles -->
-		<form action="" method="post">
-			<ul>
-				<li><b>Change rank titles:</b><br>
+		<tr><td>
+			<form action="" method="post">
+				Change rank titles:<br>
 					<?php
 						$rank_count = 1;
 						foreach ($ranks as $rank) {
@@ -692,23 +752,21 @@ if ($highest_access >= 2) {
 						echo '<input type="hidden" name="change_ranks" value="' . $gid . '" />';
 					?>
 					<input type="submit" value="Update Ranks">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</td></tr>
 		<!-- forms to disband guild -->
-		<form action="" method="post">
-			<ul>
-				<li><b>DELETE GUILD (All members must be offline):</b><br>
+		<tr><td>
+			<form action="" method="post">
+				DELETE GUILD (All members must be offline):<br>
 					<?php echo '<input type="hidden" name="disband" value="' . $gid . '" />'; ?>
 					<input type="submit" value="Disband Guild">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</tr></td>
 		<!-- forms to change leadership-->
 		<?php if ($members > 1) { ?>
-		<form action="" method="post">
-			<ul>
-				<li><b>Change Leadership with:</b><br>
+		<tr><td>
+			<form action="" method="post">
+				Change Leadership with:<br>
 					<select name="new_leader">
 					<?php
 					//$gid = get_guild_id($_GET['name']);
@@ -722,10 +780,10 @@ if ($highest_access >= 2) {
 					?>
 					</select>
 					<input type="submit" value="Change Leadership">
-				</li>
-			</ul>
-		</form>
+			</form>
+		</td></tr>
 		<?php } ?>
+		</table>
 		<?php if ($config['TFSVersion'] == 'TFS_10' && $config['guildwar_enabled'] === true) { ?>
 		<h2>Guild War Management:</h2>
 		<form action="" method="post">
@@ -820,14 +878,14 @@ if (user_logged_in() === true) {
 	if ($bool) {
 $forumExist = mysql_select_single("SELECT `id` FROM `znote_forum` WHERE `guild_id`='$gid' LIMIT 1;");
 if ($forumExist !== false) {
-	?> - <font size="4"><a href="forum.php?cat=<?php echo $forumExist['id']; ?>">Visit Guild Board</a></font><br><br><br><?php
+	?><br> - Visit <a href="forum.php?cat=<?php echo $forumExist['id']; ?>">Guild Board</a>.<br><?php
 }
 ?>
 
 <form action="" method="post">
-	<ul>
-		<li>
-			Leave Guild:<br>
+	<table>
+		<tr><td>Leave Guild</td></tr>
+		<tr><td>
 			<select name="leave_guild">
 				<option disabled>With...</option>
 			<?php
@@ -836,15 +894,15 @@ if ($forumExist !== false) {
 					if ($player['name'] == $characters[$i]) {
 						$data = get_player_guild_data(user_character_id($player['name']));
 						if ($data['rank_level'] != 3) echo '<option value="'. $characters[$i] .'">'. $characters[$i] .'</option>';
-						else echo '<option disabled>'. $characters[$i] .' [disabled:Leader]</option>';
+						else echo '<option disabled>'. $characters[$i] .' (disabled: Leader)</option>';
 					}
 				}
 			}
 			?>
 			</select>
 			<input type="submit" value="Leave Guild">
-		</li>
-	</ul>
+		</td></tr>
+	</table>
 </form>
 <?php
 } // display form if user has a character in guild

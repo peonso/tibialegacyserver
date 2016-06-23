@@ -1,6 +1,11 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; 
+<?php
+require_once 'engine/init.php';
+include 'layout_admin/overall/header.php'; 
 protect_page();
 admin_only($user_data);
+?>
+	<h2>Main Settings</h2>
+<?php
 // Encryption (if select field has $key 0, it will return false, so add $enc + $key will return 100, subtract and you get 0, not false). 
 $enc = 100;
 // Don't bother to think about cross site scripting here, since they can't access the page unless they are admin anyway.
@@ -117,10 +122,7 @@ if (empty($errors) === false){
 	echo '</b></font>';
 }
 // end
-?>
-<h1>Admin Page.</h1>
-<p>
-<?php
+
 $basic = user_znote_data('version', 'installed', 'cached');
 if ($basic['version'] !== $version) {
 	mysql_update("UPDATE `znote` SET `version`='$version';");
@@ -129,7 +131,6 @@ if ($basic['version'] !== $version) {
 echo "Running Znote AAC Version: ". $basic['version'] .".<br>";
 echo "Last cached on: ". getClock($basic['cached'], true) .".<br>";
 ?>
-</p>
 <ul>
 	<li>
 		<b>Permanently Delete/erase character from database:</b> 
@@ -237,7 +238,46 @@ echo "Last cached on: ". getClock($basic['cached'], true) .".<br>";
 			<input type="submit" value="Give Points">
 		</form>
 	</li>
+	<li>
+        <b>Update spells from file:</b><br>
+        <?php
+            if (!isset($_POST['action'])) 
+            {            
+                $_POST['action'] = 'undefine'; 
+            }
+            
+            if ($_POST['action'] == 'upload')
+            {
+                $xml = $_FILES['file'];
+                $_POST['action'] = 'undefine';
+                if($xml['tmp_name'])
+                {
+                    if($xml['name'] == 'spells.xml')
+                    {
+                        $groups = (isset($_POST['show_groups']) && $_POST['show_groups'] == 'yes') ? true : false;
+                        echo 'Successfully fetched spells.xml!<br>';
+                        echo 'Using temporal file: '. $_FILES['file']['tmp_name'] .'<br>';
+                        build_spells(simplexml_load_file($xml['tmp_name']), $groups);
+                    }
+                    else
+                    {
+                        echo '<span style="color:red;font-weight:bold">ERROR: File "spells.xml" not found.</span>';
+                    }
+                }
+                else
+                {
+                    echo '<span style="color:red;font-weight:bold">ERROR: Upload failed.</span>';
+                }
+            }
+        ?>
+        <form enctype='multipart/form-data' method='POST'>
+            <input type='checkbox' name='show_groups' value='yes'> Show spells groups (Only for TFS 0.2.9+)<br>
+            <input type='hidden' name='action' value='upload' />
+            <input type='file' name='file' />
+            <input type='submit' value='Submit' />
+        </form>
+    </li>
 </ul>
-<div id="twitter"><?php include 'twtrNews.php'; ?></div>
 
-<?php include 'layout/overall/footer.php'; ?>
+
+<?php include 'layout_admin/overall/footer.php'; ?>

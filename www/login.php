@@ -1,7 +1,19 @@
 <?php
 require_once 'engine/init.php';
 logged_in_redirect();
-include 'layout/overall/header.php';
+include 'layout/overall/header.php'; ?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 
 if (empty($_POST) === false) {
 	if ($config['log_ip']) {

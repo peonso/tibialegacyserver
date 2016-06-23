@@ -1,6 +1,17 @@
-<?php require_once 'engine/init.php';
+<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; ?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 protect_page();
-include 'layout/overall/header.php'; 
 
 if (empty($_POST) === false) {
 	// $_POST['']
@@ -72,12 +83,9 @@ if (empty($_POST) === false) {
 		}
 	}
 }
-?>
 
-<h1>Create Character</h1>
-<?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
-	echo 'Congratulations! Your character has been created. See you in-game!';
+	echo '<br><center>Congratulations! Your character has been created. See you in-game!</center>';
 } else {
 	if (empty($_POST) === false && empty($errors) === true) {
 		if ($config['log_ip']) {
@@ -105,13 +113,13 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		echo '</b></font>';
 	}
 	?>
-	<form action="" method="post">
-		<ul>
-			<li>
+	<table>
+	<tr><td>Create Character</td></tr>
+		<form action="" method="post">
+			<tr><td>
 				Name:<br>
-				<input type="text" name="name">
-			</li>
-			<li>
+				<input type="text" name="name" placeholder=" 4 - 20 characters long">
+				<br>
 				<!-- Available vocations to select from when creating character -->
 				Vocation:<br>
 				<select name="selected_vocation">
@@ -119,16 +127,14 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 				<option value="<?php echo $id; ?>"><?php echo vocation_id_to_name($id); ?></option>
 				<?php } ?>
 				</select>
-			</li>
-			<li>
+				<br>
 				<!-- Available genders to select from when creating character -->
 				Gender:<br>
 				<select name="selected_gender">
 				<option value="1">Male</option>
 				<option value="0">Female</option>
 				</select>
-			</li>
-			<li>
+				<br>
 				<!-- Available towns to select from when creating character -->
 				Town:<br>
 				<select name="selected_town">
@@ -136,16 +142,16 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 				<option value="<?php echo $tid; ?>"><?php echo town_id_to_name($tid); ?></option>
 				<?php } ?>
 				</select>
-			</li>
-			<?php
+				<br>
+				<br>
+				<?php
 				/* Form file */
 				Token::create();
-			?>
-			<li>
+				?>
 				<input type="submit" value="Create Character">
-			</li>
-		</ul>
-	</form>
+			</td></tr>
+		</form>
+	</table>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

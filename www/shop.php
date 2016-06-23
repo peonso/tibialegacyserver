@@ -1,12 +1,24 @@
 <?php require_once 'engine/init.php';
-protect_page();
+/* protect_page(); */
 include 'layout/overall/header.php'; 
-
+?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_shop.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 // Import from config:
 $shop = $config['shop'];
 $shop_list = $config['shop_offers'];
 
-if (!empty($_POST['buy'])) {
+if (!empty($_POST['buy']) && ($_SESSION['shop_session'] == $_POST['session'])) {
 	$time = time();
 	$player_points = (int)$user_znote_data['points'];
 	$cid = (int)$user_data['id'];
@@ -39,6 +51,7 @@ if (!empty($_POST['buy'])) {
 		
 		// Do the magic (insert into db, or change sex etc)
 		// If type is 2 or 3
+		/*
 		if ($buy['type'] == 2) {
 			// Add premium days to account
 			user_account_add_premdays($cid, $buy['count']);
@@ -55,6 +68,31 @@ if (!empty($_POST['buy'])) {
 			mysql_insert("INSERT INTO `znote_shop_orders` (`account_id`, `type`, `itemid`, `count`, `time`) VALUES ('$cid', '". $buy['type'] ."', '". $buy['itemid'] ."', '". $buy['count'] ."', '$time')");
 			echo '<font color="green" size="4">Your order is ready to be delivered. Write this command in-game to get it: [!shop].<br>Make sure you are in depot and can carry it before executing the command!</font>';
 		}
+		*/
+		if ($buy['type'] == 2) {
+			// Add premium days to account
+			user_account_add_premdays($cid, $buy['count']);
+			echo '<div class="alert alert-success alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				You now have '.$buy['count'].' additional days of premium membership.</div>'; 
+		} else if ($buy['type'] == 3) {
+			// Character Gender
+			mysql_insert("INSERT INTO `znote_shop_orders` (`account_id`, `type`, `itemid`, `count`, `time`) VALUES ('$cid', '". $buy['type'] ."', '". $buy['itemid'] ."', '". $buy['count'] ."', '$time')");
+			echo '<div class="alert alert-success alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				You now have access to change character gender on your characters. Visit <a href="myaccount.php">My Account</a> to select character and change the gender.</div>';
+		} else if ($buy['type'] == 4) {
+			// Character Name
+			mysql_insert("INSERT INTO `znote_shop_orders` (`account_id`, `type`, `itemid`, `count`, `time`) VALUES ('$cid', '". $buy['type'] ."', '". $buy['itemid'] ."', '". $buy['count'] ."', '$time')");
+			echo '<div class="alert alert-success alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				You now have access to change character name on your characters. Visit <a href="myaccount.php">My Account</a> to select character and change the name.</div>';
+		} else {
+			mysql_insert("INSERT INTO `znote_shop_orders` (`account_id`, `type`, `itemid`, `count`, `time`) VALUES ('$cid', '". $buy['type'] ."', '". $buy['itemid'] ."', '". $buy['count'] ."', '$time')");
+			echo '<div class="alert alert-success alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				Your order is ready to be delivered. Use the command <strong>/shop</strong> in-game to get it. <br>It\'s safer if you make sure you are in depot and can carry it before executing the command.</div>';
+		}
 		
 		// No matter which type, we will always log it.
 		mysql_insert("INSERT INTO `znote_shop_logs` (`account_id`, `player_id`, `type`, `itemid`, `count`, `points`, `time`) VALUES ('$cid', '0', '". $buy['type'] ."', '". $buy['itemid'] ."', '". $buy['count'] ."', '". $buy['points'] ."', '$time')");
@@ -65,11 +103,7 @@ if (!empty($_POST['buy'])) {
 }
 
 if ($shop['enabled']) {
-?>
-
-<h1>Shop Offers</h1>
-<?php
-if (!empty($_POST['buy'])) {
+if (!empty($_POST['buy']) && ($_SESSION['shop_session'] == $_POST['session'])) {
 	if ($user_znote_data['points'] >= $buy['points']) {
 		?><td>You have <?php echo (int)($user_znote_data['points'] - $buy['points']); ?> points. (<a href="buypoints.php">Buy points</a>).</td><?php
 	} else {
@@ -105,8 +139,30 @@ if ($config['shop_auction']['characterAuction']) {
 		?>
 		<form action="" method="POST">
 			<input type="hidden" name="buy" value="<?php echo (int)$key; ?>">
-			<input type="submit" value="  PURCHASE  "  class="needconfirmation" data-item-name="<?php echo $offers['describtion']; ?>" data-item-cost="<?php echo $offers['points']; ?>">
+			<input type="hidden" name="session" value="<?php echo time(); ?>">
+			<input type="submit" id="spendTickets<?php echo (int)$key; ?>" value="Purchase" class="hidden needconfirmation" data-item-name="<?php echo $offers['name']; ?>" data-item-cost="<?php echo $offers['points']; ?>">
 		</form>
+						<button class="btn btn-success" data-toggle="modal" data-target="#myModalBuy<?php echo (int)$key; ?>" style="margin-left:-10px;">
+							  Purchase
+						</button>
+
+						<div class="modal fade" id="myModalBuy<?php echo (int)$key; ?>" style="top:25%;" tabindex="-1" role="dialog" aria-labelledby="spendTicketsLabel<?php echo (int)$key; ?>" aria-hidden="true">
+							  <div class="modal-dialog">
+								<div class="modal-content">
+								  <div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="set_position">Confirm your purchase.</h4>
+								  </div>
+								  <div class="modal-body">
+									Do you really want to purchase <?php echo $offers['name']; ?> for <?php echo $offers['points']; ?> tickets?
+								  </div>
+								  <div class="modal-footer">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+									<label type="submit" class="btn btn-success" for="spendTickets<?php echo (int)$key; ?>">Yes</label>
+								  </div>
+								</div>
+							  </div>
+							</div><!-- ./modal -->
 		<?php
 		echo '</td>';
 		echo '</tr>';
@@ -115,7 +171,7 @@ if ($config['shop_auction']['characterAuction']) {
 </table>
 
 <?php if ($shop['enableShopConfirmation']) { ?>
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
     $(document).ready(function(){
         $(".needconfirmation").each(function(e){
@@ -129,8 +185,12 @@ if ($config['shop_auction']['characterAuction']) {
             });
         });
     });
-</script>
-<?php }
+</script>-->
+<?php 
+
+}
 } else echo '<h1>Buy Points system disabled.</h1><p>Sorry, this functionality is disabled.</p>';
+	// Store current timestamp to prevent page-reload from processing old purchase
+	$_SESSION['shop_session'] = time();
 include 'layout/overall/footer.php'; ?>
 

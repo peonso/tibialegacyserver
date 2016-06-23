@@ -242,10 +242,13 @@ function shop_account_gender_tickets($accid) {
 function guild_remove_member($cid) {
 	$cid = (int)$cid;
 	mysql_update("UPDATE `players` SET `rank_id`='0' WHERE `id`=$cid");
+	mysql_update("UPDATE `players` SET `guildnick`= NULL WHERE `id`=$cid");
 }
 function guild_remove_member_10($cid) {
 	$cid = (int)$cid;
+	
 	mysql_update("DELETE FROM `guild_membership` WHERE `player_id`='$cid' LIMIT 1;");
+	mysql_update("UPDATE `guild_membership` SET `nick`= NULL WHERE `player_id`=$cid");
 }
 
 // Change guild rank name.
@@ -311,7 +314,7 @@ function guild_leader_gid($leader) {
 // Returns guild leader(charID) of a guild. (parameter: guild_ID)
 function guild_leader($gid) {
 	$gid = (int)$gid;
-	$data = mysql_select_single("SELECT `owner_id` FROM `guilds` WHERE `id`='$gid';");
+	$data = mysql_select_single("SELECT `owner_id` FROM `guilds` WHERE `id`=$gid;");
 	return ($data !== false) ? $data['owner_id'] : false;
 }
 
@@ -331,10 +334,12 @@ function guild_delete($gid) {
 function guild_player_leave($cid) {
 	$cid = (int)$cid;
 	mysql_update("UPDATE `players` SET `rank_id`='0' WHERE `id`=$cid LIMIT 1;");
+	mysql_update("UPDATE `players` SET `guildnick`= NULL WHERE `id`=$cid");
 }
 function guild_player_leave_10($cid) {
 	$cid = (int)$cid;
 	mysql_delete("DELETE FROM `guild_membership` WHERE `player_id`='$cid' LIMIT 1;");
+	mysql_update("UPDATE `guild_membership` SET `nick`= NULL WHERE `player_id`=$cid");
 }
 
 // Player join guild
@@ -409,10 +414,31 @@ function update_player_guild_position_10($cid, $rid) {
 	mysql_update("UPDATE `guild_membership` SET `rank_id`='$rid' WHERE `player_id`=$cid");
 }
 
+// Update player's guild nick
+function update_player_guildnick($cid, $nick) {
+	$cid = (int)$cid;
+	$nick = sanitize($nick);
+	if (!empty($nick)) { 
+
+	mysql_update("UPDATE `players` SET `guildnick`='$nick' WHERE `id`=$cid");
+	} else {
+	mysql_update("UPDATE `players` SET `guildnick`= NULL WHERE `id`=$cid");
+	}
+}
+function update_player_guildnick_10($cid, $nick) {
+	$cid = (int)$cid;
+	$nick = sanitize($nick);
+	if (!empty($nick)) { 
+	mysql_update("UPDATE `guild_membership` SET `nick`='$nick' WHERE `player_id`=$cid");
+	} else {
+	mysql_update("UPDATE `guild_membership` SET `nick`= NULL WHERE `player_id`=$cid");
+	}
+}
+
 // Get guild data, using guild id.
 function get_guild_rank_data($gid) {
 	$gid = (int)$gid;
-	return mysql_select_multi("SELECT `id`, `guild_id`, `name`, `level` FROM `guild_ranks` WHERE `guild_id`='$gid' ORDER BY `id` DESC LIMIT 0, 30");
+	return mysql_select_multi("SELECT `id`, `guild_id`, `name`, `level` FROM `guild_ranks` WHERE `guild_id`=$gid ORDER BY `id` DESC LIMIT 0, 30");
 }
 
 // Creates a guild, where cid is the owner of the guild, and name is the name of guild.
@@ -505,8 +531,8 @@ function get_guilds_list() {
 // Get array of player data related to a guild.
 function get_guild_players($gid) {
     $gid = (int)$gid; // Sanitizing the parameter id
-    if (config('TFSVersion') !== 'TFS_10') return mysql_select_multi("SELECT p.rank_id, p.name, p.level, p.vocation, p.online, gr.name AS `rank_name` FROM players AS p LEFT JOIN guild_ranks AS gr ON gr.id = p.rank_id WHERE gr.guild_id ='$gid' ORDER BY gr.id, p.name;");
-    else return mysql_select_multi("SELECT p.id, p.name, p.level, p.vocation, gm.rank_id, gr.name AS `rank_name` FROM players AS p LEFT JOIN guild_membership AS gm ON gm.player_id = p.id LEFT JOIN guild_ranks AS gr ON gr.id = gm.rank_id WHERE gm.guild_id = '$gid' ORDER BY gm.rank_id, p.name");
+    if (config('TFSVersion') !== 'TFS_10') return mysql_select_multi("SELECT p.rank_id, p.name, p.level, p.guildnick, p.vocation, p.online, gr.name AS `rank_name` FROM players AS p LEFT JOIN guild_ranks AS gr ON gr.id = p.rank_id WHERE gr.guild_id ='$gid' ORDER BY gr.id, p.name;");
+    else return mysql_select_multi("SELECT p.id, p.name, p.level, p.vocation, gm.rank_id, gm.nick AS `guildnick`, gr.name AS `rank_name` FROM players AS p LEFT JOIN guild_membership AS gm ON gm.player_id = p.id LEFT JOIN guild_ranks AS gr ON gr.id = gm.rank_id WHERE gm.guild_id = '$gid' ORDER BY gm.rank_id, p.name");
 }
 
 // Returns total members in a guild (integer)
@@ -822,7 +848,7 @@ function user_character_list($account_id) {
 			if ($characters[$i]['lastlogin'] != 0) {
 				$characters[$i]['lastlogin'] = getClock($characters[$i]['lastlogin'], true, false);
 			} else {
-				$characters[$i]['lastlogin'] = 'Never.';
+				$characters[$i]['lastlogin'] = 'never logged in';
 			}
 			
 			$characters[$i]['online'] = online_id_to_name($characters[$i]['online']); // 0 to "offline", 1 to "ONLINE". 
@@ -959,7 +985,7 @@ function user_account_add_premdays($accid, $days) {
     { 
         $tmp = $tmp + ($days * 24 * 60 * 60); 
     } 
- mysql_update("UPDATE `accounts` SET `premend`='$tmp' WHERE `id`='$accid'");
+	mysql_update("UPDATE `accounts` SET `premend`='$tmp' WHERE `id`='$accid'");
 }
 
 // Name = char name. Changes from male to female & vice versa.

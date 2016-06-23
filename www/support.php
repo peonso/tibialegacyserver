@@ -1,5 +1,17 @@
 <?php require_once 'engine/init.php'; include 'layout/overall/header.php';
-?><h1>Support in-game</h1><?php
+?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_staff.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 $cache = new Cache('engine/cache/support');
 if ($cache->hasExpired()) {
 	// Fetch all staffs in-game.
@@ -23,30 +35,42 @@ if ($cache->hasExpired()) {
 }
 $writeHeader = true;
 if (!empty($srtGrp)) {
-	foreach (array_reverse($srtGrp) as $grpName => $grpList) {
-		?>
+			?>
 		<table id="supportTable" class="table table-striped">
 			<?php if ($writeHeader) {
 			$writeHeader = false; ?>
 			<tr class="yellow">
-				<th width="30%">Group</th>
-				<th width="40%">Name</th>
-				<th width="30%">Status</th>
+				<td width="20%">Position</td>
+				<td>Name</td>
+				<td width="20%">Status</td>
 			</tr>
 			<?php
 			}
+		foreach (array_reverse($srtGrp) as $grpName => $grpList) {
 			foreach ($grpList as $char) {
-				if ($char['name'] != $config['website_char']) {
-					echo '<tr>';
-					echo "<td width='30%'>". $grpName ."</td>";
-					echo '<td width="40%"><a href="characterprofile.php?name='. $char['name'] .'">'. $char['name'] .'</a></td>';
-					echo "<td width='30%'>". online_id_to_name($char['online']) ."</td>";
-					echo '</tr>';
+				if ($rankcolor !== true && $rankcolor !== false) {
+					$checkname = $grpName;
+					$rankcolor = true;
+				} 
+				elseif ($grpName !== $checkname) {
+					$checkname = $grpName;
+					if ($rankcolor === true) {
+						$rankcolor = false;
+					} else { 
+					$rankcolor = true;
+					}
 				}
+				if ($rankcolor === true) {
+				echo '<tr class="lightborder">';
+				} else echo '<tr class="darkborder">';
+				echo "<td>". $grpName ."</td>";
+				echo '<td><a href="characterprofile.php?name='. $char['name'] .'">'. $char['name'] .'</a></td>';
+				echo "<td>". online_id_to_name($char['online']) ."</td>";
+				echo '</tr>';
 			}
-			?>
-		</table>
-		<?php
-	}
+		}
+	?>
+	</table>
+	<?php
 }
 echo'</table>'; include 'layout/overall/footer.php'; ?>

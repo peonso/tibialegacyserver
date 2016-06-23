@@ -1,6 +1,18 @@
-<?php require_once 'engine/init.php';
+<?php require_once 'engine/init.php'; include 'layout/overall/header.php';
+?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 protect_page();
-include 'layout/overall/header.php'; 
 // Change character comment PAGE2 (Success).
 if (!empty($_POST['comment']) &&!empty($_POST['charn'])) {
 	if (!Token::isValid($_POST['token'])) {
@@ -8,7 +20,7 @@ if (!empty($_POST['comment']) &&!empty($_POST['charn'])) {
 	}
 	if (user_character_account_id($_POST['charn']) === $session_user_id) {
 		user_update_comment(user_character_id($_POST['charn']), $_POST['comment']);
-		echo 'Successfully updated comment.';
+		echo 'Successfully updated comment. Back to <a href="myaccount.php">My Account</a>.';
 	}
 } else {
 // Hide character
@@ -120,6 +132,39 @@ if (!empty($_POST['change_name'])) {
 	} else echo "Did not find any name change tickets, but them in our <a href='shop.php'>shop!</a>";
 }
 // end
+
+// Change character comment PAGE1:
+if (!empty($_POST['selected_comment'])) {
+	if (!Token::isValid($_POST['token'])) {
+		exit();
+	}
+	if (user_character_account_id($_POST['selected_comment']) === $session_user_id) {
+		$comment_data = user_znote_character_data(user_character_id($_POST['selected_comment']), 'comment');
+		?>
+		<!-- Changing comment MARKUP -->
+		<div id="myaccount">
+		<table>
+			<tr><td>Change Comment</td></tr>
+				<tr><td>
+					<form action="" method="post">
+					<input name="charn" type="text" value="<?php echo $_POST['selected_comment']; ?>" readonly>
+					Comment:<br>
+					<textarea name="comment" cols="70" rows="10"><?php echo $comment_data['comment']; ?></textarea>
+					<br><br>
+				<?php
+					/* Form file */
+					Token::create();
+				?>
+					<input type="submit" value="Update Comment">
+					</form>
+				</td></tr>
+		<table>
+		</div>
+
+		<?php
+	}
+}
+// end
 // Change character sex
 if (!empty($_POST['change_gender'])) {
 	if (!Token::isValid($_POST['token'])) {
@@ -171,36 +216,6 @@ if (!empty($_POST['change_gender'])) {
 			} else echo 'You don\'t have any character gender tickets, buy them in the <a href="shop.php">SHOP</a>!';
 		} else echo 'Your character must be offline.';
 	}
-}
-// end
-// Change character comment PAGE1:
-if (!empty($_POST['selected_comment'])) {
-	if (!Token::isValid($_POST['token'])) {
-		exit();
-	}
-	if (user_character_account_id($_POST['selected_comment']) === $session_user_id) {
-		$comment_data = user_znote_character_data(user_character_id($_POST['selected_comment']), 'comment');
-		?>
-		<!-- Changing comment MARKUP -->
-		<h1>Change comment on:</h1>
-		<form action="" method="post">
-			<ul>
-				<li>
-					<input name ="charn" type="text" value="<?php echo $_POST['selected_comment']; ?>" readonly="readonly">
-				</li>
-				<li>
-					<font class="profile_font" name="profile_font_comment">Comment:</font> <br>
-					<textarea name="comment" cols="70" rows="10"><?php echo $comment_data['comment']; ?></textarea>
-				</li>
-				<?php
-					/* Form file */
-					Token::create();
-				?>
-				<li><input type="submit" value="Update Comment"></li>
-			</ul>
-		</form>
-		<?php
-	}
 } else {
 	// end
 	$char_count = user_character_list_count($session_user_id);
@@ -217,7 +232,6 @@ if (!empty($_POST['selected_comment'])) {
 		}
 	?>
 	<div id="myaccount">
-		<h1>My account</h1>
 		<p>Welcome to your account page, logged in with account number <b><?php echo $user_data['id']; ?></b>.<br>
 		<?php 			
 		if ($user_data['premend'] != 0) {
@@ -228,7 +242,6 @@ if (!empty($_POST['selected_comment'])) {
 				echo 'You do not have premium account days.';
 			}
 		?></p>
-		<h2>Character List: <?php echo $char_count; ?> characters.</h2>
 		<?php
 		//data_dump($user_data, false, "data");
 		// Echo character list!
@@ -237,8 +250,9 @@ if (!empty($_POST['selected_comment'])) {
 		if ($char_array) {
 			?>
 			<table id="myaccountTable" class="table table-striped table-hover">
-				<tr class="yellow">
-					<th>NAME</th><th>LEVEL</th><th>VOCATION</th><th>TOWN</th><th>LAST LOGIN</th><th>STATUS</th><th>HIDE</th>
+				<tr><td colspan="7">Character List - <?php echo $char_count; ?> characters</td></tr>
+				<tr style="	font-weight: bold;">
+					<td>Name</td><td>Level</td><td>Vocation</td><td>Town</td><td>Last Login</td><td>Status</td><td>Hide</td>
 				</tr>
 				<?php
 				$characters = array();
@@ -251,12 +265,13 @@ if (!empty($_POST['selected_comment'])) {
 				}
 			?>
 			</table>
+			<table>
+				<tr><td>Character Management</td></tr>
 			<!-- FORMS TO HIDE CHARACTER-->
-			<form action="" method="post">
-				<ul>
-					<li>
+			<tr><td>
+				<form action="" method="post">
 						Character hide:<br>
-						<select name="selected_hide" multiple="multiple">
+						<select name="selected_hide">
 						<?php
 						for ($i = 0; $i < $char_count; $i++) {
 							if (user_character_hide($characters[$i]) == 1) {
@@ -272,15 +287,13 @@ if (!empty($_POST['selected_comment'])) {
 							Token::create();
 						?>
 						<input type="submit" value="Toggle hide" class="btn btn-info">
-					</li>
-				</ul>
-			</form>
+				</form>
+			</td></tr>
 			<!-- FORMS TO CHANGE CHARACTER COMMENT-->
-			<form action="" method="post">
-				<ul>
-					<li>
+			<tr><td>
+				<form action="" method="post">
 						Character comment:<br>
-						<select name="selected_comment" multiple="multiple">
+						<select name="selected_comment">
 						<?php
 						for ($i = 0; $i < $char_count; $i++) {
 							echo '<option value="'. $characters[$i] .'">'. $characters[$i] .'</option>'; 	
@@ -292,15 +305,14 @@ if (!empty($_POST['selected_comment'])) {
 							Token::create();
 						?>
 						<input type="submit" value="Change comment" class="btn btn-info">
-					</li>
-				</ul>
-			</form>
+				</form>
+			</td></tr>
 			<!-- FORMS TO CHANGE CHARACTER GENDER-->
-			<form action="" method="post">
-				<ul>
-					<li>
+			<?php if ($config['change_sex'] === true) { ?>
+			<tr><td>
+				<form action="" method="post">
 						Change character gender:<br>
-						<select name="change_gender" multiple="multiple">
+						<select name="change_gender">
 						<?php
 						for ($i = 0; $i < $char_count; $i++) {
 							echo '<option value="'. $characters[$i] .'">'. $characters[$i] .'</option>'; 	
@@ -312,15 +324,14 @@ if (!empty($_POST['selected_comment'])) {
 							Token::create();
 						?>
 						<input type="submit" value="Change gender" class="btn btn-info">
-					</li>
-				</ul>
-			</form>
+				</form>
+			</td></tr>	
+			<?php } ?>
 			<!-- FORMS TO CHANGE CHARACTER NAME-->
-			<form action="" method="post">
-				<ul>
-					<li>
+			<?php if ($config['change_name'] === true) { ?>
+				<form action="" method="post">
 						Change character name:<br>
-						<select name="change_name" multiple="multiple">
+						<select name="change_name">
 						<?php
 						for ($i = 0; $i < $char_count; $i++) {
 							echo '<option value="'. $characters[$i] .'">'. $characters[$i] .'</option>'; 	
@@ -333,15 +344,14 @@ if (!empty($_POST['selected_comment'])) {
 							Token::create();
 						?>
 						<input type="submit" value="Change name" class="btn btn-info">
-					</li>
-				</ul>
-			</form>
+				</form>
+			</td></tr>	
+			<?php } ?>
 			<!-- FORMS TO DELETE CHARACTER-->
-			<form action="" method="post">
-				<ul>
-					<li>
+			<tr><td>
+				<form action="" method="post">
 						Delete character:<br>
-						<select id="selected_delete" name="selected_delete" multiple="multiple">
+						<select id="selected_delete" name="selected_delete">
 						<?php
 						for ($i = 0; $i < $char_count; $i++) {
 							echo '<option value="'. $characters[$i] .'">'. $characters[$i] .'</option>'; 	
@@ -353,9 +363,8 @@ if (!empty($_POST['selected_comment'])) {
 							Token::create();
 						?>
 						<input type="submit" value="Delete Character" class="btn btn-danger needconfirmation">
-					</li>
-				</ul>
-			</form>
+				</form>
+			</td></tr>	
 			<script src="engine/js/jquery-1.10.2.min.js" type="text/javascript"></script>
 			<script>
 			    $(document).ready(function(){
@@ -370,18 +379,19 @@ if (!empty($_POST['selected_comment'])) {
 			        });
 			    });
 			</script>
+			</table>
 			<?php 
 			} else {
 				echo 'You don\'t have any characters. Why don\'t you <a href="createcharacter.php">create one</a>?';
 			}
 			//Done.
+		echo '</div>';
 		}
-		?>
-	</div>
-	<?php
+	
 }
-include 'layout/overall/footer.php'; 
-// ZEOTSS: Register visitor
+include 'layout/overall/footer.php';
+/* 
+// ZEOTSS: Register visitor 
 if ($config['zeotss']['enabled'] && $config['zeotss']['visitors']) {
 	$curl_connection = curl_init($config['zeotss']['server']."modules/visitor/registervisitor.php");
 	curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, 1);
@@ -405,4 +415,5 @@ if ($config['zeotss']['enabled'] && $config['zeotss']['visitors']) {
 		<?php
 	}
 }
+*/
 ?>

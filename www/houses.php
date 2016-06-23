@@ -1,6 +1,18 @@
 <?php
 require_once 'engine/init.php';
-include 'layout/overall/header.php';
+include 'layout/overall/header.php';?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_houses.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 
 if ($config['log_ip'])
 	znote_visitor_insert_detailed_data(3);
@@ -52,7 +64,7 @@ if (empty($_POST) === false && $config['TFSVersion'] === 'TFS_03') {
 						echo "<td>". $value['name'] ."</td>";
 						echo "<td>". $value['size'] ."</td>";
 						echo "<td>". $value['doors'] ."</td>";
-						echo "<td>". $value['beds'] ."</td>";
+						echo "<td>". convert_number_to_words($house['beds']) ."</td>";
 						echo "<td>". $value['price'] ."</td>";
 						if ($value['owner'] == 0)
 							echo "<td>None</td>";
@@ -153,31 +165,43 @@ if (empty($_POST) === false && $config['TFSVersion'] === 'TFS_03') {
 
 		// Create Search house box
 		?>
+		<table>
+			<tr><td colspan="4">House Search</td></tr>
+			<tr class="darkborder">
+				<td><b>Town</b></td>
+				<td colspan="3"><b>Order by</b></td>
+			</tr>
+			<tr class="darkborder">
 		<form action="" method="get" style="width: 648px">
-			<b>Select town:</b>
-			<select name="id">
+			<td valign="top">
+
 			<?php
 			foreach ($towns as $id => $name)
-				echo '<option value="'. $id .'"' . ($townid != $id ?: ' selected') . '>'. $name .'</option>';
+				echo '<input type="radio" name="id" value="'. $id .'"' . ($townid != $id ?: ' checked') . '>'. $name .'<br>';
+
 			?>
-			</select>
-			<b style="padding-left: 8px;">Order:</b>
-			<select name="order">
+
+			</td><td valign="top">
+
 			<?php
-			$order_allowed = array('id', 'name', 'size', 'beds', 'rent', 'owner');
+			$order_allowed = array('name', 'size', 'beds', 'rent', 'owner');
 			foreach($order_allowed as $o)
-				echo '<option value="' . $o . '"' . ($o != $order ?: ' selected') . '>' . ucfirst($o) . '</option>';
+				echo '<input type="radio" name="order" value="' . $o . '"' . ($o != 'name' ?: ' checked') . '>' . ucfirst($o) . '<br>';
+
 			?>
-			</select>
-			<select name="type">
+
+			</td><td valign="top">
+
 			<?php
 			$type_allowed = array('desc', 'asc');
 			foreach($type_allowed as $t)
-				echo '<option value="' . $t . '"' . ($t != $type ?: ' selected') . '>' . ($t == 'desc' ? 'Descending' : 'Ascending') .'</option>';
+				echo '<input type="radio" name="type" value="' . $t . '"' . ($t == 'asc' ?: ' checked') . '>' . ($t == 'desc' ? 'Descending' : 'Ascending') .'<br>';
 			?>
-			</select>
-			<input type="submit" value="Fetch houses" style="margin-left: 8px;"/>
-		</form>
+
+			</td><td valign="top"><input type="submit" value="Fetch houses" style="margin-left: 8px;"/>
+		
+			</td></form></tr>
+		</table>
 		<?php
 		if(!in_array($order, $order_allowed))
 			$order = 'id';
@@ -237,9 +261,9 @@ if (empty($_POST) === false && $config['TFSVersion'] === 'TFS_03') {
 						?>
 						<tr>
 							<td><?php echo "<a href='house.php?id=". $house['id'] ."'>". $house['name'] ."</a>"; ?></td>
-							<td><?php echo $house['size']; ?></td>
-							<td><?php echo $house['beds']; ?></td>
-							<td><?php echo $house['rent']; ?></td>
+							<td><?php echo $house['size']; ?> sqm</td>
+							<td><?php echo convert_number_to_words($house['beds']); ?></td>
+							<td><?php echo $house['rent']; ?> gold</td>
 							<?php
 							// Status:
 							if ($house['owner'] != 0)

@@ -2,13 +2,12 @@
 	// OTHire = OTH
 	// With everythingelse you will got incompatibility issues
 	$config['TFSVersion'] = 'OTH';
-	$config['CustomVersion'] = true;
 
-	$config['site_title'] = 'Znote AAC';
-	$config['site_title_context'] = 'Because open communities are good communities. :3';
+	$config['site_title'] = 'Tibia Legacy Server';
+	$config['site_title_context'] = 'OpenTibia';
 
 	// Path to server folder without / Example: C:\Users\Alvaro\Documents\GitHub\forgottenserver
-	$config['server_path'] = ''; 
+	$config['server_path'] = 'D:\otserv\tls'; 
 	
 
 	// ------------------------ \\
@@ -16,13 +15,13 @@
 	// ------------------------ \\
 
 	// phpmyadmin username for OT server: (DONT USE "root" if ur hosting to public.).
-	$config['sqlUser'] = 'tfs10';
+	$config['sqlUser'] = 'root';
 
 	// phpmyadmin password for OT server:
-	$config['sqlPassword'] = 'tfs10';
+	$config['sqlPassword'] = '';
 
 	// The database name to connect to. (This is usually same as username).
-	$config['sqlDatabase'] = 'tfs10';
+	$config['sqlDatabase'] = 'otserv';
 
 	// Hostname is usually localhost or 127.0.0.1.
 	$config['sqlHost'] = '127.0.0.1';
@@ -37,7 +36,7 @@
 	function getClock($time = false, $format = false, $adjust = true) {
 		if ($time === false) $time = time();
 		// Date string representation
-		$date = "d F Y (H:i)"; // 15 July 2013 (13:50)
+		$date = "d M Y, H:i"; // 15 Jul 2013, 13:50
 		if ($adjust) $adjust = (1 * 3600); // Adjust to fit your timezone.
 		else $adjust = 0;
 		if ($format) return date($date, $time+$adjust);
@@ -94,8 +93,8 @@
 		array(12106,1,"The Ancient Tombs",0),
 		array(12107,1,"The Ancient Tombs",1),
 		array(12022,3,"Barbarian Test Quest",0),
-		array(12022,3,"Barbarian Test Quest",0),
-		array(12022,3,"Barbarian Test Quest",1),
+		array(12023,3,"Barbarian Test Quest",0),
+		array(12024,3,"Barbarian Test Quest",1),
 		array(12025,3,"The Ice Islands Quest",0),
 		array(12026,5,"The Ice Islands Quest",0),
 		array(12027,3,"The Ice Islands Quest",0),
@@ -176,8 +175,17 @@
 	// Town ids and names: (In RME map editor, open map, click CTRL + T to view towns, their names and their IDs. 
 	// townID => 'townName' etc: ['3'=>'Thais']
 	$config['towns'] = array(
-		2 => 'Thyrfing',
-		3 => 'Town 3',
+		1 => 'Ab\'Dendriel',
+		2 => 'Kazordoon',
+		3 => 'Thais',
+		4 => 'Venore',
+		5 => 'Carlin',
+		6 => 'Ankrahmun',
+		7 => 'Darashia',
+		8 => 'Port Hope',
+		9 => 'Edron',
+		10 => 'Isle of Solitude',
+		11 => 'Rookgaard',
 	);
 
 	// - TFS 1.0 ONLY -- HOUSE AUCTION SYSTEM!
@@ -224,7 +232,7 @@
 	$config['available_vocations'] = array(1, 2, 3, 4);
 
 	// Available towns (specify town ids, etc: (0, 1, 2); to display 3 town options (town id 0, 1 and 2).
-	$config['available_towns'] = array(2);
+	$config['available_towns'] = array(1);
 
 	$config['level'] = 8;
 	$config['health'] = 185;
@@ -262,7 +270,7 @@
 	// -------------- \\
 
 	// News to be displayed per page
-	$config['news_per_page'] = 4;
+	$config['news_per_page'] = 3;
 
 	// Enable or disable changelog ticker in news page.
 	$config['UseChangelogTicker'] = true;
@@ -270,23 +278,23 @@
 	// Highscore configuration
 	$config['highscore'] = array(
 			'rows' => 100,
-			'rowsPerPage' => 20,
-			'ignoreGroupId' => 2, // Ignore this group id and higher (staff)
+			'rowsPerPage' => 25,
+			'ignoreGroupId' => 4, // Ignore this group id and higher (staff)
 		);
 
 	// ONLY FOR TFS 0.2 (TFS 0.3/4 users don't need to care about this, as its fully loaded from db)
 	$config['house'] = array(
-			'house_file' => 'C:\test\Mystic Spirit_0.2.5\data\world\forgotten-house.xml',
+			'house_file' => 'D:\otserv\tls\data\world\world-house.xml',
 			'price_sqm' => '50', // price per house sqm
 		);
 
 	$config['status'] = array(
-		'status_check' => false, //enable or disable status checker
+		'status_check' => true, //enable or disable status checker
 		'status_ip' => '127.0.0.1',
 		'status_port' => "7171",
 		);
 
-	$config['delete_character_interval'] = '24 HOUR'; // Delay after user character delete request is executed eg. 1 DAY, 2 HOUR, 3 MONTH etc. 
+	$config['delete_character_interval'] = '12 HOUR'; // Delay after user character delete request is executed eg. 1 DAY, 2 HOUR, 3 MONTH etc. 
 
 	$config['validate_IP'] = true; // Only allow legal IP addresses to register and create character.
 	$config['salt'] = false; // Some noob 0.3.6 servers don't support salt.
@@ -360,7 +368,7 @@
 	// IMPORTANT! Write a character name(that exist) that will represent website bans!
 	// Or remember to create character "God Website" character exist.
 	// If you don't do this, bann from admin panel won't work properly.
-	$config['website_char'] = 'Luxitur';
+	$config['website_char'] = 'GM Peonso';
 
 	//----------------\\
 	// ADVANCED STUFF \\
@@ -512,7 +520,7 @@
 
 	// Write your paypal address here, and what currency you want to recieve money in.
 	$config['paypal'] = array(
-		'enabled' => false,
+		'enabled' => true,
 		'email' => 'stefan_brannfjell@live.no', // Example: paypal@mail.com
 		'currency' => 'EUR',
 		'points_per_currency' => 10, // 1 currency = ? points? [ONLY used to calculate bonuses]
@@ -541,7 +549,7 @@
 	// You can configure paygol to send each month, then they will send money 
 	// to you 1 month after recieving 50+ eur.
 	$config['paygol'] = array(
-		'enabled' => false,
+		'enabled' => true,
 		'serviceID' => 86648,// Service ID from paygol.com
 		'currency' => 'SEK',
 		'price' => 20,
@@ -556,9 +564,9 @@
 	////////////
 	// If useDB is set to true, player can shop in-game as well using Znote LUA shop system plugin.
 	$config['shop'] = array(
-		'enabled' => false,
+		'enabled' => true,
 		'enableShopConfirmation' => true, // Verify that user wants to buy with popup
-		'useDB' => false, // Fetch offers from database, or the below config array
+		'useDB' => true, // Fetch offers from database, or the below config array
 		'showImage' => true,
 		'imageServer' => 'items.znote.eu',
 		'imageType' => 'gif',
@@ -628,4 +636,22 @@
 			'points' => 20,
 		),
 	);
+	
+	// ---------------- \\
+	// TLS CUSTOM  \\
+	// ---------------- \\
+	
+	// If false hide options from myaccount.php
+	$config['change_sex'] = false;
+	$config['change_name'] = false;
+	
+	// html insert
+	$config['server_rules'] = "	<b>Server Rules</b>
+				<p>The golden rule: Have fun.</p>
+				<p>If you get pwn3d, don' hate the game.</p>
+				<p>No <a href='http://en.wikipedia.org/wiki/Cheating' target='_blank'>cheating</a> allowed.</p>
+				<p>No <a href='http://en.wikipedia.org/wiki/Internet_bot' target='_blank'>botting</a> allowed.</p>
+				<p>The staff can delete, ban, do whatever they want with your account and your <br>
+					submitted information. (Including exposing and logging your IP).</p>";
+	
 ?>

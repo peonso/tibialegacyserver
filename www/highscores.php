@@ -1,4 +1,16 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php';
+<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; ?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_highscores.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 
 if ($config['log_ip']) {
 	znote_visitor_insert_detailed_data(3);
@@ -24,8 +36,8 @@ function skillName($type) {
 		2 => "Sword",
 		3 => "Axe",
 		4 => "Distance",
-		5 => "Shield",
-		6 => "Fish",
+		5 => "Shielding",
+		6 => "Fishing",
 		7 => "Experience", // Hardcoded
 		8 => "Magic Level", // Hardcoded
 		9 => "Fist", // Since 0 returns false I will make 9 = 0. :)
@@ -49,17 +61,17 @@ if ($cache->hasExpired()) {
 
 if ($scores) {
 	?>
-	<h1>Ranking for <?php echo skillName($type); ?>.</h1>
+	<h1>Ranking for <?php echo skillName($type); ?></h1>
 	<form action="" method="GET">
 		<select name="type">
 			<option value="7" <?php if ($type == 7) echo "selected"; ?>>Experience</option>
 			<option value="8" <?php if ($type == 8) echo "selected"; ?>>Magic</option>
-			<option value="5" <?php if ($type == 5) echo "selected"; ?>>Shield</option>
+			<option value="5" <?php if ($type == 5) echo "selected"; ?>>Shielding</option>
 			<option value="2" <?php if ($type == 2) echo "selected"; ?>>Sword</option>
 			<option value="1" <?php if ($type == 1) echo "selected"; ?>>Club</option>
 			<option value="3" <?php if ($type == 3) echo "selected"; ?>>Axe</option>
 			<option value="4" <?php if ($type == 4) echo "selected"; ?>>Distance</option>
-			<option value="6" <?php if ($type == 6) echo "selected"; ?>>Fish</option>
+			<option value="6" <?php if ($type == 6) echo "selected"; ?>>Fishing</option>
 			<option value="9" <?php if ($type == 9) echo "selected"; ?>>Fist</option>
 		</select>
 		<select name="page">
@@ -80,7 +92,7 @@ if ($scores) {
 			<td>Name</td>
 			<td>Vocation</td>
 			<td>Level</td>
-			<?php if ($type === 7) echo "<td>Points</td>"; ?>
+			<?php if ($type === 7) echo "<td width='10%'>Experience</td>"; ?>
 		</tr>
 		<?php
 		for ($i = 0; $i < count($scores[$type]); $i++) {

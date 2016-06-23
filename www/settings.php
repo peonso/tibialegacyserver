@@ -24,10 +24,21 @@ if (empty($_POST) === false) {
 			$errors[] = 'That email address is already in use.';
 		}
 	}
+	
+	print_r($errors);
 }
 ?>
-<h1>Settings</h1>
-
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
 <?php
 if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	echo 'Your settings have been updated.';
@@ -45,22 +56,20 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		echo output_errors($errors);
 	}
 	?>
-	
-	<form action="" method="post">
-		<ul>
-			<li>
-				email:<br>
-				<input type="text" name="new_email" value="<?php echo $user_data['email']; ?>">
-			</li>
+	<table>
+		<tr><td>Change Email</td></tr>
+		<tr class="darkborder"><td>
+			<form action="" method="post">
+				Email:<br>
+				<input type="text" name="new_email" value="<?php echo $user_data['email']; ?>"><br><br>
 			<?php
 				/* Form file */
 				Token::create();
 			?>
-			<li>
 				<input type="submit" value="Update settings">
-			</li>
-		</ul>
-	</form>
+			</form>
+		</td></tr>
+	</table>
 <?php
 }
 include 'layout/overall/footer.php';

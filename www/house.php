@@ -1,4 +1,16 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php';
+<?php require_once 'engine/init.php'; include 'layout/overall/header.php';?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_houses.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php
 if ($config['log_ip']) {
 	znote_visitor_insert_detailed_data(3);
 }
@@ -11,7 +23,7 @@ if ($house !== false && $config['TFSVersion'] === 'OTH') {
 	if ($house['owner'] > 0) $house['ownername'] = user_name($house['owner']);
 
 	//data_dump($house, false, "Data");
-
+	/*
 	//////////////////////
 	// Bid on house logic
 	$bid_char = &$_POST['char'];
@@ -81,26 +93,27 @@ if ($house !== false && $config['TFSVersion'] === 'OTH') {
 			} else echo "<b><font color='red'>You cannot have more houses.</font></b>";
 		} else echo "<b><font color='red'>You need premium account to purchase houses.</font></b>";
 	}
-
+	*/
 	// HTML structure and logic
 	?>
-	<h1>House: <?php echo $house['name']; ?></h1>
-	<ul>
-		<li><b>Town</b>: 
-		<?php
-		$town_name = &$config['towns'][$house['town_id']];
-		echo "<a href='houses.php?id=". $house['town_id'] ."'>". ($town_name ? $town_name : 'Specify town id ' . $house['town_id'] . ' name in config.php first.') ."</a>";
-		?></li>
-		<li><b>Size</b>: <?php echo $house['size']; ?></li>
-		<li><b>Beds</b>: <?php echo $house['beds']; ?></li>
-		<li><b>Owner</b>: <?php
-		if ($house['owner'] > 0) echo "<a href='characterprofile.php?name=". $house['ownername'] ."' target='_BLANK'>". $house['ownername'] ."</a>";
-		else echo "Available for auction.";
-		?></li>
-		<li><b>Rent</b>: <?php echo $house['rent']; ?></li>
-	</ul>
+	<span style="position: absolute;margin-left:30px;margin-top:2px;"><img style="max-width: 100px; max-height: 100px;" src="<?php house_exists(sanitize($house['name'])); ?>"/></span>
+		<div style="margin-left:150px;">
+			<b><?php echo $house['name']; ?></b><br>
+			This house has <?php echo convert_number_to_words($house['beds']); ?> bed<?php if ($house['beds'] > 1) echo 's';?>.<br>
+			<br>
+			The house has a size of <b><?php echo $house['size']; ?> square meters</b>. The monthly rent is <b><?php echo $house['rent']; ?> gold</b> and will be debited to the depot of
+			<?php
+				$town_name = &$config['towns'][$house['town_id']];
+				echo "<a href='houses.php?id=". $house['town_id'] ."'>". ($town_name ? $town_name : 'Specify town id ' . $house['town_id'] . ' name in config.php first.') ."</a>";
+			?>.<br><br>
+			<?php
+				if ($house['owner'] > 0) echo "The house has been rented by <a href='characterprofile.php?name=". $house['ownername'] ."' target='_BLANK'>". $house['ownername'] ."</a>.";
+				else echo "The house is currently available.";
+			?>
+		</div>
 	<?php
 	// AUCTION MARKUP INIT
+	/*
 	if ($house['owner'] == 0) {
 		?>
 		<h2>This house is up on auction!</h2>
@@ -140,6 +153,7 @@ if ($house !== false && $config['TFSVersion'] === 'OTH') {
 			} else echo "<br>You need to login before you can bid on houses.";
 		} else echo "<br><b>Bid has ended! House transaction will proceed next server restart assuming active bidder have sufficient balance.</b>";
 	}
+	*/
 } else {
 	?>
 	<h1>No house selected.</h1>

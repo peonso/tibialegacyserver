@@ -1,8 +1,17 @@
 <?php require_once 'engine/init.php';
 logged_in_redirect();
 include 'layout/overall/header.php'; ?>
-
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
 <h1>Account Recovery</h1>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
 <!-- Success markup -->
 <?php
 $mode_allowed = array('username', 'password');
@@ -13,7 +22,7 @@ if (isset($_GET['mode']) === true && in_array($_GET['mode'], $mode_allowed) === 
 		$mail = $_POST['email'];
 		$acc_id = user_id_from_email($mail);
 			if (isset($_POST['character']) === true && empty($_POST['character']) === false) {
-				if (user_character_exist($_POST['character'])> 0) {
+				if (user_character_exist($_POST['character']) > 0) {
 					// EDOM
 					if ($_GET['mode'] === 'username') { // Recover password, edom == username
 						// edom == password
@@ -33,8 +42,8 @@ if (isset($_GET['mode']) === true && in_array($_GET['mode'], $mode_allowed) === 
 								// User exist, email exist, character exist. Lets start the recovery function
 								user_recover($_GET['mode'], $_POST['edom'], $_POST['email'], $_POST['character'], ip2long(getIP()));
 								//echo 'password';
-							} else { echo 'That account number ['. $_POST['edom'] .'] is incorrect.'; }
-						} else { echo 'You forgot to write account number.'; }
+							} else { echo 'That username ['. $_POST['edom'] .'] is incorrect.'; }
+						} else { echo 'You forgot to write username.'; }
 					}
 					// end EDOM
 				} else { echo 'That character name does not exist.'; }

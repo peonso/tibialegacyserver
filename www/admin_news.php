@@ -1,8 +1,10 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; 
+<?php
+require_once 'engine/init.php';
+include 'layout_admin/overall/header.php'; 
 protect_page();
-admin_only($user_data);
-
-
+admin_only($user_data); ?>
+	<h2>News</h2>
+<?php
 // Recieving POST
 if (empty($_POST) === false) {
 	list($action, $id) = explode('!', sanitize($_POST['option']));
@@ -101,7 +103,6 @@ if (empty($_POST) === false) {
 }
 
 ?>
-<h1>News admin panel</h1>
 <form action="" method="post">
 	<input type="hidden" name="option" value="a!0">
 	<input type="submit" value="Create new article">
@@ -149,4 +150,4 @@ if ($news !== false) {
 	</table>
 	<?php
 }
-include 'layout/overall/footer.php'; ?>
+include 'layout_admin/overall/footer.php'; ?>

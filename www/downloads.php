@@ -1,11 +1,20 @@
 <?php require_once 'engine/init.php'; include 'layout/overall/header.php'; ?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_downloads.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
 
-<h1>Downloads</h1>
 <p>In order to play, you need an compatible IP changer and a Tibia client.</p>
 
 <p>Download otland IP changer <a href="http://static0.otland.net/ipchanger.exe">HERE</a>.</p>
 <p>Download Tibia client <?php echo ($config['client'] / 100); ?> for windows <a href="<?php echo $config['client_download']; ?>">HERE</a>.</p>
-<p>Download Tibia client <?php echo ($config['client'] / 100); ?> for linux <a href="<?php echo $config['client_download_linux']; ?>">HERE</a>.</p>
 
 <h2>How to connect and play:</h2>
 <ol>

@@ -94,7 +94,7 @@ function url($path = false) {
 	$domain   = $_SERVER['SERVER_NAME'] . ($_SERVER['SERVER_PORT'] != 80 ? ':' . $_SERVER['SERVER_PORT'] : null);
 	$folder   = dirname($_SERVER['SCRIPT_NAME']);
 
-	return $protocol . $domain . ($folder == '/' ? '' : $folder) . '/' . $path;
+	return $protocol . $domain . ($folder == '\\' ? '' : $folder) . '/' . $path;
 }
 
 function getCache() {
@@ -320,9 +320,9 @@ function hide_char_to_name($id) {
 function online_id_to_name($id) {
 	$id = (int)$id;
 	if ($id == 1) {
-		return '<font class="status_online">ONLINE</font>';
+		return '<span style="color: #43ac6a; font-weight: bold;">online</span>';
 	} else {
-		return '<font class="status_offline">offline</font>';
+		return '<!--<span style="color: #b94a48; font-weight: bold;">offline</span>-->';
 	}
 }
 
@@ -505,5 +505,241 @@ function logo_exists($guild) {
 		echo'engine/guildimg/default@logo.gif';
 	}
 }
+
+function house_exists($house) {
+
+	if (file_exists('engine/houseimg/'.$house.'.gif')) {
+
+		echo'engine/houseimg/'.$house.'.gif';
+
+	} else {
+
+		echo'engine/houseimg/default@house.gif';
+	}
+}
+
+//spells by cbrm
+//http://otland.net/threads/znote-aac-advanced-spells-v2.170186/
+
+function build_spells($xml, $display_groups) {
+    $t_count = 0;
+    $rune = array();
+    $string = '<?php'."\n".'#Generated spells file from admin panel'."\n".'#Edit at your own risk!';
+    $string .= "\n".'$show_spells_groups = '.($display_groups ? 'true' : 'false').';'."\n".'$spells = array(';
+    foreach($xml as $key => $value)
+    {        
+        if($value['lvl'])
+        {
+            if($key == 'rune')
+            {
+                if($display_groups)
+                {
+                    if($value['group'] == NULL)
+                    {
+                        echo '<span style="color:orange;font-weight:bold">WARNING: Group not found at spell "'.$value['name'].'", set to "Attack".</span><br>';
+                    }
+                    $rune[(string)$value['name']] = ($value['group'] == NULL) ? 'Attack' : $value['group'];
+                }
+                continue;
+            }
+
+            $t_count++;
+            $string .= "\n\t".'array(';
+            
+            if($display_groups)
+            {
+                $string .= "\n\t\t".'"group" => ';
+                {
+                    if($value['function'] == 'conjureRune')
+                    {
+                        $string .= '\''.ucfirst($rune[(string)$value['name']]).'\'';
+                    }
+                    else
+                    {
+                        if($value['group'] == NULL)
+                        {
+                            echo '<span style="color:orange;font-weight:bold">WARNING: Group not found at spell "'.$value['name'].'", set to "Attack".</span><br>';
+                        }
+                        $string .= '\''.ucfirst(($value['group'] == NULL) ? 'Attack' : $value['group']).'\'';
+                    }
+                }
+                $string .= ',';
+            }
+
+            $string .= "\n\t\t".'"type" => ';
+            if(config('TFSVersion') == 'OTH')
+            {
+                $string .= (($value['function'] == 'conjureRune') ? '\'Rune\'' : '\'Instant\'');
+            }
+            if(config('TFSVersion') == 'TFS_03')
+            {
+                $string .= (($value['value'] == 'conjureRune') ? '\'Rune\'' : '\'Instant\'');
+            }
+            $string .= ',';
+            $string .= "\n\t\t".'"name" => "'.$value['name'].'",';
+            $string .= "\n\t\t".'"words" => \''.$value['words'].'\',';
+            $string .= "\n\t\t".'"level" => '.$value['lvl'].',';
+            $string .= "\n\t\t".'"mana" => ';
+            $string .= (($value['mana'] == NULL) or ($value['mana'] == '')) ? '\'Var.\'' : $value['mana'];
+            $string .= ',';
+            $string .= "\n\t\t".'"premium" => ';
+            if($value['prem'])
+            {
+                $string .= ($value['prem'] == 1) ? '\'yes\'' : '\'no\'';
+            }
+            else
+            {
+                $string .= '\'no\'';
+            }
+            $string .= ',';
+            $vocs = array();
+            $string .= "\n\t\t".'"vocation" => array(';
+            foreach($value->vocation as $vocation)
+            {
+                if(config('TFSVersion') == 'OTH')
+                {
+                    $vocs[] = '\''.$vocation[0]['name'].'\'';
+                }
+                elseif(config('TFSVersion') == 'TFS_03')
+                {
+                    if(strpos($vocation[0]['id'], ';') !== FALSE)
+                    {
+                        $array = explode(';', $vocation[0]['id']);
+                        foreach($array as $voc)
+                        {
+                            $vocs[] = '\''.vocation_id_to_name($voc).'\'';
+                        }
+                    }
+                    else
+                    {
+                        $vocs[] = '\''.vocation_id_to_name((int)$vocation[0]['id']).'\'';
+                    }
+                }
+            }
+            if(count($vocs) < 1) foreach(config('vocations') as $id => $name) if($id > 0) $vocs[] = '\''.$name.'\'';
+            $string .= implode(', ',$vocs).')'."\n\t".'),';
+        } 
+    }    
+    $string .= "\n".'); ?>';
+    echo('Loaded '. $t_count .' spells!<br>');
+    echo 'File "spell.php" '.(file_exists('spell.php') ? 'updated' : 'created').'!<br>';
+    $file = fopen('spell.php', 'w');
+    fwrite($file, $string);
+    fclose($file);
+}
+
+// NUMBER TO WORDS
+function convert_number_to_words($number) {
+    
+    $hyphen      = '-';
+    $conjunction = ' and ';
+    $separator   = ', ';
+    $negative    = 'negative ';
+    $decimal     = ' point ';
+    $dictionary  = array(
+        0                   => 'zero',
+        1                   => 'one',
+        2                   => 'two',
+        3                   => 'three',
+        4                   => 'four',
+        5                   => 'five',
+        6                   => 'six',
+        7                   => 'seven',
+        8                   => 'eight',
+        9                   => 'nine',
+        10                  => 'ten',
+        11                  => 'eleven',
+        12                  => 'twelve',
+        13                  => 'thirteen',
+        14                  => 'fourteen',
+        15                  => 'fifteen',
+        16                  => 'sixteen',
+        17                  => 'seventeen',
+        18                  => 'eighteen',
+        19                  => 'nineteen',
+        20                  => 'twenty',
+        30                  => 'thirty',
+        40                  => 'fourty',
+        50                  => 'fifty',
+        60                  => 'sixty',
+        70                  => 'seventy',
+        80                  => 'eighty',
+        90                  => 'ninety',
+        100                 => 'hundred',
+        1000                => 'thousand',
+        1000000             => 'million',
+        1000000000          => 'billion',
+        1000000000000       => 'trillion',
+        1000000000000000    => 'quadrillion',
+        1000000000000000000 => 'quintillion'
+    );
+    
+    if (!is_numeric($number)) {
+        return false;
+    }
+    
+    if (($number >= 0 && (int) $number < 0) || (int) $number < 0 - PHP_INT_MAX) {
+        // overflow
+        trigger_error(
+            'convert_number_to_words only accepts numbers between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX,
+            E_USER_WARNING
+        );
+        return false;
+    }
+
+    if ($number < 0) {
+        return $negative . convert_number_to_words(abs($number));
+    }
+    
+    $string = $fraction = null;
+    
+    if (strpos($number, '.') !== false) {
+        list($number, $fraction) = explode('.', $number);
+    }
+    
+    switch (true) {
+        case $number < 21:
+            $string = $dictionary[$number];
+            break;
+        case $number < 100:
+            $tens   = ((int) ($number / 10)) * 10;
+            $units  = $number % 10;
+            $string = $dictionary[$tens];
+            if ($units) {
+                $string .= $hyphen . $dictionary[$units];
+            }
+            break;
+        case $number < 1000:
+            $hundreds  = $number / 100;
+            $remainder = $number % 100;
+            $string = $dictionary[$hundreds] . ' ' . $dictionary[100];
+            if ($remainder) {
+                $string .= $conjunction . convert_number_to_words($remainder);
+            }
+            break;
+        default:
+            $baseUnit = pow(1000, floor(log($number, 1000)));
+            $numBaseUnits = (int) ($number / $baseUnit);
+            $remainder = $number % $baseUnit;
+            $string = convert_number_to_words($numBaseUnits) . ' ' . $dictionary[$baseUnit];
+            if ($remainder) {
+                $string .= $remainder < 100 ? $conjunction : $separator;
+                $string .= convert_number_to_words($remainder);
+            }
+            break;
+    }
+    
+    if (null !== $fraction && is_numeric($fraction)) {
+        $string .= $decimal;
+        $words = array();
+        foreach (str_split((string) $fraction) as $number) {
+            $words[] = $dictionary[$number];
+        }
+        $string .= implode(' ', $words);
+    }
+    
+    return $string;
+}
+// END NUMBERS TO WORDS
 
 ?>

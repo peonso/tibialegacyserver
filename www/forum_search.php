@@ -1,4 +1,16 @@
-<?php require_once 'engine/init.php'; include 'layout/overall/header.php'; protect_page();
+<?php require_once 'engine/init.php'; include 'layout/overall/header.php';?>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_forum.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
+<?php protect_page();
 
 // Search CONFIG
 $searchResults = 30; // How many max search results

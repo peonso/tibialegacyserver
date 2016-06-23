@@ -38,9 +38,17 @@ if (empty($_POST) === false) {
 }
 
 include 'layout/overall/header.php'; ?>
-
-<h1>Change Password:</h1>
-
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table><br>
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
 	echo 'Your password has been changed.<br>You will need to login again with the new password.';
@@ -62,30 +70,24 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		echo '</b></font>';
 	}
 	?>
-
-	<form action="" method="post">
-		<ul>
-			<li>
+	<table>
+		<tr><td>Change Password</td></tr>
+		<tr class="darkborder"><td>
+			<form action="" method="post">
 				Current password:<br>
-				<input type="password" name="current_password">
-			</li>
-			<li>
+				<input type="password" name="current_password"><br>
 				New password:<br>
-				<input type="password" name="new_password">
-			</li>
-			<li>
+				<input type="password" name="new_password" placeholder=" 6 - 32 characters long"><br>
 				New password again:<br>
-				<input type="password" name="new_password_again">
-			</li>
+				<input type="password" name="new_password_again" placeholder=" 6 - 32 characters long"><br><br>
 			<?php
 				/* Form file */
 				Token::create();
 			?>
-			<li>
 				<input type="submit" value="Change password">
-			</li>
-		</ul>
-	</form>
+			</form>
+		</td></tr>
+	</table>
 <?php
 }
 include 'layout/overall/footer.php'; ?>

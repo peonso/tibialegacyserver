@@ -1,18 +1,20 @@
 <?php
 require_once 'engine/init.php';
+include 'layout_admin/overall/header.php';
 protect_page();
 admin_only($user_data);
-include 'layout/overall/header.php';
-
+?>
+	<h2>Reports</h2>
+<?php
 // Report status types. When a player make new report it will be default to 0.
 // Feel free to add/remove and change name/color of status types.
 $statusTypes = array(
-    0 => '<font color="purple">Reported</font>',
-    1 => '<font color="darkblue">To-Do List</font>',
-    2 => '<font color="red">Confirmed bug</font>',
-    3 => '<font color="grey">Invalid</font>',
-    4 => '<font color="grey">Rejected</font>',
-    5 => '<font color="green"><b>Fixed</b></font>'
+    0 => '<span style="color: #5bc0de; font-weight: bold;">Reported</span>',
+    1 => '<span style="color: #5bc0de; font-weight: bold;">To-Do List</span>',
+    2 => '<span style="color: #b94a48; font-weight: bold;">Confirmed bug</span>',
+    3 => '<span style="color: #e99002; font-weight: bold;">Invalid</span>',
+    4 => '<span style="color: #e99002; font-weight: bold;">Rejected</span>',
+    5 => '<span style="color: #43ac6a; font-weight: bold;">Fixed</span>'
 );
 // Which status IDs should give option to add to changelog?
 $statusChangeLog = array(0,5);
@@ -41,9 +43,9 @@ if (!empty($_POST)) {
     $customPoints = getValue($_POST['customPoints']);
     $reportId = getValue($_POST['id']);
 
-    $changelogReportId = &$_POST['changelogReportId'];
+    $changelogReportId = (int)$_POST['changelogReportId'];
     $changelogValue = &$_POST['changelogValue'];
-    $changelogText = &$_POST['changelogText'];
+    $changelogText = getValue($_POST['changelogText']);
     $changelogStatus = ($changelogReportId !== false && $changelogValue === '2' && $changelogText !== false) ? true : false;
 
     if ($customPoints !== false) $price = (int)($price + $customPoints);
@@ -122,85 +124,106 @@ if (!empty($_POST)) {
     
     // Create html form
     ?>
-    <div style="width: 300px; margin: auto;">
-        <form action="admin_reports.php" method="POST">
-            Player: <a target="_BLANK" href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></a>
-            <input type="hidden" name="playerName" value="<?php echo $report['name']; ?>">
-            <input type="hidden" name="id" value="<?php echo $report['id']; ?>">
-            <br>Set status: 
-            <select name="status">
-                <?php
-                foreach ($statusTypes as $sid => $sname)
-                    echo ($sid != $report['status']) ? "<option value='$sid'>$sname</option>" : "<option value='$sid' selected>$sname</option>";
-                ?>
-            </select><br>
-            Give user points:
-            <select name="price">
-                <option value='0'>0</option>
-                <?php
-                foreach ($config['paypal_prices'] as $price)
-                    echo "<option value='$price'>$price</option>";
-                ?>
-            </select> + <input name="customPoints" type="text" style="width: 50px;" placeholder="0"><br>
-            <?php
-            if (in_array($report['status'], $statusChangeLog)) {
-                ?>
-                <br>
-                <input type="hidden" name="changelogReportId" value="<?php echo $report['id']; ?>">
-                Add / update changelog message? <select name="changelogValue">
-                    <option value="1">No</option>
-                    <option value="2">Yes</option>
-                </select><br>
-                <textarea rows="7" cols="40" maxlength="254" name="changelogText"></textarea>
-                <?php
-            }
-            ?>
-            <br>
-            <input type="submit" value="Update Report" style="width: 100%;">
-        </form>
-    </div>
+    <div class="row">
+		<div class="col-md-6 col-sm-6">
+			<div class="well well-sm">
+				<form action="admin_reports.php" method="POST">
+					Player: <a target="_BLANK" href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></a>
+					<input type="hidden" name="playerName" value="<?php echo $report['name']; ?>">
+					<input type="hidden" name="id" value="<?php echo $report['id']; ?>">
+					<br>Set status: 
+					<select name="status">
+						<?php
+						foreach ($statusTypes as $sid => $sname)
+							echo ($sid != $report['status']) ? "<option value='$sid'>$sname</option>" : "<option value='$sid' selected>$sname</option>";
+						?>
+					</select><br>
+					<!--Give user points:
+					<select name="price">
+						<option value='0'>0</option>
+						<?php
+						foreach ($config['paypal_prices'] as $price)
+							echo "<option value='$price'>$price</option>";
+						?>
+					</select> + <input name="customPoints" type="text" style="width: 50px;" placeholder="0"><br>
+					<?php
+					if (in_array($report['status'], $statusChangeLog)) {
+						?>
+						<br>
+						<input type="hidden" name="changelogReportId" value="<?php echo $report['id']; ?>">
+						Add / update changelog message? <select name="changelogValue">
+							<option value="1">No</option>
+							<option value="2">Yes</option>
+						</select><br>
+						<textarea rows="7" cols="40" maxlength="254" name="changelogText"></textarea>
+						<?php
+					}
+					?>
+					<br>-->
+					<button type="submit" class="btn btn-default">Update Report</button>
+				</form>
+			</div><!-- ./well -->
+		</div>
+	</div>
     <?php
 }
 
 // If sql data is not empty
 if ($reportsData !== false) {
     // Render HTML
-    ?>
-    <center>
-        <?php
         foreach ($reports as $statusId => $statusArray) {
-            ?>
-            <h2 class="statusType"><?php echo $statusTypes[$statusId]; ?> (<span id="status-<?php echo $statusId; ?>">Visible</span>)</h2>
-            <table class="table tbl" border="0" cellspacing="1" cellpadding="4" width="100%">
-                <thead>
-                    <tr class="yellow" onclick="javascript:toggle('<?php echo $statusId; ?>')">
-                        <td width="38%">Info</td>
-                        <td>Description</td>
-                    </tr>
-                </thead>
-                <?php
-                foreach ($statusArray as $reportId => $report) {
-                ?>
-                <tbody class="row<?php echo $report['status']; ?>">
-                    <tr>
-                        <td>
-                            <b>Report ID:</b> #<?php echo $report['id']; ?>
-                            <br><b>Name:</b> <a href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></a>
-                            <br><b>Position:</b> <input type="text" disabled value="/pos <?php echo $report['posx'].', '.$report['posy'].', '.$report['posz']; ?>">
-                            <br><b>Reported:</b> <?php echo getClock($report['date'], true, true); ?>
-                            <br><b>Status:</b> <?php echo $statusTypes[$report['status']]; ?>. <a href="?action=edit&name=<?php echo $report['name'].'&id='.$report['id']; ?>">Edit</a>
-                        </td>
-                        <td><?php echo $report['report_description']; ?></td>
-                    </tr>
-                </tbody>
-                <?php
-               }
-            ?></table><?php
+            ?>	
+				<div class="row">
+					<div class="col-md-2 col-sm-2">
+						<h2 class="statusType"><?php echo $statusTypes[$statusId]; ?></h2>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<button onclick="javascript:toggle('<?php echo $statusId; ?>')" class="btn btn-default">Show/Hide</button>
+					</div>
+				</div>
+				<div id="div-<?php echo $statusId; ?>">
+					<table class="table table-striped table-hover">
+						<tr class="<?php
+						if ($statusId == 0) {
+							echo 'info';
+						} elseif ($statusId == 1) {
+							echo 'info';
+						} elseif ($statusId == 2) {
+							echo 'danger';
+						} elseif ($statusId == 3) {
+							echo 'warning';
+						} elseif ($statusId == 4) {
+							echo 'warning';
+						} elseif ($statusId == 5) {
+							echo 'success';
+						}
+						?>">
+							<th width="3%">Id</th>
+							<th width="14%">Name</th>
+							<th width="12%">Position</th>
+							<th width="14%">Date</th>
+							<th width="4%">Edit</th>
+							<th>Message</th>
+						</tr>
+					<?php
+					$row = 0;
+					foreach ($statusArray as $reportId => $report) {
+					?>					
+						<tr>
+							<td>#<?php echo $report['id']; ?></td>
+							<td><a href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></td>
+							<td><span style="font-style: italic;">/pos <?php echo $report['posx'].', '.$report['posy'].', '.$report['posz']; ?></span></td>
+							<td><?php echo getClock($report['date'], true, true); ?></td>
+							<td><a href="?action=edit&name=<?php echo $report['name'].'&id='.$report['id']; ?>">Edit</a></td>
+							<th><?php echo $report['report_description']; ?></th>
+						</tr>
+					<?php
+				   }
+				?></table>
+				</div>
+			<?php
         }
-        ?>
-    </center>
-    <?php 
-} else echo "<h2>No reports submitted.</h2>";
+} else echo "<h3>No reports submitted.</h3>";
 ?>
 <style>
 tr.yellow[onclick] td {
@@ -216,17 +239,18 @@ tbody[class^=row] td:last-of-type {
     // Hide and show tables
     // Written in clean javascript to make it cross-layout compatible.
     function toggle(statusId) {
-        var divStatus = 'row' + statusId,
+        var divStatus = 'div-' + statusId,
             msgStatus = 'status-' + statusId;
 
         // Change visibility status
-        statusElement = document.getElementById(msgStatus);
-
-        statusElement.innerHTML = (statusElement.innerHTML == 'Visible') ? 'Hidden' : 'Visible';
-        // Show/hide elements.
-        var elements = document.getElementsByClassName(divStatus);
-        for (var i = 0; i < elements.length; i++)
-            elements[i].style.display = (elements[i].style.display == 'none') ? 'table-header-group' : 'none';
+        // statusElement = document.getElementById(msgStatus);
+        // statusElement.innerHTML = (statusElement.innerHTML == 'Visible') ? 'Hidden' : 'Visible';
+		
+		var mydiv = document.getElementById(divStatus);
+		if (mydiv.style.display === 'block' || mydiv.style.display === '')
+			mydiv.style.display = 'none';
+		  else
+			mydiv.style.display = 'block'
     }
 
     <?php // Hide configured tables by default
@@ -240,4 +264,4 @@ tbody[class^=row] td:last-of-type {
             toggle(e.currentTarget.querySelector('span').id.match(/(\d)+/)[0]);
         });
 </script>
-<?php include 'layout/overall/footer.php'; ?>
+<?php include 'layout_admin/overall/footer.php'; ?>
