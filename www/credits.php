@@ -14,7 +14,7 @@
 
 	<ul>
         <li><a href="#cip">CipSoft</a></li>
-        <li><a href="#ot">OTServ Team</a></li>
+        <li><a href="#ot">OpenTibia Team</a></li>
         <li><a href="#othire">OTHire</a></li>
         <li><a href="#znote">ZnoteAAC</a></li>
         <li><a href="#others">Others</a></li>
@@ -28,7 +28,7 @@
 	<br><br><!-- end CipSoft credits -->
 	
 	<!-- OTServ Team credits -->
-	<h1><a class="anchors" name="ot"></a>.:: OTServ Team ::.</h1>
+	<h1><a class="anchors" name="ot"></a>.:: OpenTibia Team ::.</h1>
 	OpenTibia is a project from years and years ago, and the files used to run TLS are based on their work, the list of contributors is extensive. You can find more information about it in the current repository in GitHub, <a href="https://github.com/opentibia/server">here</a>.<br>
 	<br><strong>Project Admins:</strong> Iryont/iryont, marksamman, Remere/hjnilsson.
 	<br><strong>Active Developers:</strong> assassina, hackerpotato, kilouco/aseverino.
