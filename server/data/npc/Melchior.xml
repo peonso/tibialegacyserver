@@ -1,0 +1,11 @@
+<npc name="Melchior" script="Melchior.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="0" body="25" legs="59" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Only one minute more, |PLAYERNAME|. I shall talk to you at once."/>
+<parameter key="message_walkaway" value="May the light be with you."/>
+<parameter key="message_farewell" value="Farewell, stranger. May Uman the Wise guide your steps in this treacherous land."/>
+<parameter key="message_idletimeout" value="May the light be with you."/>
+	</parameters>
+</npc>

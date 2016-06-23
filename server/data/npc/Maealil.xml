@@ -1,0 +1,12 @@
+<npc name="Maealil" script="Maealil.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="63" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Ashari, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Sorry, please wait a moment |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Asha Thrazi, traveller."/>
+<parameter key="message_farewell" value="Asha Thrazi, traveller."/>
+<parameter key="message_idletimeout" value="Asha Thrazi, traveller."/>
+	</parameters>
+</npc>

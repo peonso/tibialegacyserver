@@ -1,0 +1,11 @@
+<npc name="Trimegis" script="Trimegis.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="57" body="109" legs="94" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Please wait, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Farewell."/>
+<parameter key="message_farewell" value="Farewell."/>
+<parameter key="message_idletimeout" value="Farewell."/>
+	</parameters>
+</npc>

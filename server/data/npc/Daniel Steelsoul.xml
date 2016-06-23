@@ -1,0 +1,12 @@
+<npc name="Daniel Steelsoul" script="Daniel Steelsoul.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="73" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings and Banor with you, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Shut up! I am talking already!"/>
+<parameter key="message_walkaway" value="PRAISE TO BANOR!"/>
+<parameter key="message_farewell" value="PRAISE TO BANOR!"/>
+<parameter key="message_idletimeout" value="PRAISE TO BANOR!"/>
+	</parameters>
+</npc>

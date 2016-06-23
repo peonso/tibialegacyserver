@@ -1,0 +1,12 @@
+<npc name="Helor" script="Helor.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="134" head="57" body="79" legs="95" feet="98"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Be greeted in the name of the gods, traveller."/>
+<parameter key="message_placedinqueue" value="Learn to show patience."/>
+<parameter key="message_walkaway" value="May the gods watch over you."/>
+<parameter key="message_farewell" value="May the gods watch over you."/>
+<parameter key="message_idletimeout" value="May the gods watch over you."/>
+	</parameters>
+</npc>

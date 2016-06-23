@@ -1,0 +1,15 @@
+<npc name="Topsy" script="Topsy.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="78" body="52" legs="64" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello, dear |PLAYERNAME|. How can I help you?"/>
+<parameter key="message_placedinqueue" value="I am busy with a customer at the moment."/>
+<parameter key="message_walkaway" value="Good bye. Do come again!"/>
+<parameter key="message_farewell" value="Good bye. Do come again!"/>
+<parameter key="message_idletimeout" value="Good bye. Do come again!"/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

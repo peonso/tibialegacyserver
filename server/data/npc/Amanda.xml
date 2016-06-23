@@ -1,0 +1,10 @@
+<npc name="Amanda" script="Amanda.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="96" body="95" legs="0" feet="95"/>
+	<parameters>
+<parameter key="message_placedinqueue" value="Please wait a moment, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="If you are heavily wounded or poisoned, feel free to return for a healing."/>
+<parameter key="message_farewell" value="Farewell, |PLAYERNAME|!"/>
+<parameter key="message_idletimeout" value="Farewell, |PLAYERNAME|!"/>
+	</parameters>
+</npc>

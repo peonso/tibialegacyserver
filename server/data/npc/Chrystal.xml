@@ -1,0 +1,12 @@
+<npc name="Chrystal" script="Chrystal.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="116" body="79" legs="117" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="At your service |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Please be patient |PLAYERNAME|. I'll be with you in moment."/>
+<parameter key="message_walkaway" value="Who is next?"/>
+<parameter key="message_farewell" value="Who is next?"/>
+<parameter key="message_idletimeout" value="Who is next?"/>
+	</parameters>
+</npc>

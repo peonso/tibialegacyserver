@@ -1,0 +1,12 @@
+<raid>
+<announce delay="1000" type="event" message="Rat Plague in Thais!" />
+
+  <!--Area Spawns-->
+  <areaspawn delay="1000" fromx="32331" fromy="32182" fromz="7" tox="32426" toy="32261" toz="7">
+    <monster name="rat" amount="400" />
+    <monster name="cave rat" amount="250" />
+  </areaspawn>
+ 
+
+
+</raid>

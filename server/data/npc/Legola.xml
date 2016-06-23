@@ -1,0 +1,11 @@
+<npc name="Legola" script="Legola.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="137" head="72" body="105" legs="105" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

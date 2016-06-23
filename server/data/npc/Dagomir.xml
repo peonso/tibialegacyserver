@@ -1,0 +1,7 @@
+<npc name="Dagomir" script="Dagomir.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="130" head="0" body="2" legs="41" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="1"/>
+	</parameters>
+</npc>

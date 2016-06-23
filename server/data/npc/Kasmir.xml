@@ -1,0 +1,12 @@
+<npc name="Kasmir" script="Kasmir.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="76" body="0" legs="38" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="May Daraman enlighten you |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="May Daraman fulfill you with patience, |PLAYERNAME|. Wait please."/>
+<parameter key="message_walkaway" value="Gone like a Djinn..."/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. May Daraman's all-seeing eye watch your travels!"/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|. May Daraman's all-seeing eye watch your travels!"/>
+	</parameters>
+</npc>

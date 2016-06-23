@@ -1,0 +1,15 @@
+<npc name="Tandros" script="Tandros.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="132" head="78" body="79" legs="113" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Be greeted, student of the arcane."/>
+<parameter key="message_placedinqueue" value="Show some patience please."/>
+<parameter key="message_walkaway" value="Farewell."/>
+<parameter key="message_farewell" value="Farewell."/>
+<parameter key="message_idletimeout" value="Farewell."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back when you have enough money."/>
+	</parameters>
+</npc>

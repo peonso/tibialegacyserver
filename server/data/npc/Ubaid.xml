@@ -1,0 +1,11 @@
+<npc name="Ubaid" script="Ubaid.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="51" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="talkradius" value="4"/>
+<parameter key="idletime" value="60"/>
+<parameter key="message_walkaway" value="Why did you waste my time?"/>
+<parameter key="message_farewell" value="Hail King Malor! See you on the battlefield, human worm."/>
+<parameter key="message_idletimeout" value="Hail King Malor! See you on the battlefield, human worm."/>
+	</parameters>
+</npc>

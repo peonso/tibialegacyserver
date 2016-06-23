@@ -1,0 +1,11 @@
+<npc name="Donald McRonald" script="Donald McRonald.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="41" body="94" legs="79" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Hmm, I'm busy |PLAYERNAME|."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

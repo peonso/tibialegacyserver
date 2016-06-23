@@ -1,0 +1,16 @@
+<npc name="Rowenna" script="Rowenna.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="132" body="38" legs="76" feet="38"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to the finest weaponshop in the land, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Learn patience, |PLAYERNAME|!"/>
+<parameter key="message_walkaway" value="Good bye. Come back soon."/>
+<parameter key="message_farewell" value="Good bye. Come back soon."/>
+<parameter key="message_idletimeout" value="Good bye. Come back soon."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so much."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

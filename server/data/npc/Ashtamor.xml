@@ -1,0 +1,14 @@
+<npc name="Ashtamor" script="Ashtamor.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="19" body="114" legs="76" feet="114"/>
+	<parameters>
+<parameter key="message_greet" value="Welcome, |PLAYERNAME|, wanderer between the worlds."/>
+<parameter key="message_placedinqueue" value="The time comes for everyone, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="See you again ... sooner or later, more or less alive."/>
+<parameter key="message_farewell" value="See you again ... sooner or later, more or less alive."/>
+<parameter key="message_idletimeout" value="See you again ... sooner or later, more or less alive."/>
+
+<parameter key="message_decline" value="Do you really want to leave the choice of your future vessel to chance?"/>
+<parameter key="message_needmoremoney" value="Sorry, that's not even enough for a shard of my quality wares."/>
+	</parameters>
+</npc>

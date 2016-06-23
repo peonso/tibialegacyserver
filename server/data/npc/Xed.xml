@@ -1,0 +1,15 @@
+<npc name="Xed" script="Xed.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="78" body="36" legs="57" feet="97"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings, |PLAYERNAME|. Welcome to the distance fighting booth of the Ironhouse."/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Goodbye, and may the gods be with you."/>
+<parameter key="message_farewell" value="Goodbye, and may the gods be with you."/>
+<parameter key="message_idletimeout" value="Goodbye, and may the gods be with you."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

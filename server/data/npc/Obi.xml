@@ -1,0 +1,9 @@
+<npc name="Obi" script="obi.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="39" body="63" legs="96" feet="38"/>
+	<parameters>
+<parameter key="message_greet" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy!" />
+<parameter key="message_farewell" value="Bye, bye." />
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper." />
+	</parameters>
+</npc>

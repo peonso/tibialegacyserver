@@ -1,0 +1,12 @@
+<npc name="Uso" script="Uso.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="160" head="79" body="39" legs="77" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Hiho."/>
+<parameter key="message_placedinqueue" value="Hey, just wait, ok?"/>
+<parameter key="message_walkaway" value="So long."/>
+<parameter key="message_farewell" value="So long."/>
+<parameter key="message_idletimeout" value="So long."/>
+	</parameters>
+</npc>

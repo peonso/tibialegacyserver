@@ -1,0 +1,46 @@
+-- NPC Converter System - developed by Utroz <utroz@oakcoders.com>
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+
+function onCreatureAppear(cid)	npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)	npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()	npcHandler:onThink() end
+
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'My name is Djema. Daddy says it means \'Moonflower\' in the old language.'})
+keywordHandler:addKeyword({'djem'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That is my name. I do not like it much, though. Everybody around here calls me Djem.'})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the librarian in this place. I don\'t like the work too much because we do not really have that many books, and most of them are written by people who have died thousands of years ago. ...'})
+keywordHandler:addKeyword({'librarian'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes. I administrate the library. You know - registering new books, sorting them in alphabetical order etc. ...'})
+keywordHandler:addKeyword({'parents'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can\'t remember them. I... They have both died a long time. At least that is what I have been told. Listen, can we talk about something else?'})
+keywordHandler:addKeyword({'marid'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The djinn you have met call themselves the Marid. They are generally very nice. Nice, but boring.'})
+keywordHandler:addKeyword({'djinn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The djinn are a curious race. They are nice, but they are always so serious. Oh, don\'t get me wrong, there is not a single djinn around here I do not like, but, you know, they are not much fun. ...'})
+keywordHandler:addKeyword({'daraman	'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Daraman was a human, but he must have been something very special - he was a holy man. To this day daddy and all the other djinn around here look up to Daraman as a true prophet.'})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Officially there is no king of the djinn. Daddy used to hold the title, but he has chosen to put if off. Of course, he is still the undisputed leader of the Marid. He simply dislikes the title.'})
+keywordHandler:addKeyword({'efreet'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Apparently the greenskins are different from the Marid who have raised me. I don\'t know. Perhaps the Efreet would be more fun than the djinn around here, but then daddy says they are really evil.'})
+keywordHandler:addKeyword({'malor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Malor is the leader of the Efreet. I have never seen him, but they say he is really nasty. Daddy always gets upset when this name is pronounced.'})
+keywordHandler:addKeyword({'mal\'ouquah'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Oh, that place. They say it is pure evil. But I don\'t think it looks that evil. I have seen the dark fortress once, you know?!'})
+keywordHandler:addKeyword({'dark'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'One night I went there. I wanted to see it for myself. Don\'t tell daddy, though. He would freak out if he heard I was there.'})
+keywordHandler:addKeyword({'ashta\'daramai'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That\'s what this place is called. Sure, it is beautiful, but it is as also boring and sometimes downright depressing. Sometimes I feel like I am bound to this place by golden chains.'})
+keywordHandler:addKeyword({'human'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have lived here for as long as I can remember, but I know I don\'t belong here. I belong to them! I am a human! One day I will leave this place, and I will never come back.'})
+keywordHandler:addKeyword({'zathroth'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes, I have heard his name before. Let\'s see... Yes, I have read his name in a book! It was a book about gods and creation. Pretty weird stuff.'})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Daddy has often told me about how huge and mysterious this world is. <Sighs> How much I would like to see it all. But he won\'t let me go. ...'})
+keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Darashia is a beautiful city to the north. I have been there! One day Daddy disguised himself, and he took me there. It was awesome. ...'})
+keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have read all about the northern cities. It is almost as if I had been there myself.'})
+keywordHandler:addKeyword({'ankrahmun'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'If there is one city I don\'t want to see it is Ankrahmun. I have heard all kinds of stories about the pharaoh and his cult of weirdos!'})
+keywordHandler:addKeyword({'scarab'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ah, those nasty critters. They give me the creeps!'})
+keywordHandler:addKeyword({'pharaoh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Apparently he is an undead! Yuk - how disgusting!'})
+keywordHandler:addKeyword({'palace'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I do not care just how beautiful the pharaoh\'s palace is. I will never go there. The minute I would see some undead pile of flesh I would dash for the door screaming.'})
+keywordHandler:addKeyword({'ascension'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have heard that term before. Has to do with the pharaoh\'s cult, I think, but I do not know for sure, and I\'m not particularly eager to learn more about it.'})
+keywordHandler:addKeyword({'akh\'rah'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Hm. No - doesn\'t ring a bell.'})
+keywordHandler:addKeyword({'kha\'zeel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I don\'t know whether I should hate or love these mountains. I mean, they are so beautiful. If only you saw those peaks in the evening, when the sun is setting. It is like a thousand fires that set the horizon aglow. ...'})
+keywordHandler:addKeyword({'kha\'labal'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That is the huge desert to the east. You can see it from here if you look in the direction of the rising sun. It seems huge... endless... It makes my heart sink whenever I watch it.'})
+keywordHandler:addKeyword({'war'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Daddy and all the other djinn around here are so restive lately. I know they try not to show it, but I can sense that they are tense and perhaps even a bit afraid. ...'})
+keywordHandler:addKeyword({'melchior'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Hm. I think I have heard that name before. A human, wasn\'t it? I think he used to drop quite often when I was much younger, but I have no clear memory of him. ...'})
+keywordHandler:addKeyword({'alesar'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have never known this djinn, but apparently there is some sad story behind this. Daddy is very sad that Alesar left us. Of course, he tries not to show, but as usual he does a bad job about it.'})
+keywordHandler:addKeyword({'lamp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'When I was still a kid I could not understand how it could be that I was not able to sleep in a lamp. ...'})
+keywordHandler:addKeyword({'fa\'hradin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Uncle Fad is a weird guy. He is incredibly intelligent, but he is also totally inept in worldly matters. Sometimes I feel he is not quite at home in this world.'})
+keywordHandler:addKeyword({'fa\'hradin lamp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have heard many a story about this artifact. It was used to trap that Malor guy. Clever idea of good old uncle Fa\'hradin.'})
+keywordHandler:addKeyword({'book'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The books around here are not exactly what I would call a riveting read. Most of them are technical documents written by uncle Fad at some point or other. Now and then he turns up and brings new files. Not that anybody would ever re'})
+
+npcHandler:addModule(FocusModule:new())

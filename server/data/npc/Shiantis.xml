@@ -1,0 +1,15 @@
+<npc name="Shiantis" script="Shiantis.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="0" body="36" legs="13" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|. What is your need today?"/>
+<parameter key="message_placedinqueue" value="Excuse me, |PLAYERNAME|, I am already talking to another customer. Wait just a moment."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Hmm, but I'm sure, it would fit nicely into your house."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

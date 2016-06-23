@@ -1,0 +1,11 @@
+<npc name="Duria" script="Duria.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="70" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Waitaminute |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Becarefulloutthere, jawoll."/>
+<parameter key="message_farewell" value="Goodbye."/>
+<parameter key="message_idletimeout" value="Goodbye."/>
+	</parameters>
+</npc>

@@ -1,0 +1,16 @@
+<npc name="Beatrice" script="Beatrice.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="96" body="102" legs="69" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello, hiho, and ashari |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="You're next, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="See you later."/>
+<parameter key="message_farewell" value="See you later."/>
+<parameter key="message_idletimeout" value="See you later."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so much."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

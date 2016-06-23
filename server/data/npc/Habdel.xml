@@ -1,0 +1,16 @@
+<npc name="Habdel" script="Habdel.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="129" head="95" body="2" legs="0" feet="97"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|! See the fine weapons I sell."/>
+<parameter key="message_placedinqueue" value="I will have finished soon |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye and please come back soon."/>
+<parameter key="message_farewell" value="Good bye. Come back soon."/>
+<parameter key="message_idletimeout" value="Good bye and please come back soon."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have that many."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

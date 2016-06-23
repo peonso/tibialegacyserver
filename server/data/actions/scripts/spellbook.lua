@@ -1,9 +1,15 @@
+-- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
+-- Country:		Brazil
+-- From: 		Tibia World RPG OldSchool
+-- Email: 		god.rodrigo@hotmail.com
+-- Compiler:	Tibia World Script Maker (Action)
+
 function onUse(cid, item, frompos, item2, topos)
 	local count = getPlayerInstantSpellCount(cid)
 	local text = ""
 	local t = {}
 
-	for i=0, count-1 do
+	for i = 0, count - 1 do
 		local spell = getPlayerInstantSpellInfo(cid, i)
 		if spell.level ~= 0 then
 			if spell.manapercent > 0 then
@@ -17,7 +23,7 @@ function onUse(cid, item, frompos, item2, topos)
 	table.sort(t, function(a, b) return a.level < b.level end)
 
 	local prevLevel = -1
-	for i,spell in ipairs(t) do
+	for i, spell in ipairs(t) do
 		local line = ""
 		if prevLevel ~= spell.level then
 			if i ~= 1 then
@@ -32,5 +38,5 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 		
 	doShowTextDialog(cid, item.itemid, text)
-	return true
+	return TRUE
 end

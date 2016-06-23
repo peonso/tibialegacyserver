@@ -1,0 +1,15 @@
+<npc name="Scott" script="Scott.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="131" head="75" body="38" legs="77" feet="96"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to my little inn, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Just a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="I hope to see you again."/>
+<parameter key="message_farewell" value="I hope to see you again."/>
+<parameter key="message_idletimeout" value="I hope to see you again."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

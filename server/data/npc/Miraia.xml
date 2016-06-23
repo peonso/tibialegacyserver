@@ -1,0 +1,15 @@
+<npc name="Miraia" script="Miraia.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="95" body="0" legs="7" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Daraman's blessings, |PLAYERNAME|. Welcome to the Enlightened Oasis."/>
+<parameter key="message_placedinqueue" value="I will serve you in a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Daraman's blessings. Come back soon."/>
+<parameter key="message_farewell" value="Daraman's blessings. Come back soon."/>
+<parameter key="message_idletimeout" value="Daraman's blessings. Come back soon."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

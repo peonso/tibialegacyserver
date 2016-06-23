@@ -1,0 +1,12 @@
+<npc name="Harkath Bloodblade" script="Harkath Bloodblade.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="131" head="76" body="38" legs="38" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Salutations, commoner |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="SILENCE! I am busy!"/>
+<parameter key="message_walkaway" value="LONG LIVE THE KING!"/>
+<parameter key="message_farewell" value="LONG LIVE THE KING!"/>
+<parameter key="message_idletimeout" value="LONG LIVE THE KING!"/>
+	</parameters>
+</npc>

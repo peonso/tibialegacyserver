@@ -1,2 +1,15 @@
-<?xml version="1.0"?>
-<raids/>
+<raids>
+
+	<raid name="demodras" file="demodras.xml" interval2="35" margin="1800" />
+	<raid name="elfs" file="elfs.xml" interval2="30" margin="1800" />
+	<raid name="orcs_thais" file="orcs_thais.xml" interval2="30" margin="1800" />
+	<raid name="orshabaal" file="orshabaal.xml" interval2="45" margin="1800" />
+	<raid name="ferumbras" file="ferumbras.xml" interval2="60" margin="1800" />
+	<raid name="rats" file="rats.xml" interval2="30" margin="1800" />
+	<raid name="scarabs" file="scarabs.xml" interval2="30" margin="1800" />
+	<raid name="the_old_widow" file="the_old_widow.xml" interval2="35" margin="1800" />
+	<raid name="undead_darashia" file="undead_darashia.xml" interval2="30" margin="1800" />
+	<raid name="undead_army" file="undead_army.xml" interval2="30" margin="1800" />
+	<raid name="horned_fox" file="horned_fox.xml" interval2="30" margin="1800" />
+
+</raids>

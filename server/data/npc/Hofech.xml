@@ -1,0 +1,12 @@
+<npc name="Hofech" script="Hofech.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="95" body="2" legs="2" feet="57"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|! Have a look at my wares, my friend."/>
+<parameter key="message_placedinqueue" value="|PLAYERNAME|, just a moment, please."/>
+<parameter key="message_walkaway" value="Daraman's blessings."/>
+<parameter key="message_farewell" value="Daraman's blessings."/>
+<parameter key="message_idletimeout" value="Daraman's blessings."/>
+	</parameters>
+</npc>

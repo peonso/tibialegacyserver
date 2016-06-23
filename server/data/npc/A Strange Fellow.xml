@@ -1,0 +1,10 @@
+<npc name="A Strange Fellow" script="A Strange Fellow.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="128" head="76" body="43" legs="38" feet="76" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Uh? What do you want?!" />
+		<parameter key="message_farewell" value="Good riddance." />
+		<parameter key="message_walkaway" value="Still I am better in vanishing!" />
+		<parameter key="message_placedinqueue" value="Just wait a minute!" />
+	</parameters>
+</npc>

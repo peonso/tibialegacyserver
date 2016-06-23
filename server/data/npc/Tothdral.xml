@@ -1,0 +1,12 @@
+<npc name="Tothdral" script="Tothdral.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="65" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Be mourned, pilgrim in flesh."/>
+<parameter key="message_placedinqueue" value="Mourned |PLAYERNAME|, know that I am busy."/>
+<parameter key="message_walkaway" value="Your incivility will not be tolerated much longer."/>
+<parameter key="message_farewell" value="Strive for enlightenment, mourned mortal."/>
+<parameter key="message_idletimeout" value="Strive for enlightenment, mourned mortal."/>
+	</parameters>
+</npc>

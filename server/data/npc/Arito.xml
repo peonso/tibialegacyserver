@@ -1,0 +1,15 @@
+<npc name="Arito" script="Arito.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="132" head="59" body="74" legs="62" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Be mourned, pilgrim in flesh."/>
+<parameter key="message_placedinqueue" value="Please show some patience, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Please visit us again."/>
+<parameter key="message_farewell" value="Do visit us again."/>
+<parameter key="message_idletimeout" value="Do visit us again."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

@@ -1,0 +1,15 @@
+<npc name="Sandra" script="Sandra.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="137" head="115" body="63" legs="95" feet="38"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Sorry |PLAYERNAME|, I am busy right now. Please wait a moment."/>
+<parameter key="message_walkaway" value="Good bye and please come back soon."/>
+<parameter key="message_farewell" value="Good bye and please come back soon."/>
+<parameter key="message_idletimeout" value="Good bye and please come back soon."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

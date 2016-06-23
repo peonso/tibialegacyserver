@@ -1,0 +1,9 @@
+<npc name="Kroox" script="Kroox.lua" floorchange="0" walkinterval="2000" speed="220">
+	<health now="100" max="100"/>
+	<look type="160" head="0" body="100" legs="105" feet="76"/>
+	<parameters>
+<parameter key="message_greet" value="Welcome to Kroox Quality Armor, |PLAYERNAME|!" />
+<parameter key="message_farewell" value="Good bye. Come back soon." />
+<parameter key="message_needmoremoney" value="No, no, you do not hold enough copper." />
+	</parameters>
+</npc>

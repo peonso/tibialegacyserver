@@ -1,0 +1,16 @@
+<npc name="Willard" script="Willard.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="131" head="58" body="104" legs="19" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings and Banor be with you, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="I'm ready soon, |PLAYERNAME|. Please wait."/>
+<parameter key="message_walkaway" value="Farewell."/>
+<parameter key="message_farewell" value="Farewell."/>
+<parameter key="message_idletimeout" value="Farewell."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so much."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

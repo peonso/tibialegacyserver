@@ -1,0 +1,16 @@
+<npc name="Halif" script="Halif.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="128" head="95" body="2" legs="10" feet="131"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings |PLAYERNAME|, you child of wealth and generousity. What wise decision to buy my wares."/>
+<parameter key="message_placedinqueue" value="Sorry |PLAYERNAME|, please could you wait a moment until I finish this deal."/>
+<parameter key="message_walkaway" value="Good bye, may Daraman bless your travels."/>
+<parameter key="message_farewell" value="Good bye, may Daraman bless your travels."/>
+<parameter key="message_idletimeout" value="Good bye, may Daraman bless your travels."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_needmoremoney" value="My twelve starving children don't allow me to sell it for less, o grandmaster of haggling."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have that many."/>
+	</parameters>
+</npc>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="The Orc King" script="The Orc King.lua" walkinterval="2000">
+    <health now="100" max="100"/>
+    <look type="19"/>
+    <parameters>
+	  <parameter key="message_farewell" value="We will meet again."/>
+	  <parameter key="message_walkaway" value="Yes, flee this place, but you will never escape my revenge!"/>
+	  <parameter key="message_idletimeout" value="We will meet again."/>
+
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;hive;minion;underling;horde;hate;rage;direction;focus;blog;divine;orc;slime;djinn;malor;cheat;wish;third;deathwish;abandoned;good djinn;awaken;paleskins" />
+        <parameter key="keyword_reply1" value="I am Charkahn the Slayer! The immortal father of the orcs and master of this hive." />
+        <parameter key="keyword_reply2" value="I am Charkahn the Slayer! The immortal father of the orcs and master of this hive." />
+        <parameter key="keyword_reply3" value="I can sense the presence and the feelings of my underlings and minions. I embrace the rage of the horde." />
+        <parameter key="keyword_reply4" value="The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage." />
+        <parameter key="keyword_reply5" value="The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage." />
+        <parameter key="keyword_reply6" value="The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage." />
+        <parameter key="keyword_reply7" value="Hate and rage are the true blessings of Blog, since they are powerful weapons. They give the hive strength. I provide them with direction and focus." />
+        <parameter key="keyword_reply8" value="Hate and rage are the true blessings of Blog, since they are powerful weapons. They give the hive strength. I provide them with direction and focus." />
+        <parameter key="keyword_reply9" value="To conquer, to destroy and to dominate. Orcs are born to rule the world." />
+        <parameter key="keyword_reply10" value="To conquer, to destroy and to dominate. Orcs are born to rule the world." />
+		<parameter key="keyword_reply11" value="The Raging One blessed us with his burning hate. We are truly his children and therefore divine." />
+        <parameter key="keyword_reply12" value="The orcs are the bearers of Blogs rage. This makes us the ultimate fighters and the most powerful of all races." />
+        <parameter key="keyword_reply13" value="The orcs are the bearers of Blogs rage. This makes us the ultimate fighters and the most powerful of all races." />
+        <parameter key="keyword_reply14" value="Pah! Don't mock me, mortal! This shape is a curse which the evil djinn bestowed upon me!" />
+        <parameter key="keyword_reply15" value="This cursed djinn king! I set him free from an enchanted lamp, and he cheated me!" />
+        <parameter key="keyword_reply16" value="This cursed djinn king! I set him free from an enchanted lamp, and he cheated me!" />
+        <parameter key="keyword_reply17" value="Because I freed him he granted me three wishes. He was true to his word in the first two wishes." />
+        <parameter key="keyword_reply18" value="He built this fortress over Uldrek's grave within a single night. Also, he granted me my second wish and gave me immortality. Test it and try to kill me if you want. Har Har!" />
+        <parameter key="keyword_reply19" value="I wished to father more healthy and fertile children as any orc has ever done. But the djinn cheated me and made me a slime! Then he laughed at me and left for his abandoned fortress in the Deathwish Mountains." />
+        <parameter key="keyword_reply20" value="His ancient fortress on Darama was deserted as the evil Djinn fled this world after his imprisonment. Now the time has come for the evil Djinns to return to their master although this will certainly awaken the good Djinn too." />
+		<parameter key="keyword_reply21" value="His ancient fortress on Darama was deserted as the evil Djinn fled this world after his imprisonment. Now the time has come for the evil Djinns to return to their master although this will certainly awaken the good Djinn too." />
+		<parameter key="keyword_reply22" value="I will not share anything more about that topic with you paleskins." />
+		<parameter key="keyword_reply23" value="I will not share anything more about that topic with you paleskins." />
+		<parameter key="keyword_reply24" value="You are as ugly as maggots, although not quite as as tasty." />
+    </parameters>
+</npc>

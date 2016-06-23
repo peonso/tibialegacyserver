@@ -1,0 +1,15 @@
+<npc name="Bruno" script="Bruno.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="113" body="10" legs="95" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Ahoi, |PLAYERNAME|. You want to buy some fresh fish?"/>
+<parameter key="message_placedinqueue" value="One moment please |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye and come again!"/>
+<parameter key="message_farewell" value="Good bye and come again!"/>
+<parameter key="message_idletimeout" value="Good bye and come again!"/>
+
+<parameter key="message_decline" value="*grumble* Maybe next time."/>
+<parameter key="message_needmoremoney" value="Come back when you have enough money."/>
+	</parameters>
+</npc>

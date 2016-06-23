@@ -1,10 +1,15 @@
+-- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
+-- Country:		Brazil
+-- From: 		Tibia World RPG OldSchool
+-- Email: 		god.rodrigo@hotmail.com
+-- Compiler:	Tibia World Script Maker (Action)
+
 function onUse(cid, item, frompos, item2, topos)
 	if(item.actionid == 0) then
-		-- This is impossible to happen, but whatever.
 		doTransformItem(item.uid, item.itemid+2)
-		return true
+		return TRUE
 	end
 
 	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "It is locked.")
-	return true
+	return TRUE
 end

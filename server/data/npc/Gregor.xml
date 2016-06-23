@@ -1,0 +1,11 @@
+<npc name="Gregor" script="Gregor.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="131" head="38" body="38" legs="38" feet="38"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Please wait a moment, |PLAYERNAE|."/>
+<parameter key="message_walkaway" value="Be careful on your journeys."/>
+<parameter key="message_farewell" value="Be careful on your journeys."/>
+<parameter key="message_idletimeout" value="Be careful on your journeys."/>
+	</parameters>
+</npc>

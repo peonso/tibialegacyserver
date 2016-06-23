@@ -1,0 +1,100 @@
+dofile(getDataDir() .. 'libs/greeting.lua')
+
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+
+-- OTServ event handling functions start
+function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() 						npcHandler:onThink() end
+
+function greetCallback(cid)
+if getPlayerSex(cid) == 0 then
+	npcHandler:setMessage(MESSAGE_GREET, "Hello, Mam. How may I help you, ".. getPlayerName(cid) ..".")
+	return true
+	else
+	npcHandler:setMessage(MESSAGE_GREET, "Hello, Sir. How may I help you, ".. getPlayerName(cid) ..".")
+	return true
+	end
+end	
+
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+
+local shopModule = ShopModule:new()
+npcHandler:addModule(shopModule)
+
+shopModule:addSellableItem({'dagger'}, 					ID_dagger, 2)
+shopModule:addSellableItem({'spear'}, 					ID_spear, 3)
+shopModule:addSellableItem({'hand axe'}, 					ID_handaxe, 4)
+shopModule:addSellableItem({'rapier'}, 					ID_rapier, 5)
+shopModule:addSellableItem({'axe'}, 					ID_axe, 7)
+shopModule:addSellableItem({'hatchet'}, 					ID_hatchet, 25)
+shopModule:addSellableItem({'sabre'}, 					ID_sabre, 12)
+shopModule:addSellableItem({'short sword'}, 					ID_shortsword, 10)
+shopModule:addSellableItem({'sword'}, 					ID_sword, 25)
+shopModule:addSellableItem({'mace'}, 					ID_mace, 30)
+shopModule:addSellableItem({'doublet'}, 					ID_doublet, 3)
+shopModule:addSellableItem({'leather armor'}, 					ID_leatherarmor, 5)
+shopModule:addSellableItem({'chain armor'}, 					ID_chainarmor, 40)
+shopModule:addSellableItem({'brass armor'}, 					ID_brassarmor, 150)
+shopModule:addSellableItem({'leather helmet'}, 					Cleatherhelmet, 3)
+shopModule:addSellableItem({'chain helmet'}, 					ID_chainhelmet, 12)
+shopModule:addSellableItem({'studded helmet'}, 					ID_studdedhelmet, 20)
+shopModule:addSellableItem({'wooden shield'}, 					ID_woodenshield, 3)
+shopModule:addSellableItem({'studded shield'}, 					ID_studdedshield, 16)
+shopModule:addSellableItem({'brass shield'}, 					ID_brassshield, 25)
+shopModule:addSellableItem({'plate shield'}, 					ID_plateshield, 40)
+shopModule:addSellableItem({'copper shield'}, 					ID_coppershield, 50)
+shopModule:addSellableItem({'leather boots'}, 					ID_leatherboots, 2)
+shopModule:addSellableItem({'rope'}, 					ID_rope, 8)
+shopModule:addBuyableItem({'spear'}, 					ID_spear, 10)
+shopModule:addBuyableItem({'rapier'}, 					ID_rapier, 15)
+shopModule:addBuyableItem({'sabre'}, 					ID_sabre, 25)
+shopModule:addBuyableItem({'dagger'}, 					ID_dagger, 5)
+shopModule:addBuyableItem({'sickle'}, 					ID_sickle, 8)
+shopModule:addBuyableItem({'hand axe'}, 					ID_handaxe, 8)
+shopModule:addBuyableItem({'axe'}, 					ID_axe, 20)
+shopModule:addBuyableItem({'short sword'}, 					ID_shortsword, 30)
+shopModule:addBuyableItem({'jacket'}, 					ID_jacket, 10)
+shopModule:addBuyableItem({'coat'}, 					ID_coat, 8)
+shopModule:addBuyableItem({'doublet'}, 					ID_doublet, 16)
+shopModule:addBuyableItem({'leather armor'}, 					ID_leatherarmor, 25)
+shopModule:addBuyableItem({'leather legs'}, 					ID_leatherlegs, 10)
+shopModule:addBuyableItem({'leather helmet'}, 					ID_leatherhelmet, 12)
+shopModule:addBuyableItem({'studded helmet'}, 					ID_studdedhelmet, 63)
+shopModule:addBuyableItem({'chain helmet'}, 					ID_chainhelmet, 52)
+shopModule:addBuyableItem({'wooden shield'}, 					ID_woodenshield, 15)
+shopModule:addBuyableItem({'studded shield'}, 					ID_studdedshield, 50)
+shopModule:addBuyableItem({'torch'}, 					ID_torch, 2)
+shopModule:addBuyableItem({'bag'}, 					ID_bag, 4)
+shopModule:addBuyableItem({'scroll'}, 					1949, 5)
+shopModule:addBuyableItem({'shovel'}, 					ID_shovel, 10)
+shopModule:addBuyableItem({'backpack'}, 					ID_backpack, 10)
+shopModule:addBuyableItem({'scythe'}, 					ID_scythe, 12)
+shopModule:addBuyableItem({'rope'}, 					ID_rope, 50)
+shopModule:addBuyableItem({'fishing rod'}, 					ID_fishingrod, 150)
+shopModule:addBuyableItem({'worm'}, 					ID_worm, 1)
+
+keywordHandler:addKeyword({'pick'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am sorry, an agent of Al Dee bought all our picks. Now he has a monopoly on them."})
+keywordHandler:addKeyword({'club'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm sorry, we don't buy this."})
+keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am fine, thank you."})
+keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We're selling many things. Please have a look at the blackboards downstairs to see a list of our inventory."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm helping my grandfather Obi with this shop. Do you want to buy or sell anything?"})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm Dixi."})
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "If you need something, please let me know."})
+keywordHandler:addKeyword({'stuff'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell equipment of all kinds. Please let me know if you need something."})
+keywordHandler:addKeyword({'wares'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell weapons, shields, armor, helmets, and equipment. For what do you want to ask?"})
+keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell weapons, shields, armor, helmets, and equipment. For what do you want to ask?"})
+keywordHandler:addKeyword({'weapon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell spears, rapiers, sabres, daggers, hand axes, axes, and short swords. Just tell me what you want to buy."})
+keywordHandler:addKeyword({'armor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell jackets, coats, doublets, leather armor, and leather legs. Just tell me what you want to buy."})
+keywordHandler:addKeyword({'helmet'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell leather helmets, studded helmets, and chain helmets. Just tell me what you want to buy."})
+keywordHandler:addKeyword({'shield'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell wooden shields and studded shields. Just tell me what you want to buy."})
+keywordHandler:addKeyword({'equipment'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We sell torches, bags, scrolls, shovels, picks, backpacks, sickles, scythes, ropes, fishing rods and worms. Just tell me what you want to buy."})
+keywordHandler:addKeyword({'do you sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What do you need? We sell weapons, armor, helmets, shields, and equipment."})
+keywordHandler:addKeyword({'do you have'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What do you need? We sell weapons, armor, helmets, shields, and equipment."})
+keywordHandler:addKeyword({'bolt'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm sorry, I don't have any in stock now."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is |TIME|."})
+
+npcHandler:addModule(FocusModule:new())

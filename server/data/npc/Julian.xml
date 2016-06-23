@@ -1,0 +1,15 @@
+<npc name="Julian" script="Julian.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="55" body="30" legs="23" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Be greeted, |PLAYERNAME|! May I help you?"/>
+<parameter key="message_placedinqueue" value="Sorry, I am busy right now, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Oh well, next time perhaps."/>
+<parameter key="message_needmoremoney" value="You need some more money."/>
+	</parameters>
+</npc>

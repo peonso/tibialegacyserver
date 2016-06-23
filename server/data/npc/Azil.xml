@@ -1,0 +1,16 @@
+<npc name="Azil" script="Azil.lua" floorchange="0" walkinterval="0" speed="0" lookdir="1">
+	<health now="100" max="100"/>
+	<look type="129" head="95" body="10" legs="12" feet="119"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Be greeted |PLAYERNAME|! See the armors: harder than the scales of a dragon, lighter than a feather."/>
+<parameter key="message_placedinqueue" value="One moment please, o honoured customer."/>
+<parameter key="message_walkaway" value="Good bye, honoured customer. It was a pleasure to talk to you."/>
+<parameter key="message_farewell" value="Good bye. Come back soon."/>
+<parameter key="message_idletimeout" value="Good bye. Come back soon."/>
+
+<parameter key="message_decline" value="Maybe we can trade another day."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so many."/>
+<parameter key="message_needmoremoney" value="Sorry, but your purse is as empty as the eye socket of a ghoul."/>
+	</parameters>
+</npc>

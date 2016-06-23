@@ -1,0 +1,16 @@
+<npc name="Boozer" script="Boozer.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="76" body="20" legs="116" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to the Hard Rock Racing Track, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Please give me a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="You'll be back."/>
+<parameter key="message_farewell" value="You'll be back."/>
+<parameter key="message_idletimeout" value="You'll be back."/>
+
+<parameter key="message_decline" value="Then not, fine with me."/>
+<parameter key="message_nothaveitem" value=""/>
+<parameter key="message_needmoremoney" value="You don't have the copper. If we were gambling I'd call you a cheater ... and you know what happens to cheaters, don't you?"/>
+	</parameters>
+</npc>

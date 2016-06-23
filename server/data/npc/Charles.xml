@@ -1,0 +1,11 @@
+<npc name="Charles" script="Charles.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="134" head="57" body="29" legs="95" feet="98"/>
+	<parameters>
+<parameter key="message_greet" value="Ahoi."/>
+<parameter key="message_placedinqueue" value="Just wait."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+	</parameters>
+</npc>

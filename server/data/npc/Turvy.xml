@@ -1,0 +1,16 @@
+<npc name="Turvy" script="Turvy.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="78" body="52" legs="64" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello, dear |PLAYERNAME|. Can I be of any assistance?"/>
+<parameter key="message_placedinqueue" value="I'm so sorry, but I simply must talk to this customer first. Please wait a moment."/>
+<parameter key="message_walkaway" value="Good bye. Do come again!"/>
+<parameter key="message_farewell" value="Good bye. Do come again!"/>
+<parameter key="message_idletimeout" value="Good bye. Do come again!"/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so much."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

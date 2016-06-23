@@ -1,0 +1,11 @@
+<npc name="Gamon" script="Gamon.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="97" body="58" legs="105" feet="120"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="One moment, please. I got a customer here."/>
+<parameter key="message_walkaway" value="Now where's he gone? I could have sworn..."/>
+<parameter key="message_farewell" value="You'll come back. They all do."/>
+<parameter key="message_idletimeout" value="You'll come back. They all do."/>
+	</parameters>
+</npc>

@@ -1,0 +1,12 @@
+<npc name="Chatterbone" script="Chatterbone.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="18" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="... Greeeeeetiiiingssss"/>
+<parameter key="message_placedinqueue" value="... Wait... |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="... Good... Bye"/>
+<parameter key="message_farewell" value="... Good... Bye"/>
+<parameter key="message_idletimeout" value="... Good... Bye"/>
+	</parameters>
+</npc>

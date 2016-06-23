@@ -1,0 +1,11 @@
+<npc name="Kawill" script="Kawill.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="66" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Earth under your feet, pilgrim."/>
+<parameter key="message_farewell" value="Earth under your feet, |PLAYERNAME|!"/>
+<parameter key="message_idletimeout" value="Earth under your feet, |PLAYERNAME|!"/>
+	</parameters>
+</npc>

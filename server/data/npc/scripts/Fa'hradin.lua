@@ -1,0 +1,42 @@
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+
+function onCreatureAppear(cid)	npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid)	npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg) end
+function onThink()	npcHandler:onThink() end
+
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am known as Fa\'hradin.'})
+keywordHandler:addKeyword({'fa\'hradin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Yes, that is me. It seems you have heard my name before.'})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Well, you could say I am the wizard of the Marid. Of course, I know that all djinn are magical creatures. But let us put it this way: I am slightly better at wielding magic then your average djinn in the street.'})
+keywordHandler:addKeyword({'djinn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Our race is in a deplorable state at the moment. However, it is interesting from a scientific point of view. I am really curious to see if the Efreet and the Marid are really going to develop into two completely different species...'})
+keywordHandler:addKeyword({'efreet'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have not be been able to figure out exactly why the Efreet have developed a different skin colour. ...'})
+keywordHandler:addKeyword({'marid'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That is what we call ourselves. We like to think of ourselves as the true inheritors of the djinn legacy.'})
+keywordHandler:addKeyword({'gabel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'He is our leader. He does have his mistakes, but then he always tries to do what he thinks is right, and I suppose that makes him a good leader.'})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Djinns do not have kings. Gabel has long abdicated the title because of his convictions, and Malor... Well, I suppose he would not refuse to take the crown, but I doubt he will ever get a chance to do so.'})
+keywordHandler:addKeyword({'malor'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That treacherous snake has been waiting for a chance to seize power for as long as I can remember. He and Gabel used to be as close as brothers, you know.'})
+keywordHandler:addKeyword({'ashta\'daramai'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That is what this place is called. It is not difficult to guess that that name was not my idea.'})
+keywordHandler:addKeyword({'human'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You are a curious species: Weak, yet strong. Stupid, yet clever. Evil, yet good. Fascinating, really. ...'})
+keywordHandler:addKeyword({'zathroth'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'He created our race, but we find it hard to love him. Sometimes I think that whole war has erupted because there is something like a design flaw in us djinns, an inconsistency in the way we are. ...'})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Eons ago when I was still young I felt the world was a place of wonder and joy. Now all I see is a badly working system full of design flaws. ...'})
+keywordHandler:addKeyword({'daraman	'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I have met him myself. He was a sharp thinker and a charismatic conversationalist. ...'})
+keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Darashia is comparatively young. The local ruler managed to establish his own little caliphate thanks to the riches he accumulated. ...'})
+keywordHandler:addKeyword({'scarab'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'An interesting species. Oh, they are as thick as two short planks, of course, but there is definitely something magic about them. ...'})
+keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am not much of a traveller, but I would like to see the northern cities everbody is talking about. Perhaps one day I will do that. Oh, I will use some kind of magical disguise, of course.'})
+keywordHandler:addKeyword({'ankrahmun'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That is one of the oldest human settlements in the whole of Tibia. I understand it is currently ruled by the pharaoh - some sort of undead priest-king. I am sure that must be a charming fellow.'})
+keywordHandler:addKeyword({'pharaoh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Apparently the whole issue of dying in order to extend the natural life span was his idea. Those humans. You never know what they come up with next!'})
+keywordHandler:addKeyword({'palace'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The pharaoh\'s palace in Ankrahmun is an impressive building. At least that is how I remember it to be. ...'})
+keywordHandler:addKeyword({'ascension'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'A fundamental part of the pharaoh\'s cult. I have not studied it in any detail, though.'})
+keywordHandler:addKeyword({'rah'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Another cornerstone of the undead pharaoh\'s theological theories. I do not know much more about it, I\'m afraid.'})
+keywordHandler:addKeyword({'kha\'zeel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'None of the mountains here has developed naturally. The whole range has been raised by using powerful magic, and a lot of this magic lingers to this very day. A great place to be a wizard, but a dangerous place to travel.'})
+keywordHandler:addKeyword({'kha\'labal'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'The Kha\'labal used to be a paradise. I remember it well. The fact that it is a barren desert today might give you an idea of the things that happened during the war.'})
+keywordHandler:addKeyword({'war'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'For a long time it seemed that the war was over for good. But now that Malor is free again he will surely kindle the flame of war again. ...'})
+keywordHandler:addKeyword({'melchior'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ah. I remember him. A trader, was he not? I haven\'t seen him for a long time.'})
+keywordHandler:addKeyword({'alesar'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'That name brings up bad memories. I never really liked him, but you just had to admire his skills at the forge. His desertion was a great loss for our cause.'})
+keywordHandler:addKeyword({'baa\'leal'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Oh, you just have to love that djinn. We have met on the battlefield on half a dozen occasions, and he lost each single one of these battles. ...'})
+keywordHandler:addKeyword({'lamp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ah yes. We djinn sleep in lamps. We have a natural ability to dematerialise, you see.'})
+keywordHandler:addKeyword({'rata\'mari'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ah yes. Have you seen him? One of my best works so far. Nobody will ever suspect he is in fact a transformed djinn. The only problem is I\'m much better with transforming people into other forms than with transforming them back. Poor fe'})
+keywordHandler:addKeyword({'fa\'hradin lamp'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I hate to flatter myself, but that lamp was a masterpiece. Malor would have been imprisoned in it for the rest of his miserable life if it had not been for that nincompoop who calls himself an orc king. That foolish troglodyte!'})
+
+npcHandler:addModule(FocusModule:new())

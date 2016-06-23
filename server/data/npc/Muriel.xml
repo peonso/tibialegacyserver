@@ -1,0 +1,11 @@
+<npc name="Muriel" script="Muriel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="115" body="94" legs="97" feet="57"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Wait a moment, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Farewell."/>
+<parameter key="message_farewell" value="Farewell."/>
+<parameter key="message_idletimeout" value="Farewell."/>
+	</parameters>
+</npc>

@@ -1,0 +1,11 @@
+<npc name="Penny" script="Penny.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="137" head="96" body="79" legs="95" feet="96"/>
+	<parameters>
+<parameter key="idletime" value="90"/>
+<parameter key="message_placedinqueue" value="Just a minute, %N."/>
+<parameter key="message_walkaway" value="May Justice be with you!"/>
+<parameter key="message_farewell" value="May Justice be with you!"/>
+<parameter key="message_idletimeout" value="May Justice be with you!"/>
+	</parameters>
+</npc>

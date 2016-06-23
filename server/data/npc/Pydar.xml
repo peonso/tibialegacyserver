@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<npc name="Pydar" script="Pydar.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="160" head="95" body="94" legs="132" feet="118"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="May the fire in your heart never die."/>
+<parameter key="message_farewell" value="May the fire in your heart never die."/>
+<parameter key="message_idletimeout" value="May the fire in your heart never die."/>
+	</parameters>
+</npc>

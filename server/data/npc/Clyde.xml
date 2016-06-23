@@ -1,0 +1,15 @@
+<npc name="Clyde" script="Clyde.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="98" body="40" legs="48" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings, dear customer."/>
+<parameter key="message_placedinqueue" value="Please wait a moment."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye, visit us again."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

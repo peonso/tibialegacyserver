@@ -1,0 +1,15 @@
+<npc name="Karl" script="Karl.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="58" body="68" legs="109" feet="131"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Pshhhht! Not that loud ... but welcome."/>
+<parameter key="message_placedinqueue" value="Just a moment."/>
+<parameter key="message_walkaway" value="Please come back, but don't tell others."/>
+<parameter key="message_farewell" value="Please come back, but don't tell others."/>
+<parameter key="message_idletimeout" value="Please come back, but don't tell others."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="Sorry, come back with more copper."/>
+	</parameters>
+</npc>

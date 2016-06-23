@@ -1,0 +1,344 @@
+dofile(getDataDir() .. 'libs/greeting.lua')
+
+local keywordHandler = KeywordHandler:new()
+local npcHandler = NpcHandler:new(keywordHandler)
+NpcSystem.parseParameters(npcHandler)
+
+-- OTServ event handling functions start
+function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
+function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
+function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
+function onThink() 						npcHandler:onThink() end
+
+local shopModule = ShopModule:new()
+npcHandler:addModule(shopModule)
+
+shopModule:addSellableItem({'white pearl'}, 					ID_whitepearl, 160)
+shopModule:addSellableItem({'black pearl'}, 					ID_blackpearl, 280)
+shopModule:addSellableItem({'small diamond'}, 					ID_smalldiamond, 300)
+shopModule:addSellableItem({'small sapphire'}, 					ID_smallsapphire, 250)
+shopModule:addSellableItem({'small ruby'}, 					ID_smallruby, 250)
+shopModule:addSellableItem({'small emerald'}, 					ID_smallemerald, 250)
+shopModule:addSellableItem({'small amethyst'}, 					ID_smallamethyst, 200)
+shopModule:addBuyableItem({'wedding ring'}, 					ID_weddingring, 990)
+shopModule:addBuyableItem({'golden amulet'}, 					ID_goldenamulet, 6600)
+shopModule:addBuyableItem({'ruby necklace'}, 					ID_rubynecklace, 3560)
+shopModule:addBuyableItem({'white pearl'}, 					ID_whitepearl, 320)
+shopModule:addBuyableItem({'black pearl'}, 					ID_blackpearl, 560)
+shopModule:addBuyableItem({'small diamond'}, 					ID_smalldiamond, 600)
+shopModule:addBuyableItem({'small sapphire'}, 					ID_smallsapphire, 500)
+shopModule:addBuyableItem({'small ruby'}, 					ID_smallruby, 500)
+shopModule:addBuyableItem({'small emerald'}, 					ID_smallemerald, 500)
+shopModule:addBuyableItem({'small amethyst'}, 					ID_smallamethyst, 400)
+
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell and buy gems and jewelry."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the mourned Tesha."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Time is yet another burden that lies heavy on our mortal bodies."})
+keywordHandler:addKeyword({'temple'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The temple can offer us guidance and solace in our mortal existence."})
+keywordHandler:addKeyword({'oldpharaoh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This poor man could not comprehend his son's wisdom. Perhaps he has spelled his own eternal doom."})
+keywordHandler:addKeyword({'pharaoh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is the benevolent father of this nation. Blessed be our saviour."})
+keywordHandler:addKeyword({'scarab'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The priests say they are sacred beings, although ... <whispers>I find them scary!"})
+keywordHandler:addKeyword({'chosen'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can only hope my humble work for our community and for the temple will make me worthy one day to be elevated to the rank of a chosen one. One to whom the path of ascension is opened up through undeath."})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The world is so huge, and I have seen so little. Perhaps if I am chosen one day I will travel and see it all."})
+keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls."})
+keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls."})
+keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls."})
+keywordHandler:addKeyword({'venore'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls."})
+keywordHandler:addKeyword({'kazordoon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed."})
+keywordHandler:addKeyword({'dwarf'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed."})
+keywordHandler:addKeyword({'dwarves'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed."})
+keywordHandler:addKeyword({"ab'dendriel"}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us."})
+keywordHandler:addKeyword({'elf'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us."})
+keywordHandler:addKeyword({'elves'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us."})
+keywordHandler:addKeyword({'daraman'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He was a great man. If he had left his mortal existence behind he might have become one of the greatest prophets of the true faith, second only to the pharaoh himself."})
+keywordHandler:addKeyword({'darama'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "In the desert the lines of life and death are clearly drawn. Because of this it is easier for us, its children, to focus on them. In the jungle those lines are fuzzy and blurred, and people easily fall victim to temptation."})
+keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Those poor souls there might still be saved if only they listened."})
+keywordHandler:addKeyword({'ankrahmun'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This city is both a refuge and centre of learning for the believers of the true faith taught by his divine majesty the pharaoh."})
+keywordHandler:addKeyword({'mortality'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Mortality can be overcome. It is a sickness, but it can be cured through undeath."})
+keywordHandler:addKeyword({'false'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "These greedy beings are trying to devour us all. May the pharaoh thwart their evil plans and free us from their reign of terror!"})
+keywordHandler:addKeyword({'ascension'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Oh, I am not asking for much, you know. I mean, I really don't have to be a god or something. All I wish for is a bit of the wisdom that comes with ascension."})
+keywordHandler:addKeyword({"Akh'rah Uthun"}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I don't really understand this concept, but from what I know it is the three components that make up every being."})
+keywordHandler:addKeyword({'Akh'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our body. The only physical part of the Akh'rah Uthun."})
+keywordHandler:addKeyword({'undea'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Undeath is the reward for a life of faith and service."})
+keywordHandler:addKeyword({'Rah'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The Rah is our essence. The spiritual bond that keep the other parts of the Akh'rah Uthun together."})
+keywordHandler:addKeyword({'uthun'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The Uthun is all we learned in life."})
+keywordHandler:addKeyword({'mourn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The dead mourn our tempted existence, and we mourn ourselves."})
+keywordHandler:addKeyword({'arena'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Look for it in the eastern part of the city."})
+keywordHandler:addKeyword({'palace'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Isn't the palace magnificent to behold? It is so impressive!"})
+keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you various gems, pearls or some wonderful jewels. I also change and deposit money."})
+keywordHandler:addKeyword({'good'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you various gems, pearls or some wonderful jewels. I also change and deposit money."})
+keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you various gems, pearls or some wonderful jewels. I also change and deposit money."})
+keywordHandler:addKeyword({'have'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you various gems, pearls or some wonderful jewels. I also change and deposit money."})
+keywordHandler:addKeyword({'gem'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You can buy and sell small diamonds, small sapphires, small rubies, small emeralds, and small amethysts."})
+keywordHandler:addKeyword({'pearl'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "There are white and black pearls you can buy or sell."})
+keywordHandler:addKeyword({'jewel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Currently you can purchase wedding rings, golden amulets, and ruby necklaces."})
+keywordHandler:addKeyword({'talon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I don't trade or work with these magic gems. It's better you ask a mage about this."})
+
+function creatureSayCallback(cid, type, msg)
+	if(npcHandler.focus ~= cid) then
+		return false
+	end
+
+--------------------MESSAGES------------------------------------------------------------------------------            
+        if msgcontains(msg, 'change gold') then
+                npcHandler:say('How many platinum coins do you want to get?')
+                talkState = 8
+                
+        elseif msgcontains(msg, 'change platinum') then
+                npcHandler:say('Do you want to change your platinum coins to gold or crystal?')
+                talkState = 10
+                
+        elseif msgcontains(msg, 'change crystal') then
+                npcHandler:say('How many crystal coins do you want to change to platinum?')
+                talkState = 15
+
+----------------------CHANGE GOLD---------------------------------------------------------------------------------
+        elseif talkState == 8 and getNumber(msg) == 0 or getNumber(msg) >= 999 then
+		npcHandler:say('How many platinum coins do you want to get?')
+		elseif talkState == 8 then
+                n = getNumber(msg)
+                b = n * 100
+                npcHandler:say('So I should change '..b..' of your gold coins to '..n..' platinum coins for you?')
+                talkState = 9
+                
+        elseif talkState == 9 then
+                if msgcontains(msg, 'yes') then
+                        if doPlayerRemoveItem(cid, 2148, b) == TRUE then
+                                doPlayerAddItem(cid, 2152, n)
+								npcHandler:say('Here you are.')
+                                talkState = 0
+                        else
+                                npcHandler:say('You don\'t have money.')
+                                talkState = 0
+                        end
+                else
+                        npcHandler:say('Ok. We cancel.')
+                        talkState = 0
+                end
+
+---------------------CHANGE PLATINUM-------------------------------------------------------------------------
+				elseif talkState == 10 then
+                        if msgcontains(msg, 'gold') then
+                                npcHandler:say('How many platinum coins do you want to change to gold?')
+                                talkState = 11
+                        elseif msgcontains(msg, 'crystal') then
+                                npcHandler:say('How many crystal coins do you want to get?')
+                                talkState = 13                                
+                        end
+                
+		elseif talkState == 11 and getNumber(msg) == 0 or getNumber(msg) >= 999 then
+		npcHandler:say('How many platinum coins do you want to change to gold?')	
+                elseif talkState == 11 then
+                        n = getNumber(msg)
+                        b = n * 100
+                        npcHandler:say('So I should change '..n..' of your platinum coins to '..b..' gold coins for you?')
+                        talkState = 12
+              
+        elseif talkState == 12 then
+                if msgcontains(msg, 'yes') then
+                        if doPlayerRemoveItem(cid, 2152, n) == TRUE then
+                                doPlayerAddItem(cid, 2148, b)
+								npcHandler:say('Here you are.')
+                                talkState = 0
+                        else
+                                npcHandler:say('You don\'t have money.')
+                                talkState = 0
+                        end
+                else
+                        npcHandler:say('Ok. We cancel.')
+                        talkState = 0
+                end
+	elseif talkState == 13 and getNumber(msg) == 0 or getNumber(msg) >= 999 then
+		npcHandler:say('How many crystal coins do you want to get?')	
+        elseif talkState == 13 then
+                n = getNumber(msg)
+                b = n * 100
+                npcHandler:say('So I should change '..b..' of your platinum coins to '..n..' crystal coins for you?')
+                talkState = 14
+                
+        elseif talkState == 14 then
+                if msgcontains(msg, 'yes') then
+                        if doPlayerRemoveItem(cid, 2152, b) == TRUE then
+                                doPlayerAddItem(cid, 2160, n)
+								npcHandler:say('Here you are.')
+                                talkState = 0
+                        else
+                                npcHandler:say('You don\'t have money.')
+                                talkState = 0
+                        end
+                else
+                        npcHandler:say('Ok. We cancel.')
+                        talkState = 0
+                end
+                
+---------------------CHANGE CRYSTAL-------------------------------------------------------------------------------              
+               elseif talkState == 15 and getNumber(msg) == 0 or getNumber(msg) >= 999 then
+				npcHandler:say('How many crystal coins do you want to change to platinum?')  
+				elseif talkState == 15 then
+                n = getNumber(msg)
+                b = n * 100
+                npcHandler:say('So I should change '..n..' of your crystal coins to '..b..' platinum coins for you?')
+                talkState = 16
+                
+        elseif talkState == 16 then
+                if msgcontains(msg, 'yes') then
+                        if doPlayerRemoveItem(cid, 2160, n) == TRUE then
+                                doPlayerAddItem(cid, 2152, b)
+								npcHandler:say('Here you are.')
+                                talkState = 0
+                        else
+                                npcHandler:say('You don\'t have money.')
+                                talkState = 0
+                        end
+                else
+                        npcHandler:say('Ok. We cancel.')
+                        talkState = 0
+                end        
+        end
+		
+---------------------BALANCE-------------------------------------------------------------------------
+if  msgcontains(msg, 'balance') then
+	npcHandler:say("Your account balance is ".. getPlayerBalance(cid) .." gold.", 1)
+	talk_state = 0 
+end
+
+---------------------DEPOSIT------------------------------------------------------------------------
+if  msgcontains(msg, 'deposit all') then
+	PLAYERCURRENTMONEY = ((getPlayerItemCount(cid, ITEM_CRYSTAL_COIN) * 10000) + (getPlayerItemCount(cid, ITEM_PLATINUM_COIN) * 100) + getPlayerItemCount(cid, ITEM_GOLD_COIN))
+    npcHandler:say('Would you like to deposit '.. PLAYERCURRENTMONEY ..' gold?', 1)
+    talk_state = 205
+	
+elseif  msgcontains(msg, 'deposit') then
+    npcHandler:say('How much would you like to deposit?', 1)
+    talk_state = 201 
+		
+elseif talk_state == 201 then
+	DEPOSITAMOUNT = getCount(msg)
+if DEPOSITAMOUNT >= 1 then
+	npcHandler:say("Would you like to deposit ".. DEPOSITAMOUNT .." gold?", 1)
+	talk_state = 203
+else
+	npcHandler:say("I'm sorry, but you must give me an valid amount of how much you would like to deposit.", 1)
+end
+
+elseif talk_state == 203 and msgcontains(msg,'no') then
+	npcHandler:say('Ok then.')
+	talk_state = 0
+
+elseif talk_state == 203 and msgcontains(msg, 'yes') then
+if DepositMoney(cid, DEPOSITAMOUNT) == TRUE then
+	npcHandler:say("You have added ".. DEPOSITAMOUNT .." gold to your bank account.", 1)
+	talk_state = 0
+else
+	npcHandler:say("You don't have that money amount!", 1)
+	talk_state = 0
+end
+
+elseif talk_state == 205 and msgcontains(msg, 'yes') then
+if DepositMoney(cid, PLAYERCURRENTMONEY) == TRUE then
+	npcHandler:say("You have added ".. PLAYERCURRENTMONEY .." gold to your bank account.", 1)
+	talk_state = 0
+else
+	npcHandler:say("Hey! where did you put the money?", 1)
+	talk_state = 0
+end
+end
+
+---------------------WITHDRAW-------------------------------------------------------------------------
+if msgcontains(msg, 'withdraw') then
+    npcHandler:say('How much would you like to withdraw?', 1)
+    talk_state = 301
+	
+elseif talk_state == 301 then
+	WITHDRAWMONEY = getCount(msg)
+if WITHDRAWMONEY >= 1 then
+	npcHandler:say("Would you like to withdraw ".. WITHDRAWMONEY .." gold?", 1)
+	talk_state = 303
+else
+	npcHandler:say("I'm sorry, but you must give me a valid amount of how much you would like to withdraw.", 1)
+	talk_state = 0
+end
+		
+elseif talk_state == 303 and msgcontains(msg, 'yes') then
+if WithdrawMoney(cid, WITHDRAWMONEY) == TRUE then
+	npcHandler:say("Here you are.", 1)
+	talk_state = 0
+else
+	npcHandler:say("You don't have that money amount on your bank account!", 1)
+	talk_state = 0
+end
+
+elseif talk_state == 303 and msgcontains(msg, 'no') then
+	npcHandler:say('Ok then.')
+	talk_state = 0
+end
+
+---------------------TRANSFER-------------------------------------------------------------------------		
+if msgcontains(msg, 'transfer') then
+    npcHandler:say('How much would you like to transfer?', 1)
+    talk_state = 501
+
+elseif talk_state == 501 and getCount(msg) >= 1 then
+	TRANSFERAMOUNT = getCount(msg)
+    npcHandler:say('Who would you like to transfer the money to?', 1)
+    talk_state = 504 
+
+elseif talk_state == 504 then
+	TRANSFERTO = msg
+	newmsg = string.upper(string.sub(msg, 0, 1)) .. string.sub(msg, 2)
+	UPPERCASETRANSFERTO = newmsg
+	npcHandler:say("Would you like to transfer ".. TRANSFERAMOUNT .." gold to ".. UPPERCASETRANSFERTO .."?", 1)
+	talk_state = 505
+	
+elseif talk_state == 505 and msgcontains(msg, 'no') then
+	npcHandler:say('Ok then.')
+	talk_state = 0	
+
+elseif talk_state == 505 and msgcontains(msg, 'yes') then
+if getPlayerGUIDByName(TRANSFERTO) > 0 then
+	checkcharexist = mysqlQuery("SELECT `id`, `bank_balance`, `vocation` FROM `players` WHERE `players`.`name` = '" .. TRANSFERTO .. "'", "id, bank_balance, vocation")
+	GETVALIDCHAR = getCount(checkcharexist.id)
+if GETVALIDCHAR >= 1 then
+	if GETVALIDCHAR == getPlayerGUIDByName(getPlayerName(cid)) then
+		npcHandler:say("You can not send money to yourself.", 1)
+		talk_state = 0
+	else
+		notinrook = getCount(checkcharexist.vocation)
+		if notinrook == 0 or notinrook == 9 then
+			npcHandler:say("You can not send money to Rookgaard!", 1)
+			talk_state = 0
+		else
+			if isPlayerFromRook(cid) == TRUE then
+				npcHandler:say("I'm sorry, but you're not allowed to transfer money yet.", 1)
+				talk_state = 0
+			else
+				BALANCEOFTRANSFERTO = getCount(checkcharexist.bank_balance)
+				resultdb = mysqlQuery("SELECT `bank_balance` FROM `players` WHERE `players`.`name` = '" .. getPlayerName(cid) .. "'", "bank_balance")
+				getbalance = getCount(resultdb.bank_balance)
+				if getbalance >= TRANSFERAMOUNT then
+					mysqlQuery('UPDATE `players` SET `players`.`bank_balance`="'.. BALANCEOFTRANSFERTO+TRANSFERAMOUNT ..'" WHERE `players`.`name` = "' .. TRANSFERTO .. '"', 'UPDATE')
+					mysqlQuery('UPDATE `players` SET `players`.`bank_balance`="'.. getbalance-TRANSFERAMOUNT ..'" WHERE `players`.`name` = "' .. getPlayerName(cid) .. '"', 'UPDATE')
+					npcHandler:say("You have transfered ".. TRANSFERAMOUNT .." gold to ".. UPPERCASETRANSFERTO ..".", 1)
+					talk_state = 0
+				else
+					npcHandler:say("You don't have that much money!", 1)
+					talk_state = 0
+				end	
+			end
+		end
+	end
+else
+	npcHandler:say("This player does not exist.", 1)
+	talk_state = 0
+end
+else
+	npcHandler:say("This player does not exist.", 1)
+	talk_state = 0
+end
+end			
+
+return TRUE        
+end
+
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

@@ -1,0 +1,15 @@
+<npc name="Thomas" script="Thomas.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="116" body="11" legs="101" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Feel welcome, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Don't be that impatient, |PLAYERNAME|. Wait a moment!"/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_nothaveitem" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

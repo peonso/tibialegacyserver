@@ -1,0 +1,15 @@
+<npc name="Shiriel" script="Shiriel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="144" head="2" body="103" legs="0" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Ashari |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Wait, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Asha Thrazi."/>
+<parameter key="message_farewell" value="Asha Thrazi."/>
+<parameter key="message_idletimeout" value="Asha Thrazi."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

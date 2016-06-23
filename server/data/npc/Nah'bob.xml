@@ -1,0 +1,16 @@
+<npc name="Nah'bob" script="Nah'bob.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="80" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Sighs.. Another customer! I've only just sat down! What is it, |PLAYERNAME|?"/>
+<parameter key="message_placedinqueue" value="Whoa, |PLAYERNAME|! Easy! Old Bob is busy right now!"/>
+<parameter key="message_walkaway" value="Bye then."/>
+<parameter key="message_farewell" value="Bye now. Visit old Bob again one day!"/>
+<parameter key="message_idletimeout" value="Bye now. Visit old Bob again one day!"/>
+
+<parameter key="message_decline" value="Well, obviously not."/>
+<parameter key="message_nothaveitem" value="You do not have that many!"/>
+<parameter key="message_needmoremoney" value="Well, come back if you have enough copper."/>
+	</parameters>
+</npc>

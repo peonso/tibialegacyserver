@@ -1,5 +1,10 @@
+-- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
+-- Country:		Brazil
+-- From: 		Tibia World RPG OldSchool
+-- Email: 		god.rodrigo@hotmail.com
+-- Compiler:	Tibia World Script Maker (Action)
+
 function onUse(cid, item, frompos, item2, topos)
-	local tibiaTime = getTibiaTime()
-	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The time is " .. tibiaTime.hours .. ":" .. tibiaTime.minutes .. ".")
-	return true
-end
+	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "The time is " .. getTibiaTime() .. ".")
+	return TRUE
+end 

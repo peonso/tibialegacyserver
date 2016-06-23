@@ -1,0 +1,11 @@
+<npc name="Loui" script="Loui.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="57" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="message_greet" value="BEWARE! Beware of that hole!"/>
+<parameter key="message_placedinqueue" value="Please wait, you may listen to the frightening story I am telling!"/>
+<parameter key="message_walkaway" value="STAY AWAY FROM THAT HOLE!"/>
+<parameter key="message_farewell" value="May the gods protect you! And stay away from that hole!"/>
+<parameter key="message_idletimeout" value="May the gods protect you! And stay away from that hole!"/>
+	</parameters>
+</npc>

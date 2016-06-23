@@ -1,0 +1,11 @@
+<npc name="Uzon" script="Uzon.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="95" body="5" legs="18" feet="76"/>
+	<parameters>
+<parameter key="message_greet" value="Daraman's blessings, traveller |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Hastiness is not the way of the people of Darama, |PLAYERNAME|. Give me the time I need here."/>
+<parameter key="message_walkaway" value="Daraman's blessings."/>
+<parameter key="message_farewell" value="Daraman's blessings."/>
+<parameter key="message_idletimeout" value="Daraman's blessings."/>
+	</parameters>
+</npc>

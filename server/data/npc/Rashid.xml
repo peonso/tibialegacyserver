@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rashid" script="Rashid.lua" walkinterval="25" access="3" lookdir="2">
+<look type="128" head="114" body="101" legs="122" feet="115"/>
+	<mana now="800" max="800"/>
+	<health now="200" max="200"/>
+	
+<parameters>
+	<parameter key="message_greet" value="Hello |PLAYERNAME|, I buy many items, you are abble to choise between armors, weapons, helmets, shields, boots, amulets and dolls, What do you offer me?" />
+	<parameter key="message_farewell" value="Good bye |PLAYERNAME|!" />
+	
+	<parameter key="module_keywords" value="1" />
+	<parameter key="keywords" value="weapons;armors;helmets;shields;boots list;amulets;dolls" />
+	
+	<parameter key="keyword_reply1" value="I buy these weapons, daramanian mace, daramanian waraxe, guardian halberd, heavy machete, silver dagger and war axe." />
+	<parameter key="keyword_reply2" value="I buy these armors, dragon scale mail, dwarven armor, golden armor and leopard armor." />
+	<parameter key="keyword_reply3" value="I buy these helmets, beholder helmet and devil helmet." />
+	<parameter key="keyword_reply4" value="i buy these shields, bone shield, dark shield, demon shield, medusa shield and scarab shield." />
+	<parameter key="keyword_reply5" value="I buy these boots, crocodile boots, traper boots and steel boots." />
+	<parameter key="keyword_reply6" value="I buy these amulets, ancient amulet, crystal necklace, crystal ring, demonbone amulet, emerald amulet, golden ring, platinum amulet, ring of the sky, ruby necklace, scarab amulet and silver brooch." />
+	<parameter key="keyword_reply7" value="I buy these dolls, doll and voodoo doll." />  
+    </parameters>
+</npc>

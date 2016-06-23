@@ -1,0 +1,12 @@
+<npc name="Clark" script="Clark.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="19" body="79" legs="98" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello."/>
+<parameter key="message_placedinqueue" value="Wait."/>
+<parameter key="message_walkaway" value="Goodbye."/>
+<parameter key="message_farewell" value="Goodbye."/>
+<parameter key="message_idletimeout" value="Goodbye."/>
+	</parameters>
+</npc>

@@ -1,0 +1,11 @@
+<npc name="Padreia" script="Padreia.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="0" body="87" legs="85" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Please wait, %N."/>
+<parameter key="message_walkaway" value="Farewell, |PLAYERNAME|. May Crunor be with you, my child."/>
+<parameter key="message_farewell" value="Farewell, |PLAYERNAME|."/>
+<parameter key="message_idletimeout" value="Farewell, |PLAYERNAME|."/>
+	</parameters>
+</npc>

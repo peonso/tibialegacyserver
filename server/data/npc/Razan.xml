@@ -1,0 +1,12 @@
+<npc name="Razan" script="Razan.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="95" body="19" legs="10" feet="58"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Greetings |PLAYERNAME|. What leads you to me?"/>
+<parameter key="message_placedinqueue" value="Be patient, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Daraman's blessings."/>
+<parameter key="message_farewell" value="Daraman's blessings."/>
+<parameter key="message_idletimeout" value="Daraman's blessings."/>
+	</parameters>
+</npc>

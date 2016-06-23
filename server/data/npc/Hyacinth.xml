@@ -1,0 +1,9 @@
+<npc name="Hyacinth" script="Hyacinth.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="11" body="123" legs="123" feet="94"/>
+	<parameters>
+<parameter key="message_greet" value="Greetings, traveller |PLAYERNAME|." />
+<parameter key="message_farewell" value="May Crunor bless you." />
+<parameter key="message_needmoremoney" value="Come back, when you have enough money." />
+	</parameters>
+</npc>

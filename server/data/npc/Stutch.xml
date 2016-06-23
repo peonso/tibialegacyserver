@@ -1,0 +1,6 @@
+<npc name="Stutch" script="Stutch.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="131" head="79" body="79" legs="79" feet="79"/>
+	<parameters>
+	</parameters>
+</npc>

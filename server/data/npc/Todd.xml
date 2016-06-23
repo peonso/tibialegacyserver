@@ -1,0 +1,12 @@
+<npc name="Todd" script="Todd.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="115" body="0" legs="67" feet="114"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Uhm oh hello... not so loud please... my head..."/>
+<parameter key="message_placedinqueue" value="Please wait... in silence if possible (uuuhh)."/>
+<parameter key="message_walkaway" value="Silence at last."/>
+<parameter key="message_farewell" value="Yes, goodbye, just leave me alone."/>
+<parameter key="message_idletimeout" value="Yes, goodbye, just leave me alone."/>
+	</parameters>
+</npc>

@@ -1,0 +1,12 @@
+<npc name="Kazzan" script="Kazzan.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="95" body="13" legs="15" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Feel welcome in the lands of the children of the enlightened Daraman, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="I will test your patience |PLAYERNAME|, since I am already talking!"/>
+<parameter key="message_walkaway" value="May your soul flourish"/>
+<parameter key="message_farewell" value="May your soul flourish."/>
+<parameter key="message_idletimeout" value="May your soul flourish."/>
+	</parameters>
+</npc>

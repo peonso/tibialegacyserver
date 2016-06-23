@@ -1,0 +1,12 @@
+<npc name="Ferks" script="Ferks.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="128" head="78" body="52" legs="118" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="A good day to you."/>
+<parameter key="message_placedinqueue" value="Wait, please."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

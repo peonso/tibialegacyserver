@@ -1,0 +1,4 @@
+<npc name="Demon Skeleton" script="Demon Skeleton.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="37" head="0" body="0" legs="0" feet="0"/>
+</npc>

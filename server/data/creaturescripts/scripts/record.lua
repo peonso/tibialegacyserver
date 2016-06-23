@@ -16,6 +16,7 @@ function onLogin(cid)
 	if current > oldRecord then
 		addEvent(doBroadcastMessage, 150, "New record: " .. current .. " players are logged in.", MESSAGE_STATUS_DEFAULT)
 		setGlobalStorageValue(PlayersRecordStorage, current)
+		db.executeQuery("INSERT INTO `server_record` (`record`, `timestamp`) VALUES (" .. current .. ", " .. os.time() .. ");")
 	end
 	
 	return true

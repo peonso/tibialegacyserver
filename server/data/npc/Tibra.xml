@@ -1,0 +1,12 @@
+<npc name="Tibra" script="Tibra.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="60" body="92" legs="90" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome in the name of the gods, pilgrim |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="|PLAYERNAME|, please be patient and wait a moment, my child."/>
+<parameter key="message_walkaway" value="May the gods guard you!"/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. May the gods be with you to guard and guide you, my child!"/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|. May the gods be with you to guard and guide you, my child!"/>
+	</parameters>
+</npc>

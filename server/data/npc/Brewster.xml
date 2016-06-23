@@ -1,0 +1,10 @@
+<npc name="Brewster" script="Brewster.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="133" head="57" body="115" legs="115" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Uh? Gimme a break. As you can see there's another one first."/>
+<parameter key="message_walkaway" value="ye ... and now I'll have a quick drink."/>
+<parameter key="message_idletimeout" value="Bye ... and now I'll have a quick drink."/>
+	</parameters>
+</npc>

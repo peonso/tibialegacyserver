@@ -1,0 +1,12 @@
+<npc name="Ustan" script="Ustan.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="132" head="0" body="24" legs="13" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Crunor's blessing, traveller."/>
+<parameter key="message_placedinqueue" value="Just some patience please."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye, traveller."/>
+<parameter key="message_idletimeout" value="Good bye, traveller."/>
+	</parameters>
+</npc>

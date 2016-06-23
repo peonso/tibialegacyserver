@@ -1,0 +1,16 @@
+<npc name="Gail" script="Gail.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+	<look type="140" head="77" body="64" legs="52" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Please feel welcome."/>
+<parameter key="message_placedinqueue" value="Please wait a moment. I'll be with you within a heartbeat."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have that many."/>
+<parameter key="message_needmoremoney" value="Come back when you have enough money."/>
+	</parameters>
+</npc>

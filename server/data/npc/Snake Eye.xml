@@ -1,0 +1,15 @@
+<npc name="Snake Eye" script="Snake Eye.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="73" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hi |PLAYERNAME|. Come in and have a drink."/>
+<parameter key="message_placedinqueue" value="Hang on a second, |PLAYERNAME|. I'm talking!"/>
+<parameter key="message_walkaway" value="Bye"/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+
+<parameter key="message_decline" value="OK, then not."/>
+<parameter key="message_needmoremoney" value="What? You don't have the money. You crook. Get lost."/>
+	</parameters>
+</npc>

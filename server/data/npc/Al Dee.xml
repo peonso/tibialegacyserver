@@ -1,0 +1,15 @@
+<npc name="Al Dee" script="Al Dee.lua" access="5" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="97" body="77" legs="87" feet="115"/>
+	<parameters>
+<parameter key="message_greet" value="Hello, hello, |PLAYERNAME|! Please come in, look, and buy!"/>
+<parameter key="message_placedinqueue" value="I'll be with you in a moment, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Bye, bye."/>
+<parameter key="message_farewell" value="Bye, bye."/>
+<parameter key="message_idletimeout" value="Bye, bye."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have this."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

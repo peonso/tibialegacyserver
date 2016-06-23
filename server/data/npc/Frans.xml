@@ -1,0 +1,15 @@
+<npc name="Frans" script="Frans.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look typeex="2229"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Beeee Greeeeted |PLAYERNAME|. What is your neeeed?"/>
+<parameter key="message_placedinqueue" value="|PLAYERNAME|, I am veeeerry busy. Unfoooortunately you will have to waiiiit."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+
+<parameter key="message_decline" value="Better not annoy a FRANS if you don't want to deeeeal with him!"/>
+<parameter key="message_needmoremoney" value="Sorry, too many buttonssss and not enough copper in your pursssse."/>
+	</parameters>
+</npc>

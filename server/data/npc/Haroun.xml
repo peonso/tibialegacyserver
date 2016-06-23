@@ -1,0 +1,16 @@
+<npc name="Haroun" script="Haroun.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="80" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Be greeted, human |PLAYERNAME|. How can a humble djinn be of service?"/>
+<parameter key="message_placedinqueue" value="Please wait, human |PLAYERNAME|. I'll be with you in a minute."/>
+<parameter key="message_walkaway" value="Farewell, human."/>
+<parameter key="message_farewell" value="Farewell! May the serene light of the enlightened one rest shine on your travels."/>
+<parameter key="message_idletimeout" value="Farewell! May the serene light of the enlightened one rest shine on your travels."/>
+
+<parameter key="message_decline" value="I understand. Perhaps another time then."/>
+<parameter key="message_nothaveitem" value="You do not have that many."/>
+<parameter key="message_needmoremoney" value="I hate to disappoint you, but it seems you do not have enough copper."/>
+	</parameters>
+</npc>

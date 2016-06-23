@@ -1,0 +1,12 @@
+<npc name="Thanita" script="Thanita.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="78" body="52" legs="64" feet="52"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="How could you sneak up on me like this? I thought you were one of THEM! Well, since you are not, what brings you to this wilderness?"/>
+<parameter key="message_placedinqueue" value="Please wait."/>
+<parameter key="message_walkaway" value="Take good care of yourself traveler!"/>
+<parameter key="message_farewell" value="Take good care of yourself traveler. Would be a shame to lose such a courageous wanderer to those green monsters."/>
+<parameter key="message_idletimeout" value="Take good care of yourself traveler. Would be a shame to lose such a courageous wanderer to those green monsters."/>
+	</parameters>
+</npc>

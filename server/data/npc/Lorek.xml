@@ -1,0 +1,11 @@
+<npc name="Lorek" script="Lorek.lua" floorchange="0" walkinterval="0" speed="0">
+	<health now="100" max="100"/>
+<look type="132" head="19" body="10" legs="38" feet="95"/>
+	<parameters>
+<parameter key="message_greet" value="Greetings, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Just wait."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+	</parameters>
+</npc>

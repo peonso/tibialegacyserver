@@ -1,0 +1,12 @@
+<npc name="Nydala" script="Nydala.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="76" body="86" legs="86" feet="96"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to Carlin Furniture Store, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="One moment please |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

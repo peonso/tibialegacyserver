@@ -1,0 +1,12 @@
+<npc name="A Wrinkled Beholder" script="A Wrinkled Beholder.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="17" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="What is this? An optically challenged entity called |PLAYERNAME|. How fascinating!"/>
+<parameter key="message_placedinqueue" value="Wait. I will eat you later, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Strange entity. I will record this encounter."/>
+<parameter key="message_farewell" value="Wait right there. I will eat you after writing down what I found out."/>
+<parameter key="message_idletimeout" value="Wait right there. I will eat you after writing down what I found out."/>
+	</parameters>
+</npc>

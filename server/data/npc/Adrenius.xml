@@ -1,0 +1,13 @@
+<npc name="Adrenius" script="Adrenius.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="9" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="120"/>
+<parameter key="message_greet" value="Hello, |PLAYERNAME|! What can I do for you?"/>
+<parameter key="message_placedinqueue" value="Can't you see, I am talking to someone else!"/>
+<parameter key="message_walkaway" value="Leave me, I am used to it anyways..."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+<parameter key="message_alreadyfocused" value="??"/>
+	</parameters>
+</npc>

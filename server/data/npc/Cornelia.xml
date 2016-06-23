@@ -1,0 +1,16 @@
+<npc name="Cornelia" script="Cornelia.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="95" body="57" legs="102" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to the finest armorshop in the land, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye. Come back soon."/>
+<parameter key="message_farewell" value="Good bye. Come back soon."/>
+<parameter key="message_idletimeout" value="Good bye. Come back soon."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so many."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

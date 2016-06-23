@@ -1,0 +1,12 @@
+<npc name="Rose" script="Rose.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="79" body="77" legs="112" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to Crunor's Finest Warehouse, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

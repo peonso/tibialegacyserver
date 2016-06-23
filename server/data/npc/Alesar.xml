@@ -1,0 +1,11 @@
+<npc name="Alesar" script="Alesar.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="80" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="I am already talking to one of you creeps. So shut up until it is your turn, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Humans..."/>
+<parameter key="message_farewell" value="Finally."/>
+<parameter key="message_idletimeout" value="Humans..."/>
+	</parameters>
+</npc>

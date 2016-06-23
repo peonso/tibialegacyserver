@@ -1,0 +1,10 @@
+<npc name="Svenson" script="Svenson.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="77" body="113" legs="68" feet="67"/>
+	<parameters>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye. You are welcome."/>
+<parameter key="message_farewell" value="Good bye. You are welcome."/>
+<parameter key="message_idletimeout" value="Good bye. You are welcome."/>
+	</parameters>
+</npc>

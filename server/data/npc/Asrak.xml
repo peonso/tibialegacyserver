@@ -1,0 +1,12 @@
+<npc name="Asrak" script="Asrak.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="29" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="I welcome you, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Please wait in patience, young |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="May your path be as straight as an arrow."/>
+<parameter key="message_farewell" value="May your path be as straight as an arrow."/>
+<parameter key="message_idletimeout" value="May your path be as straight as an arrow."/>
+	</parameters>
+</npc>

@@ -1,0 +1,15 @@
+<npc name="Jezzara" script="Jezzara.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="3" body="43" legs="91" feet="97"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Be mourned pilgrim in flesh."/>
+<parameter key="message_placedinqueue" value="Mourned |PLAYERNAME|, know that I am busy."/>
+<parameter key="message_walkaway" value="May enlightenment be your path."/>
+<parameter key="message_farewell" value="May enlightenment be your path."/>
+<parameter key="message_idletimeout" value="May enlightenment be your path."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

@@ -1,0 +1,13 @@
+<npc name="Riddler" script="Riddler.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="48" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="600"/>
+<parameter key="message_greet" value="|PLAYERNAME|! HEHEHEHE! Another fool! Excellent!"/>
+<parameter key="message_placedinqueue" value="Wait |PLAYERNAME|, you'll die next!"/>
+<parameter key="message_walkaway" value="COWARD! CHICKEN! HEHEHEHE!"/>
+<parameter key="message_farewell" value="HEHEHE! I knew you don't have the stomach."/>
+<parameter key="message_idletimeout" value="HEHEHE! I knew you don't have the stomach."/>
+<parameter key="message_alreadyfocused" value="HEHEHEHE!"/>
+	</parameters>
+</npc>

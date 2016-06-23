@@ -1,0 +1,10 @@
+<npc name="Bo'ques" script="Bo'ques.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="80" head="0" body="0" legs="0" feet="0" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Hey! A human! What are you doing in my kitchen, |PLAYERNAME|?" />
+		<parameter key="message_farewell" value="Goodbye. I am sure you will come back for more. They all do." />
+		<parameter key="message_walkaway" value="Now, where was I?" />
+		<parameter key="message_placedinqueue" value="Whoa. Do I look as if I had two heads? Only one at a time, |PLAYERNAME|!" />
+	</parameters>
+</npc>

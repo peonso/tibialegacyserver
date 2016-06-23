@@ -1,0 +1,12 @@
+<npc name="Marlene" script="Marlene.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="96" body="111" legs="16" feet="96"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Ahhh, welcome |PLAYERNAME|! Say, have you already heard the latest news about the seamonster, Aneus, or the rumours in this area?"/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye and come again for some other rumours! *waves with her hand at you*"/>
+<parameter key="message_farewell" value="Good bye and come again for some other rumours! *waves with her hand at you*"/>
+<parameter key="message_idletimeout" value="Good bye and come again for some other rumours! *waves with her hand at you*"/>
+	</parameters>
+</npc>

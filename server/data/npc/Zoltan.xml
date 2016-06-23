@@ -1,0 +1,12 @@
+<npc name="Zoltan" script="Zoltan.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="95" body="94" legs="95" feet="57"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|, student of the arcane arts."/>
+<parameter key="message_placedinqueue" value="Wait |PLAYERNAME|. Your time will come."/>
+<parameter key="message_walkaway" value="Use your knowledge wisely."/>
+<parameter key="message_farewell" value="Use your knowledge wisely."/>
+<parameter key="message_idletimeout" value="Use your knowledge wisely."/>
+	</parameters>
+</npc>

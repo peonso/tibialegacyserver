@@ -1,0 +1,74 @@
+<npc name="Ukea" script="Ukea.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="144" head="78" body="58" legs="64" feet="58"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Ashari |PLAYERNAME|. Welcome to Ab'Dendriel Furniture Store."/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Asha Thrazi."/>
+<parameter key="message_idletimeout" value="Asha Thrazi."/>
+	</parameters>
+	
+<item type="selling" name="wooden drawer" id="Cfwoodendrawer" price="20"/>
+<item type="selling" name="dresser" id="Cfdresser" price="25"/>
+<item type="selling" name="locker" id="Cflocker" price="30"/>
+<item type="selling" name="large trunk" id="Cflargetrunk" price="10"/>
+<item type="selling" name="box" id="1738" price="10"/>
+<item type="selling" name="chest" id="1740" price="10"/>
+<item type="selling" name="crate" id="1739" price="10"/>
+<item type="selling" name="trough" id="1775" price="7"/>
+<item type="selling" name="barrel" id="Cfbarrel" price="12"/>
+<item type="selling" name="green tapestry" id="Cfgreentapestry" price="25"/>
+<item type="selling" name="yellow tapestry" id="Cfyellowtapestry" price="25"/>
+<item type="selling" name="orange tapestry" id="Cforangetapestry" price="25"/>
+<item type="selling" name="red tapestry" id="Cfredtapestry" price="25"/>
+<item type="selling" name="blue tapestry" id="Cfbluetapestry" price="25"/>
+<item type="selling" name="white tapestry" id="Cfwhitetapestry" price="25"/>
+<item type="selling" name="water pipe" id="Cfwaterpipe" price="40"/>
+<item type="selling" name="coal basin" id="Cfcoalbasin" price="25"/>
+<item type="selling" name="birdcage" id="Cfbirdcage" price="50"/>
+<item type="selling" name="globe" id="Cfglobe" price="50"/>
+<item type="selling" name="pendulum clock" id="Cfpendulumclock" price="75"/>
+<item type="selling" name="table lamp" id="Cftablelamp" price="35"/>
+<item type="selling" name="cuckoo clock" id="Cfcuckooclock" price="40"/>
+<item type="selling" name="rocking horse" id="3922" price="30"/>
+<item type="selling" name="globe" id="3927" price="50"/>
+<item type="selling" name="harp" id="Cfharp" price="50"/>
+<item type="selling" name="piano" id="Cfpiano" price="200"/>
+<item type="selling" name="vase" id="Cfvase" price="3"/>
+<item type="selling" name="coal basin" id="Cfcoalbasin" price="25"/>
+<item type="selling" name="large amphora" id="Cflargeamphora" price="50"/>
+<item type="selling" name="amphora" id="Cfamphora" price="4"/>
+<item type="selling" name="small purple pillow" id="Cfpurplepillow" price="20"/>
+<item type="selling" name="small green pillow" id="Cfgreenpillow" price="20"/>
+<item type="selling" name="small red pillow" id="Cfredpillow" price="20"/>
+<item type="selling" name="small blue pillow" id="Cfbluepillow" price="20"/>
+<item type="selling" name="small orange pillow" id="Cforangepillow" price="20"/>
+<item type="selling" name="small turqoise pillow" id="Cfturqoisepillow" price="20"/>
+<item type="selling" name="small white pillow" id="Cfwhitepillow" price="20"/>
+<item type="selling" name="heart pillow" id="Cfheartpillow" price="30"/>
+<item type="selling" name="round blue pillow" id="Cfblueroundpillow" price="25"/>
+<item type="selling" name="round red pillow" id="Cfredroundpillow" price="25"/>
+<item type="selling" name="round purple pillow" id="Cfpurpleroundpillow" price="25"/>
+<item type="selling" name="round turqoise pillow" id="Cfturqoiseroundpillow" price="25"/>
+<item type="selling" name="square blue pillow" id="Cfbluesquarepillow" price="30"/>
+<item type="selling" name="square red pillow" id="Cfredsquarepillow" price="30"/>
+<item type="selling" name="square green pillow" id="Cfgreensquarepillow" price="30"/>
+<item type="selling" name="square yellow pillow" id="Cfyellowsquarepillow" price="30"/>
+<item type="selling" name="flower bowl" id="Cfflowerbowl" price="6"/>
+<item type="selling" name="honey flower" id="Cfhoneyflower" price="5"/>
+<item type="selling" name="potted flower" id="Cfpottedflower" price="5"/>
+<item type="selling" name="indoor plant" id="Cfindoorplant" price="8"/>
+<item type="selling" name="wooden chair" id="Cfwoodenchair" price="15"/>
+<item type="selling" name="sofa chair" id="Cfsofachair" price="55"/>
+<item type="selling" name="red cushioned chair" id="Cfredcushionedchair" price="40"/>
+<item type="selling" name="green cushioned chair" id="Cfgreencushionedchair" price="40"/>
+<item type="selling" name="big table" id="Cfbigtable" price="30"/>
+<item type="selling" name="square table" id="Cfsquaretable" price="25"/>
+<item type="selling" name="small table" id="Cfsmalltable" price="20"/>
+<item type="selling" name="small round table" id="Cfsmallroundtable" price="25"/>
+<item type="selling" name="knight statue" id="3916" price="50"/>
+<item type="selling" name="goblin statue" id="3930" price="50"/>
+<item type="selling" name="minotaur statue" id="3925" price="50"/>
+</npc>

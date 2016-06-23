@@ -1,0 +1,12 @@
+<npc name="Rokyn" script="Rokyn.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="160" head="58" body="87" legs="57" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hiho, Hiho, |PLAYERNAME|! What can I do for you?"/>
+<parameter key="message_placedinqueue" value="Hey, |PLAYERNAME| gimme a minute, ok?"/>
+<parameter key="message_walkaway" value="Yeah, bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

@@ -1,0 +1,11 @@
+<npc name="Phillip" script="Phillip.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="116" body="54" legs="68" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Patience, |PLAYERNAME|. Listen to my words and learn."/>
+<parameter key="message_walkaway" value="Did the bell ring?"/>
+<parameter key="message_farewell" value="Go and be careful. Remember what you have learned!"/>
+<parameter key="message_idletimeout" value="Go and be careful. Remember what you have learned!"/>
+	</parameters>
+</npc>

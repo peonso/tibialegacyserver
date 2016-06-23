@@ -1,0 +1,15 @@
+<npc name="Omur" script="Omur.lua" floorchange="0" walkinterval="0" speed="0" lookdir="2">
+	<health now="100" max="100"/>
+	<look type="128" head="95" body="0" legs="6" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome at the humble booth of Omur, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Please give me a minute to finish this deal, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="May your soul flourish like dunegrass after a rainfall."/>
+<parameter key="message_farewell" value="May your soul flourish like dunegrass after a rainfall."/>
+<parameter key="message_idletimeout" value="May your soul flourish like dunegrass after a rainfall."/>
+
+<parameter key="message_decline" value="Don't you like my wares?"/>
+<parameter key="message_needmoremoney" value="Oh, I'm sorry, but I can't give you credit."/>
+	</parameters>
+</npc>

@@ -1,0 +1,12 @@
+<npc name="Zebron" script="Zebron.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="95" body="15" legs="109" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Take a minute to count your money, |PLAYERNAME|. I'll be here soon."/>
+<parameter key="message_walkaway" value="Hey, you can't leave. Luck is smiling on you. I can feel it!"/>
+<parameter key="message_farewell" value="Hey, you can't leave. Luck is smiling on you. I can feel it!"/>
+<parameter key="message_idletimeout" value="Hey, you can't leave. Luck is smiling on you. I can feel it!"/>
+<parameter key="message_alreadyfocused" value="I'm talking with you already, dumbie!"/>
+	</parameters>
+</npc>

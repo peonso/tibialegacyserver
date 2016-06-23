@@ -1,0 +1,15 @@
+<npc name="Mirabell" script="Mirabell.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="96" body="12" legs="87" feet="77"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to the Horn of Plenty, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Please give me a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Come back soon, traveller."/>
+<parameter key="message_farewell" value="Come back soon, traveller."/>
+<parameter key="message_idletimeout" value="Come back soon, traveller."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

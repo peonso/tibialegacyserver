@@ -1,0 +1,9 @@
+<npc name="Lily" script="Lily.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="78" body="101" legs="86" feet="115"/>
+	<parameters>
+<parameter key="message_greet" value="Welcome, |PLAYERNAME|." />
+<parameter key="message_farewell" value="Take care." />
+<parameter key="message_needmoremoney" value="Sorry, you don't have enough copper." />
+	</parameters>
+</npc>

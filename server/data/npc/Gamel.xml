@@ -1,0 +1,15 @@
+<npc name="Gamel" script="Gamel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="79" body="132" legs="115" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Pssst! Be silent. Do you wish to buy something?"/>
+<parameter key="message_placedinqueue" value="Not right now."/>
+<parameter key="message_walkaway" value="Bye. Tell others about... my little shop here."/>
+<parameter key="message_farewell" value="Bye. Tell others about... my little shop here."/>
+<parameter key="message_idletimeout" value="Bye. Tell others about... my little shop here."/>
+
+<parameter key="message_decline" value="Maybe we will make the deal another time."/>
+<parameter key="message_needmoremoney" value="Hey, you do not have enough copper."/>
+	</parameters>
+</npc>

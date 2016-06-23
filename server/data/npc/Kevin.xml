@@ -1,0 +1,10 @@
+<npc name="Kevin" script="Kevin.lua" autowalk="25" floorchange="0" access="5">
+	<health now="150" max="150"/>
+	<look type="128" head="76" body="43" legs="38" feet="76" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Greetings |PLAYERNAME|, what brings you here?" />
+		<parameter key="message_farewell" value="Good bye." />
+		<parameter key="message_walkaway" value="How rude!" />
+		<parameter key="message_placedinqueue" value="Please wait a moment." />
+	</parameters>
+</npc>

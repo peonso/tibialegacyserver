@@ -1,0 +1,12 @@
+<npc name="Bunny Bonecrusher" script="Bunny Bonecrusher.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="139" head="96" body="3" legs="79" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Salutations, commoner |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="SILENCE! I am busy!"/>
+<parameter key="message_walkaway" value="LONG LIVE THE QUEEN!"/>
+<parameter key="message_farewell" value="LONG LIVE THE QUEEN!"/>
+<parameter key="message_idletimeout" value="LONG LIVE THE QUEEN!"/>
+	</parameters>
+</npc>

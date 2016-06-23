@@ -1,0 +1,13 @@
+<npc name="Nemal" script="Nemal.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="129" head="57" body="97" legs="45" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Hello. How are you? Maybe you can help me: Do my shoes have the same colour?"/>
+<parameter key="message_placedinqueue" value="Is there someone else? Step closer!"/>
+<parameter key="message_walkaway" value="Where are you? Are you gone?"/>
+<parameter key="message_farewell" value="Farewell!"/>
+<parameter key="message_idletimeout" value="Farewell!"/>
+<parameter key="message_alreadyfocused" value="can't you see me?"/>
+	</parameters>
+</npc>

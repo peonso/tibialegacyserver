@@ -1,0 +1,11 @@
+<npc name="Captain Sinbeard" script="Captain Sinbeard.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="134" head="95" body="10" legs="56" feet="77"/>
+	<parameters>
+<parameter key="message_placedinqueue" value="One moment please |PLAYERNAME|. You're next in line."/>
+<parameter key="message_walkaway" value="Good bye. Recommend us, if you were satisfied with our service."/>
+<parameter key="message_farewell" value="Good bye. Recommend us, if you were satisfied with our service."/>
+<parameter key="message_idletimeout" value="Good bye. Recommend us, if you were satisfied with our service."/>
+
+	</parameters>
+</npc>

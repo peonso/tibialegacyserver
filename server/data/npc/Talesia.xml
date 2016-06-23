@@ -1,0 +1,12 @@
+<npc name="Talesia" script="Talesia.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="114" body="78" legs="77" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Salutation, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Come back later, I am talking."/>
+<parameter key="message_walkaway" value="Fare thee well."/>
+<parameter key="message_farewell" value="Fare thee well."/>
+<parameter key="message_idletimeout" value="Fare thee well."/>
+	</parameters>
+</npc>

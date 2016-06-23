@@ -1,0 +1,12 @@
+<npc name="Suzy" script="Suzy.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="78" body="10" legs="96" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|! What can I do for you?"/>
+<parameter key="message_placedinqueue" value="Sorry |PLAYERNAME|, I am already talking to a customer. Please wait."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

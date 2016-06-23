@@ -1,0 +1,16 @@
+<npc name="Shanar" script="Shanar.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="93" legs="105" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Ashari |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Wait, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Asha Thrazi."/>
+<parameter key="message_farewell" value="Asha Thrazi."/>
+<parameter key="message_idletimeout" value="Asha Thrazi."/>
+
+<parameter key="message_decline" value="As you wish."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have one."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Captain Jack" script="Captain Jack.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="132" head="19" body="70" legs="95" feet="115" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="Ahoy, matey. You are lucky to catch me here. I was preparing to set sail." /> 
+		<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|." />
+		<parameter key="message_farewell" value="Good bye. You are welcome." /> 
+		<parameter key="message_walkaway" value="Good bye. You are welcome." /> 	
+		
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;sail;captain;ship;ferry;wares;traveller;trip;passage;carlin;island;monastery;monk;white raven" />
+		
+        <parameter key="keyword_reply1" value="I'm m ol' Captain Jack." />
+        <parameter key="keyword_reply2" value="I work as a kind of ferryman. I transport wares and travellers for the monks." />
+        <parameter key="keyword_reply3" value="I work as a kind of ferryman. I transport wares and travellers for the monks." />
+        <parameter key="keyword_reply4" value="I work as a kind of ferryman. I transport wares and travellers for the monks." />
+        <parameter key="keyword_reply5" value="All right she's small. But she's a real beauty, don't you think?" />
+        <parameter key="keyword_reply6" value="All right she's small. But she's a real beauty, don't you think?" />
+		<parameter key="keyword_reply7" value="They always need provisions from the cities, and they sell their wine there." />
+		<parameter key="keyword_reply8" value="Sometimes pilgrims come to this place. And now and then a monk leaves the monastery for some time." />
+		<parameter key="keyword_reply9" value="Where do you want to go today?" />
+		<parameter key="keyword_reply10" value="If you have the abbot's permission, I can take you to the home of a local fisherman on the continent Tibia. We can't sail to Carlin though." />
+		<parameter key="keyword_reply11" value="For some obscure political reason the monks never sail to Carlin or Thais directly." />
+		<parameter key="keyword_reply12" value="This is the isle of the kings. All the great Tibian leaders have found their final rest here under the monastery." />
+		<parameter key="keyword_reply13" value="The white raven monastery is a place of wisdom and contemplation, or so the monks say. Sounds like a pretty boring place to me! HAR HAR!" />
+		<parameter key="keyword_reply14" value="The order of the white raven." />
+		<parameter key="keyword_reply15" value="I prefer parrots. And monkeys! And snakes! HAR! HAR!" />
+
+    </parameters>
+</npc>

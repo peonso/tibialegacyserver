@@ -1,0 +1,10 @@
+<npc name="Rata'mari" script="Rata'mari.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="21" head="0" body="0" legs="0" feet="0" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Meep? I mean - hello! Sorry, |PLAYERNAME|... Being a rat has kind of grown on me." />
+		<parameter key="message_farewell" value="Remember - this conversation never took place!" />
+		<parameter key="message_walkaway" value="Meep!" />
+		<parameter key="message_placedinqueue" value="And now there's more of you? Great! More attention is just what I need. Step back and wait, |PLAYERNAME|!" />
+	</parameters>
+</npc>

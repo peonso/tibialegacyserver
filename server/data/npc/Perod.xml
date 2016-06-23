@@ -1,0 +1,15 @@
+<npc name="Perod" script="Perod.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="58" body="68" legs="12" feet="114"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Greetings, dear |PLAYERNAME|. What do you need?"/>
+<parameter key="message_placedinqueue" value="Please wait a moment, |PLAYERNAME|. I am already talking to someone."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back when you have enough money."/>
+	</parameters>
+</npc>

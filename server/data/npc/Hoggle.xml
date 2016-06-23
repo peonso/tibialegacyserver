@@ -1,0 +1,12 @@
+<npc name="Hoggle" script="Hoggle.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="20" body="46" legs="88" feet="94"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to my humble home!"/>
+<parameter key="message_placedinqueue" value="Can't you see I'm talking to someone?"/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+	</parameters>
+</npc>

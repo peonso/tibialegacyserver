@@ -1,0 +1,15 @@
+<npc name="Livielle" script="Livielle.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="114" body="94" legs="132" feet="132"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Don't push me, don't push me. One after another, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Aww, I don't even deserve a farewell?"/>
+<parameter key="message_farewell" value="Bon appetit, and come back soon for your daily dose of vitamins!"/>
+<parameter key="message_idletimeout" value="Bon appetit, and come back soon for your daily dose of vitamins!"/>
+<parameter key="message_alreadyfocused" value="Bon appetit, and come back soon for your daily dose of vitamins!"/>
+
+<parameter key="message_decline" value="You should really prefer my fruits over all this fat meat offered elsewhere. They keep you lithe and lissom."/>
+<parameter key="message_needmoremoney" value="Sorry, but that's not enough money, please count again."/>
+	</parameters>
+</npc>

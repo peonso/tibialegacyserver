@@ -1,0 +1,11 @@
+<npc name="Petros" script="Petros.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="79" body="10" legs="127" feet="127"/>
+	<parameters>
+<parameter key="message_greet" value="Greetings, |PLAYERNAME|. I can take you to Venore, Port Hope or Ankrahmun if you like."/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye!"/>
+<parameter key="message_farewell" value="Good bye!"/>
+<parameter key="message_idletimeout" value="Good bye!"/>
+	</parameters>
+</npc>

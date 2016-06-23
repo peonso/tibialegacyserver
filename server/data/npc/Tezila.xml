@@ -1,0 +1,16 @@
+<npc name="Tezila" script="Tezila.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="160" head="3" body="92" legs="110" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hiho, |PLAYERNAME|. Come in and look. But don't touch the exhibits, jawoll!"/>
+<parameter key="message_placedinqueue" value="Sorry |PLAYERNAME|, I am busy with a customer. Please have some patience."/>
+<parameter key="message_walkaway" value="Good bye."/>
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_idletimeout" value="Good bye."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have that many."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

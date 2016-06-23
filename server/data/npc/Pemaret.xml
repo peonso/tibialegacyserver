@@ -1,0 +1,13 @@
+<npc name="Pemaret" script="Pemaret.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="79" body="10" legs="127" feet="127"/>
+	<parameters>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Good bye. You are welcome."/>
+<parameter key="message_farewell" value="Good bye. You are welcome."/>
+<parameter key="message_idletimeout" value="Good bye. You are welcome."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

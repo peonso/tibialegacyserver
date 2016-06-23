@@ -1,0 +1,12 @@
+<npc name="Ebenizer" script="Ebenizer.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="59" body="95" legs="87" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Yes? What may I do for you, |PLAYERNAME|?"/>
+<parameter key="message_placedinqueue" value="It's not your turn |PLAYERNAME|. Wait please."/>
+<parameter key="message_walkaway" value="Have a nice day."/>
+<parameter key="message_farewell" value="Have a nice day."/>
+<parameter key="message_idletimeout" value="Have a nice day."/>
+	</parameters>
+</npc>

@@ -1,0 +1,15 @@
+<npc name="Maria" script="Maria.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="77" body="79" legs="61" feet="131"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="The Hard Rock Tavern greets you, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="You're served soon, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Visit us again."/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. Tell your friends about us and visit us again."/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|. Tell your friends about us and visit us again."/>
+
+<parameter key="message_decline" value="Hrmpf!"/>
+<parameter key="message_needmoremoney" value="You penniless beggar! Get out of here!"/>
+	</parameters>
+</npc>

@@ -1,0 +1,11 @@
+<npc name="Lea" script="Lea.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="59" body="95" legs="94" feet="113"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Be patient |PLAYERNAME|, please."/>
+<parameter key="message_walkaway" value="Take care on your journeys."/>
+<parameter key="message_farewell" value="Take care on your journeys."/>
+<parameter key="message_idletimeout" value="Take care on your journeys."/>
+	</parameters>
+</npc>

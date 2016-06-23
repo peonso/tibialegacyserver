@@ -1,0 +1,10 @@
+<npc name="Urkalio" script="Urkalio.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="128" head="39" body="40" legs="118" feet="76" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Welcome to the pits of the Hard Rock Tavern, |PLAYERNAME|." />
+		<parameter key="message_farewell" value="Have a good fight, |PLAYERNAME|." />
+		<parameter key="message_walkaway" value="We're some hasty one, aren't we?" />
+		<parameter key="message_placedinqueue" value="Hey, some patience, |PLAYERNAME|. You'll be served soon enough." />
+	</parameters>
+</npc>

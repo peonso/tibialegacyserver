@@ -1,0 +1,14 @@
+<npc name="Norbert" script="Norbert.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="6" body="79" legs="93" feet="14"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Please give me another minute with this customer here, dear %N."/>
+<parameter key="message_walkaway" value="Bye, bye."/>
+<parameter key="message_farewell" value="Bye, bye."/>
+<parameter key="message_idletimeout" value="Bye, bye."/>
+
+<parameter key="message_decline" value="What a pity, perhaps next time."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough money."/>
+	</parameters>
+</npc>

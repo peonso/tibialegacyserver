@@ -1,0 +1,20 @@
+<npc name="Frodo" script="Frodo.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="58" body="68" legs="109" feet="131"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Welcome to Frodo's Hut. You heard about the news?"/>
+<parameter key="message_placedinqueue" value="Just a minute, |PLAYERNAME|. I'll be with you in no time."/>
+<parameter key="message_walkaway" value="Please come back from time to time."/>
+<parameter key="message_farewell" value="Please come back from time to time."/>
+<parameter key="message_idletimeout" value="Please come back from time to time."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+	
+<item type="selling" name="bread" id="Cfbread" price="4"/>
+<item type="selling" name="cheese" id="Cfcheese" price="6"/>
+<item type="selling" name="meat" id="Cfmeat" price="5"/>
+<item type="selling" name="ham" id="Cfham" price="8"/>
+</npc>

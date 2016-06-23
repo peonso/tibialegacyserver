@@ -1,0 +1,11 @@
+<npc name="Vladruc" script="Vladruc.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="68" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Please be seated and wait, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Go safely, and leave something of the happiness you bring!"/>
+<parameter key="message_farewell" value="Go safely, and leave something of the happiness you bring!"/>
+<parameter key="message_idletimeout" value="Go safely, and leave something of the happiness you bring!"/>
+	</parameters>
+</npc>

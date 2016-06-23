@@ -1,0 +1,15 @@
+<npc name="Rachel" script="Rachel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="58" body="84" legs="86" feet="114"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Wait, |PLAYERNAME|! One after the other."/>
+<parameter key="message_walkaway" value="These impatient young brats!"/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|"/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|"/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so many."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

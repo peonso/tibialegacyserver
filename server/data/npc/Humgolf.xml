@@ -1,0 +1,15 @@
+<npc name="Humgolf" script="Humgolf.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="69" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="|PLAYERNAME|, good day .. or night, whatever."/>
+<parameter key="message_placedinqueue" value="Wait |PLAYERNAME|. We talk later if you insist."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye"/>
+<parameter key="message_idletimeout" value="Bye"/>
+
+<parameter key="message_decline" value="Then not."/>
+<parameter key="message_nothaveitem" value="You don't have one."/>
+	</parameters>
+</npc>

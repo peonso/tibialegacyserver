@@ -1,0 +1,11 @@
+<npc name="Aruda" script="Aruda.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="140" head="77" body="83" legs="79" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_placedinqueue" value="Please be nice and wait a minute. I'll be right with you |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="I hope to see you soon."/>
+<parameter key="message_farewell" value="Good bye. I really hope we'll talk again soon."/>
+<parameter key="message_idletimeout" value="Good bye. I really hope we'll talk again soon."/>
+	</parameters>
+</npc>

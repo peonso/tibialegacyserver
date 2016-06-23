@@ -1,0 +1,11 @@
+<npc name="Etzel" script="Etzel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="66" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Patient, young |PLAYERNAME|! Wait for your turn."/>
+<parameter key="message_walkaway" value="Take care out there, young one. (cough)"/>
+<parameter key="message_farewell" value="Take care out there, young one. (cough)"/>
+<parameter key="message_idletimeout" value="Take care out there, young one. (cough)"/>
+	</parameters>
+</npc>

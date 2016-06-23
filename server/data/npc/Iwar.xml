@@ -1,0 +1,12 @@
+<npc name="Iwar" script="Iwar.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="160" head="58" body="108" legs="63" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hiho |PLAYERNAME|! Welcome to Kazordoon Furniture Store."/>
+<parameter key="message_placedinqueue" value="One moment, |PLAYERNAME|, me busy."/>
+<parameter key="message_walkaway" value="Guut bye."/>
+<parameter key="message_farewell" value="Guut bye."/>
+<parameter key="message_idletimeout" value="Guut bye."/>
+	</parameters>
+</npc>

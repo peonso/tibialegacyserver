@@ -1,0 +1,16 @@
+<npc name="Yaman" script="Yaman.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="51" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Well, if it isn't a human. Greetings, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="One at a time, human. Wait until I have time for you, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Farewell, human."/>
+<parameter key="message_farewell" value="Goodbye human."/>
+<parameter key="message_idletimeout" value="Goodbye human."/>
+
+<parameter key="message_decline" value="As you wish."/>
+<parameter key="message_nothaveitem" value="You do not have that many, human!"/>
+<parameter key="message_needmoremoney" value="You do not have enough gold, human!"/>
+	</parameters>
+</npc>

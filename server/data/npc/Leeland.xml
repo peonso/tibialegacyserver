@@ -1,0 +1,12 @@
+<npc name="Leeland" script="Leeland.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="19" body="36" legs="96" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Please give me another minute, |PLAYERNAME|. I am talking already, but will be avaliable for you very soon."/>
+<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|. Make sure to visit my shop."/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. Make sure to visit my shop."/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|. Make sure to visit my shop."/>
+	</parameters>
+</npc>

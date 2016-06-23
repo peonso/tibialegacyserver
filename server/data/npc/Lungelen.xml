@@ -1,0 +1,4 @@
+<npc name="Lungelen" script="Lungelen.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="77" body="19" legs="95" feet="115"/>
+</npc>

@@ -1,0 +1,12 @@
+<npc name="Loria" script="Loria.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="96" body="118" legs="82" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Just a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Hope to see you again."/>
+<parameter key="message_farewell" value="May the magic be with you, |PLAYERNAME|."/>
+<parameter key="message_idletimeout" value="May the magic be with you, |PLAYERNAME|."/>
+	</parameters>
+</npc>

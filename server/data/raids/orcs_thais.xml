@@ -1,0 +1,43 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Orc activity near Thais reported! Beware!" />
+  <announce delay="60000" type="Event" message="Thais is under attack!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="32358" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
+    <monster name="Orc Shaman" amount="11" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32360" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
+    <monster name="Orc Berserker" amount="8" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32360" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
+    <monster name="Orc Warlord" amount="5" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32359" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
+    <monster name="Orc Rider" amount="18" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32360" fromy="32161" fromz="7" tox="32374" toy="32173" toz="7">
+    <monster name="Orc" amount="12" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32452" fromy="32235" fromz="7" tox="32437" toy="32220" toz="7">
+    <monster name="Orc Shaman" amount="11" />
+    <monster name="Orc" amount="12" />
+    <monster name="Orc Rider" amount="18" />
+    <monster name="Orc Berserker" amount="8" />
+    <monster name="Orc Warlord" amount="5" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32348" fromy="32286" fromz="7" tox="32335" toy="32297" toz="7">
+    <monster name="Orc Shaman" amount="11" />
+    <monster name="Orc" amount="12" />
+    <monster name="Orc Rider" amount="18" />
+    <monster name="Orc Berserker" amount="8" />
+    <monster name="Orc Warlord" amount="5" />
+  </areaspawn>
+  <areaspawn delay="60000" fromx="32261" fromy="32271" fromz="7" tox="32287" toy="32297" toz="7">
+    <monster name="Orc Shaman" amount="11" />
+    <monster name="Orc" amount="12" />
+    <monster name="Orc Rider" amount="18" />
+    <monster name="Orc Berserker" amount="8" />
+    <monster name="Orc Warlord" amount="5" />
+  </areaspawn>
+</raid>

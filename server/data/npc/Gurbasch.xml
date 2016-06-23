@@ -1,0 +1,11 @@
+<npc name="Gurbasch" script="Gurbasch.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+<look type="66" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="message_greet" value="Welcome, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Don't hurry."/>
+<parameter key="message_walkaway" value="No patience, these brats!"/>
+<parameter key="message_farewell" value="Until next time."/>
+<parameter key="message_idletimeout" value="No patience, these brats!"/>
+	</parameters>
+</npc>

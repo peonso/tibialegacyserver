@@ -1,0 +1,15 @@
+<npc name="Chephan" script="Chephan.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="2" body="26" legs="115" feet="76"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Ah, looking for some cooking gear today, |PLAYERNAME|?"/>
+<parameter key="message_placedinqueue" value="Please give me another minute, |PLAYERNAME|. I am talking already, but will be avaliable for you very soon."/>
+<parameter key="message_walkaway" value="So long, |PLAYERNAME|."/>
+<parameter key="message_farewell" value="So long, |PLAYERNAME|."/>
+<parameter key="message_idletimeout" value="So long, |PLAYERNAME|."/>
+
+<parameter key="message_decline" value="I hope next time."/>
+<parameter key="message_needmoremoney" value="Please come back with more money."/>
+	</parameters>
+</npc>

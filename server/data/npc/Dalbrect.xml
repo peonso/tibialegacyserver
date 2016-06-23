@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Dalbrect" script="Dalbrect.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="129" head="76" body="97" legs="105" feet="76" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="Be greeted, traveler." /> 
+		<parameter key="message_placedinqueue" value="One moment please." />
+		<parameter key="message_farewell" value="Good bye. You are welcome." /> 
+		<parameter key="message_walkaway" value="Good bye. You are welcome." /> 	
+		
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;captain;ship;ferry;legacy;family;nobility;fate;poverty;project;ghostlands;trip;passages;carlin;island;monastery;white raven" />
+		
+        <parameter key="keyword_reply1" value="My name is Dalbrect Windtrouser, of the once proud windtrouser family." />
+        <parameter key="keyword_reply2" value="I am merely a humble fisher now that nothing is left of my noble legacy." />
+        <parameter key="keyword_reply3" value="I am merely a humble fisher now that nothing is left of my noble legacy." />
+        <parameter key="keyword_reply4" value="Our academy has a library, a training center in the cellars and the oracle upstairs." />
+        <parameter key="keyword_reply5" value="My ship is my only pride and joy." />
+        <parameter key="keyword_reply6" value="My ship is my only pride and joy." />
+		<parameter key="keyword_reply7" value="Once my family was once noble and wealthy, but fate turned against us and threw us into poverty." />
+		<parameter key="keyword_reply8" value="Once my family was once noble and wealthy, but fate turned against us and threw us into poverty." />
+		<parameter key="keyword_reply9" value="Once my family was once noble and wealthy, but fate turned against us and threw us into poverty." />
+		<parameter key="keyword_reply10" value="When Carlin tried to colonize the region now known as the ghostlands, my ancestors put their fortune in that project." />
+		<parameter key="keyword_reply11" value="When Carlin tried to colonize the region now known as the ghostlands, my ancestors put their fortune in that project." />
+		<parameter key="keyword_reply12" value="Our family fortune was lost when the colonization of those cursed lands failed. Now nothing is left of our fame or our fortune. If I only had something as a reminder of those better times." />
+		<parameter key="keyword_reply13" value="Our family fortune was lost when the colonization of those cursed lands failed. Now nothing is left of our fame or our fortune. If I only had something as a reminder of those better times." />
+		<parameter key="keyword_reply14" value="I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission." />
+		<parameter key="keyword_reply15" value="I have only sailed to the isle of the kings once or twice. I dare not anger the monks by bringing travellers there without their permission." />
+		<parameter key="keyword_reply16" value="To think my family used to belong to the local nobility! And now those arrogant women are in charge!" />
+		<parameter key="keyword_reply17" value="The only isle I visit regularly is the isle of the kings. I bring food and the occasional visitor to the monastery." />
+		<parameter key="keyword_reply18" value="The monks are not exactly fond of visitors, so I rarely take somebody there without their permission." />
+
+    </parameters>
+</npc>

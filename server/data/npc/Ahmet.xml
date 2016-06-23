@@ -1,0 +1,15 @@
+<npc name="Ahmet" script="Ahmet.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="38" body="40" legs="39" feet="114"/>
+	<parameters>
+<parameter key="message_greet" value="Be mourned pilgrim in flesh."/>
+<parameter key="message_placedinqueue" value="Mourned |PLAYERNAME|, know that I am busy."/>
+<parameter key="message_walkaway" value="May enlightenment be your path."/>
+<parameter key="message_farewell" value="May enlightenment be your path."/>
+<parameter key="message_idletimeout" value="May enlightenment be your path."/>
+
+<parameter key="message_decline" value="Maybe next time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so many."/>
+<parameter key="message_needmoremoney" value="My twelve starving children don't allow me to sell it for less, o grandmaster of haggling."/>
+	</parameters>
+</npc>

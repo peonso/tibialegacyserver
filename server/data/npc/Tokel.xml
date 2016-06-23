@@ -1,0 +1,15 @@
+<npc name="Tokel" script="Tokel.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="78" body="96" legs="30" feet="114"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hi there, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Sorry |PLAYERNAME|, I am busy right now. Please wait a minute."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+
+<parameter key="message_decline" value="Maybe later."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

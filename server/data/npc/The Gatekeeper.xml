@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<npc name="The Gatekeeper" script="The Gatekeeper.lua" access="3" floorchange="0" walkinterval="0">
+<health now="1000" max="1000"/>	
+<look typeex="1448"/>
+	<parameters>
+<parameter key="idletime" value="120"/>
+<parameter key="talkradius" value="3"/>
+<parameter key="message_walkaway" value="COME BACK WHEN YOU ARE PREPARED TO FACE YOUR DESTINY!"/>
+<parameter key="message_farewell" value="COME BACK WHEN YOU ARE PREPARED TO FACE YOUR DESTINY!"/>
+<parameter key="message_idletimeout" value="COME BACK WHEN YOU ARE PREPARED TO FACE YOUR DESTINY!"/>
+	</parameters>                         
+</npc>

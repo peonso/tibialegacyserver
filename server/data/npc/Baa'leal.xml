@@ -1,0 +1,12 @@
+<npc name="Baa'leal" script="Baa'leal.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="51" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="You are still alive, |PLAYERNAME|? Well, what do you want?"/>
+<parameter key="message_placedinqueue" value="Can't you see I am already talking to somebody here, |PLAYERNAME|? You civilians don't understand the concept of discipline at all, do you!"/>
+<parameter key="message_walkaway" value="Hail Malor!"/>
+<parameter key="message_farewell" value="Stand down, soldier!"/>
+<parameter key="message_idletimeout" value="Hail Malor!"/>
+	</parameters>
+</npc>

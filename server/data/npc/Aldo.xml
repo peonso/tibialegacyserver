@@ -1,0 +1,14 @@
+<npc name="Aldo" script="Aldo.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="40" body="37" legs="116" feet="76"/>
+	<parameters>
+<parameter key="message_greet" value="Just great, another ... 'customer'. Hello, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="es, yes, I can only talk to one after the other! You will have to wait, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Yeah, get lost."/>
+<parameter key="message_farewell" value="That's music in my ears."/>
+<parameter key="message_idletimeout" value="Yeah, get lost."/>
+
+<parameter key="message_decline" value="Good decision!"/>
+<parameter key="message_needmoremoney" value="At last, someone poorer than me."/>
+	</parameters>
+</npc>

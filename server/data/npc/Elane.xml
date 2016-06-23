@@ -1,0 +1,11 @@
+<npc name="Elane" script="Elane.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="137" head="113" body="63" legs="120" feet="119"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_placedinqueue" value="Please wait a minute |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Bye."/>
+<parameter key="message_farewell" value="Bye."/>
+<parameter key="message_idletimeout" value="Bye."/>
+	</parameters>
+</npc>

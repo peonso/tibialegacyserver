@@ -1,0 +1,12 @@
+<npc name="Lynda" script="Lynda.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="138" head="79" body="83" legs="86" feet="114" corpse="2212"/>
+	<parameters>
+
+		<parameter key="message_greet" value="Welcome in the name of the gods, pilgrim |PLAYERNAME|!" />
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|. May the gods guard you, my child!" />
+		<parameter key="message_walkaway" value="May the gods be with you!" />
+		<parameter key="message_placedinqueue" value="|PLAYERNAME|! Please be patient, my child." />
+	
+	</parameters>
+</npc>

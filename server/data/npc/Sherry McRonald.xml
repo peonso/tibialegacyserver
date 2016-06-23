@@ -1,0 +1,15 @@
+<npc name="Sherry McRonald" script="Sherry McRonald.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="78" body="94" legs="38" feet="58"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hello |PLAYERNAME|! Welcome to our humble farm."/>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="What a strange person."/>
+<parameter key="message_farewell" value="Grace our home with another visit soon."/>
+<parameter key="message_idletimeout" value="Grace our home with another visit soon."/>
+
+<parameter key="message_decline" value="Maybe another time."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

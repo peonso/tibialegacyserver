@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<npc name="Cobra" script="Cobra.lua" access="3" floorchange="0" walkinterval="0">
+<health now="1000" max="1000"/>	
+<look typeex="1468"/>                       
+</npc>

@@ -1,0 +1,12 @@
+<npc name="Avar Tar" script="Avar Tar.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="73" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Greetings, traveler |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Only one chat at the same time, sorry."/>
+<parameter key="message_walkaway" value="see you later."/>
+<parameter key="message_farewell" value="see you later."/>
+<parameter key="message_idletimeout" value="see you later."/>
+	</parameters>
+</npc>

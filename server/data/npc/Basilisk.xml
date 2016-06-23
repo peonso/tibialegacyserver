@@ -1,0 +1,7 @@
+<npc name="Basilisk" script="Basilisk.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="28" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="talkradius" value="1"/>
+	</parameters>
+</npc>

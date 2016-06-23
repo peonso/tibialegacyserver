@@ -1,0 +1,10 @@
+<npc name="Fa'hradin" script="Fa'hradin.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="80" head="0" body="0" legs="0" feet="0" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Aaaah... what have we here. A human - interesting. And such an ugly specimen, too... All right, human |PLAYERNAME|. How can I help you?" />
+		<parameter key="message_farewell" value="Farewell, human. I will always remember you. Unless I forget you, of course." />
+		<parameter key="message_walkaway" value="Farewell, human." />
+		<parameter key="message_placedinqueue" value="Wait human. I'll take care of you in a minute, |PLAYERNAME|." />
+	</parameters>
+</npc>

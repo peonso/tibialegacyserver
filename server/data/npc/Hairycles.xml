@@ -1,0 +1,10 @@
+<npc name="Hairycles" script="Hairycles.lua" autowalk="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="117" head="0" body="0" legs="0" feet="0" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Be greeted, friend of the ape people. If you want to trade, just ask for my offers. If you are injured, ask for healing." />
+		<parameter key="message_farewell" value="Bye, bye." />
+		<parameter key="message_walkaway" value="Bye, bye." />
+		<parameter key="message_placedinqueue" value="Wait! Wait! Time I no have!" />
+	</parameters>
+</npc>

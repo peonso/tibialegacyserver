@@ -1,0 +1,12 @@
+<npc name="Abran Ironeye" script="Abran Ironeye.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="73" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Hail, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Stand still and wait!"/>
+<parameter key="message_walkaway" value="HEY! I did not dismiss you!"/>
+<parameter key="message_farewell" value="You are dismissed."/>
+<parameter key="message_idletimeout" value="You are dismissed."/>
+	</parameters>
+</npc>

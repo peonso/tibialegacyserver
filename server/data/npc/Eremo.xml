@@ -1,0 +1,16 @@
+<npc name="Eremo" script="Eremo.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="130" head="0" body="109" legs="128" feet="95"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to my little garden, adventurer |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Shouldn't I teleport you back to Pemaret?"/>
+<parameter key="message_farewell" value="Shouldn't I teleport you back to Pemaret?"/>
+<parameter key="message_idletimeout" value="Shouldn't I teleport you back to Pemaret?"/>
+
+<parameter key="message_decline" value="Maybe another time."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not own one."/>
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper."/>
+	</parameters>
+</npc>

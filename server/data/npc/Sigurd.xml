@@ -1,0 +1,15 @@
+<npc name="Sigurd" script="Sigurd.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="69" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Welcome to the magic store, |PLAYERNAME|!"/>
+<parameter key="message_placedinqueue" value="You next |PLAYERNAME|, jawoll!"/>
+<parameter key="message_walkaway" value="Good bye. Come back soon."/>
+<parameter key="message_farewell" value="Good bye. Come back soon."/>
+<parameter key="message_idletimeout" value="Good bye. Come back soon."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

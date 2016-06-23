@@ -1,17 +1,17 @@
 -- Load Lua-made functions
-dofile(getDataDir() .. 'functions.lua')
+dofile(getDataDir() .. 'libs/functions.lua')
 
 -- Load House class
-dofile(getDataDir() .. 'game_classes/house.lua')
+dofile(getDataDir() .. 'libs/house.lua')
 
 -- Load Calculator class
-dofile(getDataDir() .. 'game_classes/calculator.lua')
+dofile(getDataDir() .. 'libs/calculator.lua')
 
 -- Load Exp Stages
-dofile(getDataDir() .. 'exp_stages.lua')
+dofile(getDataDir() .. 'libs/exp_stages.lua')
 
 -- Load db file
-dofile(getDataDir() .. 'db.lua')
+dofile(getDataDir() .. 'libs/db.lua')
 
 -- Storages consts
 STORAGE_RUM_MACHINE = 100000
@@ -260,8 +260,8 @@ TALKTYPE_SAY  = 1
 TALKTYPE_WHISPER = 2
 TALKTYPE_YELL = 3
 TALKTYPE_BROADCAST = 11
-TALKTYPE_ORANGE_1 = 16
-TALKTYPE_ORANGE_2 = 17
+TALKTYPE_ORANGE_1 = 18
+TALKTYPE_ORANGE_2 = 19
 TALKTYPE_ORANGE = TALKTYPE_ORANGE_1
 TALKTYPE_ORANGE_YELL = TALKTYPE_ORANGE_2
 
@@ -441,7 +441,7 @@ PLAYERFLAG_CANNOTMOVEITEMS = 42
 PLAYERFLAG_CANNOTMOVECREATURES = 43
 PLAYERFLAG_CANREPORTBUGS = 44
 PLAYERFLAG_CANSEESPECIALDESCRIPTION = 45
-PLAYERFLAG_CANNOTBESEEN = 45--Unused (removed from code)
+PLAYERFLAG_CANNOTBESEEN = 46--Unused (removed from code)
 PLAYERFLAG_HIDEHEALTH = 47--Unused (removed from code)
 PLAYERFLAG_CANPASSTHROUGHALLCREATURES = 48--Unused (removed from code)
 

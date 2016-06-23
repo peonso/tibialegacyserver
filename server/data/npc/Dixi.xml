@@ -1,0 +1,8 @@
+<npc name="Dixi" script="Dixi.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="136" head="96" body="99" legs="76" feet="115"/>
+	<parameters>
+<parameter key="message_farewell" value="Good bye." />
+<parameter key="message_needmoremoney" value="Sorry, you do not have enough copper." />
+	</parameters>
+</npc>

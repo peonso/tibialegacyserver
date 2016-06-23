@@ -1,0 +1,10 @@
+<npc name="Alia" script="Alia.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="138" head="96" body="95" legs="0" feet="95"/>
+	<parameters>
+<parameter key="message_placedinqueue" value="Please wait a minute, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Please return if you are heavily wounded or poisoned. I can heal you anytime."/>
+<parameter key="message_farewell" value="May the gods be with you, |PLAYERNAME|!"/>
+<parameter key="message_idletimeout" value="May the gods be with you, |PLAYERNAME|!"/>
+	</parameters>
+</npc>

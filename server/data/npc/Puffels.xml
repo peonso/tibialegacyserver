@@ -1,0 +1,12 @@
+<npc name="Puffels" script="Puffels.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="21" head="0" body="0" legs="0" feet="0"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Yeah, another fool disturbing me, what a joy."/>
+<parameter key="message_placedinqueue" value="Shut up!"/>
+<parameter key="message_walkaway" value="Whatever."/>
+<parameter key="message_farewell" value="Whatever."/>
+<parameter key="message_idletimeout" value="Whatever."/>
+	</parameters>
+</npc>

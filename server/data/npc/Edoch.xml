@@ -1,0 +1,15 @@
+<npc name="Edoch" script="Edoch.lua" floorchange="0" walkinterval="0" speed="0" lookdir="3">
+	<health now="100" max="100"/>
+	<look type="129" head="95" body="0" legs="40" feet="116"/>
+	<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="Daraman's blessings, |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="One moment please, |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Daraman's blessings, traveller."/>
+<parameter key="message_farewell" value="Daraman's blessings, traveller."/>
+<parameter key="message_idletimeout" value="Daraman's blessings, traveller."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>

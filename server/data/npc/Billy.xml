@@ -1,0 +1,13 @@
+<npc name="Willie" script="Billy.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="128" head="58" body="63" legs="58" feet="115"/>
+	<parameters>
+<parameter key="message_greet" value="Howdy |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="Can't you see i am talking? Wait!"/>
+<parameter key="message_farewell" value="Bye."/>
+
+<parameter key="message_decline" value="Then not."/>
+<parameter key="message_nothaveitem" value="Sorry, you do not have so many."/>
+<parameter key="message_needmoremoney" value="I am sorry, but you do not have enough copper."/>
+	</parameters>
+</npc>

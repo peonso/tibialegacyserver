@@ -1,0 +1,15 @@
+<npc name="Dario" script="Dario.lua" floorchange="0" walkinterval="1500" speed="100">
+	<health now="100" max="100"/>
+	<look type="144" head="3" body="58" legs="41" feet="115"/>
+	<parameters>
+<parameter key="idletime" value="60"/>
+<parameter key="message_greet" value="Ashari |PLAYERNAME|."/>
+<parameter key="message_placedinqueue" value="In a few moment I will have my attention |PLAYERNAME|."/>
+<parameter key="message_walkaway" value="Asha Thrazi."/>
+<parameter key="message_farewell" value="Asha Thrazi."/>
+<parameter key="message_idletimeout" value="Asha Thrazi."/>
+
+<parameter key="message_decline" value="Hmm, but next time."/>
+<parameter key="message_needmoremoney" value="Come back, when you have enough money."/>
+	</parameters>
+</npc>
