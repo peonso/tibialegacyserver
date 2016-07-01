@@ -18,7 +18,7 @@
 	<action itemid="2114" script="piggy_bank.lua" />
 	<action itemid="2566" script="pumpkinhead.lua" />
 	<action itemid="2096" script="pumpkinhead.lua" />
-	<action itemid="2342" script="pedrahelmet.lua" />
+	<action itemid="2342" script="hota.lua" />
 	<action itemid="2148" script="changegold.lua" />
 	<action itemid="2152" script="changegold.lua" />
 	<action itemid="2160" script="changegold.lua" />

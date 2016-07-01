@@ -39,25 +39,13 @@ function onUse(cid, item, frompos, item2, topos)
 				elseif item.type == FLUID.BEER or item.type == FLUID.WINE then
 				doPlayerSay(cid, "Aah...", 1)
 				doAddCondition(cid, drunk)
-				elseif item.type == FLUID.MANA and isPlayerVip(cid) == TRUE then
-					new_mana = math.random(80, 160)
+				elseif item.type == FLUID.MANA then
+					new_mana = math.random(50, 150)
 					doPlayerAddMana(cid, new_mana)
 					doSendMagicEffect(topos, 12)
 					doPlayerSay(cid, "Aaaah...", 1)
                     doAddCondition(cid, exhaust)
-					doRemoveItem(item.uid)
-				elseif item.type == FLUID.MANA and isPlayerVip(cid) == FALSE then
-					new_mana = math.random(80, 160)
-					doPlayerAddMana(cid, new_mana)
-					doSendMagicEffect(topos, 12)
-					doPlayerSay(cid, "Aaaah...", 1)
-                    doAddCondition(cid, exhaust)
-				elseif item.type == FLUID.LIFE and isPlayerVip(cid) == FALSE then
-					new_life = math.random(40, 80)
-					doPlayerAddHealth(cid, new_life)
-					doSendMagicEffect(topos, 12)
-					doPlayerSay(cid, "Aaaah...", 1)
-				elseif item.type == FLUID.LIFE and isPlayerVip(cid) ==  TRUE then
+				elseif item.type == FLUID.LIFE then
 					new_life = math.random(40, 80)
 					doPlayerAddHealth(cid, new_life)
 					doSendMagicEffect(topos, 12)
@@ -71,7 +59,7 @@ function onUse(cid, item, frompos, item2, topos)
 				splash = doCreateItem(2025, item.type, topos)
 				doDecayItem(splash)
 			end
-		end
+		end		
 	elseif item2.itemid >= 490 and item2.itemid <= 517 or item2.itemid >= 618 and item2.itemid <= 629 or item2.itemid == 1368 or item2.itemid == 1369 or item2.itemid >= 4820 and item2.itemid <= 4825 or item2.itemid >= 4828 and item2.itemid <= 4831 or item2.itemid >= 4608 and item2.itemid <= 4666 then
 		doChangeTypeItem(item.uid, 1)
 	elseif item2.itemid == 103 then

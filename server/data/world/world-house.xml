@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <houses>
 	<house name="Alai Flats, Flat 01" houseid="1" entryx="32377" entryy="32256" entryz="7" rent="0" townid="3" size="13" />
-	<house name="Unnamed House #2" houseid="2" entryx="32382" entryy="32256" entryz="7" rent="0" townid="3" size="13" />
-	<house name="Unnamed House #3" houseid="3" entryx="32374" entryy="32264" entryz="7" rent="0" townid="3" size="13" />
-	<house name="Unnamed House #4" houseid="4" entryx="32386" entryy="32261" entryz="7" rent="0" townid="3" size="13" />
-	<house name="Unnamed House #5" houseid="5" entryx="32386" entryy="32268" entryz="7" rent="0" townid="3" size="19" />
-	<house name="Unnamed House #6" houseid="6" entryx="32386" entryy="32268" entryz="7" rent="0" townid="3" size="18" />
-	<house name="Unnamed House #7" houseid="7" entryx="32382" entryy="32268" entryz="7" rent="0" townid="3" size="13" />
+	<house name="Alai Flats, Flat 02" houseid="2" entryx="32382" entryy="32256" entryz="7" rent="0" townid="3" size="13" />
+	<house name="Alai Flats, Flat 03" houseid="3" entryx="32374" entryy="32264" entryz="7" rent="0" townid="3" size="13" />
+	<house name="Alai Flats, Flat 04" houseid="4" entryx="32386" entryy="32261" entryz="7" rent="0" townid="3" size="13" />
+	<house name="Alai Flats, Flat 05" houseid="5" entryx="32386" entryy="32268" entryz="7" rent="0" townid="3" size="19" />
+	<house name="Alai Flats, Flat 06" houseid="6" entryx="32386" entryy="32268" entryz="7" rent="0" townid="3" size="18" />
+	<house name="Alai Flats, Flat 07" houseid="7" entryx="32382" entryy="32268" entryz="7" rent="0" townid="3" size="13" />
 	<house name="Alai Flats, Flat 08" houseid="8" entryx="32377" entryy="32268" entryz="7" rent="0" townid="3" size="13" />
 	<house name="Unnamed House #9" houseid="9" entryx="32356" entryy="32262" entryz="7" rent="0" townid="3" size="112" />
 	<house name="Unnamed House #10" houseid="10" entryx="32377" entryy="32268" entryz="6" rent="0" townid="3" size="13" />
@@ -103,7 +103,7 @@
 	<house name="Druids Retreat B" houseid="104" entryx="32272" entryy="31767" entryz="7" rent="1260" townid="5" size="23" />
 	<house name="Druids Retreat C" houseid="105" entryx="32284" entryy="31766" entryz="7" rent="980" townid="5" size="16" />
 	<house name="Moonkeep" houseid="106" entryx="32432" entryy="31761" entryz="7" rent="13020" guildhall="true" townid="5" size="227" />
-	<house name="Unnamed House #107" houseid="107" entryx="32319" entryy="31835" entryz="7" rent="0" guildhall="true" townid="5" size="227" />
+	<house name="Unnamed House #107" houseid="107" entryx="32319" entryy="31835" entryz="7" rent="0" townid="5" size="227" />
 	<house name="Druids Retreat A" houseid="108" entryx="32277" entryy="31729" entryz="7" rent="1340" townid="5" size="25" />
 	<house name="Druids Retreat D" houseid="109" entryx="32324" entryy="31724" entryz="7" rent="1180" townid="5" size="21" />
 	<house name="House of Recreation" houseid="110" entryx="32280" entryy="31823" entryz="7" rent="22540" guildhall="true" townid="5" size="318" />
@@ -131,7 +131,7 @@
 	<house name="Unnamed House #132" houseid="132" entryx="32163" entryy="31660" entryz="6" rent="0" townid="5" size="24" />
 	<house name="Unnamed House #133" houseid="133" entryx="32158" entryy="31654" entryz="6" rent="0" townid="5" size="13" />
 	<house name="Unnamed House #134" houseid="134" entryx="32132" entryy="31659" entryz="6" rent="0" townid="5" size="11" />
-	<house name="Unnamed House #135" houseid="135" entryx="32657" entryy="31583" entryz="7" rent="0" guildhall="true" townid="1" size="414" />
+	<house name="Castle of the Winds" houseid="135" entryx="32657" entryy="31583" entryz="7" rent="0" guildhall="true" townid="1" size="414" />
 	<house name="Unnamed House #136" houseid="136" entryx="32681" entryy="31592" entryz="7" rent="0" townid="1" size="20" />
 	<house name="Unnamed House #137" houseid="137" entryx="32648" entryy="31602" entryz="7" rent="0" townid="1" size="24" />
 	<house name="Unnamed House #138" houseid="138" entryx="32652" entryy="31656" entryz="7" rent="0" townid="1" size="24" />
@@ -143,11 +143,11 @@
 	<house name="Unnamed House #144" houseid="144" entryx="32677" entryy="31678" entryz="7" rent="0" townid="1" size="20" />
 	<house name="Unnamed House #145" houseid="145" entryx="32690" entryy="31647" entryz="7" rent="0" townid="1" size="12" />
 	<house name="Unnamed House #146" houseid="146" entryx="32712" entryy="31665" entryz="7" rent="0" townid="1" size="10" />
-	<house name="Unnamed House #147" houseid="147" entryx="32714" entryy="31643" entryz="7" rent="0" guildhall="true" townid="1" size="255" />
+	<house name="Ab'Dendriel Clanhall" houseid="147" entryx="32714" entryy="31643" entryz="7" rent="0" guildhall="true" townid="1" size="255" />
 	<house name="Unnamed House #148" houseid="148" entryx="32717" entryy="31621" entryz="7" rent="0" townid="1" size="12" />
 	<house name="Unnamed House #149" houseid="149" entryx="32693" entryy="31605" entryz="7" rent="0" townid="1" size="16" />
 	<house name="Unnamed House #150" houseid="150" entryx="32643" entryy="31691" entryz="7" rent="0" townid="1" size="26" />
-	<house name="Unnamed House #151" houseid="151" entryx="32546" entryy="31666" entryz="7" rent="0" guildhall="true" townid="1" size="318" />
+	<house name="The Hideout" houseid="151" entryx="32546" entryy="31666" entryz="7" rent="0" guildhall="true" townid="1" size="318" />
 	<house name="Unnamed House #152" houseid="152" entryx="32660" entryy="31641" entryz="7" rent="0" townid="1" size="6" />
 	<house name="Unnamed House #153" houseid="153" entryx="32662" entryy="31636" entryz="7" rent="0" townid="1" size="8" />
 	<house name="Unnamed House #154" houseid="154" entryx="32663" entryy="31641" entryz="7" rent="0" townid="1" size="9" />
@@ -186,7 +186,7 @@
 	<house name="Unnamed House #187" houseid="187" entryx="32640" entryy="31689" entryz="6" rent="0" townid="1" size="10" />
 	<house name="Unnamed House #188" houseid="188" entryx="32681" entryy="31675" entryz="6" rent="0" townid="1" size="19" />
 	<house name="Unnamed House #189" houseid="189" entryx="32713" entryy="31665" entryz="6" rent="0" townid="1" size="21" />
-	<house name="Unnamed House #190" houseid="190" entryx="32698" entryy="31773" entryz="7" rent="0" guildhall="true" townid="1" size="329" />
+	<house name="Shadow Towers" houseid="190" entryx="32698" entryy="31773" entryz="7" rent="0" guildhall="true" townid="1" size="329" />
 	<house name="Unnamed House #191" houseid="191" entryx="32654" entryy="31672" entryz="8" rent="0" townid="1" size="7" />
 	<house name="Unnamed House #192" houseid="192" entryx="32654" entryy="31676" entryz="8" rent="0" townid="1" size="7" />
 	<house name="Unnamed House #193" houseid="193" entryx="32656" entryy="31676" entryz="8" rent="0" townid="1" size="7" />
@@ -207,10 +207,10 @@
 	<house name="Unnamed House #208" houseid="208" entryx="32656" entryy="31672" entryz="10" rent="0" townid="1" size="7" />
 	<house name="Unnamed House #209" houseid="209" entryx="32656" entryy="31668" entryz="10" rent="0" townid="1" size="7" />
 	<house name="Unnamed House #210" houseid="210" entryx="32656" entryy="31664" entryz="10" rent="0" townid="1" size="7" />
-	<house name="Unnamed House #211" houseid="211" entryx="33221" entryy="31874" entryz="7" rent="0" guildhall="true" townid="9" size="339" />
-	<house name="Unnamed House #212" houseid="212" entryx="33226" entryy="31876" entryz="7" rent="0" guildhall="true" townid="9" size="328" />
-	<house name="Unnamed House #213" houseid="213" entryx="33230" entryy="31889" entryz="7" rent="0" guildhall="true" townid="9" size="292" />
-	<house name="Unnamed House #214" houseid="214" entryx="33333" entryy="31760" entryz="7" rent="0" guildhall="true" townid="9" size="147" />
+	<house name="Sky Lane, Guild 1" houseid="211" entryx="33221" entryy="31874" entryz="7" rent="0" guildhall="true" townid="9" size="339" />
+	<house name="Sky Lane, Guild 2" houseid="212" entryx="33226" entryy="31876" entryz="7" rent="0" guildhall="true" townid="9" size="328" />
+	<house name="Sky Lane, Guild 3" houseid="213" entryx="33230" entryy="31889" entryz="7" rent="0" guildhall="true" townid="9" size="292" />
+	<house name="Stonehome Clanhall" houseid="214" entryx="33333" entryy="31760" entryz="7" rent="0" guildhall="true" townid="9" size="147" />
 	<house name="Unnamed House #215" houseid="215" entryx="33313" entryy="31753" entryz="7" rent="0" townid="9" size="20" />
 	<house name="Unnamed House #216" houseid="216" entryx="33318" entryy="31753" entryz="7" rent="0" townid="9" size="13" />
 	<house name="Unnamed House #217" houseid="217" entryx="33324" entryy="31755" entryz="7" rent="0" townid="9" size="11" />
@@ -330,8 +330,8 @@
 	<house name="Unnamed House #332" houseid="332" entryx="33267" entryy="32427" entryz="6" rent="0" townid="7" size="18" />
 	<house name="Unnamed House #333" houseid="333" entryx="33267" entryy="32427" entryz="6" rent="0" townid="7" size="47" />
 	<house name="Unnamed House #334" houseid="334" entryx="33273" entryy="32405" entryz="7" rent="0" townid="7" size="59" />
-	<house name="Unnamed House #335" houseid="335" entryx="33232" entryy="32470" entryz="7" rent="0" guildhall="true" townid="7" size="188" />
-	<house name="Unnamed House #336" houseid="336" entryx="33228" entryy="32470" entryz="7" rent="0" guildhall="true" townid="7" size="144" />
+	<house name="Darashia, Eastern Guildhall" houseid="335" entryx="33232" entryy="32470" entryz="7" rent="0" guildhall="true" townid="7" size="188" />
+	<house name="Darashia, Western Guildhall" houseid="336" entryx="33228" entryy="32470" entryz="7" rent="0" guildhall="true" townid="7" size="144" />
 	<house name="Unnamed House #337" houseid="337" entryx="33201" entryy="32414" entryz="7" rent="0" townid="7" size="47" />
 	<house name="Unnamed House #338" houseid="338" entryx="33202" entryy="32411" entryz="7" rent="0" townid="7" size="21" />
 	<house name="Unnamed House #339" houseid="339" entryx="33202" entryy="32416" entryz="7" rent="0" townid="7" size="21" />
@@ -407,7 +407,7 @@
 	<house name="Unnamed House #410" houseid="410" entryx="32627" entryy="32773" entryz="6" rent="0" townid="8" size="20" />
 	<house name="Unnamed House #411" houseid="411" entryx="32634" entryy="32773" entryz="6" rent="0" townid="8" size="23" />
 	<house name="Unnamed House #412" houseid="412" entryx="32618" entryy="32773" entryz="6" rent="0" townid="8" size="65" />
-	<house name="Unnamed House #413" houseid="413" entryx="32664" entryy="32791" entryz="7" rent="0" guildhall="true" townid="8" size="364" />
+	<house name="Bamboo Fortress" houseid="413" entryx="32664" entryy="32791" entryz="7" rent="0" guildhall="true" townid="8" size="364" />
 	<house name="Unnamed House #414" houseid="414" entryx="32645" entryy="32789" entryz="7" rent="0" townid="8" size="25" />
 	<house name="Unnamed House #415" houseid="415" entryx="32622" entryy="32796" entryz="7" rent="0" townid="8" size="15" />
 	<house name="Unnamed House #416" houseid="416" entryx="32638" entryy="32750" entryz="7" rent="0" townid="8" size="111" />
@@ -417,11 +417,11 @@
 	<house name="Unnamed House #420" houseid="420" entryx="32601" entryy="32761" entryz="7" rent="0" townid="8" size="23" />
 	<house name="Unnamed House #421" houseid="421" entryx="32593" entryy="32759" entryz="7" rent="0" townid="8" size="20" />
 	<house name="Unnamed House #422" houseid="422" entryx="32612" entryy="32739" entryz="7" rent="0" townid="8" size="135" />
-	<house name="Unnamed House #423" houseid="423" entryx="32556" entryy="32767" entryz="6" rent="0" guildhall="true" townid="8" size="124" />
-	<house name="Unnamed House #424" houseid="424" entryx="32747" entryy="32697" entryz="7" rent="0" guildhall="true" townid="8" size="478" />
+	<house name="Shark Manor" houseid="423" entryx="32556" entryy="32767" entryz="6" rent="0" guildhall="true" townid="8" size="124" />
+	<house name="The Treehouse" houseid="424" entryx="32747" entryy="32697" entryz="7" rent="0" guildhall="true" townid="8" size="478" />
 	<house name="Unnamed House #425" houseid="425" entryx="32574" entryy="32795" entryz="7" rent="0" townid="8" size="23" />
 	<house name="Unnamed House #426" houseid="426" entryx="32398" entryy="32256" entryz="7" rent="0" townid="3" size="120" />
-	<house name="Unnamed House #427" houseid="427" entryx="32397" entryy="32155" entryz="7" rent="0" guildhall="true" townid="3" size="275" />
+	<house name="Dark Mansion" houseid="427" entryx="32397" entryy="32155" entryz="7" rent="0" guildhall="true" townid="3" size="275" />
 	<house name="Unnamed House #428" houseid="428" entryx="32398" entryy="32181" entryz="7" rent="0" townid="3" size="16" />
 	<house name="Unnamed House #429" houseid="429" entryx="32404" entryy="32181" entryz="7" rent="0" townid="3" size="33" />
 	<house name="Unnamed House #430" houseid="430" entryx="32422" entryy="32178" entryz="7" rent="0" townid="3" size="46" />
@@ -452,10 +452,10 @@
 	<house name="Unnamed House #455" houseid="455" entryx="32419" entryy="32247" entryz="7" rent="0" townid="3" size="14" />
 	<house name="Unnamed House #456" houseid="456" entryx="32412" entryy="32256" entryz="7" rent="0" townid="3" size="23" />
 	<house name="Unnamed House #457" houseid="457" entryx="32419" entryy="32256" entryz="7" rent="0" townid="3" size="43" />
-	<house name="Unnamed House #458" houseid="458" entryx="32401" entryy="32254" entryz="7" rent="0" guildhall="true" townid="3" size="266" />
+	<house name="Southern Thais Guildhall" houseid="458" entryx="32401" entryy="32254" entryz="7" rent="0" guildhall="true" townid="3" size="266" />
 	<house name="Unnamed House #459" houseid="459" entryx="32360" entryy="32252" entryz="7" rent="0" townid="3" size="56" />
 	<house name="Unnamed House #460" houseid="460" entryx="32348" entryy="32252" entryz="7" rent="0" townid="3" size="56" />
-	<house name="Unnamed House #461" houseid="461" entryx="32336" entryy="32222" entryz="7" rent="0" townid="3" size="16" />
+	<house name="Harbour Place 1 (Shop)" houseid="461" entryx="32336" entryy="32222" entryz="7" rent="0" townid="3" size="16" />
 	<house name="Unnamed House #462" houseid="462" entryx="32334" entryy="32244" entryz="7" rent="0" townid="3" size="10" />
 	<house name="Unnamed House #463" houseid="463" entryx="32333" entryy="32237" entryz="7" rent="0" townid="3" size="10" />
 	<house name="Unnamed House #464" houseid="464" entryx="32333" entryy="32232" entryz="7" rent="0" townid="3" size="10" />
@@ -483,17 +483,17 @@
 	<house name="Unnamed House #486" houseid="486" entryx="32300" entryy="32251" entryz="6" rent="0" townid="3" size="12" />
 	<house name="Unnamed House #487" houseid="487" entryx="32300" entryy="32249" entryz="6" rent="0" townid="3" size="15" />
 	<house name="Unnamed House #488" houseid="488" entryx="32284" entryy="32252" entryz="7" rent="0" townid="3" size="41" />
-	<house name="Unnamed House #489" houseid="489" entryx="32435" entryy="32359" entryz="7" rent="0" guildhall="true" townid="3" size="499" />
-	<house name="Unnamed House #490" houseid="490" entryx="32208" entryy="32437" entryz="7" rent="0" guildhall="true" townid="3" size="508" />
-	<house name="Unnamed House #491" houseid="491" entryx="32178" entryy="32373" entryz="7" rent="0" guildhall="true" townid="3" size="122" />
-	<house name="Unnamed House #492" houseid="492" entryx="32278" entryy="32069" entryz="7" rent="0" guildhall="true" townid="3" size="128" />
-	<house name="Unnamed House #493" houseid="493" entryx="32180" entryy="32427" entryz="7" rent="0" guildhall="true" townid="3" size="329" />
-	<house name="Unnamed House #494" houseid="494" entryx="32396" entryy="32042" entryz="7" rent="0" guildhall="true" townid="3" size="233" />
+	<house name="Snake Tower" houseid="489" entryx="32435" entryy="32359" entryz="7" rent="0" guildhall="true" townid="3" size="499" />
+	<house name="Mercenary Tower" houseid="490" entryx="32208" entryy="32437" entryz="7" rent="0" guildhall="true" townid="3" size="508" />
+	<house name="Fibula Clanhall" houseid="491" entryx="32178" entryy="32373" entryz="7" rent="0" guildhall="true" townid="3" size="122" />
+	<house name="Greenshore Clanhall" houseid="492" entryx="32278" entryy="32069" entryz="7" rent="0" guildhall="true" townid="3" size="128" />
+	<house name="Guildhall of the Red Rose" houseid="493" entryx="32180" entryy="32427" entryz="7" rent="0" guildhall="true" townid="3" size="329" />
+	<house name="Halls of the Adventurers" houseid="494" entryx="32396" entryy="32042" entryz="7" rent="0" guildhall="true" townid="3" size="233" />
 	<house name="Unnamed House #495" houseid="495" entryx="32332" entryy="32257" entryz="7" rent="0" townid="3" size="13" />
-	<house name="Unnamed House #496" houseid="496" entryx="32333" entryy="32255" entryz="6" rent="0" guildhall="true" townid="3" size="62" />
-	<house name="Unnamed House #497" houseid="497" entryx="32277" entryy="32011" entryz="5" rent="0" guildhall="true" townid="3" size="436" />
-	<house name="Unnamed House #498" houseid="498" entryx="32348" entryy="32213" entryz="7" rent="0" guildhall="true" townid="3" size="247" />
-	<house name="Unnamed House #499" houseid="499" entryx="32326" entryy="32272" entryz="7" rent="0" guildhall="true" townid="3" size="144" />
+	<house name="Thais Hostel" houseid="496" entryx="32333" entryy="32255" entryz="6" rent="0" townid="3" size="62" />
+	<house name="The Tibianic" houseid="497" entryx="32277" entryy="32011" entryz="5" rent="0" guildhall="true" townid="3" size="436" />
+	<house name="Warriors' Guildhall" houseid="498" entryx="32348" entryy="32213" entryz="7" rent="0" guildhall="true" townid="3" size="247" />
+	<house name="Thais Clanhall" houseid="499" entryx="32326" entryy="32272" entryz="7" rent="0" guildhall="true" townid="3" size="144" />
 	<house name="Unnamed House #500" houseid="500" entryx="32274" entryy="32062" entryz="7" rent="0" townid="3" size="30" />
 	<house name="Unnamed House #501" houseid="501" entryx="32264" entryy="32042" entryz="7" rent="0" townid="3" size="9" />
 	<house name="Unnamed House #502" houseid="502" entryx="32259" entryy="32042" entryz="7" rent="0" townid="3" size="9" />
@@ -503,19 +503,19 @@
 	<house name="Unnamed House #506" houseid="506" entryx="32276" entryy="32045" entryz="7" rent="0" townid="3" size="115" />
 	<house name="Unnamed House #507" houseid="507" entryx="32266" entryy="32032" entryz="7" rent="0" townid="3" size="17" />
 	<house name="Unnamed House #508" houseid="508" entryx="32278" entryy="32052" entryz="7" rent="0" townid="3" size="20" />
-	<house name="Unnamed House #509" houseid="509" entryx="32290" entryy="32070" entryz="7" rent="0" townid="3" size="247" />
+	<house name="Castle of Greenshore" houseid="509" entryx="32290" entryy="32070" entryz="7" rent="0" guildhall="true" townid="3" size="247" />
 	<house name="Unnamed House #510" houseid="510" entryx="32176" entryy="32433" entryz="7" rent="0" townid="3" size="10" />
 	<house name="Unnamed House #511" houseid="511" entryx="32184" entryy="32433" entryz="7" rent="0" townid="3" size="10" />
 	<house name="Unnamed House #512" houseid="512" entryx="32175" entryy="32440" entryz="7" rent="0" townid="3" size="20" />
 	<house name="Unnamed House #513" houseid="513" entryx="32171" entryy="32440" entryz="7" rent="0" townid="3" size="20" />
 	<house name="Unnamed House #514" houseid="514" entryx="32159" entryy="32439" entryz="7" rent="0" townid="3" size="68" />
 	<house name="Unnamed House #515" houseid="515" entryx="32196" entryy="32438" entryz="7" rent="0" townid="3" size="41" />
-	<house name="Unnamed House #516" houseid="516" entryx="32140" entryy="32374" entryz="7" rent="0" guildhall="true" townid="3" size="181" />
+	<house name="Fibula Village, Villa" houseid="516" entryx="32140" entryy="32374" entryz="7" rent="0" townid="3" size="181" />
 	<house name="Unnamed House #517" houseid="517" entryx="32151" entryy="32399" entryz="7" rent="0" townid="3" size="56" />
-	<house name="Unnamed House #519" houseid="519" entryx="32265" entryy="32316" entryz="7" rent="0" guildhall="true" townid="3" size="293" />
-	<house name="Unnamed House #520" houseid="520" entryx="32469" entryy="32170" entryz="7" rent="0" townid="3" size="232" />
-	<house name="Unnamed House #521" houseid="521" entryx="32622" entryy="31954" entryz="9" rent="0" guildhall="true" townid="2" size="269" />
-	<house name="Unnamed House #522" houseid="522" entryx="32607" entryy="31893" entryz="9" rent="0" guildhall="true" townid="2" size="230" />
+	<house name="Spiritkeep" houseid="519" entryx="32265" entryy="32316" entryz="7" rent="0" guildhall="true" townid="3" size="293" />
+	<house name="Bloodhall" houseid="520" entryx="32469" entryy="32170" entryz="7" rent="0" guildhall="true" townid="3" size="232" />
+	<house name="Marble Guildhall" houseid="521" entryx="32622" entryy="31954" entryz="9" rent="0" guildhall="true" townid="2" size="269" />
+	<house name="Iron Guildhall" houseid="522" entryx="32607" entryy="31893" entryz="9" rent="0" guildhall="true" townid="2" size="230" />
 	<house name="Unnamed House #523" houseid="523" entryx="32624" entryy="31906" entryz="9" rent="0" townid="2" size="7" />
 	<house name="Unnamed House #524" houseid="524" entryx="32624" entryy="31911" entryz="9" rent="0" townid="2" size="7" />
 	<house name="Unnamed House #525" houseid="525" entryx="32624" entryy="31916" entryz="9" rent="0" townid="2" size="7" />
@@ -579,7 +579,7 @@
 	<house name="Unnamed House #587" houseid="587" entryx="32615" entryy="31920" entryz="5" rent="0" townid="2" size="4" />
 	<house name="Unnamed House #588" houseid="588" entryx="32615" entryy="31923" entryz="5" rent="0" townid="2" size="4" />
 	<house name="Unnamed House #589" houseid="589" entryx="32615" entryy="31923" entryz="5" rent="0" townid="2" size="10" />
-	<house name="Unnamed House #590" houseid="590" entryx="32599" entryy="31949" entryz="5" rent="0" guildhall="true" townid="2" size="283" />
+	<house name="Granite Guildhall" houseid="590" entryx="32599" entryy="31949" entryz="5" rent="0" guildhall="true" townid="2" size="283" />
 	<house name="Unnamed House #591" houseid="591" entryx="33076" entryy="32865" entryz="7" rent="0" townid="6" size="17" />
 	<house name="Unnamed House #592" houseid="592" entryx="33076" entryy="32860" entryz="7" rent="0" townid="6" size="20" />
 	<house name="Unnamed House #593" houseid="593" entryx="33078" entryy="32860" entryz="7" rent="0" townid="6" size="18" />
@@ -668,7 +668,7 @@
 	<house name="Unnamed House #677" houseid="677" entryx="33189" entryy="32816" entryz="7" rent="0" townid="6" size="44" />
 	<house name="Unnamed House #678" houseid="678" entryx="33188" entryy="32812" entryz="5" rent="0" townid="6" size="7" />
 	<house name="Unnamed House #679" houseid="679" entryx="33193" entryy="32811" entryz="6" rent="0" townid="6" size="28" />
-	<house name="Unnamed House #680" houseid="680" entryx="33208" entryy="32816" entryz="7" rent="0" townid="6" size="76" />
+	<house name="Uthemath II" houseid="680" entryx="33208" entryy="32816" entryz="7" rent="0" guildhall="true" townid="6" size="76" />
 	<house name="Unnamed House #681" houseid="681" entryx="33192" entryy="32838" entryz="7" rent="0" townid="6" size="25" />
 	<house name="Unnamed House #682" houseid="682" entryx="33199" entryy="32838" entryz="7" rent="0" townid="6" size="48" />
 	<house name="Unnamed House #683" houseid="683" entryx="33187" entryy="32830" entryz="7" rent="0" townid="6" size="25" />
@@ -687,15 +687,15 @@
 	<house name="Unnamed House #696" houseid="696" entryx="33173" entryy="32863" entryz="6" rent="0" townid="6" size="13" />
 	<house name="Unnamed House #697" houseid="697" entryx="33181" entryy="32860" entryz="6" rent="0" townid="6" size="13" />
 	<house name="Unnamed House #698" houseid="698" entryx="33175" entryy="32853" entryz="5" rent="0" townid="6" size="20" />
-	<house name="Unnamed House #699" houseid="699" entryx="33217" entryy="32836" entryz="6" rent="0" guildhall="true" townid="6" size="166" />
-	<house name="Unnamed House #700" houseid="700" entryx="33174" entryy="32843" entryz="7" rent="0" townid="6" size="83" />
+	<house name="Horakhal" houseid="699" entryx="33217" entryy="32836" entryz="6" rent="0" guildhall="true" townid="6" size="166" />
+	<house name="Ramen Tah" houseid="700" entryx="33174" entryy="32843" entryz="7" rent="0" guildhall="true" townid="6" size="83" />
 	<house name="Unnamed House #701" houseid="701" entryx="33083" entryy="32841" entryz="7" rent="0" townid="6" size="8" />
 	<house name="Unnamed House #702" houseid="702" entryx="33084" entryy="32840" entryz="7" rent="0" townid="6" size="8" />
 	<house name="Unnamed House #703" houseid="703" entryx="33084" entryy="32841" entryz="7" rent="0" townid="6" size="8" />
 	<house name="Unnamed House #704" houseid="704" entryx="33084" entryy="32841" entryz="7" rent="0" townid="6" size="8" />
-	<house name="Unnamed House #705" houseid="705" entryx="33088" entryy="32827" entryz="7" rent="0" townid="6" size="94" />
+	<house name="Harrah I" houseid="705" entryx="33088" entryy="32827" entryz="7" rent="0" guildhall="true" townid="6" size="94" />
 	<house name="Unnamed House #706" houseid="706" entryx="33287" entryy="31765" entryz="7" rent="0" townid="9" size="36" />
-	<house name="Unnamed House #707" houseid="707" entryx="33271" entryy="31825" entryz="6" rent="0" guildhall="true" townid="9" size="134" />
+	<house name="Magic Academy, Guild" houseid="707" entryx="33271" entryy="31825" entryz="6" rent="0" guildhall="true" townid="9" size="134" />
 	<house name="Unnamed House #708" houseid="708" entryx="33282" entryy="31832" entryz="7" rent="0" townid="9" size="20" />
 	<house name="Unnamed House #709" houseid="709" entryx="33282" entryy="31832" entryz="5" rent="0" townid="9" size="19" />
 	<house name="Unnamed House #710" houseid="710" entryx="33282" entryy="31832" entryz="4" rent="0" townid="9" size="20" />
@@ -707,11 +707,11 @@
 	<house name="Unnamed House #716" houseid="716" entryx="32305" entryy="32274" entryz="8" rent="0" townid="3" size="6" />
 	<house name="Unnamed House #717" houseid="717" entryx="32293" entryy="32273" entryz="8" rent="0" townid="3" size="6" />
 	<house name="Unnamed House #718" houseid="718" entryx="32297" entryy="32273" entryz="8" rent="0" townid="3" size="6" />
-	<house name="Unnamed House #719" houseid="719" entryx="32908" entryy="32126" entryz="6" rent="0" guildhall="true" townid="4" size="121" />
-	<house name="Unnamed House #720" houseid="720" entryx="32987" entryy="32109" entryz="6" rent="0" guildhall="true" townid="4" size="167" />
-	<house name="Unnamed House #721" houseid="721" entryx="32929" entryy="32125" entryz="6" rent="0" guildhall="true" townid="4" size="213" />
-	<house name="Unnamed House #722" houseid="722" entryx="32958" entryy="32119" entryz="6" rent="0" guildhall="true" townid="4" size="168" />
-	<house name="Unnamed House #723" houseid="723" entryx="32979" entryy="32096" entryz="6" rent="0" guildhall="true" townid="4" size="249" />
+	<house name="Blessed Shield Guildhall" houseid="719" entryx="32908" entryy="32126" entryz="6" rent="0" guildhall="true" townid="4" size="121" />
+	<house name="Golden Axe Guildhall" houseid="720" entryx="32987" entryy="32109" entryz="6" rent="0" guildhall="true" townid="4" size="167" />
+	<house name="Steel Home" houseid="721" entryx="32929" entryy="32125" entryz="6" rent="0" guildhall="true" townid="4" size="213" />
+	<house name="Swamp Watch" houseid="722" entryx="32958" entryy="32119" entryz="6" rent="0" guildhall="true" townid="4" size="168" />
+	<house name="Valorous Venore" houseid="723" entryx="32979" entryy="32096" entryz="6" rent="0" guildhall="true" townid="4" size="249" />
 	<house name="Unnamed House #724" houseid="724" entryx="32894" entryy="32055" entryz="6" rent="0" townid="4" size="50" />
 	<house name="Unnamed House #725" houseid="725" entryx="32902" entryy="32055" entryz="6" rent="0" townid="4" size="49" />
 	<house name="Unnamed House #726" houseid="726" entryx="32902" entryy="32056" entryz="6" rent="0" townid="4" size="52" />
@@ -771,14 +771,14 @@
 	<house name="Unnamed House #780" houseid="780" entryx="32906" entryy="32099" entryz="7" rent="0" townid="4" size="7" />
 	<house name="Unnamed House #781" houseid="781" entryx="32911" entryy="32100" entryz="7" rent="0" townid="4" size="6" />
 	<house name="Unnamed House #782" houseid="782" entryx="32914" entryy="32094" entryz="7" rent="0" townid="4" size="7" />
-	<house name="Unnamed House #783" houseid="783" entryx="32761" entryy="32128" entryz="7" rent="0" guildhall="true" townid="4" size="268" />
+	<house name="Riverspring" houseid="783" entryx="32761" entryy="32128" entryz="7" rent="0" guildhall="true" townid="2" size="268" />
 	<house name="Unnamed House #784" houseid="784" entryx="32377" entryy="32224" entryz="7" rent="0" townid="3" size="24" />
 	<house name="Unnamed House #785" houseid="785" entryx="32382" entryy="32232" entryz="7" rent="0" townid="3" size="16" />
 	<house name="Unnamed House #786" houseid="786" entryx="32377" entryy="32222" entryz="6" rent="0" townid="3" size="12" />
 	<house name="Unnamed House #787" houseid="787" entryx="32377" entryy="32224" entryz="6" rent="0" townid="3" size="22" />
 	<house name="Unnamed House #788" houseid="788" entryx="32382" entryy="32233" entryz="6" rent="0" townid="3" size="16" />
 	<house name="Unnamed House #789" houseid="789" entryx="32382" entryy="32231" entryz="8" rent="0" townid="3" size="16" />
-	<house name="Unnamed House #790" houseid="790" entryx="32336" entryy="32210" entryz="7" rent="0" townid="3" size="18" />
+	<house name="Harbour Place 2 (Shop)" houseid="790" entryx="32336" entryy="32210" entryz="7" rent="0" townid="3" size="18" />
 	<house name="Unnamed House #791" houseid="791" entryx="33302" entryy="31963" entryz="7" rent="0" townid="9" size="20" />
 	<house name="Unnamed House #792" houseid="792" entryx="33297" entryy="31968" entryz="7" rent="0" townid="9" size="64" />
 	<house name="Unnamed House #793" houseid="793" entryx="33292" entryy="31982" entryz="7" rent="0" townid="9" size="30" />
@@ -789,7 +789,6 @@
 	<house name="Unnamed House #798" houseid="798" entryx="33278" entryy="31980" entryz="7" rent="0" townid="9" size="81" />
 	<house name="Unnamed House #799" houseid="799" entryx="33294" entryy="32005" entryz="7" rent="0" townid="9" size="71" />
 	<house name="Unnamed House #800" houseid="800" entryx="33305" entryy="32005" entryz="7" rent="0" townid="9" size="34" />
-	<house name="Unnamed House #801" houseid="801" entryx="33287" entryy="32009" entryz="7" rent="0" guildhall="true" townid="9" size="152" />
 	<house name="Unnamed House #802" houseid="802" entryx="33311" entryy="31965" entryz="7" rent="0" townid="9" size="7" />
 	<house name="Unnamed House #803" houseid="803" entryx="33315" entryy="31965" entryz="7" rent="0" townid="9" size="7" />
 	<house name="Unnamed House #804" houseid="804" entryx="33320" entryy="31965" entryz="7" rent="0" townid="9" size="11" />
@@ -802,8 +801,8 @@
 	<house name="Unnamed House #811" houseid="811" entryx="33311" entryy="31966" entryz="6" rent="0" townid="9" size="7" />
 	<house name="Unnamed House #812" houseid="812" entryx="33315" entryy="31966" entryz="6" rent="0" townid="9" size="7" />
 	<house name="Unnamed House #813" houseid="813" entryx="33318" entryy="31966" entryz="6" rent="0" townid="9" size="11" />
-	<house name="Unnamed House #814" houseid="814" entryx="33297" entryy="31986" entryz="7" rent="0" guildhall="true" townid="9" size="426" />
-	<house name="Unnamed House #815" houseid="815" entryx="32643" entryy="32025" entryz="7" rent="0" guildhall="true" townid="4" size="307" />
+	<house name="Castle of the White Dragon" houseid="814" entryx="33297" entryy="31986" entryz="7" rent="0" guildhall="true" townid="9" size="426" />
+	<house name="Wolftower" houseid="815" entryx="32643" entryy="32025" entryz="7" rent="0" guildhall="true" townid="2" size="307" />
 	<house name="Unnamed House #816" houseid="816" entryx="32301" entryy="31791" entryz="7" rent="0" townid="5" size="36" />
 	<house name="Unnamed House #817" houseid="817" entryx="32310" entryy="31781" entryz="5" rent="0" townid="5" size="10" />
 	<house name="Unnamed House #818" houseid="818" entryx="32314" entryy="31781" entryz="5" rent="0" townid="5" size="10" />
@@ -830,13 +829,13 @@
 	<house name="Unnamed House #839" houseid="839" entryx="33170" entryy="31807" entryz="4" rent="0" townid="9" size="14" />
 	<house name="Unnamed House #840" houseid="840" entryx="33170" entryy="31802" entryz="4" rent="0" townid="9" size="18" />
 	<house name="Unnamed House #841" houseid="841" entryx="33273" entryy="32406" entryz="7" rent="0" townid="7" size="66" />
-	<house name="Unnamed House #842" houseid="842" entryx="32593" entryy="31826" entryz="9" rent="0" townid="1" size="190" />
+	<house name="Hill Hideout" houseid="842" entryx="32593" entryy="31826" entryz="9" rent="0" guildhall="true" townid="2" size="190" />
 	<house name="Unnamed House #843" houseid="843" entryx="32631" entryy="31922" entryz="8" rent="0" townid="2" size="10" />
 	<house name="Unnamed House #844" houseid="844" entryx="32634" entryy="31930" entryz="8" rent="0" townid="2" size="18" />
 	<house name="Unnamed House #845" houseid="845" entryx="32635" entryy="31933" entryz="8" rent="0" townid="2" size="30" />
 	<house name="Unnamed House #846" houseid="846" entryx="32635" entryy="31926" entryz="8" rent="0" townid="2" size="25" />
 	<house name="Unnamed House #847" houseid="847" entryx="33254" entryy="31840" entryz="8" rent="0" townid="9" size="20" />
-	<house name="Unnamed House #848" houseid="848" entryx="32660" entryy="32236" entryz="7" rent="0" townid="2" size="152" />
+	<house name="Outlaw Castle" houseid="848" entryx="32660" entryy="32236" entryz="7" rent="0" guildhall="true" townid="2" size="152" />
 	<house name="Unnamed House #849" houseid="849" entryx="32657" entryy="32209" entryz="7" rent="0" townid="2" size="2" />
 	<house name="Unnamed House #850" houseid="850" entryx="32660" entryy="32209" entryz="7" rent="0" townid="2" size="2" />
 	<house name="Unnamed House #851" houseid="851" entryx="32663" entryy="32209" entryz="7" rent="0" townid="2" size="2" />
@@ -850,4 +849,8 @@
 	<house name="Unnamed House #859" houseid="859" entryx="32666" entryy="32200" entryz="8" rent="0" townid="2" size="6" />
 	<house name="Unnamed House #860" houseid="860" entryx="32665" entryy="32199" entryz="8" rent="0" townid="2" size="15" />
 	<house name="Unnamed House #861" houseid="861" entryx="32645" entryy="32204" entryz="7" rent="0" townid="2" size="35" />
+	<house name="Cormaya 9a" houseid="862" entryx="33288" entryy="32013" entryz="7" rent="0" townid="9" size="19" />
+	<house name="Cormaya 9b" houseid="863" entryx="33286" entryy="32012" entryz="7" rent="0" townid="9" size="46" />
+	<house name="Cormaya 9c" houseid="864" entryx="33288" entryy="32013" entryz="6" rent="0" townid="9" size="19" />
+	<house name="Cormaya 9d" houseid="865" entryx="33286" entryy="32012" entryz="6" rent="0" townid="9" size="46" />
 </houses>

@@ -224,16 +224,15 @@
 	<movevent event="StepIn" actionid="28591" script="ferumbras.lua" />
 	<movevent event="StepIn" actionid="28590" script="ferumbras.lua" />
 	
-	-- Citizens by Nottinghster
-	<movevent event="StepIn" actionid="6661"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6662"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6663"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6664"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6665"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6666"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6667"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6668"   script="citizen.lua"/>
-	<movevent event="StepIn" actionid="6669"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30021"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30022"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30023"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30024"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30025"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30026"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30027"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30028"   script="citizen.lua"/>
+	<movevent event="StepIn" actionid="30029"   script="citizen.lua"/>
 	
 	-- Draconia Quest by Nottinghster
 	<movevent event="StepIn" actionid="988" script="Draconia Quest/4 levers.lua" />
