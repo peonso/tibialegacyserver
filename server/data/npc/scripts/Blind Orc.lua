@@ -161,7 +161,7 @@ elseif talk_state == 110 and msgcontains(msg, 'mok') then
 	end
 	
 end		
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'ikem'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ikem pashak porak, bata, dora. Ba goshak maruk?"})

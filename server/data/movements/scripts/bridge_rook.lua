@@ -10,5 +10,5 @@ if Player:GetLevel() < 2 then
   Player:MagicEffect(newposition, 12)
 end
 
-	return TRUE
+	return true
 end

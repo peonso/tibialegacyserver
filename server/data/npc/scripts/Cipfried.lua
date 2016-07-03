@@ -68,7 +68,7 @@ function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('You aren\'t looking really bad, ' .. getCreatureName(cid) .. '. I can only help in cases of real emergencies. Raise your health simply by eating food.')
 		end
-		return TRUE
+		return true
 	end
 end
 

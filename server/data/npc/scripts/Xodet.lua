@@ -113,7 +113,7 @@ elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and 
 	npcHandler:say("The names of the wands are 'Wand of Vortex', 'Wand of Dragonbreath', 'Wand of Plague', 'Wand of Cosmic Energy' and 'Wand of Inferno'. Which one would you like to buy?", 1)
 	talk_state = 7624
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm Xodet, the owner of this shop."})

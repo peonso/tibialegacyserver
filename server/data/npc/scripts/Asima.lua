@@ -117,7 +117,7 @@ elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and 
 	talk_state = 7624
 
         end
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

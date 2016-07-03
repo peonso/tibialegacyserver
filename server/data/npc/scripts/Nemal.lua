@@ -82,7 +82,7 @@ elseif talk_state == 5 and msgcontains(msg, '') then
 	talk_state = 0	
 	
 end		
-    return TRUE
+    return true
 end
 
 

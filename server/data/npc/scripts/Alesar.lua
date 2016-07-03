@@ -136,7 +136,7 @@ elseif msgcontains(msg, "zathroth") then
 	addEvent(message81, 5000, pos)	
 	
 end		
-    return TRUE
+    return true
 end
 
 function message11(cid, type, msg)

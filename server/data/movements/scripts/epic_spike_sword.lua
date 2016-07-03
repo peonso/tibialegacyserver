@@ -43,5 +43,5 @@ function onAddItem(moveitem, tileitem, pos)
 		end
 	end
 
-	return TRUE
+	return true
 end

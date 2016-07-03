@@ -452,7 +452,7 @@ npcHandler:say("I sell 'Find Person', 'Light', 'Light Healing', 'Light Magic Mis
 npcHandler:say("'Fire Wave', 'Ultimate Healing', 'Great Fireball', 'Firebomb', 'Energy Beam', 'Creature Illusion', 'Poison Wall', 'Explosion', 'Fire Wall', 'Great Energy Beam', 'Invisible', 'Summon Creature', 'Energy Wall', 'Energy Wave' and 'Sudden Death'.", 5)
 talk_state = 0	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

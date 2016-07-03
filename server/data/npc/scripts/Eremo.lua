@@ -199,7 +199,7 @@ elseif msgcontains(msg, 'spiritual') then
 	npcHandler:say("You can ask for the blessing of spiritual shielding the whiteflower temple south of Thais.", 1)
 	talk_state = 0
 end	
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

@@ -202,7 +202,7 @@ talk_state = 0
 --End of the System that does the job after confirm spell--
 		
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

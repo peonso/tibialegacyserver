@@ -52,7 +52,7 @@ if msgcontains(msg, 'time') or msgcontains(msg, 'Time') then
 	npcHandler:resetNpc()
 
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

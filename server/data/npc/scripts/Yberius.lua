@@ -78,7 +78,7 @@ function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('You aren\'t looking that bad. Sorry, I can\'t help you. If you are looking for additional protection, you should go on the pilgrimageof ashes.')
 		end
-		return TRUE
+		return true
 	end
 end
 

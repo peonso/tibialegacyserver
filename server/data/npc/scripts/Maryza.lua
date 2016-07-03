@@ -76,7 +76,7 @@ elseif msgcontains(msg, 'hi') or msgcontains(msg, 'Hi') or msgcontains(msg, 'hel
 	npcHandler:say("Talking to me?", 1)
 	talk_state = 0			
         end	
-    return TRUE
+    return true
 end
 
 

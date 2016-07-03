@@ -70,5 +70,5 @@ function onLogin(cid)
 			setPlayerStorageValue(cid, storage, 1)
 		end
 	end
-	return TRUE
+	return true
 end

@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 	newpos = {x=32273, y=31856, z=15}
@@ -8,5 +8,5 @@ function onStepIn(cid, item, pos)
 		doSendMagicEffect(getCreaturePosition(cid), 10)
 	else
 	end
-	return TRUE
+	return true
 end

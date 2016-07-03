@@ -47,7 +47,7 @@ elseif talk_state == 301 and msgcontains(msg, '08') then
 	npcHandler:say("As you wish.", 1)
 	
 end		
-    return TRUE
+    return true
 end
 
 

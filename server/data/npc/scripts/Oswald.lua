@@ -73,7 +73,7 @@ elseif talk_state == 3 and msgcontains(msg, '') then
 npcHandler:say("Fascinating! Absolutely fascinating!", 1)	
 talk_state = 0
 end
-    return TRUE
+    return true
 end
 
 

@@ -18,5 +18,5 @@ elseif item.actionid == 134 then --Wand Of Cosmic
 setPlayerStorageValue(cid,10038,1)
 doSendMagicEffect(wand, 5)
 end
-return TRUE
+return true
 end

@@ -127,7 +127,7 @@ npcHandler:say("Maybe next time.", 1)
 talk_state = 0
 
 end		
-    return TRUE
+    return true
 end
 
 

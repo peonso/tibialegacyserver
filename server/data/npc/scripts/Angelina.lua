@@ -86,7 +86,7 @@ elseif talk_state == 0 and msgcontains(msg, 'cathedral') and npcHandler.focus ==
 	npcHandler:say("Later the dwarven constructors explained that this was caused by volcanic activities and a massive cave-in. ...", 25)
 	npcHandler:say("Since the gods did not interfere and the setting was close to the notorious Pits of Inferno, it was assumed that this was the work of secret demonic powers.", 29)	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

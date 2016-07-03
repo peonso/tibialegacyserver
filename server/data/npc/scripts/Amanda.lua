@@ -52,7 +52,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You aren\'t looking that bad. Sorry, I can\'t help you. But if you are looking for additional protection you should go on thepilgrimage of ashes.')
 		end
 	end
-	return TRUE
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

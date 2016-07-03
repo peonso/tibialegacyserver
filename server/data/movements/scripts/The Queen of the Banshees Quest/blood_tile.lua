@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 	splash = {x=32243, y=31892, z=14, stackpos=1}
@@ -17,5 +17,5 @@ function onStepIn(cid, item, pos)
 		doTeleportThing(cid, pos)
 		doSendMagicEffect(pos, 10)
 	end
-	return TRUE
+	return true
 end

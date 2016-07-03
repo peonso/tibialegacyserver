@@ -117,7 +117,7 @@ function creatureSayCallback(cid, type, msg)
 	talk_state = 0
 	end
 	
-	return TRUE
+	return true
 end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am the blacksmith. If you need weapons or armor - just ask me.'})

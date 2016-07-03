@@ -5,5 +5,5 @@ doAddCondition(cid, CONDITION_POISON)
 doSendMagicEffect(getCreaturePosition(cid),8)
 setPlayerStorageValue(cid, 10051, 1)
 end
-return TRUE
+return true
 end

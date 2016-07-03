@@ -84,7 +84,7 @@ elseif talk_state == 2 and msgcontains(msg, 'wallcarving') then
 	talk_state = 0	
 	
 end		
-    return TRUE
+    return true
 end
 
 function message31(cid, type, msg)

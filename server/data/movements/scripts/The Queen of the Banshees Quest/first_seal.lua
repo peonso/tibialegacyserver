@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 	ghost1 = {x=32277, y=31902, z=13}
@@ -20,5 +20,5 @@ function onStepIn(cid, item, pos)
 		doSendMagicEffect(getCreaturePosition(cid), 10)
 	else
 	end
-	return TRUE
+	return true
 end

@@ -75,7 +75,7 @@ npcHandler:say("She's a fine cook; likes it bloddy, though. Humans call her Bloo
 elseif msgcontains(msg, 'hi') or msgcontains(msg, 'Hi') or msgcontains(msg, 'hello') or msgcontains(msg, 'Hello') then
 	npcHandler:say("Talking to me, ".. getPlayerName(cid) .."?", 1)
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

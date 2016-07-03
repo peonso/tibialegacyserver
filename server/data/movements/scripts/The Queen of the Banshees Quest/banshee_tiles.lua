@@ -25,5 +25,5 @@ function onStepIn(cid, item, position, lastPosition, fromPosition, toPosition, a
 								setPlayerStorageValue(cid, 20005,1)
                                 doSendMagicEffect(getCreaturePosition(cid), cfg.flame_effect)
                         end
-return TRUE
+return true
 end	

@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 	coin = {x=33240, y=32855, z=13, stackpos=1}
@@ -18,5 +18,5 @@ function onStepIn(cid, item, pos)
 	doTeleportThing(cid, {x=33239, y=32856, z=13})
 	doSendMagicEffect(getCreaturePosition(cid), CONST_ME_MAGIC_BLUE)	
 	end
-	return TRUE
+	return true
 end

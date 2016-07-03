@@ -15,12 +15,12 @@ doTransformItem(item.uid,1511)
 
 end
 end
-return TRUE
+return true
 end
 
 
 function onStepOut(cid, item, pos)
 
 doTransformItem(item.uid,1510)
-return TRUE
+return true
 end

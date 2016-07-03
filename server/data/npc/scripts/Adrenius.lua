@@ -115,7 +115,7 @@ elseif talk_state == 8 and msgcontains(msg, '') then
 	talk_state = 8
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

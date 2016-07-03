@@ -95,7 +95,7 @@ npcHandler:say("I can offer you cheese, cherries, and melons.", 1)
 talk_state = 0
 	
 end		
-    return TRUE
+    return true
 end
 
 

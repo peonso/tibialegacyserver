@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 switch1pos = {x=32310, y=31975, z=13, stackpos=1}
@@ -32,5 +32,5 @@ pos.y = pos.y-2
 doTeleportThing(cid, pos)
 doSendMagicEffect(pos, 10)
 end
-return TRUE
+return true
 end

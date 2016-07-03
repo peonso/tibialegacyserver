@@ -2,7 +2,7 @@
 
 function onStepOut(cid, item, pos)
 	if(item.actionid == 0) then
-		return TRUE
+		return true
 	end
 
 	local topos = getPlayerPosition(cid)
@@ -24,5 +24,5 @@ function onStepOut(cid, item, pos)
 	end
 
 	doTransformItem(item.uid, item.itemid-1)
-	return TRUE
+	return true
 end

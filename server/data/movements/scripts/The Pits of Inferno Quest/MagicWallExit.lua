@@ -8,5 +8,5 @@ doSendMagicEffect(getPlayerPosition(cid),2)
 doTeleportThing(cid,{x=32791, y=32331, z=10}) 
 doSendMagicEffect({x=32791, y=32331, z=10},10)
 end 
-return TRUE
+return true
 end

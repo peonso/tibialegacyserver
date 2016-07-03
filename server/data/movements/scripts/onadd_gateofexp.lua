@@ -5,7 +5,7 @@ function onAddItem(item, tile, pos)
 	local isVocationDoor = (item.actionid >= 2001 and item.actionid <= 2008)
 
 	if not(isLevelDoor or isVocationDoor) then
-		return TRUE
+		return true
 	end
 
 	if(isLevelDoor) then
@@ -19,5 +19,5 @@ function onAddItem(item, tile, pos)
 		local voc = vocDescriptions[item.actionid-2000]
 		doSetItemSpecialDescription(item.uid, "It is a gate for " .. voc .. ".\n Only the worthy may pass.")
 	end
-	return TRUE
+	return true
 end

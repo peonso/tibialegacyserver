@@ -105,7 +105,7 @@ elseif  msgcontains(msg, 'mail') then
 	setPlayerStorageValue(cid,234,getPlayerStorageValue(cid,234)+1)
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

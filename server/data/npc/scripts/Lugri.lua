@@ -113,7 +113,7 @@ elseif talk_state == 3 and msgcontains(msg, 'yes') then
 	talk_state = 0
 	
 end		
-    return TRUE
+    return true
 end
 
 

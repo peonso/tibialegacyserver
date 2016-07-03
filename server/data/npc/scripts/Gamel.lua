@@ -68,7 +68,7 @@ elseif msgcontains(msg, 'berfasmur') or msgcontains(msg, 'Berfasmur') then
 	npcHandler:say("Never heard that name!", 1)
 	talk_state = 0	
 end		
-    return TRUE
+    return true
 end
 
 

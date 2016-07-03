@@ -63,7 +63,7 @@ function creatureSayCallback(cid, type, msg)
 	
 	end
 
-	return TRUE
+	return true
 end
 
 keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am recovering from a sea journey."})

@@ -349,7 +349,7 @@ npcHandler:say("Then not.", 1)
 talk_state = 0
 end
 
-    return TRUE
+    return true
 end
 
 function paladinspell11(cid, type, msg)

@@ -116,7 +116,7 @@ elseif  msgcontains(msg, 'darama') or msgcontains(msg, 'Darama') then
     talk_state = 0 
 
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am selling items of magic power such as runes, wands, rods, life fluids and mana fluids."})

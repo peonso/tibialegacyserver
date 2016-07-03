@@ -42,5 +42,5 @@ local D = {x=32848, y=32287, z=9}
 		doTeleportThing(cid,D)		
 	end
 		
-return TRUE
+return true
 end		

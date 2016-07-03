@@ -63,7 +63,7 @@ if msgcontains(msg, 'sewer') or msgcontains(msg, 'Sewer') then
 	talk_state = 0
 
 end		
-    return TRUE
+    return true
 end
 
 

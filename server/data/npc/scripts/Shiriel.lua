@@ -114,7 +114,7 @@ elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and 
 	talk_state = 7624
 
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell mystic runes, spellbooks, wands, rods and fluids of life or mana."})

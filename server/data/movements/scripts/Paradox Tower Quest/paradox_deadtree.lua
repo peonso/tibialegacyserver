@@ -9,5 +9,5 @@ doCreatureAddHealth(cid, -200)
 doSendMagicEffect(trap,16)
 doSendAnimatedText(getCreaturePosition(cid), '200', TEXTCOLOR_RED)
 end
-return TRUE
+return true
 end

@@ -52,7 +52,7 @@ if msg == "heal" then
 	return true
 	end
 	talk_state = 0	
-    return TRUE
+    return true
 end
 
 if(npcHandler.focus ~= cid) then
@@ -188,7 +188,7 @@ talk_state = 0
 --End of the System that does the job after confirm spell--
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

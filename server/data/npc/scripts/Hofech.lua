@@ -188,7 +188,7 @@ elseif talk_state == 203 and msgcontains(msg, 'yes') then
 	
 end
 --END of Complete System For Creature Item Mission&Buy--
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

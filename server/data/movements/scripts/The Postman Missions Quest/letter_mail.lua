@@ -28,5 +28,5 @@ getmail = getThingfromPos(mail)
 		end			
 	end
 	
-	return TRUE
+	return true
 end

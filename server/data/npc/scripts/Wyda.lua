@@ -153,7 +153,7 @@ elseif msgcontains(msg, 'witch') or msgcontains(msg, 'witch') then
 	npcHandler:say("Aye, I am a witch.", 1)
 	talk_state = 0	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

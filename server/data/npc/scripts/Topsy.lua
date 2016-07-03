@@ -119,7 +119,7 @@ elseif  talk_state == 21 and msgcontains(msg, '') then
     npcHandler:say('Really? Tststs.', 1)
     talk_state = 0
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm just wonderful - thank you for asking."})

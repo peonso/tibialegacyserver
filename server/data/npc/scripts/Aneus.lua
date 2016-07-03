@@ -127,7 +127,7 @@ npcHandler:story("Since then, a woman has always been ruling over Carlin and thi
 npcHandler:say("So that was the story of Carlin and these Fields of Glory. I hope you liked it. *smiles*", 13)
 
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

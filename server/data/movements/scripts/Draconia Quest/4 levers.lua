@@ -26,5 +26,5 @@ pos.x = pos.x-2
 doTeleportThing(cid, pos)
 doSendMagicEffect(pos, 10)
 end
-return TRUE
+return true
 end

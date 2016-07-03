@@ -54,7 +54,7 @@ function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('You aren\'t looking really bad. Eat some food to regain strength.')
 		end
-		return TRUE
+		return true
 	end
 end
 

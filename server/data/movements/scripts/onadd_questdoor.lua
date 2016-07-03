@@ -2,7 +2,7 @@
 
 function onAddItem(item, tile, pos)
 	if(item.actionid == 0) then
-		return TRUE
+		return true
 	end
 
 	doSetItemSpecialDescription(item.uid, "The door is sealed against unwanted intruders.")

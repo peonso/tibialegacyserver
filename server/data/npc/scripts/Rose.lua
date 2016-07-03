@@ -41,7 +41,7 @@ if msgcontains(msg, 'name') or msgcontains(msg, 'Name') then
 	npcHandler:say("My name is Rose, nice to meet you, ".. getPlayerName(cid) ..".", 1)
 	talk_state = 0
 end		
-    return TRUE
+    return true
 end
 
 

@@ -14,7 +14,7 @@ end
 
 function onStepIn(cid, item, pos)
 	if(item.actionid > 0) then
-		return TRUE
+		return true
 	end
 
 	doTransformTile(item)
@@ -31,16 +31,16 @@ function onStepIn(cid, item, pos)
 					depotStr = "Your depot contains 1 item."
 				end
 				 doPlayerSendTextMessage(cid,MESSAGE_EVENT_DEFAULT, depotStr)
-				return TRUE
+				return true
 			end
 			pos.x = pos.x - x
 			pos.y = pos.y - y
 		end
 	end
-	return TRUE
+	return true
 end
 
 function onStepOut(cid, item, pos)
 	doTransformTile(item)
-	return TRUE
+	return true
 end

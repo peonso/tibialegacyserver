@@ -47,7 +47,7 @@ elseif msgcontains(msg, 'carlin') or msgcontains(msg, 'Carlin') then
 	npcHandler:resetNpc()	
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

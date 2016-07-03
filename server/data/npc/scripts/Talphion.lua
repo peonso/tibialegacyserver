@@ -105,7 +105,7 @@ function creatureSayCallback(cid, type, msg)
 	doSendMagicEffect(getCreaturePosition(cid), 13)
 	end
 
-return TRUE
+return true
 end	
 	
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

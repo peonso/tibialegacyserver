@@ -10,5 +10,5 @@ function onStepIn(cid, item, pos)
 			doSendMagicEffect(getPlayerPosition(cid),10)
 		end
 	end
-	return TRUE
+	return true
 end

@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 	white = {x=32173, y=31871, z=15, stackpos=255}
@@ -21,5 +21,5 @@ function onStepIn(cid, item, pos)
 	doTeleportThing(cid, pos)
 	doSendMagicEffect(pos, 10)
 	end
-	return TRUE
+	return true
 end

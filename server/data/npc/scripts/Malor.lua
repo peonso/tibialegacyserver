@@ -77,7 +77,7 @@ elseif msgcontains(msg, 'fuck') then
 
 
 end		
-    return TRUE
+    return true
 end
 
 

@@ -252,7 +252,7 @@ elseif talk_state == 7 and msgcontains(msg, 'repair') or talk_state == 7 and msg
 	talk_state = 0	
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

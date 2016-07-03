@@ -17,5 +17,5 @@ function onStepIn(cid, item, pos)
 		doTeleportThing(cid, pos)
 		doSendMagicEffect(pos, 10)
 	end
-	return TRUE
+	return true
 end

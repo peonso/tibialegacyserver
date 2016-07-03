@@ -32,7 +32,7 @@ function greetCallback(cid)
 		doSummonCreature('Slime', North)
 		setPlayerStorageValue(cid,3058,1)
 	else
-		return TRUE
+		return true
 	end
 end
  

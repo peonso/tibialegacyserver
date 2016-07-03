@@ -550,7 +550,7 @@ elseif msgcontains(msg, 'spell') then
 	end
 	
 end		
-    return TRUE
+    return true
 end
 
 function druidspell1(cid, type, msg)

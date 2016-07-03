@@ -19,5 +19,5 @@ function onStepIn(cid, item, pos)
 		end	
 	end
 
-    return TRUE
+    return true
 end

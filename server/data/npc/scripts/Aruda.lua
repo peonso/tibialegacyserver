@@ -387,7 +387,7 @@ elseif msgcontains(msg, 'yenny') and npcHandler.focus == cid then
 	npcHandler:say("Yenny? I know no Yenny, nor have I ever used that name! You have mistook me with someone else.", 1)
 	talk_state = 0
 end		
-    return TRUE
+    return true
 end
 
 

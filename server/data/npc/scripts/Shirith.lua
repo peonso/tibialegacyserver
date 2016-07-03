@@ -59,7 +59,7 @@ elseif talk_state == 1 and msgcontains(msg, '') then
 	
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

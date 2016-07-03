@@ -100,7 +100,7 @@ elseif msgcontains(msg, 'rune') then
 	npcHandler:say("I sell blank runes and spell runes.", 1)
 	talk_state = 0	
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a FRANS."})

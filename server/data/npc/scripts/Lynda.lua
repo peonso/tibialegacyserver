@@ -115,7 +115,7 @@ function creatureSayCallback(cid, type, msg)
 	topic = 0
 	end
 	
-	return TRUE
+	return true
 end
 
 	keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I am a priest of the great pantheon.'})

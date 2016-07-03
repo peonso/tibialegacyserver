@@ -17,5 +17,5 @@ function onStepIn(cid, item, frompos, item2, topos)
 	doSendMagicEffect(getCreaturePosition(cid), 11)	
 	end
 
-return TRUE
+return true
 end	

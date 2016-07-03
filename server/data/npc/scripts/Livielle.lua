@@ -59,7 +59,7 @@ if msgcontains(msg, 'name') or msgcontains(msg, 'Name') then
 	talk_state = 0
 
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

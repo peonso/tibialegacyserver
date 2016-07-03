@@ -14,12 +14,12 @@ doSendAnimatedText(getCreaturePosition(cid), hp, TEXTCOLOR_RED)
 doTransformItem(item.uid,1513)
 end
 end
-return TRUE
+return true
 end
 
 
 function onStepOut(cid, item, pos)
 
 doTransformItem(item.uid,1512)
-return TRUE
+return true
 end

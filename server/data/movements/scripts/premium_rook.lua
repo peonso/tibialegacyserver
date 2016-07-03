@@ -9,5 +9,5 @@ doSendMagicEffect(getPlayerPosition(cid), 12)
 else
 doPlayerSendCancel(cid,"")
 end
-return TRUE
+return true
 end

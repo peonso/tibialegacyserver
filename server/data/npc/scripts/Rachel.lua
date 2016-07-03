@@ -133,7 +133,7 @@ elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and 
 	talk_state = 7624
 
         end
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the head alchemist of Carlin. I keep the secret recipies of our ancestors. Besides, I am selling mana and life fluids, spellbooks, wands, rods and runes."})

@@ -194,7 +194,7 @@ npcHandler:say("I mastered some spells of battle.", 1)
 talk_state = 0	
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

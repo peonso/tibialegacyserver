@@ -136,7 +136,7 @@ end
 	npcHandler:say("I can fly you to Femor Hills or Edron if you like. Where do you want to go?", 1)
 	talk_state = 0	
 end
-	return TRUE
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

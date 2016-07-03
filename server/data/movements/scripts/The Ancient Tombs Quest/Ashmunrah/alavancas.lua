@@ -1,4 +1,4 @@
---Script by Nottinghster
+-- by Nottinghster
 function onStepIn(cid, item, pos)
 
 switch1pos = {x=33176, y=32880, z=11, stackpos=2}
@@ -32,5 +32,5 @@ doTeleportThing(cid, pos)
 doSendMagicEffect(pos, 10)
 doPlayerSendCancel(cid,"You need to flip all levers to pass on teleport.")
 end
-return TRUE
+return true
 end

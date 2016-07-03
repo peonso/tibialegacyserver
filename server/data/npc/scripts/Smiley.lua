@@ -480,7 +480,7 @@ npcHandler:say("'Energy Field', 'Destroy Field', 'Ultimate healing', 'Great Fire
 talk_state = 0	
 
 end		
-    return TRUE
+    return true
 end
 
 

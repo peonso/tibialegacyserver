@@ -13,5 +13,5 @@ doCreateItem(2383, spike)
 doSendMagicEffect(spike,13)
 end
 
-return TRUE
+return true
 end

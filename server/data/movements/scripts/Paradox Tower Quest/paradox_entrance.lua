@@ -34,5 +34,5 @@ function onStepIn(cid, item, pos)
 		doTeleportThing(cid,entrance)
 	else
 	end
-	return TRUE
+	return true
 end

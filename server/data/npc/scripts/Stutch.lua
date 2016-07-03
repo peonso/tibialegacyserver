@@ -156,7 +156,7 @@ elseif msgcontains(msg, "idiot") then
 	talk_state = 0
 	
 end		
-    return TRUE
+    return true
 end
 
 

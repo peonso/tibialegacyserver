@@ -107,7 +107,7 @@ elseif msgcontains(msg, 'assassin') or msgcontains(msg, 'dark monk') then
 	npcHandler:resetNpc()
 	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

@@ -125,7 +125,7 @@ elseif talk_state == 9166 and msgcontains(msg, 'yes') and npcHandler.focus == ci
 	
 	
 end		
-    return TRUE
+    return true
 end
 
 

@@ -46,7 +46,7 @@ if msgcontains(msg, 'hi') or msgcontains(msg, 'hello') or msgcontains(msg, 'Hi')
 	npcHandler:say("Wha... what?? HOW DARE YOU!!?? LEAVE ME ALONE ON MY TOILET AT ONCE!", 1)
 
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

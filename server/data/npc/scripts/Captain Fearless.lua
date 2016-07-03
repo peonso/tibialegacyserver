@@ -223,7 +223,7 @@ elseif msgcontains(msg, 'no') and talk_state == 2 then
 	talk_state = 0	
 end
 
-	return TRUE	
+	return true	
 end
 
 

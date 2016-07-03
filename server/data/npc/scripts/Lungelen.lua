@@ -35,7 +35,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 if msgcontains(msg, 'hi') or msgcontains(msg, 'Hi') or msgcontains(msg, 'hello') or msgcontains(msg, 'Hello') then
 	npcHandler:say("Please don't disturb me, I am very busy in my recent researches. Have a nice day!", 1)
 end		
-    return TRUE
+    return true
 end
 
 

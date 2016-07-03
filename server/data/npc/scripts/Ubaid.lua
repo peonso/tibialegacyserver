@@ -141,7 +141,7 @@ elseif talk_state == 601 and msgcontains(msg, "") then
 	npcHandler:say("okey, then what are you doing here?", 1)
 	talk_state = 0	
 end		
-    return TRUE
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

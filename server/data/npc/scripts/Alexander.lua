@@ -108,7 +108,7 @@ elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and 
 	talk_state = 7624
 
 end		
-    return TRUE
+    return true
 end
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Alexander."})
