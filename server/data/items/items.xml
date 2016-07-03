@@ -230,7 +230,7 @@
 	<item id="488" article="a" name="ramp"/>
 	<item id="489" article="a" name="hole">
 		<attribute key="floorchange" value="down"/>
-		<attribute key="decayTo" value="9059"/>
+		<attribute key="decayTo" value="481"/>
 		<attribute key="duration" value="30"/>
 	</item>
 	<item id="493" name="water">
@@ -3592,11 +3592,11 @@
 		<attribute key="weight" value="210"/>
 		<attribute key="charges" value="1"/>
 	</item>
-	<item id="2292" article="a" name="stalagmite rune">
-		<attribute key="type" value="rune"/>
-		<attribute key="runeSpellName" value="adori tera"/>
-		<attribute key="weight" value="21"/>
-		<attribute key="charges" value="10"/>
+	<item id="2292" article="a" name="envenom rune">
+		<attribute key="type" value="rune" />
+		<attribute key="runeSpellName" value="adevo res pox" />
+		<attribute key="weight" value="21" />
+		<attribute key="charges" value="1" />
 		<attribute key="showcharges" value="1"/>
 	</item>
 	<item id="2293" article="a" name="magic wall rune">
@@ -3741,8 +3741,8 @@
 	<item id="2319" article="a" name="dragonfetish">
 		<attribute key="weight" value="490"/>
 	</item>
-	<item id="2320" article="a" name="skull" plural="skulls">
-		<attribute key="weight" value="2180"/>
+	<item id="2320" article="a" name="skull of Ratha" plural="skulls of Ratha">
+		<attribute key="weight" value="2180" />
 	</item>
 	<item id="2321" article="a" name="giant smithhammer">
 		<attribute key="description" value="This cyclopean hammer seems to be an awesome smithing tool."/>
@@ -4375,7 +4375,7 @@
 		<attribute key="weaponType" value="club"/>
 	</item>
 	<item id="2437" article="a" name="light mace">
-		<attribute key="weight" value="5000"/>
+		<attribute key="weight" value="4100"/>
 		<attribute key="defense" value="9"/>
 		<attribute key="attack" value="14"/>
 		<attribute key="weaponType" value="club"/>
@@ -4398,6 +4398,12 @@
 		<attribute key="attack" value="39"/>
 		<attribute key="weaponType" value="axe"/>
 		<attribute key="slotType" value="two-handed"/>
+	</item>
+	<item id="2441" article="a" name="daramian axe">
+		<attribute key="weight" value="4100" />
+		<attribute key="defense" value="8" />
+		<attribute key="attack" value="17" />
+		<attribute key="weaponType" value="axe" />
 	</item>
 	<item id="2442" article="a" name="heavy machete">
 		<attribute key="weight" value="1840"/>
@@ -4747,20 +4753,26 @@
 		<attribute key="armor" value="7"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
+	<item id="2505" article="an" name="elven mail">
+		<attribute key="weight" value="9000" />
+		<attribute key="armor" value="9" />
+		<attribute key="slotType" value="body" />
+	</item>
 	<item id="2506" article="a" name="dragon scale helmet">
 		<attribute key="description" value="It is made of dragon scales."/>
 		<attribute key="weight" value="6000"/>
 		<attribute key="armor" value="10"/>
 		<attribute key="slotType" value="head"/>
 	</item>
-	<item id="2507" name="ranger legs">
+	<item id="2507" name="elven legs">
 		<attribute key="weight" value="3500"/>
 		<attribute key="armor" value="4"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
-	<item id="2508" article="a" name="native armor" editorsuffix=" (Unknown weight)">
-		<attribute key="slotType" value="body"/>
-		<attribute key="armor" value="7"/>
+	<item id="2508" article="a" name="native armor">
+		<attribute key="weight" value="8000" />
+		<attribute key="slotType" value="body" />
+		<attribute key="armor" value="7" />
 	</item>
 	<item id="2509" article="a" name="steel shield">
 		<attribute key="weight" value="6900"/>
@@ -5322,6 +5334,7 @@
 	</item>
 	<item id="2655" article="a" name="red robe">
 		<attribute key="weight" value="2600"/>
+		<attribute key="description" value="The robe is artfully embroideredy." />
 		<attribute key="armor" value="1"/>
 		<attribute key="slotType" value="body"/>
 	</item>
@@ -5364,6 +5377,11 @@
 		<attribute key="weight" value="850"/>
 		<attribute key="armor" value="1"/>
 		<attribute key="slotType" value="head"/>
+	</item>
+	<item id="2664" article="a" name="wood cape">
+		<attribute key="weight" value="1100" />
+		<attribute key="armor" value="2" />
+		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2665" article="a" name="post officers hat">
 		<attribute key="description" value="This hat is the insignia of all tibian post officers."/>
