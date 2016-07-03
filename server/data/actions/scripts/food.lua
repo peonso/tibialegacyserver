@@ -1,5 +1,3 @@
--- by Nottinghster
-
 local MAX_FOOD = 1200
 
 function onUse(cid, item, frompos, item2, topos)

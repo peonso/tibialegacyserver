@@ -1,27 +1,34 @@
--- by Nottinghster
+local coins = {
+	[ITEM_GOLD_COIN] = {
+		to = ITEM_PLATINUM_COIN, effect = COLOR_YELLOW
+	},
+	[ITEM_PLATINUM_COIN] = {
+		from = ITEM_GOLD_COIN, to = ITEM_CRYSTAL_COIN, effect = COLOR_LIGHTBLUE
+	},
+	[ITEM_CRYSTAL_COIN] = {
+		from = ITEM_PLATINUM_COIN, effect = COLOR_TEAL
+	}
+}
 
-function onUse(cid, item, frompos, item2, topos)
-	if isPremium(cid) == TRUE then
-		if item.itemid == 2148 and item.type == 100 then
-			doChangeTypeItem(item.uid, item.type-item.type)
-			doPlayerAddItem(cid, 2152, 1)
-			doSendAnimatedText(frompos, "$$$", 89)
-		elseif item.itemid == 2152 and item.type == 100 then
-			doChangeTypeItem(item.uid, item.type-item.type)
-			doPlayerAddItem(cid, 2160, 1)
-			doSendAnimatedText(frompos, "$$$", 65)
-		elseif item.itemid == 2152 and item.type < 100 then
-			doChangeTypeItem(item.uid, item.type-1)
-			doPlayerAddItem(cid, 2148, 100)
-			doSendAnimatedText(frompos, "$$$", 210)
-		elseif item.itemid == 2160 then
-			doChangeTypeItem(item.uid, item.type-1)
-			doPlayerAddItem(cid, 2152, 100)
-			doSendAnimatedText(frompos, "$$$", 89)
-		end
-	else
-		doPlayerSendCancel(cid, "Only premium players can change gold.")
-	end		
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if(getPlayerFlagValue(cid, PLAYERFLAG_CANNOTPICKUPITEM)) then
+		return false
+	end
+
+	local coin = coins[item.itemid]
+	if(not coin) then
+		return false
+	end
+
+	if(coin.to ~= nil and item.type == ITEMCOUNT_MAX) then
+		doChangeTypeItem(item.uid, item.type - item.type)
+		doPlayerAddItem(cid, coin.to, 1)
+--		doSendAnimatedText(fromPosition, "$$$", coins[coin.to].effect)
+	elseif(coin.from ~= nil) then
+		doChangeTypeItem(item.uid, item.type - 1)
+		doPlayerAddItem(cid, coin.from, ITEMCOUNT_MAX)
+--		doSendAnimatedText(fromPosition, "$$$", coins[coin.from].effect)
+	end
 
 	return true
 end

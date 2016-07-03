@@ -329,111 +329,109 @@
 	<action itemid="3937" script="furniture_package.lua"/>
 	<action itemid="3938" script="furniture_package.lua"/>
 	
+	<action itemid="2376" script="destroy.lua" />
+	<action itemid="2377" script="destroy.lua" />
+	<action itemid="2378" script="destroy.lua" />
+	<action itemid="2379" script="destroy.lua" />
+	<action itemid="2380" script="destroy.lua" />
+	<action itemid="2381" script="destroy.lua" />
+	<action itemid="2382" script="destroy.lua" />
+	<action itemid="2383" script="destroy.lua" />
+	<action itemid="2384" script="destroy.lua" />
+	<action itemid="2385" script="destroy.lua" />
+	<action itemid="2386" script="destroy.lua" />
+	<action itemid="2387" script="destroy.lua" />
+	<action itemid="2388" script="destroy.lua" />
+	<action itemid="2389" script="destroy.lua" />
+	<action itemid="2390" script="destroy.lua" />
+	<action itemid="2391" script="destroy.lua" />
+	<action itemid="2392" script="destroy.lua" />
+	<action itemid="2393" script="destroy.lua" />
+	<action itemid="2394" script="destroy.lua" />
+	<action itemid="2395" script="destroy.lua" />
+	<action itemid="2396" script="destroy.lua" />
+	<action itemid="2397" script="destroy.lua" />
+	<action itemid="2398" script="destroy.lua" />
+	<action itemid="2399" script="destroy.lua" />
+	<action itemid="2400" script="destroy.lua" />
+	<action itemid="2401" script="destroy.lua" />
+	<action itemid="2402" script="destroy.lua" />
+	<action itemid="2403" script="destroy.lua" />
+	<action itemid="2404" script="destroy.lua" />
+	<action itemid="2406" script="destroy.lua" />
+	<action itemid="2407" script="destroy.lua" />
+	<action itemid="2408" script="destroy.lua" />
+	<action itemid="2409" script="destroy.lua" />
+	<action itemid="2410" script="destroy.lua" />
+	<action itemid="2411" script="destroy.lua" />
+	<action itemid="2412" script="destroy.lua" />
+	<action itemid="2413" script="destroy.lua" />
+	<action itemid="2414" script="destroy.lua" />
+	<action itemid="2415" script="destroy.lua" />
+	<action itemid="2416" script="destroy.lua" />
+	<action itemid="2417" script="destroy.lua" />
+	<action itemid="2418" script="destroy.lua" />
+	<action itemid="2419" script="destroy.lua" />
+	<action itemid="2421" script="destroy.lua" />
+	<action itemid="2422" script="destroy.lua" />
+	<action itemid="2423" script="destroy.lua" />
+	<action itemid="2424" script="destroy.lua" />
+	<action itemid="2425" script="destroy.lua" />
+	<action itemid="2426" script="destroy.lua" />
+	<action itemid="2427" script="destroy.lua" />
+	<action itemid="2428" script="destroy.lua" />
+	<action itemid="2429" script="destroy.lua" />
+	<action itemid="2430" script="destroy.lua" />
+	<action itemid="2431" script="destroy.lua" />
+	<action itemid="2432" script="destroy.lua" />
+	<action itemid="2433" script="destroy.lua" />
+	<action itemid="2434" script="destroy.lua" />
+	<action itemid="2435" script="destroy.lua" />
+	<action itemid="2436" script="destroy.lua" />
+	<action itemid="2437" script="destroy.lua" />
+	<action itemid="2438" script="destroy.lua" />
+	<action itemid="2439" script="destroy.lua" />
+	<action itemid="2440" script="destroy.lua" />
+	<action itemid="2441" script="destroy.lua" />
+	<action itemid="2442" script="destroy.lua" />
+	<action itemid="2443" script="destroy.lua" />
+	<action itemid="2444" script="destroy.lua" />
+	<action itemid="2445" script="destroy.lua" />
+	<action itemid="2446" script="destroy.lua" />
+	<action itemid="2447" script="destroy.lua" />
+	<action itemid="2448" script="destroy.lua" />
+	<action itemid="2449" script="destroy.lua" />
+	<action itemid="2450" script="destroy.lua" />
+	<action itemid="2451" script="destroy.lua" />
+	<action itemid="2452" script="destroy.lua" />
+	<action itemid="2453" script="destroy.lua" />
+		
+	-- Donate
+	<action itemid="2571" script="donate.lua" /> -- 7 dias
+	<action itemid="2572" script="donate.lua" /> -- 15 dias
+	<action itemid="2573" script="donate.lua" /> -- 30 dias
+	<action itemid="2345" script="donate.lua" /> -- 60 dias
 
--- destroying furniture with weapons
-<action itemid="2376" script="destroy.lua" />
-<action itemid="2377" script="destroy.lua" />
-<action itemid="2378" script="destroy.lua" />
-<action itemid="2379" script="destroy.lua" />
-<action itemid="2380" script="destroy.lua" />
-<action itemid="2381" script="destroy.lua" />
-<action itemid="2382" script="destroy.lua" />
-<action itemid="2383" script="destroy.lua" />
-<action itemid="2384" script="destroy.lua" />
-<action itemid="2385" script="destroy.lua" />
-<action itemid="2386" script="destroy.lua" />
-<action itemid="2387" script="destroy.lua" />
-<action itemid="2388" script="destroy.lua" />
-<action itemid="2389" script="destroy.lua" />
-<action itemid="2390" script="destroy.lua" />
-<action itemid="2391" script="destroy.lua" />
-<action itemid="2392" script="destroy.lua" />
-<action itemid="2393" script="destroy.lua" />
-<action itemid="2394" script="destroy.lua" />
-<action itemid="2395" script="destroy.lua" />
-<action itemid="2396" script="destroy.lua" />
-<action itemid="2397" script="destroy.lua" />
-<action itemid="2398" script="destroy.lua" />
-<action itemid="2399" script="destroy.lua" />
-<action itemid="2400" script="destroy.lua" />
-<action itemid="2401" script="destroy.lua" />
-<action itemid="2402" script="destroy.lua" />
-<action itemid="2403" script="destroy.lua" />
-<action itemid="2404" script="destroy.lua" />
-<action itemid="2406" script="destroy.lua" />
-<action itemid="2407" script="destroy.lua" />
-<action itemid="2408" script="destroy.lua" />
-<action itemid="2409" script="destroy.lua" />
-<action itemid="2410" script="destroy.lua" />
-<action itemid="2411" script="destroy.lua" />
-<action itemid="2412" script="destroy.lua" />
-<action itemid="2413" script="destroy.lua" />
-<action itemid="2414" script="destroy.lua" />
-<action itemid="2415" script="destroy.lua" />
-<action itemid="2416" script="destroy.lua" />
-<action itemid="2417" script="destroy.lua" />
-<action itemid="2418" script="destroy.lua" />
-<action itemid="2419" script="destroy.lua" />
-<action itemid="2421" script="destroy.lua" />
-<action itemid="2422" script="destroy.lua" />
-<action itemid="2423" script="destroy.lua" />
-<action itemid="2424" script="destroy.lua" />
-<action itemid="2425" script="destroy.lua" />
-<action itemid="2426" script="destroy.lua" />
-<action itemid="2427" script="destroy.lua" />
-<action itemid="2428" script="destroy.lua" />
-<action itemid="2429" script="destroy.lua" />
-<action itemid="2430" script="destroy.lua" />
-<action itemid="2431" script="destroy.lua" />
-<action itemid="2432" script="destroy.lua" />
-<action itemid="2433" script="destroy.lua" />
-<action itemid="2434" script="destroy.lua" />
-<action itemid="2435" script="destroy.lua" />
-<action itemid="2436" script="destroy.lua" />
-<action itemid="2437" script="destroy.lua" />
-<action itemid="2438" script="destroy.lua" />
-<action itemid="2439" script="destroy.lua" />
-<action itemid="2440" script="destroy.lua" />
-<action itemid="2441" script="destroy.lua" />
-<action itemid="2442" script="destroy.lua" />
-<action itemid="2443" script="destroy.lua" />
-<action itemid="2444" script="destroy.lua" />
-<action itemid="2445" script="destroy.lua" />
-<action itemid="2446" script="destroy.lua" />
-<action itemid="2447" script="destroy.lua" />
-<action itemid="2448" script="destroy.lua" />
-<action itemid="2449" script="destroy.lua" />
-<action itemid="2450" script="destroy.lua" />
-<action itemid="2451" script="destroy.lua" />
-<action itemid="2452" script="destroy.lua" />
-<action itemid="2453" script="destroy.lua" />
-	
--- Donate
-<action itemid="2571" script="donate.lua" /> -- 7 dias
-<action itemid="2572" script="donate.lua" /> -- 15 dias
-<action itemid="2573" script="donate.lua" /> -- 30 dias
-<action itemid="2345" script="donate.lua" /> -- 60 dias
+	<!-- switchs -->
+	<action uniqueid="9999" script="Alavancas/rook_wall.lua" />
+	<action uniqueid="9998" script="Alavancas/rook_parede1.lua" />
+	<action uniqueid="9997" script="Alavancas/rook_parede2.lua" />
+	<action uniqueid="9996" script="Alavancas/rook_parede3.lua" />
+	<action uniqueid="9995" script="Alavancas/rook_parede4.lua" />
+	<!-- <action uniqueid="8551" script="Alavancas/miasto_alavanca.lua" /> -->
+	<action uniqueid="8887" script="Alavancas/bright_sword_quest_pedra.lua" />
+	<action actionid="1621" script="Alavancas/fibula draw well.lua" />
+	<action actionid="1622" script="Alavancas/scale draw well.lua" />
+	<action uniqueid="4321" script="Alavancas/mols.lua" />
+	<action uniqueid="2468" script="Alavancas/edron_orc_pedra.lua" />
+	<action uniqueid="2469" script="Alavancas/kazz_lever.lua" />
+	<action uniqueid="33210" script="Alavancas/banuta.lua" />
+	<action actionid="55001" script="Alavancas/rook_rats.lua" />
 
--- Alavancas
-<action uniqueid="9999" script="Alavancas/rook_wall.lua" />
-<action uniqueid="9998" script="Alavancas/rook_parede1.lua" />
-<action uniqueid="9997" script="Alavancas/rook_parede2.lua" />
-<action uniqueid="9996" script="Alavancas/rook_parede3.lua" />
-<action uniqueid="9995" script="Alavancas/rook_parede4.lua" />
-<!-- <action uniqueid="8551" script="Alavancas/miasto_alavanca.lua" /> -->
-<action uniqueid="8887" script="Alavancas/bright_sword_quest_pedra.lua" />
-<action actionid="1621" script="Alavancas/fibula draw well.lua" />
-<action actionid="1622" script="Alavancas/scale draw well.lua" />
-<action uniqueid="4321" script="Alavancas/mols.lua" />
-<action uniqueid="2468" script="Alavancas/edron_orc_pedra.lua" />
-<action uniqueid="2469" script="Alavancas/kazz_lever.lua" />
-<action uniqueid="33210" script="Alavancas/banuta.lua" />
-<action actionid="55001" script="Alavancas/rook_rats.lua" />
-
------------------ Quests ---------------------
+	<!-- Quests -->
 	 
-	 .:: Edron ::. 
-	 <!-- The Annihilator Quest -->
+	<!-- .:: Edron ::. --> 
+	<!-- The Annihilator Quest -->
 	<action uniqueid="5006" script="Quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
 	<action uniqueid="5007" script="Quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
 	<action uniqueid="5008" script="Quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
@@ -456,42 +454,42 @@
 	<!-- Triple UH Rune Quest -->
 	<action uniqueid="1015" script="Quests/Edron/Triple UH Rune Quest/triple uh.lua" />
 	
-	-- Vampire Shield Quest
+	<!-- Vampire Shield Quest -->
 	<action uniqueid="1016" script="Quests/Edron/Vampire Shield Quest/vampire shield.lua" />
 	<action uniqueid="1017" script="Quests/Edron/Vampire Shield Quest/dragon lance.lua" />
 	
-	-- Fire Axe Quest
+	<!-- Fire Axe Quest -->
 	<action uniqueid="1018" script="Quests/Edron/Fire Axe Quest/fire axe.lua" />
     <action uniqueid="1019" script="Quests/Edron/Fire Axe Quest/bag.lua" />
 	
-	-- Troll Cave Quest
+	<!-- Troll Cave Quest -->
 	<action uniqueid="1026" script="Quests/Edron/Troll Cave Quest/brass legs.lua" />
 	<action uniqueid="1027" script="Quests/Edron/Troll Cave Quest/brass legs.lua" />
 	
-	-- Edron Goblin Quest
+	<!-- Edron Goblin Quest -->
 	<action uniqueid="1028" script="Quests/Edron/Edron Goblin Quest/steel shield.lua" />
 	<action uniqueid="1029" script="Quests/Edron/Edron Goblin Quest/silver amulet.lua" />
 	
-	-- Barbarian Axe Quest
+	<!-- Barbarian Axe Quest -->
 	<action uniqueid="1030" script="Quests/Edron/Barbarian Axe Quest/reward.lua" />
 	
-	-- Berserker Treasure Quest
+	<!-- Berserker Treasure Quest -->
 	<action uniqueid="1031" script="Quests/Edron/Berserker Treasure Quest/reward.lua" />
 	
-	-- Parchment Room Quest
+	<!-- Parchment Room Quest -->
 	<action uniqueid="10057" script="Quests/Edron/Parchment Room Quest/bag.lua" />
 	
-	.:: Jakundaf Desert, Outlaw Camp and Plains of Havoc ::.
+	<!-- .:: Jakundaf Desert, Outlaw Camp and Plains of Havoc ::. -->
 	<!-- The Outlaw Camp Quest (Bright Sword Quest) -->
 	<action uniqueid="1000" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Outlaw Camp Quest/bright_sword.lua" />
 	<action uniqueid="8889" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Outlaw Camp Quest/power_ring.lua" />
 	
-	-- The Desert Dungeons Quest
+	<!-- The Desert Dungeons Quest -->
 	<action uniqueid="8890" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/desert_quest.lua" />
 	<action uniqueid="1020" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/100 platinum coins.lua" />
 	<action uniqueid="1021" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/green bag.lua" />
 	
-	-- The Pits of Inferno Quest
+	<!-- The Pits of Inferno Quest -->
 	<!-- Pits of Inferno -->
 	<action uniqueid="10203" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/Oil.lua" />
 	<action uniqueid="10204" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LeverKnight.lua" />
@@ -532,7 +530,7 @@
 	<action uniqueid="10552" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
 	<action uniqueid="42881" script="Quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poi_stone.lua"/>
 	
-	.:: Kazordoon ::.
+	<!-- .:: Kazordoon ::. -->
 	<!-- Paradox Tower Quest -->
 	<action uniqueid="10004" script="Quests/Kazordoon/Paradox Tower Quest/key.lua" />
 	<action actionid="125" script="Quests/Kazordoon/Paradox Tower Quest/paradox_lvl2.lua"/>
@@ -544,58 +542,58 @@
 	<action uniqueid="10037" script="Quests/Kazordoon/Paradox Tower Quest/bau.lua" />
 	<action uniqueid="10038" script="Quests/Kazordoon/Paradox Tower Quest/bau.lua" />
 	
-	-- Crusader Helmet Quest
+	<!-- Crusader Helmet Quest -->
 	<action uniqueid="10034" script="Quests/Kazordoon/Crusader Helmet Quest/crusader.lua" />
 	
-	.:: Rookgaard ::.
+	<!-- .:: Rookgaard ::. -->
 	<!-- Dragon Corpse Quest -->
 	<action uniqueid="1004" script="Quests/Rookgaard/Dragon Corpse Quest/dragon_reward.lua" />
 	
-	-- Katana Sword Quest
+	<!-- Katana Sword Quest -->
 	<action uniqueid="1005" script="Quests/Rookgaard/Katana Quest/key.lua" />
 	<action uniqueid="1006" script="Quests/Rookgaard/Katana Quest/viking helmet.lua" />
 	<action uniqueid="1007" script="Quests/Rookgaard/Katana Quest/katana.lua" />
 	
-	-- Minotaur Hell Quest
+	<!-- Minotaur Hell Quest -->
 	<action uniqueid="1008" script="Quests/Rookgaard/Minotaur Hell Quest/bag.lua" />
 	<action uniqueid="1009" script="Quests/Rookgaard/Minotaur Hell Quest/carlin sword.lua" />
 	<action uniqueid="1010" script="Quests/Rookgaard/Minotaur Hell Quest/fishing rod.lua" />
 	
-	-- Torch Quest
+	<!-- Torch Quest -->
 	<action uniqueid="1022" script="Quests/Rookgaard/Torch Quest/torch quest.lua" />
 	
-	-- Rapier Quest
+	<!-- Rapier Quest -->
 	<action uniqueid="1023" script="Quests/Rookgaard/Rapier Quest/rapier.lua" />
 	
-	-- Captain Iglues Treasure Quest
+	<!-- Captain Iglues Treasure Quest -->
 	<action uniqueid="1024" script="Quests/Rookgaard/Captain Iglues Treasure Quest/letter.lua" />
 	<action uniqueid="1025" script="Quests/Rookgaard/Captain Iglues Treasure Quest/salmon.lua" />
 	
-	-- Present Quest
+	<!-- Present Quest -->
 	<action uniqueid="10020" script="Quests/Rookgaard/Present Quest/backpack.lua" />
 	
-	-- Bear Room Quest
+	<!-- Bear Room Quest -->
 	<action uniqueid="10021" script="Alavancas/bear_room_alavanca.lua" />
 	<action uniqueid="10023" script="Quests/Rookgaard/Bear Room Quest/key.lua" />
 	<action uniqueid="10024" script="Quests/Rookgaard/Bear Room Quest/chain armor.lua" />
 	<action uniqueid="10025" script="Quests/Rookgaard/Bear Room Quest/brass helmet.lua" />
 	<action uniqueid="10026" script="Quests/Rookgaard/Bear Room Quest/arrow_gold.lua" />
 	
-	-- Short Sword Quest
+	<!-- Short Sword Quest -->
 	<action uniqueid="10022" script="Quests/Rookgaard/Short Sword Quest/book.lua" />
 	
-	-- Doublet Quest
+	<!-- Doublet Quest -->
 	<action uniqueid="10027" script="Quests/Rookgaard/Doublet Quest/doublet.lua" />
 	
-	-- Honey Flower Quest
+	<!-- Honey Flower Quest -->
 	<action uniqueid="10028" script="Quests/Rookgaard/Honey Flower Quest/flower.lua" />
 	
-	-- Studded Shield Quest
+	<!-- Studded Shield Quest -->
 	<action uniqueid="9910" script="Quests/Rookgaard/Studded Shield Quest/banana_tree1.lua" />
 	<action uniqueid="9911" script="Quests/Rookgaard/Studded Shield Quest/banana_tree2.lua" />
 	
-	.:: Carlin ::.
-	-- The Queen of the Banshees Quest
+	<!-- .:: Carlin ::. -->
+	<!-- The Queen of the Banshees Quest -->
 	<action uniqueid="10001" script="Quests/Carlin/The Queen of the Banshees Quest/magic_wall_1.lua" />
 	<action uniqueid="10003" script="Quests/Carlin/The Queen of the Banshees Quest/10k_chest.lua" />
 	<action uniqueid="10009" script="Quests/Carlin/The Queen of the Banshees Quest/boh_chest.lua" />
@@ -616,30 +614,30 @@
 	<action actionid="2554" script="Quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
 	<action actionid="2555" script="Quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
 
-	-- Crystal Wand Quest
+	<!-- Crystal Wand Quest -->
 	<action uniqueid="10051" script="Quests/Carlin/Crystal Wand Quest/premio.lua" />
 	<action uniqueid="10052" script="Quests/Carlin/Crystal Wand Quest/premio.lua" />
 	
-	-- Griffin Shield Quest
+	<!-- Griffin Shield Quest -->
 	<action uniqueid="10062" script="Quests/Carlin/Griffin Shield Quest/griffin.lua" />
 	<action uniqueid="10063" script="Quests/Carlin/Griffin Shield Quest/dwarven_axe.lua" />
 	<action uniqueid="10064" script="Quests/Carlin/Griffin Shield Quest/obsidian.lua" />
 	
-	.:: Venore ::.
-	-- The Black Knight Quest
+	<!-- .:: Venore ::. -->
+	<!-- The Black Knight Quest -->
 	<action uniqueid="10011" script="Quests/Venore/The Black Knight Quest/key.lua" />
 	<action uniqueid="10012" script="Quests/Venore/The Black Knight Quest/crown armor.lua" />
 	<action uniqueid="10013" script="Quests/Venore/The Black Knight Quest/crown shield.lua" />
 	
-	-- Blood Herb Quest
+	<!-- Blood Herb Quest -->
 	<action uniqueid="10032" script="Quests/Venore/Blood Herb Quest/blood_herb.lua" />
 	
-	-- Time Ring Quest
+	<!-- Time Ring Quest -->
 	<action uniqueid="10039" script="Quests/Venore/Time Ring Quest/time_ring.lua" />
 	<action uniqueid="10040" script="Quests/Venore/Time Ring Quest/elven_amulet.lua" />
 	<action uniqueid="10041" script="Quests/Venore/Time Ring Quest/crystal_ball.lua" />
 	
-	.:: Thais ::.
+	<!-- .:: Thais ::. -->
 	<!-- Fibula -->
 	<action uniqueid="10014" script="Quests/Thais/Deeper Fibula Quest/key 3980.lua" />
 	<action uniqueid="10015" script="Quests/Thais/Deeper Fibula Quest/tower shield.lua" />
@@ -677,7 +675,7 @@
 	<action uniqueid="10073" script="Quests/Thais/The Postman Missions Quest/crowbar_mail.lua" />
 	<action itemid="2416" script="Quests/Thais/The Postman Missions Quest/crowbar_mail.lua"/>
 	
-	.:: Ab'Dendriel ::.
+	<!-- .:: Ab'Dendriel ::. -->
 	<!-- Orc Fortress Quest -->
 	<action uniqueid="10029" script="Quests/Ab'Dendriel/Orc Fortress Quest/fire_sword.lua" />
 	<action uniqueid="10030" script="Quests/Ab'Dendriel/Orc Fortress Quest/knight_axe.lua" />
@@ -695,14 +693,14 @@
 	<action uniqueid="10055" script="Quests/Ab'Dendriel/Elvenbane Quest/morning_star.lua" />
 	<action uniqueid="10056" script="Quests/Ab'Dendriel/Elvenbane Quest/dwarven_shield.lua" />
 	
-	.::Darashia ::.
+	<!-- .::Darashia ::. -->
 	<!-- Medusa Shield Quest -->
 	<action uniqueid="10033" script="Quests/Darashia/Medusa Shield Quest/reward.lua" />
 	
 	<!-- Plate Armor Quest -->
 	<action uniqueid="10066" script="Quests/Darashia/Plate Armor Quest/plate_armor.lua" />
 	
-	.:: Ankrahmun ::.
+	<!-- .:: Ankrahmun ::. -->
 	<action uniqueid="10044" script="Quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
 	<action uniqueid="10045" script="Quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
 	<action uniqueid="10046" script="Quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
@@ -711,7 +709,7 @@
 	<action uniqueid="10049" script="Quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
 	<action uniqueid="10050" script="Quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
 	
-	.:: Epic Quests ::.
+	<!-- .:: Epic Quests ::. -->
 	<action uniqueid="10069" script="Epic Quests/spike_sword.lua" />
 	
 </actions>

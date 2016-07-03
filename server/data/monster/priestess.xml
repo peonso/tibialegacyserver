@@ -61,7 +61,7 @@
 		<item id="2802" chance="28000"/><!-- 28% sling herb -->
 		<item id="2760" chance="24000"/><!-- 24% goat grass -->
 		<item id="2803" chance="12000"/><!-- 12% powder herb -->
-		<item id="2374" chance="2800"/><!-- 2.8% wooden flute -->
+		<item id="2070" chance="2800"/><!-- 2.8% wooden flute -->
 		<item id="2192" chance="2400"/><!-- 2.4% crystal ball -->
 		<item id="2151" chance="1400"/><!-- 1.4% talon -->
 		<item id="2674" chance="15000" countmax="2"/><!-- 2 15% red apple -->
