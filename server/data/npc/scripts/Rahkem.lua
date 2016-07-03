@@ -82,7 +82,7 @@ if msg == "heal" then
 	return true
 	end
 	talk_state = 0	
-    return 1
+    return true
 end
 
 if(npcHandler.focus ~= cid) then
@@ -661,7 +661,7 @@ elseif msgcontains(msg, 'spell') then
 	end
 	
 end		
-    return 1
+    return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

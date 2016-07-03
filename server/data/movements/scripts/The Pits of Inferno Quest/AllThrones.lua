@@ -63,5 +63,5 @@ function onStepIn(cid, item, pos)
 			doPlayerSay(cid, "You have already absorbed some of Ashfalor´s spirit.", TALKTYPE_ORANGE)
         end
     end
-    return 1
+    return true
 end

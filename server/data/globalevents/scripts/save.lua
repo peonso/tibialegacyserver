@@ -5,5 +5,5 @@ function onThink(interval, lastExecution, thinkInterval)
         end
         print(":: Server save: " ..os.date("%X %b %d", (os.time())))
 		doBroadcastMessage("Server is saving.")
-   return 10
+   return true
 end

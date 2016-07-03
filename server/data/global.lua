@@ -13,6 +13,9 @@ dofile(getDataDir() .. 'libs/exp_stages.lua')
 -- Load db file
 dofile(getDataDir() .. 'libs/db.lua')
 
+-- Load compat file to make new TFS 1.x oop functions work
+dofile(getDataDir() .. 'libs/compat.lua')
+
 -- Storages consts
 STORAGE_RUM_MACHINE = 100000
 STORAGE_PROMOTION = 15000

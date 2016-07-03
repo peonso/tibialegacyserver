@@ -92,7 +92,7 @@ function onUse(cid, item, frompos, item2, topos)
 				doPlayerSendCancel(cid,"Sorry, you need to put the correct stuffs at the correct basins.")
 			end
 			else
-			return 0
+			return false
 			end
 		else
 			doPlayerSendCancel(cid,"Sorry, all players in your team must to be level " .. questlevel .. ".")
@@ -100,5 +100,5 @@ function onUse(cid, item, frompos, item2, topos)
 	else
 		doPlayerSendCancel(cid,"Sorry, all 4 players must be on right positions.")
 	end
-	return 1
+	return true
 end

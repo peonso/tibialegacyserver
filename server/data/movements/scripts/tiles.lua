@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Movement Scripts)
+-- by Nottinghster
 
 local SWITCHES = { {416, 417}, {426, 425}, {446, 447}, {3216, 3217}, {3202, 3215} }
 

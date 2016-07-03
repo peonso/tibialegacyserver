@@ -9,7 +9,7 @@ if item.uid == 9910 then
    doPlayerSendTextMessage(cid,22,"The palm is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end

@@ -57,5 +57,5 @@ elseif item.actionid == 2555 and item.itemid == 1946 then
 doTransformItem(item.uid,item.itemid-1)
 end
 
-return TRUE
+return true
 end

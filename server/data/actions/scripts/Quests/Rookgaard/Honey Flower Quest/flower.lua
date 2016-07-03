@@ -10,8 +10,8 @@ if item.uid == 10028 then
    doPlayerSendTextMessage(cid,22,"The heaven blossom is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end
 

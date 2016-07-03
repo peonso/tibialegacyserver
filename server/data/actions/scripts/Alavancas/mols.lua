@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 gatepos = {x=32483, y=31633, z=9, stackpos=0}
@@ -17,5 +13,5 @@ doTransformItem(item.uid,item.itemid-1)
 else
 doPlayerSendCancel(cid,"Sorry not possible.")
 end
-return TRUE
+return true
 end

@@ -82,7 +82,7 @@ elseif talk_state == 3 and msgcontains(msg, 'partos') and getPlayerStorageValue(
 	addEvent(message51, 5000, pos)
 
 end		
-    return 1
+    return true
 end
 
 function message11(cid, type, msg)

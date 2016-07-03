@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Movement Scripts)
+-- by Nottinghster
 
 function onAddItem(item, tile, pos)
 	local isLevelDoor = (item.actionid >= 1001 and item.actionid <= 1999)

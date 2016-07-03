@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local BIRD_CAGE = 2095
 local CORNUCOPIA = 2369
@@ -23,5 +19,5 @@ function onUse(cid, item, frompos, item2, topos)
 		doSendMagicEffect(frompos, CONST_ME_SOUND_YELLOW)
 	end
 	
-	return TRUE
+	return true
 end 

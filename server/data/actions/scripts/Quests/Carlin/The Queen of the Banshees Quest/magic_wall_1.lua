@@ -1,4 +1,4 @@
--- Script by Nottinghster
+-- by Nottinghster
 local function createWall(p)
 
 doCreateItem(1498,1,{x=32259, y=31890, z=10})
@@ -30,5 +30,5 @@ function onUse(cid, item, frompos, item2, topos)
 		doPlayerSendCancel(cid,"Sorry, not possible.")
 	end
 
-	return 1
+	return true
 end

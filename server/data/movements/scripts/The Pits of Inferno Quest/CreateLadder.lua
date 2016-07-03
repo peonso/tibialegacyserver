@@ -15,5 +15,5 @@ function onStepOut(cid, item, frompos, item2, topos)
 		doRemoveItem(getwall1.uid,1)
 	end
 
-	return 1
+	return true
 end

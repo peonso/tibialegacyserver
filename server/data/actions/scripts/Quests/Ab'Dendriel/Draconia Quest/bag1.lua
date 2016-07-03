@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 
@@ -20,5 +16,5 @@ if item.uid == 1655 then
 	end
 end
 
-	return TRUE
+	return true
 end	

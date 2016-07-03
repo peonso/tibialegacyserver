@@ -45,5 +45,5 @@ doTransformItem(item.uid,item.itemid-1)
 
 
 	end
-	return TRUE
+	return true
 end

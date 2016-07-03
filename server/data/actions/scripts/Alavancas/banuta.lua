@@ -23,5 +23,5 @@ doCreateItem(removals[i].item, 1, removals[i].pos)
 end       
 doTransformItem(item.uid, item.itemid - 1)   
 end   
-return TRUE
+return true
 end  

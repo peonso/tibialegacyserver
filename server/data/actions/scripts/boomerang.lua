@@ -8,7 +8,7 @@ local thing = getThingfromPos(stuff.toPosition)
         elseif isCreature(thing.uid) == FALSE then  
                 doTeleportThing(thing.uid, getCreaturePosition(stuff.cid))
         end  
-        return TRUE  
+        return true  
     end      
         doSendDistanceShoot(stuff.toPosition, getCreaturePosition(stuff.cid), CONST_ANI_ENERGY)  
         doAreaCombatHealth(0, CONST_ME_MAGIC_BLUE, stuff.toPosition, 0, -100, -200, CONST_ME_MAGIC_BLUE)  
@@ -24,5 +24,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
         local stuff = {cid = cid, toPosition = toPosition, counter = 1}          
         addEvent(target, 300, stuff)  
     end  
-    return TRUE  
+    return true  
 end

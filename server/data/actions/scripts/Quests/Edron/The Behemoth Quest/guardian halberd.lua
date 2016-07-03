@@ -1,4 +1,4 @@
--- Script by Nottinghster
+-- by Nottinghster
 function onUse(cid, item, frompos, item2, topos)
 if item.uid == 1013 then
   queststatus = getPlayerStorageValue(cid,1013)
@@ -11,8 +11,8 @@ if item.uid == 1013 then
    doPlayerSendTextMessage(cid,22,"The chest is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end
 

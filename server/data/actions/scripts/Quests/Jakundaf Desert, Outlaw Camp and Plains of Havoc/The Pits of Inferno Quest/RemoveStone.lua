@@ -10,5 +10,5 @@ doTransformItem(item.uid,item.itemid-1)
 else
 doPlayerSendCancel(cid,"Sorry not possible.")
 end
-  return 1
+  return true
   end

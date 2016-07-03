@@ -1,12 +1,8 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 if item2.itemid == 28 then
-return 0
+return false
 end
 
    if (item2.itemid >= 3805 and item2.itemid <= 3806) or
@@ -77,7 +73,7 @@ end
    doSendMagicEffect(topos,2)
    end
    else
-   return 0
+   return false
    end
-   return 1
+   return true
    end

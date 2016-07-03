@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 if item.uid == 10069 then
@@ -15,8 +11,8 @@ if item.uid == 10069 then
    doPlayerSendTextMessage(cid,22,"The chest is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end
 

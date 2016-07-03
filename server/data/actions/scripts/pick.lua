@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 
@@ -45,5 +41,5 @@ if item2.actionid == aID then
 elseif item2.itemid == 7200 then
 	doTransformItem(item2.uid,7236)
 end
-return TRUE
+return true
 end

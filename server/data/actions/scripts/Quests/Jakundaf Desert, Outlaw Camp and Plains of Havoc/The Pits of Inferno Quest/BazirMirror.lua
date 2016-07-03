@@ -10,5 +10,5 @@ if item.itemid == 1850 then
 
 end
 end
-return 1
+return true
 end

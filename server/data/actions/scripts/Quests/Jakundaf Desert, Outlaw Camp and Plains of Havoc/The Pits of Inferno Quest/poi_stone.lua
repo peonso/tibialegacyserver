@@ -19,5 +19,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		pos.stackpos = 253
         doTransformItem(item.uid, item.itemid - 1)
     end
-    return TRUE
+    return true
 end

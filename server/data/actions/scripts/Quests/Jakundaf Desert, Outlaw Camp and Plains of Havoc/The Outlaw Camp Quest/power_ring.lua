@@ -21,5 +21,5 @@ doPlayerSendCancel(cid, "")
 doCreateItem(1026, 1, parede)
 doTransformItem(item.uid, 1945)
 end
-return TRUE
+return true
 end

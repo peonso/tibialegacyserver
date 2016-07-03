@@ -98,5 +98,5 @@ if getPlayerStorageValue(cid,10552) == -1 then
  end
 
 end
-return TRUE
+return true
 end

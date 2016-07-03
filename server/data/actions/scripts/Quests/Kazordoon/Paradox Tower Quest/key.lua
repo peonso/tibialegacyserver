@@ -8,5 +8,5 @@ setPlayerStorageValue(cid, 10004,1)
 else
 doPlayerSendTextMessage(cid,22,"It is empty.")
 end
-return TRUE
+return true
 end

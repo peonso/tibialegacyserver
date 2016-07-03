@@ -13,5 +13,5 @@ elseif item.uid == 10203 and item.itemid == 1946 and getgate.itemid == 0 then
 else
 doPlayerSendTextMessage(cid,22,"The lever is creaking and rusty.")
 end
-return TRUE
+return true
 end

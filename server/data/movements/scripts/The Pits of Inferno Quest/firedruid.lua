@@ -18,5 +18,5 @@ doSendAnimatedText(topos, zabierz, kolor)
 doSendMagicEffect(getPlayerPosition(cid), 15)
 end
 
-return 1
+return true
 end

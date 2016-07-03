@@ -17,8 +17,8 @@ if item.uid == 10066 then
 	doPlayerSendTextMessage(cid,22,"The wooden coffin is empty.")
   end
 else
-  return FALSE
+  return false
 end
 
-return TRUE
+return true
 end

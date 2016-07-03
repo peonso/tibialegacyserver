@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 gatepos = {x=32088, y=32149, z=10, stackpos=1}
@@ -17,5 +13,5 @@ elseif item.uid == 9998 and item.itemid == 1946 and getgate.itemid == 0 then
 else
  doPlayerSendCancel(cid,"Not Possible")
 end
-return TRUE
+return true
 end

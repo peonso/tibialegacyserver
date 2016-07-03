@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local ITEM_CANDELABRUM_ON = 2057
 local ITEM_CANDELABRUM_OFF = 2041
@@ -17,5 +13,5 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 	
 	doDecayItem(item.uid)
-	return TRUE
+	return true
 end 

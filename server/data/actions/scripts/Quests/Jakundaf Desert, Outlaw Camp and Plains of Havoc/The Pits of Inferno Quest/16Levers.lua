@@ -49,5 +49,5 @@ else
 doPlayerSendCancel(cid,levers.text)
 doSendMagicEffect(levers.pos,2)
         end
-   return 1
+   return true
 end

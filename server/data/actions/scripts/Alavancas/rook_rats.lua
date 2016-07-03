@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local pos_realocar = {x=32102, y=32205, z=8}
 
@@ -62,5 +58,5 @@ function onUse(cid, item, frompos, item2, topos)
                 doTransformItem(item.uid,item.itemid-1)
                 doTransformItem(getTileItemById(alavancas[b],1946).uid,1945)
         end
-        return TRUE
+        return true
 end 

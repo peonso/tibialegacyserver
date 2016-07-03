@@ -9,8 +9,8 @@ if item.uid == 10031 then
    doPlayerSendTextMessage(cid,22,"The box is empty.")
   end
 else
-  return FALSE
+  return false
 end
-return TRUE
+return true
 end
 

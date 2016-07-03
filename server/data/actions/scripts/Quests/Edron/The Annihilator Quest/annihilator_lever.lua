@@ -128,5 +128,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
                 end
         end
 	end	
-        return TRUE
+        return true
 end

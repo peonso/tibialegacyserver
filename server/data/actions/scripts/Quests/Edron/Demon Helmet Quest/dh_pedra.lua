@@ -1,4 +1,4 @@
--- Script by Nottinghster
+-- by Nottinghster
 function onUse(cid, item, frompos, item2, topos)
 
 local gatepos = {x=33314, y=31592, z=15, stackpos=1}
@@ -20,5 +20,5 @@ local gettele = getThingfromPos(telepos)
         doPlayerSendCancel(cid,"Sorry, not possible.")
     end
     
-return TRUE
+return true
 end

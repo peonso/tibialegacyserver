@@ -22,5 +22,5 @@ for i=1, #tabela do
 	end
 end
 
-	return TRUE
+	return true
 end

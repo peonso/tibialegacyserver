@@ -10,8 +10,8 @@ if item.uid == 1007 then
    doPlayerSendTextMessage(cid,22,"The dead human body is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end
 

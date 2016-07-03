@@ -16,5 +16,5 @@ if pos.x == posicaoX and pos.y == posicaoY and pos.z == posicaoZ then
   doSummonCreature("Demon", demonpos4)
 end
 
-return 1
+return true
 end

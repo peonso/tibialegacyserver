@@ -13,8 +13,8 @@ function onUse(cid, item, frompos, item2, topos)
 	elseif queststatus == 1 then	
 		doPlayerSendTextMessage(cid,22,'The corpse is empty.')
 end
-return 1
+return true
 else
-return 0
+return false
 end
 end

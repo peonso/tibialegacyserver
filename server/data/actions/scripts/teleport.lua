@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 	npos = {x = frompos.x, y = frompos.y, z = frompos.z}
@@ -15,5 +11,5 @@ function onUse(cid, item, frompos, item2, topos)
 		doTeleportThing(cid, npos)
 	end
 	
-	return TRUE
+	return true
 end

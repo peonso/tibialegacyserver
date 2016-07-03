@@ -15,5 +15,5 @@ doTransformItem(item.uid,item.itemid-1)
 else
 doPlayerSendTextMessage(cid,22,"Sorry, not possible.")
 end
-return 1
+return true
 end  

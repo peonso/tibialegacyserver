@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
 	newPos = {x = topos.x, y = topos.y, z = topos.z, stackpos = 0}
@@ -21,7 +17,7 @@ function onUse(cid, item, frompos, item2, topos)
 			doPlayerSendCancel(cid, "Sorry, not possible.")
 		end
 	else
-		return FALSE
+		return false
 	end
-	return TRUE
+	return true
 end

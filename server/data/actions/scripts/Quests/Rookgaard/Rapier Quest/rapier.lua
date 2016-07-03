@@ -7,5 +7,5 @@ if Item:GetItem().uid == 1023 then
 	Player:SetQuest("chest", 1023, 2384, 1)
 end	
 
-	return TRUE
+	return true
 end

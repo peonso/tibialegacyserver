@@ -1,14 +1,10 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local MAX_FOOD = 1200
 
 function onUse(cid, item, frompos, item2, topos)
 	if (FOODS[item.itemid] == nil) then
-		return FALSE
+		return false
 	end
 
 	local size = FOODS[item.itemid][1]
@@ -16,11 +12,11 @@ function onUse(cid, item, frompos, item2, topos)
 
 	if (getPlayerFood(cid) + size > MAX_FOOD) then
 		doPlayerSendCancel(cid, "You are full.")
-		return TRUE
+		return true
 	end
 	
 	doPlayerFeed(cid, size)
 	doRemoveItem(item.uid, 1)
 	doPlayerSay(cid, sound, TALKTYPE_SAY)
-	return TRUE
+	return true
 end

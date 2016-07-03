@@ -1,4 +1,4 @@
--- Script by Nottinghster
+-- by Nottinghster
 function onUse(cid, item, frompos, item2, topos)
 gatepos1 = {x=33295, y=31677, z=15, stackpos=1}
 gatepos2 = {x=33296, y=31677, z=15, stackpos=1}
@@ -39,5 +39,5 @@ getgate5.itemid == 0 then
 else
  doPlayerSendCancel(cid,"It is not possible.")
 end
-return TRUE
+return true
 end

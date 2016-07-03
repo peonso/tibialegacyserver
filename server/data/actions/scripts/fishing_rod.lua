@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local ITEM_WORM = 3976
 local ITEM_FISH = 2667
@@ -20,7 +16,7 @@ function onUse(cid, item, frompos, item2, topos)
                         end
                 end
                 doSendMagicEffect(topos, CONST_ME_LOSEENERGY)
-            return TRUE
+            return true
         end
-    return FALSE
+    return false
 end

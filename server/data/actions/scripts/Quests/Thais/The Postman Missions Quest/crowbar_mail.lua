@@ -10,5 +10,5 @@ getmail = getThingfromPos(mail)
 		doPlayerSendCancel(cid,'Sorry, not possible.')
 	end
 	
-	return TRUE
+	return true
 end

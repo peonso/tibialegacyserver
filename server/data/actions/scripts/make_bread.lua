@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local ITEM_WHEAT = 2694
 local ITEM_FLOUR = 2692
@@ -16,19 +12,19 @@ function onUse(cid, item, frompos, item2, topos)
 	if(item.itemid == ITEM_WHEAT and isInArray(ITEM_MILL, item2.itemid) == TRUE) then
 		doPlayerAddItem(cid, ITEM_FLOUR)
 		doRemoveItem(item.uid, 1)
-		return TRUE
+		return true
 		
 	elseif(item.itemid == ITEM_FLOUR and isItemFluidContainer(item2.itemid) == TRUE and item2.type == TYPE_WATER) then
 		doPlayerAddItem(cid, ITEM_DOUGH)
 		doChangeTypeItem(item2.uid, TYPE_EMPTY)
 		doRemoveItem(item.uid, 1)
-		return TRUE
+		return true
 		
 	elseif(item.itemid == ITEM_DOUGH and isInArray(OVEN_ON, item2.itemid) == TRUE) then
 		doPlayerAddItem(cid, ITEM_BREAD)
 		doRemoveItem(item.uid, 1)
-		return TRUE
+		return true
 	end
 	
-	return FALSE
+	return false
 end 

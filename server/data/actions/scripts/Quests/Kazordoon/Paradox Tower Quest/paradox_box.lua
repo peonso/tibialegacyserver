@@ -9,5 +9,5 @@ else
 	doPlayerSendCancel(cid,"The switch seems to be stuck.")
 end
 
-	return TRUE
+	return true
 end

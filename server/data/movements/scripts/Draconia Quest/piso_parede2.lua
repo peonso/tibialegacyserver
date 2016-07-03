@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Movement Scripts)
+-- by Nottinghster
 
 function onStepIn(cid, item, frompos, item2, topos) 
 	wall1 = {x=32795, y=31578, z=5, stackpos=1}
@@ -23,5 +19,5 @@ function onStepOut(cid, item, frompos, item2, topos)
 		doTransformItem(item.uid,item.itemid+1)
 	end
 
-	return 1
+	return true
 end

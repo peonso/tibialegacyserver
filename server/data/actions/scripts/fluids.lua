@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 local exhaust = createConditionObject(CONDITION_EXHAUSTED)
 setConditionParam(exhaust, CONDITION_PARAM_TICKS, 1000)
@@ -24,7 +20,7 @@ local FLUID = {WATER = 1, BLOOD = 2, BEER = 3, SLIME = 4, LEMONADE = 5, MILK = 6
 function onUse(cid, item, frompos, item2, topos)
       if(hasCondition(cid, CONDITION_EXHAUSTED) == TRUE) then
 		doPlayerSendDefaultCancel(cid, RETURNVALUE_YOUAREEXHAUSTED)
-		return TRUE
+		return true
 	end
 
 	if item2.itemid == 1 then
@@ -87,5 +83,5 @@ function onUse(cid, item, frompos, item2, topos)
 			doDecayItem(splash)
 		end
 	end
-	return TRUE
+	return true
 end

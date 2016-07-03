@@ -1,8 +1,4 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Action)
+-- by Nottinghster
 
 function onUse(cid, item, frompos, item2, topos)
  
@@ -12,7 +8,7 @@ topos = {x=topos.x, y=topos.y, z=topos.z}
 local rand = math.random(1,100)
 
 if item2.itemid == 28 then
-	return FALSE
+	return false
 end
 
 	if item2.itemid == 468 then
@@ -37,8 +33,8 @@ end
 			doSendMagicEffect(topos,2)
 	end
 	else
-		return FALSE
+		return false
 	end
 	
-return TRUE
+return true
 end

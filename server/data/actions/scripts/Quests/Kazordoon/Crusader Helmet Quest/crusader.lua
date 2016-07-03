@@ -9,8 +9,8 @@ if item.uid == 10034 then
    doPlayerSendTextMessage(cid,22,"The slain skeleton is empty.")
   end
 else
-  return 0
+  return false
 end
-return 1
+return true
 end
 

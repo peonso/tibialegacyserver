@@ -16,5 +16,5 @@ local charpos = getPlayerPosition(cid)
 
         doSendMagicEffect({x=32828, y=32246, z=10}, 10)
         end
-    return 1
+    return true
 end

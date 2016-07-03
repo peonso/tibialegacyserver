@@ -32,9 +32,9 @@ doRemoveItem(getThingfromPos({x=32477, y=31905, z=6, stackpos=1}).uid, 1386)
 doTransformItem(item.uid,item.itemid-1)
 
 else
-return 0
+return false
 end
 
-return 1
+return true
 
 end
