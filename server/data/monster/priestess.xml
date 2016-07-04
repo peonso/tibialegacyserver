@@ -53,7 +53,7 @@
 				<item id="2183" chance="2000"/><!-- 2% tempest rod -->
 				<item id="2379" chance="46000"/><!-- 46% dagger -->
 				<item id="2423" chance="3000"/><!-- 3% clerical mace -->
-				<item id="1962" chance="14000"/><!-- 14% orange book -->
+				<item id="1977" chance="14000"/><!-- 14% orange book -->
 			</inside>
 		</item>
 		<item id="2125" chance="1200"/><!-- 1.2% crystal necklace -->

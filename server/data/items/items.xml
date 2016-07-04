@@ -2197,10 +2197,7 @@
 		<attribute key="maxTextLen" value="512"/>
 	</item>
 	<item id="1950" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1971"/>
 	</item>
 	<item id="1951" article="a" name="parchment">
 		<attribute key="weight" value="200"/>
@@ -2221,10 +2218,7 @@
 		<attribute key="weight" value="50"/>
 	</item>
 	<item id="1955" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1972"/>
 	</item>
 	<item id="1956" article="a" name="map">
 		<attribute key="weight" value="830"/>
@@ -2233,63 +2227,43 @@
 		<attribute key="weight" value="790"/>
 	</item>
 	<item id="1958" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1973"/>
 	</item>
 	<item id="1959" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1974"/>
 	</item>
 	<item id="1960" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1975"/>
 	</item>
 	<item id="1961" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
 	</item>
 	<item id="1962" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1977"/>
 	</item>
 	<item id="1963" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1978"/>
 	</item>
 	<item id="1964" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1979"/>
 	</item>
 	<item id="1965" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1980"/>
 	</item>
 	<item id="1966" article="a" name="book">
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
-		<attribute key="writeOnceItemId" value="1981"/>
 	</item>
 	<item id="1967" article="a" name="parchment">
 		<attribute key="weight" value="200"/>
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
+		<attribute key="writeOnceItemId" value="1967"/>
 	</item>
 	<item id="1968" article="a" name="document">
 		<attribute key="weight" value="150"/>
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
+		<attribute key="writeOnceItemId" value="1968"/>
 	</item>
 	<item id="1969" article="a" name="parchment">
 		<attribute key="writeable" value="1"/>
@@ -2300,39 +2274,69 @@
 		<attribute key="weight" value="1300"/>
 	</item>
 	<item id="1971" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1950"/>
 	</item>
 	<item id="1972" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1955"/>
 	</item>
 	<item id="1973" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1958"/>
 	</item>
 	<item id="1974" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1959"/>
 	</item>
 	<item id="1975" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1960"/>
 	</item>
-	<item id="1976" article="a" name="gemmed book">
+	<item id="1976" article="a" name="T book">
 		<attribute key="writeable" value="1"/>
 		<attribute key="maxTextLen" value="1100"/>
 		<attribute key="weight" value="1300"/>
 	</item>
 	<item id="1977" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1962"/>
 	</item>
 	<item id="1978" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1963"/>
 	</item>
 	<item id="1979" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1964"/>
 	</item>
 	<item id="1980" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1965"/>
 	</item>
 	<item id="1981" article="a" name="book">
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxTextLen" value="512"/>
 		<attribute key="weight" value="1300"/>
+		<attribute key="writeOnceItemId" value="1966"/>
 	</item>
 	<item id="1982" article="a" name="purple tome">
 		<attribute key="weight" value="1900"/>
