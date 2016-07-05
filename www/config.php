@@ -54,58 +54,6 @@
 		array(1501,100,"Killing in the Name of",0),
 		array(1502,150,"Killing in the Name of",0),
 		array(65001,100,"Killing in the Name of",0),
-		array(65002,150,"Killing in the Name of",0),
-		array(65003,300,"Killing in the Name of",0),
-		array(65004,3,"Killing in the Name of",0),
-		array(65005,300,"Killing in the Name of",0),
-		array(65006,150,"Killing in the Name of",0),
-		array(65007,200,"Killing in the Name of",0),
-		array(65008,300,"Killing in the Name of",0),
-		array(65009,300,"Killing in the Name of",0),
-		array(65010,300,"Killing in the Name of",0),
-		array(65011,300,"Killing in the Name of",0),
-		array(65012,300,"Killing in the Name of",0),
-		array(65013,300,"Killing in the Name of",0),
-		array(65014,300,"Killing in the Name of",1),
-		array(12110,2,"The Inquisition",0),
-		array(12111,7,"The Inquisition",0),
-		array(12112,3,"The Inquisition",0),
-		array(12113,6,"The Inquisition",0),
-		array(12114,3,"The Inquisition",0),
-		array(12115,3,"The Inquisition",0),
-		array(12116,3,"The Inquisition",0),
-		array(12117,5,"The Inquisition",1),
-		array(330,3,"Sam's Old Backpack",1),
-		array(12121,3,"The Ape City",0),
-		array(12122,5,"The Ape City",0),
-		array(12123,3,"The Ape City",0),
-		array(12124,3,"The Ape City",0),
-		array(12125,3,"The Ape City",0),
-		array(12126,3,"The Ape City",0),
-		array(12127,4,"The Ape City",0),
-		array(12128,3,"The Ape City",0),
-		array(12129,3,"The Ape City",1),
-		array(12101,1,"The Ancient Tombs",0),
-		array(12102,1,"The Ancient Tombs",0),
-		array(12103,1,"The Ancient Tombs",0),
-		array(12104,1,"The Ancient Tombs",0),
-		array(12105,1,"The Ancient Tombs",0),
-		array(12106,1,"The Ancient Tombs",0),
-		array(12107,1,"The Ancient Tombs",1),
-		array(12022,3,"Barbarian Test Quest",0),
-		array(12023,3,"Barbarian Test Quest",0),
-		array(12024,3,"Barbarian Test Quest",1),
-		array(12025,3,"The Ice Islands Quest",0),
-		array(12026,5,"The Ice Islands Quest",0),
-		array(12027,3,"The Ice Islands Quest",0),
-		array(12028,2,"The Ice Islands Quest",0),
-		array(12029,6,"The Ice Islands Quest",0),
-		array(12030,8,"The Ice Islands Quest",0),
-		array(12031,3,"The Ice Islands Quest",0),
-		array(12032,4,"The Ice Islands Quest",0),
-		array(12033,2,"The Ice Islands Quest",0),
-		array(12034,2,"The Ice Islands Quest",0),
-		array(12035,2,"The Ice Islands Quest",0),
 		array(12036,6,"The Ice Islands Quest",1),
 	);
 
@@ -229,7 +177,7 @@
 	$config['max_characters'] = 7;
 
 	// Available character vocation users can create.
-	$config['available_vocations'] = array(1, 2, 3, 4);
+	$config['available_vocations'] = array(0);
 
 	// Available towns (specify town ids, etc: (0, 1, 2); to display 3 town options (town id 0, 1 and 2).
 	$config['available_towns'] = array(1);
@@ -254,8 +202,8 @@
 	$config['nvCap'] = 400;
 	$config['nvSoul'] = 100;
 
-	$config['nvForceTown'] = 0; // Force a town to no vocation even though he selected something else? 0 = no, 1 = yes.
-	$config['nvTown'] = 0; // Town id to force no vocations to get to, if nvForceTown is 1.
+	$config['nvForceTown'] = 1; // Force a town to no vocation even though he selected something else? 0 = no, 1 = yes.
+	$config['nvTown'] = 11; // Town id to force no vocations to get to, if nvForceTown is 1.
 
 	// Minimum allowed character name letters. Etc 4 letters: "Kåre".
 	$config['minL'] = 4;

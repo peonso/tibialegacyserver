@@ -1,16 +1,16 @@
 function onLogin(cid)
-	--Register the kill/die event
+	-- Register the kill/die event
 	registerCreatureEvent(cid, "RemoveBlesses")
 
-	--Register the Give_Bag_After_Death event
+	-- Register the Give_Bag_After_Death event
 	registerCreatureEvent(cid, "Give_Bag_After_Death")
 	
-	--Register the Stage event
+	-- Register the Stage event
 	if getBooleanFromString(getConfigInfo("experience_stages"), false) then
 		registerCreatureEvent(cid, "ExpStage")
 		checkStageChange(cid)
 	end
-	--add a backpack if it is a relogin after a death
+	-- add a backpack if it is a relogin after a death
 	if getPlayerStorageValue(cid, STORAGE_DEATH_BAG) == 1 then
 		if getPlayerSlotItem(cid, CONST_SLOT_BACKPACK).uid == 0 then
 			local item_bag = doCreateItemEx(ITEM_BAG, 1)
@@ -19,7 +19,7 @@ function onLogin(cid)
 		setPlayerStorageValue(cid, STORAGE_DEATH_BAG, -1)
 	end
 
-	--Remove blesses if necessary
+	-- Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
 		local i = 0
 		while i < 5 do
@@ -29,7 +29,7 @@ function onLogin(cid)
 		setPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES, -1)
 	end
 
-	--Promotes player if necessary
+	-- Promotes player if necessary
 	if(isPremium(cid) ) then
 		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1 and getPlayerVocation(cid) <= 4) then
 			doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
@@ -42,8 +42,8 @@ function onLogin(cid)
 		return true
 	end
 
-	--Player is not premium - remove premium privileges
-	--Change outfit
+	-- Player is not premium - remove premium privileges
+	-- Change outfit
 	if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == -1) then
 		local lookType = 128
 		if(getPlayerSex(cid) == 0) then
@@ -57,16 +57,14 @@ function onLogin(cid)
 		setPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT, 1)
 	end
 
-
-
-	--Teleport to free town, change here
+	-- Teleport to free town, change here
 	--[[
 	doPlayerSetTown(cid, Z)
 	local masterFreePos = {x=100, y=100, z=7}
 	doTeleportThing(cid, masterFreePos)
 	]]-- Hoster's premium towns changes according to the map
 
-	--Remove promotion
+	-- Remove promotion
 	local isPromo = (getPlayerVocation(cid) > 4 and isPremium(cid) == false)
 	if(isPromo) then
 		doPlayerSetVocation(cid, getPlayerVocation(cid)-4)

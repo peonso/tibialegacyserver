@@ -1,13 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-@font-face {
-  font-family: 'martelregular';
-  src: url('../fonts/martel/regular.eot');
-  src: url('../fonts/martel/regular.eot?#iefix') format('embedded-opentype'), url('../fonts/martel/regular.woff') format('woff'), url('../fonts/martel/regular.ttf') format('truetype'), url('../fonts/martel/regular.svg#martelregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url(https://fonts.googleapis.com/css?family=Martel);
 
 body {
   font-family: Verdana, Tahoma, Helvetica, sans-serif;
@@ -31,7 +25,7 @@ a:hover {
   text-decoration: underline;
 }
 .martel {
-  font-family: martelregular, sans-serif;
+  font-family: Martel, sans-serif;
   text-shadow: 2px 2px 2px #000;
   font-weight: normal;
   font-size: 15px;
@@ -148,6 +142,10 @@ tr.lightborder  td{
 	background: #f1e0c6 !important;
 	color: #5a2800 !important;
 }
+tr.transborder td{
+	background-color:transparent !important;
+	color: #5a2800 !important;
+}
 table.transborder  tr td{
 	background-color:transparent !important;
 	color: #5a2800 !important;
@@ -187,11 +185,7 @@ input[type="submit"] {
 }
 
 input[type="text"] {
-	border-radius: 7px;
-}
-
-input[type="password"] {
-	border-radius: 7px;
+	size: 500;
 }
 
 /* /////////
@@ -356,14 +350,14 @@ text-decoration:underline;
 }
 #pandaac #topbar ul li,
 #pandaac #topbar ul a {
-  font-family: martelregular, sans-serif;
+  font-family: Martel, sans-serif;
   text-shadow: 2px 2px 2px #000;
   font-weight: normal;
   font-size: 16px;
 }
 #pandaac #topbar ul li:hover,
 #pandaac #topbar ul a:hover {
-  text-shadow: 2px 2px 2px #00f;
+  text-shadow: 3px 3px 3px #00f;
 }
 #pandaac #topbar ul li {
   display: table-cell;
@@ -415,7 +409,7 @@ text-decoration:underline;
 }
 #pandaac #content-container #sidebar #sidebar-links ul li,
 #pandaac #content-container #sidebar #sidebar-links ul a {
-  font-family: martelregular, sans-serif;
+  font-family: Martel, sans-serif;
   text-shadow: 2px 2px 2px #000;
   font-weight: normal;
   font-size: 15px;

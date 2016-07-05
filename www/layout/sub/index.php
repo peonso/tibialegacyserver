@@ -12,7 +12,7 @@
 <table class="newstable">
 <tr>
 <td width="80%">
-Welcome, wanderer, to the fascinating world of <?php echo $config['site_title']; ?>, a massive multiplayer online role playing game. Take the role of a valorous adventurer, explore a huge realm of magic and mystery and make friends with people from all over the world! To learn more about <?php echo $config['site_title']; ?> take a look at the our <a href="gallery.php">gallery page</a>. To start playing <a href="register.php">sign up</a> for a free account and <a href="downloads.php">download your client</a>. See you in <?php echo $config['site_title']; ?>!</td>
+Welcome, wanderer, to the fascinating world of <?php echo $config['site_title']; ?>, a massive multiplayer online role playing game. Take the role of a valorous adventurer, explore a huge realm of magic and mystery and make friends with people from all over the world! To start playing <a href="register.php">sign up</a> for a free account and <a href="downloads.php">download your client</a>. See you in <?php echo $config['site_title']; ?>!</td>
 <td width="20%" align="center"><a href="register.php"><img src="layout/images/signup.gif"/></a></td>
 </tr>
 </table>

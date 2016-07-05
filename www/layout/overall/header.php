@@ -32,7 +32,7 @@ $start = $time;
 		<div id="topbar">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="forum.php">Forum Boards</a></li>
+				<li><a href="forum.php">Forum</a></li>
 				<li><a href="sub.php?page=whoisonline">Who is Online</a></li>
 				<li><a href="shop.php">Shop</a></li>
 				<li><a href="buypoints.php">Donate</a></li>
@@ -46,14 +46,7 @@ $start = $time;
 					<div class="line wide"></div>
 
 					<ul>
-						<?php
-						if (user_logged_in() === true) {
-							include 'layout/widgets/loggedin.php'; 
-						} else {
-							include 'layout/widgets/login.php'; 
-						}
-						if (user_logged_in() && is_admin($user_data)) include 'layout/widgets/Wadmin.php'; 
-						?>
+						<li><a href="register.php">Sign Up</a></li>
 						<li><a href="sub.php?page=charactersearch">Characters</a></li>
 						<li><a href="highscores.php">Highscores</a></li>
 						<li><a href="downloads.php">Downloads</a></li>
@@ -66,6 +59,12 @@ $start = $time;
 				</div>
 
 				<div id="sidebar-misc">
+				
+					<?php if (user_logged_in() && is_admin($user_data)) { ?>
+						<div class="bar"></div>
+						<a href="admin.php" class="martel">Admin Panel</a>
+					<?php } ?>
+				
 					<div class="bar"></div>
 						<a href="
 						<?php
@@ -76,7 +75,7 @@ $start = $time;
 						}
 						?>" class="martel">My Account</a>
 					<div class="bar"></div>
-
+	
 					<br>
 
 					<a href="sub.php?page=whoisonline">Players Online</a>
@@ -96,9 +95,9 @@ $start = $time;
 									$data='';
 									while (!feof($sock))$data .= fgets($sock, 1024);
 									fclose($sock);
-									echo '<font color="#9873DA"> Online</font><br><a href="sub.php?page=whoisonline">';
+									echo '<!--font color="#9873DA"> Online</font><br--><a href="sub.php?page=whoisonline">';
 									echo user_count_online();
-									echo ' players online<br/></a>';
+									echo ' players<br/></a>';
 								}
 							}
 						?>
