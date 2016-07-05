@@ -11,7 +11,7 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
 function onThink() 						npcHandler:onThink() end
 
 function greetCallback(cid)
-	if isPremium(cid) == TRUE then
+	if isPremium(cid) == true then
 		npcHandler:setMessage(MESSAGE_GREET,'Hello, hello, '.. getPlayerName(cid) ..'! Please come in, look, and buy!')
 		return true
 	else

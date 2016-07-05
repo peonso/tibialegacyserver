@@ -42,9 +42,9 @@ function doCreatureSayWithDelay(cid,text,type,delay,e)
    else
       local func=function(pars)
                     doCreatureSay(pars.cid,pars.text,pars.type)
-                    pars.e.done=TRUE
+                    pars.e.done=true
                  end
-      e.done=FALSE
+      e.done=false
       e.event=addEvent(func,delay,{cid=cid, text=text, type=type, e=e})
    end
 end
@@ -53,7 +53,7 @@ end
 function cancelNPCTalk(events)
   local ret=1
   for aux=1,table.getn(events) do
-     if events[aux].done==FALSE then
+     if events[aux].done==false then
         stopEvent(events[aux].event)
      else
         ret=ret+1

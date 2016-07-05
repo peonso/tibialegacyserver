@@ -63,7 +63,7 @@ function creatureSayCallback(cid, type, msg)
 	
 -- Carlin
 if msgcontains(msg, 'carlin') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Carlin for free?')
 		talk_state = 1
 		town_boat = carlin
@@ -76,7 +76,7 @@ if msgcontains(msg, 'carlin') then
 	
 -- Ab'Dendriel
 elseif msgcontains(msg, 'ab\'dendriel') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Ab\'Dendriel for free?')
 		talk_state = 1
 		town_boat = abdendriel
@@ -89,7 +89,7 @@ elseif msgcontains(msg, 'ab\'dendriel') then
 	
 -- Edron
 elseif msgcontains(msg, 'edron') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Edron for free?')
 		talk_state = 1
 		town_boat = edron
@@ -102,7 +102,7 @@ elseif msgcontains(msg, 'edron') then
 	
 -- Venore
 elseif msgcontains(msg, 'venore') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Venore for free?')
 		talk_state = 1
 		town_boat = venore
@@ -115,7 +115,7 @@ elseif msgcontains(msg, 'venore') then
 	
 -- Port Hope
 elseif msgcontains(msg, 'port hope') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Port Hope for free?')
 		talk_state = 1
 		town_boat = porthope
@@ -128,10 +128,10 @@ elseif msgcontains(msg, 'port hope') then
 	
 -- Confirm Yes or No 
 elseif msgcontains(msg, 'yes') and talk_state == 1 then
-	if isPremium(cid) == TRUE then
+	if isPremium(cid) == true then
 		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == TRUE then
-				if isPlayerVip(cid) == TRUE then
+			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == true then
+				if isPlayerVip(cid) == true then
 					selfSay('Set the sails!')
 					doTeleportThing(cid, town_boat)
 					doSendMagicEffect(getCreaturePosition(cid), 10)

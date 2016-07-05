@@ -94,7 +94,7 @@ if msgcontains(msg, 'use') then
 	NPCSay("Would you like to add 7 days premium to your account by paying a premium coin?", 1)
 	talk_state = 9081
 elseif talk_state == 9081 and msgcontains(msg, 'yes') then
-		if doPlayerRemoveItem(cid, ID_premiumcoin, 1) == TRUE then
+		if doPlayerRemoveItem(cid, ID_premiumcoin, 1) == true then
 		doPlayerAddPremiumDays(cid, 7)	
 		NPCSay("You have added 7 days premium to your account!", 1)
 		talk_state = 0			
@@ -110,7 +110,7 @@ elseif msgcontains(msg, 'withdraw') then
 	NPCSay("Would you like to withdraw a premium coin? this cost 6 donation points!", 1)
 	talk_state = 9082
 elseif talk_state == 9082 and msgcontains(msg, 'yes') then
-		if RemoveDonationPoints(cid, 6) == TRUE then
+		if RemoveDonationPoints(cid, 6) == true then
 		doPlayerAddItem(cid, ID_premiumcoin, 1)
 		NPCSay("Here's your premium coin!", 1)
 		talk_state = 0			
@@ -127,8 +127,8 @@ elseif msgcontains(msg, 'deposit') then
 	NPCSay("Would you like to deposit a premium coin? 6 donation points will be added to your account!", 1)
 	talk_state = 9083
 elseif talk_state == 9083 and msgcontains(msg, 'yes') then
-		if doPlayerRemoveItem(cid, ID_premiumcoin, 1) == TRUE then
-			if AddDonationPoints(cid, 6) == TRUE then
+		if doPlayerRemoveItem(cid, ID_premiumcoin, 1) == true then
+			if AddDonationPoints(cid, 6) == true then
 			NPCSay("Okey, 6 Donation points have been added to your account!", 1)
 			talk_state = 0			
 			else
@@ -624,7 +624,7 @@ elseif talk_state == 8754 and msgcontains(msg, 'yes') then
 	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
 			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
-				if doPlayerRemoveMoney(cid, spellprice) == TRUE then
+				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)
 				NPCSay("Here you are. Look in your spellbook for the pronounciation of this spell.", 1)

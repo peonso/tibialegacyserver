@@ -47,8 +47,8 @@ function creatureSayCallback(cid, type, msg)
 	talk_state = 1
 	
 	elseif msgcontains(msg,'yes') and talk_state == 1 then
-	 if isPremium(cid) == TRUE then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+	 if isPremium(cid) == true then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 60 then
 				selfSay('Hold on!')
 				doPlayerRemoveMoney(cid, 60)
@@ -74,8 +74,8 @@ end
 	talk_state = 2
 	
 	elseif msgcontains(msg,'yes') and talk_state == 2 then
-	 if isPremium(cid) == TRUE then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+	 if isPremium(cid) == true then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 40 then
 				selfSay('Hold on!')
 				doPlayerRemoveMoney(cid, 40)
@@ -123,7 +123,7 @@ end
 	npcHandler:say("Do you want to buy a parcel for 15 gold?", 1)
 	talk_state = 3532
 	elseif talk_state == 3532 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-	if doPlayerRemoveMoney(cid, 15) == TRUE then
+	if doPlayerRemoveMoney(cid, 15) == true then
 	doPlayerAddItem(cid, ID_parcel, 1)
 	doPlayerAddItem(cid, ID_label, 1)
 	npcHandler:say("Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.", 1)

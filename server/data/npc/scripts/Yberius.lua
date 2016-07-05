@@ -63,11 +63,11 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	if msgcontains(msg, 'heal') then
-		if hasCondition(cid, CONDITION_FIRE) == TRUE then
+		if hasCondition(cid, CONDITION_FIRE) == true then
 			npcHandler:say('You are burning. I will help you.')
 			doRemoveCondition(cid, CONDITION_FIRE)
 			doSendMagicEffect(getCreaturePosition(cid), 14)
-		elseif hasCondition(cid, CONDITION_POISON) == TRUE then
+		elseif hasCondition(cid, CONDITION_POISON) == true then
 			npcHandler:say('You are poisoned. I will help you.')
 			doRemoveCondition(cid, CONDITION_POISON)
 			doSendMagicEffect(getCreaturePosition(cid), 13)

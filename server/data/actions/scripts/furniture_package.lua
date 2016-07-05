@@ -5,7 +5,7 @@ function onUse(cid, item, frompos, item2, topos)
 		return false
 	elseif (frompos.x == CONTAINER_POSITION) then
 		doPlayerSendCancel(cid, "You must put the construction kit on the floor first.")
-	elseif not(getTileHouseInfo(getPlayerPosition(cid)) ~= FALSE) then
+	elseif not(getTileHouseInfo(getPlayerPosition(cid)) ~= false) then
 		doPlayerSendCancel(cid, "You must open the construction kit in your house.")
 	else
 		doTransformItem(item.uid, CONSTRUCTIONS[item.itemid])

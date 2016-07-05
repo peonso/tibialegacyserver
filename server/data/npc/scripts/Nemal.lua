@@ -53,7 +53,7 @@ elseif talk_state == 2 and msgcontains(msg, '') then
 	talk_state = 0
 	
 elseif talk_state == 3 and msgcontains(msg, 'yes') or talk_state == 3 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveItem(cid, ID_roll, 1) == TRUE and doPlayerRemoveItem(cid, ID_flour, 1) == TRUE and doPlayerRemoveItem(cid, ID_redrose, 1) == TRUE and doPlayerRemoveItem(cid, ID_dough, 1) == TRUE and doPlayerRemoveItem(cid, ID_cherry, 1) == TRUE then
+	if doPlayerRemoveItem(cid, ID_roll, 1) == true and doPlayerRemoveItem(cid, ID_flour, 1) == true and doPlayerRemoveItem(cid, ID_redrose, 1) == true and doPlayerRemoveItem(cid, ID_dough, 1) == true and doPlayerRemoveItem(cid, ID_cherry, 1) == true then
 	npcHandler:say("You seem to have them with you. Can you tell me, how many minutes I have to cook them?", 1)
 	else
 	npcHandler:say("It doesn't seem to me as if you have the correct ingredients with you, stranger!", 1)

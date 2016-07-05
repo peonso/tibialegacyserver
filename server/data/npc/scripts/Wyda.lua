@@ -128,7 +128,7 @@ elseif msgcontains(msg, 'blood herb') or msgcontains(msg, 'Blood herb') then
 	end
 	
 elseif talk_state == 1 and msgcontains(msg, 'yes') or talk_state == 1 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_bloodherb, 1) == TRUE then
+	if doPlayerRemoveItem(cid, ID_bloodherb, 1) == true then
 		if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
 		doPlayerAddMoney(cid, 400)
 		npcHandler:say("Hmm, thanks. Take this.", 1)

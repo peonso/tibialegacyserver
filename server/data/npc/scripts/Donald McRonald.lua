@@ -155,7 +155,7 @@ elseif msgcontains(msg, 'spider') then
 elseif talk_state == 2 and msgcontains(msg, 'yes') then
 AMOUNTSPIDER = getPlayerItemCount(cid,2807)
 if AMOUNTSPIDER >= 1 then
-	if doPlayerRemoveItem(cid, 2807, AMOUNTSPIDER) == TRUE then
+	if doPlayerRemoveItem(cid, 2807, AMOUNTSPIDER) == true then
 	doPlayerAddMoney(cid, AMOUNTSPIDER*2)
 	npcHandler:say("Here you are.", 1)
 	end

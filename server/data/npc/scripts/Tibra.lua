@@ -81,7 +81,7 @@ elseif msgcontains(msg, 'gold') or msgcontains(msg, 'money') or msgcontains(msg,
 	npcHandler:say("Do you want to make a donation?", 1)
 	talk_state = 1
 elseif talk_state == 1 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveMoney(cid, 15) == TRUE then
+	if doPlayerRemoveMoney(cid, 15) == true then
 	npcHandler:say("May Daraman guide your quest for ascension.", 1)
 	doSendMagicEffect(getPlayerPosition(cid), 13)
 	else
@@ -94,11 +94,11 @@ elseif talk_state == 1 and msgcontains(msg, '') then
 	end
 	
 	if msgcontains(msg, 'heal') then
-		if hasCondition(cid, CONDITION_FIRE) == TRUE then
+		if hasCondition(cid, CONDITION_FIRE) == true then
 			npcHandler:say('You are burning. I will help you.')
 			doRemoveCondition(cid, CONDITION_FIRE)
 			doSendMagicEffect(getCreaturePosition(cid), 14)
-		elseif hasCondition(cid, CONDITION_POISON) == TRUE then
+		elseif hasCondition(cid, CONDITION_POISON) == true then
 			npcHandler:say('You are poisoned. I will help you.')
 			doRemoveCondition(cid, CONDITION_POISON)
 			doSendMagicEffect(getCreaturePosition(cid), 13)

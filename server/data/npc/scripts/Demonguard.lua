@@ -18,8 +18,8 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
   repeat 
       creature = getThingfromPos(checking) 
        if creature.itemid > 0 then 
-     if isCreature(creature.uid) == TRUE then
-      if isPlayer(creature.uid) == TRUE then
+     if isCreature(creature.uid) == true then
+      if isPlayer(creature.uid) == true then
         table.insert (monsters, creature.uid) 
       end 
      end 
@@ -47,7 +47,7 @@ end
     if #monster_table >= 1 then
         for i = 1, #monster_table do  
 		if math.random(1,10) == 1 then
-	if isPlayer(monster_table[i]) == TRUE then
+	if isPlayer(monster_table[i]) == true then
 	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
 	doSendMagicEffect(getPlayerPosition(monster_table[i]), 15)
 	doAddCondition(monster_table[i], fire)

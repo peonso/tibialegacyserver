@@ -29,7 +29,7 @@ function creatureSayCallback(cid, type, msg)
 	talk_state = 1
 	
 	elseif msgcontains(msg,'yes') and talk_state == 1 then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 60 then
 				selfSay('Hold on!')
 				doPlayerRemoveMoney(cid, 60)
@@ -51,7 +51,7 @@ end
 	talk_state = 2
 	
 	elseif msgcontains(msg,'yes') and talk_state == 2 then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 40 then
 				selfSay('Hold on!')
 				doPlayerRemoveMoney(cid, 40)

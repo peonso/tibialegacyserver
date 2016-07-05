@@ -71,7 +71,7 @@ elseif talk_state == 1 and msgcontains(msg, '') then
 	npcHandler:resetNpc()	
 	
 elseif talk_state == 2 and msgcontains(msg, 'yes') or talk_state == 2 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 1000) == TRUE then
+	if doPlayerRemoveMoney(cid, 1000) == true then
 	npcHandler:say("All right then. Here comes the first question. What was the name of Dago's favourite pet?", 1)
 	talk_state = 3		
 	else

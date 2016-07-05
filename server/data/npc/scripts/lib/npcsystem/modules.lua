@@ -80,7 +80,7 @@ if(Modules == nil) then
 			npcHandler:say('You are already promoted!')
 		elseif(getPlayerLevel(cid) < parameters.level) then
 			npcHandler:say('I am sorry, but I can only promote you once you have reached level ' .. parameters.level .. '.')
-		elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= TRUE) then
+		elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= true) then
 			npcHandler:say('You do not have enough money!')
 		else
 			doPlayerSetVocation(cid, parameters.promotions[oldVoc])
@@ -106,7 +106,7 @@ if(Modules == nil) then
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
 			if(parameters.level ~= nil and getPlayerLevel(cid) < parameters.level) then
 				npcHandler:say('You must reach level ' .. parameters.level .. ' before I can let you go there.')
-			elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= TRUE) then
+			elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= true) then
 				npcHandler:say('You do not have enough money!')
 			else
 				doTeleportThing(cid, parameters.destination)
@@ -372,7 +372,7 @@ if(Modules == nil) then
 		local premium = parentParameters.premium
 		
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium ~= true) then
-			if(doPlayerRemoveMoney(cid, cost) ~= TRUE) then
+			if(doPlayerRemoveMoney(cid, cost) ~= true) then
 				npcHandler:say('You do not have enough money!')
 			else
 				npcHandler:say('It was a pleasure doing business with you.', false)
@@ -415,7 +415,7 @@ if(Modules == nil) then
 		local premium = parameters.premium
 		
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium ~= true) then
-			if(doPlayerRemoveMoney(cid, cost) == TRUE) then
+			if(doPlayerRemoveMoney(cid, cost) == true) then
 				doTeleportThing(cid, destination)
 				doSendMagicEffect(destination, 10)
 			end
@@ -513,7 +513,7 @@ if(Modules == nil) then
 			end
 			
 			if(name ~= nil and itemid ~= nil and cost ~= nil) then
-				if((isItemRune(itemid) == TRUE or isItemFluidContainer(itemid) == TRUE) and charges == nil) then
+				if((isItemRune(itemid) == true or isItemFluidContainer(itemid) == true) and charges == nil) then
 					print('[Warning] NpcSystem:', 'Charges missing for parameter item:' , item)
 				else
 					local names = {}
@@ -606,7 +606,7 @@ if(Modules == nil) then
 			if(realname ~= nil) then
 				parameters.realname = realname
 			end
-			if(isItemRune(itemid) == TRUE or isItemFluidContainer(itemid) == TRUE) then
+			if(isItemRune(itemid) == true or isItemFluidContainer(itemid) == true) then
 				parameters.charges = charges
 			end
 			keywords = {}

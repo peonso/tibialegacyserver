@@ -120,7 +120,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif talk_state == 3 and msgcontains(msg, 'yes') then
 	AMOUNTRAT = getPlayerItemCount(cid,2813)
 	if AMOUNTRAT >= 1 then
-	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == TRUE then
+	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == true then
 	doPlayerAddMoney(cid, AMOUNTRAT*2)
 	npcHandler:say("Thank you! Here is your reward.", 1)
 	talk_state = 0

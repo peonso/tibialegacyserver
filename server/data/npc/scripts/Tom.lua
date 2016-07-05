@@ -49,7 +49,7 @@ if msgcontains(msg, 'rat') then
 elseif talk_state == 2 and msgcontains(msg, 'yes') then
 AMOUNTRAT = getPlayerItemCount(cid,2813)
 if AMOUNTRAT >= 1 then
-	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == TRUE then
+	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == true then
 	doPlayerAddMoney(cid, AMOUNTRAT*2)
 	npcHandler:say("Deal. By the way: If you'd like to hunt something bigger, check the cellar of the stables to the north. Some adventurer used to store his loot under a loose board beneath a barrel. He might have forgotten something when he left the isle.", 1)
 	end
@@ -70,7 +70,7 @@ elseif msgcontains(msg, 'rabbit') then
 elseif talk_state == 3 and msgcontains(msg, 'yes') then
 AMOUNTRABBIT = getPlayerItemCount(cid,2992)
 if AMOUNTRABBIT >= 1 then
-	if doPlayerRemoveItem(cid, 2992, AMOUNTRABBIT) == TRUE then
+	if doPlayerRemoveItem(cid, 2992, AMOUNTRABBIT) == true then
 	doPlayerAddMoney(cid, AMOUNTRABBIT*2)
 	npcHandler:say("Deal. By the way: If you'd like to hunt something bigger, check the cellar of the stables to the north. Some adventurer used to store his loot under a loose board beneath a barrel. He might have forgotten something when he left the isle.", 1)
 	end
@@ -91,7 +91,7 @@ elseif msgcontains(msg, 'wolf') or msgcontains(msg, 'wolves') then
 elseif talk_state == 4 and msgcontains(msg, 'yes') then
 AMOUNTWOLF = getPlayerItemCount(cid,2826)
 if AMOUNTWOLF >= 1 then
-	if doPlayerRemoveItem(cid, 2826, AMOUNTWOLF) == TRUE then
+	if doPlayerRemoveItem(cid, 2826, AMOUNTWOLF) == true then
 	doPlayerAddMoney(cid, AMOUNTWOLF*5)
 	npcHandler:say("Deal. By the way: If you'd like to hunt something bigger, check the cellar of the stables to the north. Some adventurer used to store his loot under a loose board beneath a barrel. He might have forgotten something when he left the isle.", 1)
 	end

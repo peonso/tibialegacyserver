@@ -43,7 +43,7 @@ if msgcontains(msg, 'key') or msgcontains(msg, 'Key') then
 	talk_state = 1
 			
 elseif talk_state == 1 and msgcontains(msg, 'yes') or talk_state == 1 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 50) == TRUE then
+	if doPlayerRemoveMoney(cid, 50) == true then
 	SHADOWCAVEKEY = doPlayerAddItem(cid, 2088, 1)
 	doSetItemActionId(SHADOWCAVEKEY, 2013)
 	doSetItemSpecialDescription(SHADOWCAVEKEY, "(Key: 3033)")

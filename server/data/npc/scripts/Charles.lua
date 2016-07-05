@@ -71,7 +71,7 @@ end
 	
 -- Venore
 if msgcontains(msg, 'venore') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Venore for free?')
 		talk_state = 1
 		town_boat = venore
@@ -84,7 +84,7 @@ if msgcontains(msg, 'venore') then
 	
 -- Thais
 elseif msgcontains(msg, 'thais') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Thais for free?')
 		talk_state = 1
 		town_boat = thais
@@ -97,7 +97,7 @@ elseif msgcontains(msg, 'thais') then
 	
 -- Darashia
 elseif msgcontains(msg, 'darashia') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Darashia for free?')
 		talk_state = 1
 		town_boat = darashia
@@ -110,7 +110,7 @@ elseif msgcontains(msg, 'darashia') then
 	
 -- Edron
 elseif msgcontains(msg, 'edron') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Edron for free?')
 		talk_state = 1
 		town_boat = edron
@@ -123,7 +123,7 @@ elseif msgcontains(msg, 'edron') then
 	
 -- Ankrahmun
 elseif msgcontains(msg, 'ankrahmun') then
-	if isPlayerVip(cid) == TRUE then
+	if isPlayerVip(cid) == true then
 		npcHandler:say('Do you seek a passage to Ankrahmun for free?')
 		talk_state = 1
 		town_boat = ankrahmun
@@ -136,10 +136,10 @@ elseif msgcontains(msg, 'ankrahmun') then
 	
 -- Confirm Yes or No 
 elseif msgcontains(msg, 'yes') and talk_state == 1 then
-	if isPremium(cid) == TRUE then
+	if isPremium(cid) == true then
 		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == TRUE then
-				if isPlayerVip(cid) == TRUE then
+			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == true then
+				if isPlayerVip(cid) == true then
 					selfSay('Set the sails!')
 					doTeleportThing(cid, town_boat)
 					doSendMagicEffect(getCreaturePosition(cid), 10)

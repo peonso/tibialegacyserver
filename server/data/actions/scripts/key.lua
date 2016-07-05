@@ -1,5 +1,5 @@
 function onUse(cid, item, frompos, item2, topos)
-	if (item2.actionid == 0 or isInArray(LOCKED_DOORS, item2.itemid) == FALSE and isInArray(LOCKED_DOORS, item2.itemid-1) == FALSE and isInArray(LOCKED_DOORS, item2.itemid-2) == FALSE) then
+	if (item2.actionid == 0 or isInArray(LOCKED_DOORS, item2.itemid) == false and isInArray(LOCKED_DOORS, item2.itemid-1) == false and isInArray(LOCKED_DOORS, item2.itemid-2) == false) then
 		return false
 	end
 
@@ -10,9 +10,9 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 
 	-- Verify if you are opening or closing the door
-	if isInArray(LOCKED_DOORS, item2.itemid) == TRUE then -- Opening
+	if isInArray(LOCKED_DOORS, item2.itemid) == true then -- Opening
 		doTransformItem(item2.uid, item2.itemid+2)
-	elseif isInArray(LOCKED_DOORS, item2.itemid-2) == TRUE then -- Closing and Locking
+	elseif isInArray(LOCKED_DOORS, item2.itemid-2) == true then -- Closing and Locking
 		doTransformItem(item2.uid, item2.itemid-2)
 	else                                                   -- Locking an already closed door
 		doTransformItem(item2.uid, item2.itemid-1)

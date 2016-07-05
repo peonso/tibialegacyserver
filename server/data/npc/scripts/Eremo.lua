@@ -112,7 +112,7 @@ elseif talk_state == 8754 and msgcontains(msg, 'yes') then
 	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
 			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
-				if doPlayerRemoveMoney(cid, spellprice) == TRUE then
+				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)
 				npcHandler:say("Here you are. Look in your spellbook for the pronounciation of this spell.", 1)
@@ -159,7 +159,7 @@ elseif msgcontains(msg, 'wisdom') or msgcontains(msg, 'solitude') then
 
 
 elseif talk_state == 1394 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveMoney(cid, 10000) == TRUE then
+	if doPlayerRemoveMoney(cid, 10000) == true then
 		if AddPlayerBlessing(cid, 4) == true then
 		npcHandler:say("So receive the wisdom of solitude, pilgrim", 1)
 		doSendMagicEffect(getPlayerPosition(cid), 13)

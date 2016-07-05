@@ -455,7 +455,7 @@ if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
 	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
 			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
-				if doPlayerRemoveMoney(cid, spellprice) == TRUE then
+				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)
 				npcHandler:say("Here you are. Look in your spellbook for the pronounciation of this spell.", 1)
@@ -487,7 +487,7 @@ npcHandler:say("In a spellbook, your spells are listed. There you can find the p
 talk_state = 814
 
 elseif talk_state == 814 and msgcontains(msg, 'yes') or talk_state == 814 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 150) == TRUE then
+	if doPlayerRemoveMoney(cid, 150) == true then
 	doPlayerAddItem(cid, ID_spellbook, 1)
 	npcHandler:say("Here you are.", 1)
 	else

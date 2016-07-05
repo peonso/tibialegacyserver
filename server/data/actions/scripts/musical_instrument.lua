@@ -6,7 +6,7 @@ local CORNUCOPIA = 2369
 function onUse(cid, item, frompos, item2, topos)
 	local random = math.random(1, 5)
 
-	if (isInArray(MUSICAL_INSTRUMENTS, item2.itemid) == TRUE) then
+	if (isInArray(MUSICAL_INSTRUMENTS, item2.itemid) == true) then
 		doSendMagicEffect(frompos, CONST_ME_SOUND_BLUE)
 	elseif (item.itemid == BIRD_CAGE) then
 		doSendMagicEffect(frompos, CONST_ME_SOUND_YELLOW)

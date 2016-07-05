@@ -22,8 +22,8 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
   repeat 
       creature = getThingfromPos(checking) 
        if creature.itemid > 0 then 
-     if isCreature(creature.uid) == TRUE then
-      if isPlayer(creature.uid) == FALSE then
+     if isCreature(creature.uid) == true then
+      if isPlayer(creature.uid) == false then
         table.insert (monsters, creature.uid) 
       end 
      end 
@@ -45,7 +45,7 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
    monster_table = getMonstersfromArea(getCreaturePosition(getNpcCid(  )), radiusx, radiusy, 253) 
     if #monster_table >= 1 then
         for i = 1, #monster_table do  
-		if getCreatureMaxHealth(monster_table[i]) >= 401 and isPlayer(monster_table[i]) == FALSE then
+		if getCreatureMaxHealth(monster_table[i]) >= 401 and isPlayer(monster_table[i]) == false then
 		doRemoveCreature(monster_table[i])
 		npcHandler:say('Get lost your beast!', 0.5) 
 		end

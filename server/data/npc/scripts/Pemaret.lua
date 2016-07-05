@@ -58,8 +58,8 @@ function creatureSayCallback(cid, type, msg)
 		end
 	
 elseif msgcontains(msg,'yes') and talk_state == 1 then
-	if isPremium(cid) == TRUE then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+	if isPremium(cid) == true then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 20 then
 				if getPlayerStorageValue(cid,227) == 1 then
 					selfSay('Here we go!')

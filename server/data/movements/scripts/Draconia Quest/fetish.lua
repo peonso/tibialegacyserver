@@ -7,7 +7,7 @@ function onStepIn(cid, item, pos)
 
 	getfetish = getThingfromPos(fetish)
 	
-	if item.actionid == 2112 and getfetish.itemid == 2194 and getPlayerStorageValue(cid,66) == TRUE then
+	if item.actionid == 2112 and getfetish.itemid == 2194 and getPlayerStorageValue(cid,66) == true then
 		doTeleportThing(cid,newpos)
 		doRemoveItem(getfetish.uid,1)
 		doSendMagicEffect(fetish, CONST_ME_MAGIC_RED)

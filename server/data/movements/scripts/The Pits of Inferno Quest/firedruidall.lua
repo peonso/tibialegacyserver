@@ -6,13 +6,13 @@ function onStepIn(cid, item, frompos, item2, topos)
 local zycie = getCreatureHealth(cid)
 local topos = getPlayerPosition(cid)
 
-if item.actionid == 9882 and isDruid(cid) == FALSE then
+if item.actionid == 9882 and isDruid(cid) == false then
 doCreatureAddHealth(cid, -zycie)
 doSendAnimatedText(topos, zycie, kolor)
 doPlayerSay(cid, "You have choosen the wrong path!", 16)
 doSendMagicEffect(getPlayerPosition(cid), 15)
 
-elseif item.actionid == 9882 and isDruid(cid) == TRUE then
+elseif item.actionid == 9882 and isDruid(cid) == true then
 doCreatureAddHealth(cid, -zabierz)
 doSendAnimatedText(topos, zabierz, kolor)
 doSendMagicEffect(getPlayerPosition(cid), 15)

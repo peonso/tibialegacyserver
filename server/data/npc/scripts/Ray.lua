@@ -51,7 +51,7 @@ elseif msgcontains(msg, 'letter') or msgcontains(msg, 'Letter') then
 	
 			
 elseif talk_state == 8595 and msgcontains(msg, 'yes') or talk_state == 8595 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 15) == TRUE then
+	if doPlayerRemoveMoney(cid, 15) == true then
 		npcHandler:say("Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.", 1)
 		doPlayerAddItem(cid, ID_parcel)
 		doPlayerAddItem(cid, ID_label)
@@ -59,7 +59,7 @@ elseif talk_state == 8595 and msgcontains(msg, 'yes') or talk_state == 8595 and 
 	npcHandler:say("Oh, you do not have enough gold to buy a ".. itemname ..".", 1)
 	end
 elseif talk_state == 8596 and msgcontains(msg, 'yes') or talk_state == 8596 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 5) == TRUE then
+	if doPlayerRemoveMoney(cid, 5) == true then
 		npcHandler:say("Here it is. Don't forget to write the name of the receiver in the first line and the address in the second one before you put the letter in a mailbox.", 1)
 		doPlayerAddItem(cid, ID_letter)
 	else

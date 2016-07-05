@@ -37,7 +37,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'kiss') and setimo_selo == -1 then
 	npcHandler:say('To receive my kiss you have to pass all other seals first.')
 	talk_state = 0
-	elseif msgcontains(msg, 'kiss') and hasCondition(cid, RETURNVALUE_PLAYERISPZLOCKED) == TRUE then
+	elseif msgcontains(msg, 'kiss') and hasCondition(cid, RETURNVALUE_PLAYERISPZLOCKED) == true then
 	npcHandler:say('You have spilled too much blood recently and the dead are hungry for your soul. Perhaps return when you regained you inner balance.')
 	talk_state = 0
 	elseif msgcontains(msg, 'kiss') and setimo_selo == 1 then

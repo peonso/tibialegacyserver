@@ -56,7 +56,7 @@ keywordHandler:addKeyword({'urgith'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'archdemons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The demons are powerful followers of Zathroth. Their leaders are known as the ruthless seven."})
 keywordHandler:addKeyword({'ruthless seven'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Infernatil, Pumin, Verminor, Tafariel, Apocalypse, Bazir and Ashfalor."})
 keywordHandler:addKeyword({'tafariel'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "She is the mistress of the damned! Rewarding or torturing, it is the same for her victims!"})
-keywordHandler:addKeyword({'apocalypse'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said even speaking its TRUE name will bring total destruction to you!"})
+keywordHandler:addKeyword({'apocalypse'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said even speaking its true name will bring total destruction to you!"})
 keywordHandler:addKeyword({'pumin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is the lord of despair."})
 keywordHandler:addKeyword({'infernatil'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The incendiary of hell."})
 keywordHandler:addKeyword({'bazir'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is the great deciver, the lord of lies."})
@@ -90,7 +90,7 @@ elseif msgcontains(msg, 'gold') or msgcontains(msg, 'money') or msgcontains(msg,
 	talk_state = 1	
 	
 elseif talk_state == 1 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveMoney(cid, 10) == TRUE then
+	if doPlayerRemoveMoney(cid, 10) == true then
 	doSendMagicEffect(getPlayerPosition(cid), 13)
 	npcHandler:say("May the gods bless you!", 1)
 	else
@@ -104,7 +104,7 @@ elseif msgcontains(msg, 'death to noodles') then
 	npcHandler:say("So, I guess you bring me a magic crystal?", 1)
 	talk_state = 3
 elseif talk_state == 3 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_lifecrystal, 1) == TRUE then
+	if doPlayerRemoveItem(cid, ID_lifecrystal, 1) == true then
 	end
 	npcHandler:say("Fine. Now you get what you deserve, you fool! DIE IN AGONY!", 1)
 	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)

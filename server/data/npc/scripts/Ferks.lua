@@ -61,7 +61,7 @@ function creatureSayCallback(cid, type, msg)
                 
         elseif talkState == 9 then
                 if msgcontains(msg, 'yes') then
-                        if doPlayerRemoveItem(cid, 2148, b) == TRUE then
+                        if doPlayerRemoveItem(cid, 2148, b) == true then
                                 doPlayerAddItem(cid, 2152, n)
 								npcHandler:say('Here you are.')
                                 talkState = 0
@@ -94,7 +94,7 @@ function creatureSayCallback(cid, type, msg)
               
         elseif talkState == 12 then
                 if msgcontains(msg, 'yes') then
-                        if doPlayerRemoveItem(cid, 2152, n) == TRUE then
+                        if doPlayerRemoveItem(cid, 2152, n) == true then
                                 doPlayerAddItem(cid, 2148, b)
 								npcHandler:say('Here you are.')
                                 talkState = 0
@@ -116,7 +116,7 @@ function creatureSayCallback(cid, type, msg)
                 
         elseif talkState == 14 then
                 if msgcontains(msg, 'yes') then
-                        if doPlayerRemoveItem(cid, 2152, b) == TRUE then
+                        if doPlayerRemoveItem(cid, 2152, b) == true then
                                 doPlayerAddItem(cid, 2160, n)
 								npcHandler:say('Here you are.')
                                 talkState = 0
@@ -140,7 +140,7 @@ function creatureSayCallback(cid, type, msg)
                 
         elseif talkState == 16 then
                 if msgcontains(msg, 'yes') then
-                        if doPlayerRemoveItem(cid, 2160, n) == TRUE then
+                        if doPlayerRemoveItem(cid, 2160, n) == true then
                                 doPlayerAddItem(cid, 2152, b)
 								npcHandler:say('Here you are.')
                                 talkState = 0
@@ -184,7 +184,7 @@ elseif talk_state == 203 and msgcontains(msg,'no') then
 	talk_state = 0
 
 elseif talk_state == 203 and msgcontains(msg, 'yes') then
-if DepositMoney(cid, DEPOSITAMOUNT) == TRUE then
+if DepositMoney(cid, DEPOSITAMOUNT) == true then
 	npcHandler:say("You have added ".. DEPOSITAMOUNT .." gold to your bank account.", 1)
 	talk_state = 0
 else
@@ -193,7 +193,7 @@ else
 end
 
 elseif talk_state == 205 and msgcontains(msg, 'yes') then
-if DepositMoney(cid, PLAYERCURRENTMONEY) == TRUE then
+if DepositMoney(cid, PLAYERCURRENTMONEY) == true then
 	npcHandler:say("You have added ".. PLAYERCURRENTMONEY .." gold to your bank account.", 1)
 	talk_state = 0
 else
@@ -218,7 +218,7 @@ else
 end
 		
 elseif talk_state == 303 and msgcontains(msg, 'yes') then
-if WithdrawMoney(cid, WITHDRAWMONEY) == TRUE then
+if WithdrawMoney(cid, WITHDRAWMONEY) == true then
 	npcHandler:say("Here you are.", 1)
 	talk_state = 0
 else
@@ -266,7 +266,7 @@ if GETVALIDCHAR >= 1 then
 			npcHandler:say("You can not send money to Rookgaard!", 1)
 			talk_state = 0
 		else
-			if isPlayerFromRook(cid) == TRUE then
+			if isPlayerFromRook(cid) == true then
 				npcHandler:say("I'm sorry, but you're not allowed to transfer money yet.", 1)
 				talk_state = 0
 			else

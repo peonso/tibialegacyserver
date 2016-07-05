@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <actions>
-	<!-- Quests System -->
-	<action actionid="2000" script="quest_system.lua"/>
-	<action uniqueid="6012" script="quest_system.lua"/>  
+	<!-- Quests System  (based on map editor) -->
+	<action actionid="2000" script="system.lua"/>
 
 	<!-- Helmet of the ancients -->
-	<action itemid="2342" script="hota.lua" />
+	<action itemid="2342" script="enchanting.lua" />
 
     <!-- Tools -->
 	<action itemid="2580" script="tools/fishing_rod.lua" allowfaruse="1"/>

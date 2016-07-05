@@ -52,7 +52,7 @@ if msgcontains(msg, "bring me to west") then
 	bcdestination = {x=32558, y=32780, z=7}
 	bcname = ""
 	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == TRUE then
+		if doPlayerRemoveMoney(cid, bcprice) == true then
 		doTeleportThing(cid, bcdestination)
 		doSendMagicEffect(bcdestination, 10)
 		npcHandler:say("Here we go!", 1)
@@ -70,7 +70,7 @@ elseif msgcontains(msg, "bring me to cent") then
 	bcdestination = {x=32628, y=32771, z=7}
 	bcname = ""
 	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == TRUE then
+		if doPlayerRemoveMoney(cid, bcprice) == true then
 		doTeleportThing(cid, bcdestination)
 		doSendMagicEffect(bcdestination, 10)
 		npcHandler:say("Here we go!", 1)
@@ -108,7 +108,7 @@ elseif msgcontains(msg, "cent") and npcHandler.focus == cid then
 --System that does the job after confirm destination--
 elseif talk_state == 9166 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
 	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == TRUE then
+		if doPlayerRemoveMoney(cid, bcprice) == true then
 		doTeleportThing(cid, bcdestination)
 		doSendMagicEffect(bcdestination, 10)
 		npcHandler:say("Here we go!", 1)

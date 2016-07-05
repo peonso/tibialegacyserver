@@ -77,7 +77,7 @@ elseif msgcontains(msg, 'sell') and msgcontains(msg, 'bread') or msgcontains(msg
 elseif talk_state == 3 and msgcontains(msg, 'yes') then
 AMOUNTBREAD = getPlayerItemCount(cid,ID_bread)
 if AMOUNTBREAD >= 1 then
-	if doPlayerRemoveItem(cid, ID_bread, AMOUNTBREAD) == TRUE then
+	if doPlayerRemoveItem(cid, ID_bread, AMOUNTBREAD) == true then
 	doPlayerAddMoney(cid, AMOUNTBREAD*2)
 	npcHandler:say("Here you are ... ".. AMOUNTBREAD*2 .." gold.", 1)
 	end

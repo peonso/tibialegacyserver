@@ -64,7 +64,7 @@ if msgcontains(msg, 'the holy') or msgcontains(msg, 'tible') then
 	talk_state = 8596
 	
 elseif talk_state == 8596 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveMoney(cid, itemprice) == TRUE then
+	if doPlayerRemoveMoney(cid, itemprice) == true then
 		npcHandler:say("Here you are, take good care of it!", 1)
 		THEHOLYTIBLE = doPlayerAddItem(cid, ID_theholytible)
 		THEHOLYTIBLE = doPlayerAddItem(cid, ID_theholytible, 1)

@@ -17,8 +17,8 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
   repeat 
       creature = getThingfromPos(checking) 
        if creature.itemid > 0 then 
-     if isCreature(creature.uid) == TRUE then
-      if isPlayer(creature.uid) == FALSE then
+     if isCreature(creature.uid) == true then
+      if isPlayer(creature.uid) == false then
         table.insert (monsters, creature.uid) 
       end 
      end 

@@ -69,7 +69,7 @@ elseif msgcontains(msg, 'goshak batuk') then
 elseif msgcontains(msg, 'goshak pixo') then
 	npcHandler:say("Maruk goshak tefar pixo ul batuk?", 1)
 	talk_state = 110
-elseif talk_state == 101 and msgcontains(msg, 'mok') == TRUE then
+elseif talk_state == 101 and msgcontains(msg, 'mok') == true then
 	if doPlayerRemoveMoney(cid, 25) then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_sabre)
@@ -79,7 +79,7 @@ elseif talk_state == 101 and msgcontains(msg, 'mok') == TRUE then
 	talk_state = 806
 	end
 elseif talk_state == 102 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 30) == TRUE then
+	if doPlayerRemoveMoney(cid, 30) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_shortsword)
 	talk_state = 806
@@ -88,7 +88,7 @@ elseif talk_state == 102 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end
 elseif talk_state == 103 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 85) == TRUE then
+	if doPlayerRemoveMoney(cid, 85) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_sword)
 	talk_state = 806
@@ -97,7 +97,7 @@ elseif talk_state == 103 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end
 elseif talk_state == 104 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 85) == TRUE then
+	if doPlayerRemoveMoney(cid, 85) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_hatchet)
 	talk_state = 806
@@ -106,7 +106,7 @@ elseif talk_state == 104 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end
 elseif talk_state == 105 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 25) == TRUE then
+	if doPlayerRemoveMoney(cid, 25) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_leatherarmor)
 	talk_state = 806
@@ -115,7 +115,7 @@ elseif talk_state == 105 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end	
 elseif talk_state == 106 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 90) == TRUE then
+	if doPlayerRemoveMoney(cid, 90) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_studdedarmor)
 	talk_state = 806
@@ -124,7 +124,7 @@ elseif talk_state == 106 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end	
 elseif talk_state == 107 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 60) == TRUE then
+	if doPlayerRemoveMoney(cid, 60) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_studdedhelmet)
 	talk_state = 806
@@ -133,7 +133,7 @@ elseif talk_state == 107 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end	
 elseif talk_state == 108 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 65) == TRUE then
+	if doPlayerRemoveMoney(cid, 65) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_brassshield)
 	talk_state = 806
@@ -142,7 +142,7 @@ elseif talk_state == 108 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end	
 elseif talk_state == 109 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 400) == TRUE then
+	if doPlayerRemoveMoney(cid, 400) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_bow)
 	talk_state = 806
@@ -151,7 +151,7 @@ elseif talk_state == 109 and msgcontains(msg, 'mok') then
 	talk_state = 806
 	end	
 elseif talk_state == 110 and msgcontains(msg, 'mok') then
-	if doPlayerRemoveMoney(cid, 30) == TRUE then
+	if doPlayerRemoveMoney(cid, 30) == true then
 	npcHandler:say("Maruk rambo zambo!", 1)
 	doPlayerAddItem(cid, ID_arrow, 10)
 	talk_state = 806

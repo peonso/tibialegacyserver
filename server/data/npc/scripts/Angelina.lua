@@ -54,7 +54,7 @@ if msgcontains(msg, 'teleport') and npcHandler.focus == cid then
 	
 --System that does the job after confirm destination--
 elseif talk_state == 9166 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-		if doPlayerRemoveMoney(cid, bcprice) == TRUE then
+		if doPlayerRemoveMoney(cid, bcprice) == true then
 		doTeleportThing(cid, bcdestination)
 		doSendMagicEffect(bcdestination, 10)
 		npcHandler:say("So be it!", 1)

@@ -37,7 +37,7 @@ npcHandler:say("Do you want to sell 5 blueberries for 1 gold?", 1)
 	talk_state = 301
 			
 elseif talk_state == 301 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid,ID_blueberry,5) == TRUE then
+	if doPlayerRemoveItem(cid,ID_blueberry,5) == true then
 	doPlayerAddMoney(cid, 1)
 	talk_state = 0
 	else

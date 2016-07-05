@@ -177,7 +177,7 @@ elseif talk_state == 202 then
 		talk_state = 0
 		end
 elseif talk_state == 203 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, config.itemid, amount) == TRUE then
+	if doPlayerRemoveItem(cid, config.itemid, amount) == true then
 	doPlayerAddMoney(cid, amount*config.price)
 	npcHandler:say("Thank you so much! here's your ".. (amount*config.price) .." gold!", 1)
 	talk_state = 0	

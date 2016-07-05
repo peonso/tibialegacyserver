@@ -65,7 +65,7 @@ elseif msgcontains(msg, 'rat') then
 elseif talk_state == 2 and msgcontains(msg, 'yes') then
 AMOUNTRAT = getPlayerItemCount(cid,2813)
 if AMOUNTRAT >= 1 then
-	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == TRUE then
+	if doPlayerRemoveItem(cid, 2813, AMOUNTRAT) == true then
 	doPlayerAddMoney(cid, AMOUNTRAT*1)
 	npcHandler:say("Here is your reward. You will become a great warrior some day.", 1)
 	end

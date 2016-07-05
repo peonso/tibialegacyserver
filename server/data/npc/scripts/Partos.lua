@@ -68,7 +68,7 @@ elseif msgcontains(msg, 'grape') then
 	npcHandler:say("Do you have any grapes with you?", 1)
 	talk_state = 1	
 elseif talk_state == 1 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_grape, 1) == TRUE then
+	if doPlayerRemoveItem(cid, ID_grape, 1) == true then
 	npcHandler:say("What do you want for that ...ohhh... tasty ...uhm... sweet ...drool... delicous ...hmm... grapes?", 1)
 	talk_state = 2
 	else

@@ -109,8 +109,8 @@ if msgcontains(msg, 'promotion') or msgcontains(msg, 'promote') then
 elseif talk_state == 2578 and msgcontains(msg, 'yes') then
 	if getPlayerVocation(cid) >= 1 and getPlayerVocation(cid) <= 4 then
 		if getPlayerLevel(cid) >= 20 then
-			if isPremium(cid) == TRUE then
-				if doPlayerRemoveMoney(cid, 20000) == TRUE then
+			if isPremium(cid) == true then
+				if doPlayerRemoveMoney(cid, 20000) == true then
 				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
 				CheckPlayerBlessings(cid)
 				npcHandler:say("Congratulations! You are now promoted. Visit the sage Eremo for new spells.", 1)

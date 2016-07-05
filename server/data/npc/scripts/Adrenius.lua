@@ -60,7 +60,7 @@ elseif talk_state == 1 and msgcontains(msg, '') then
 	npcHandler:resetNpc()	
 	
 elseif talk_state == 2 and msgcontains(msg, 'yes') or talk_state == 2 and msgcontains(msg, 'Yes') then
-	if doPlayerRemoveMoney(cid, 500) == TRUE then
+	if doPlayerRemoveMoney(cid, 500) == true then
 	npcHandler:say("Thank you very much. Now, name me the first person in alphabetical order, his age, his fate, and how long he was on his journeys!", 1)
 	talk_state = 4	
 	else

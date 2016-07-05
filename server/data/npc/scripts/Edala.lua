@@ -55,7 +55,7 @@ elseif msgcontains(msg, 'fire') or msgcontains(msg, 'sun') then
 
 
 elseif talk_state == 1394 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveMoney(cid, 10000) == TRUE then
+	if doPlayerRemoveMoney(cid, 10000) == true then
 		if AddPlayerBlessing(cid, 3) == true then
 		npcHandler:say("Kneel down and receive the warmth of sunfire, pilgrim.", 1)
 		doSendMagicEffect(getPlayerPosition(cid), 13)

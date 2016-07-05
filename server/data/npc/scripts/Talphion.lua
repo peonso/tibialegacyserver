@@ -94,12 +94,12 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'heal') then
 	npcHandler:say('I AM AN ENGINEER, NOT A DOCTOR!')
 	
-	elseif msgcontains(msg, 'heal') and hasCondition(cid, CONDITION_FIRE) == TRUE then
+	elseif msgcontains(msg, 'heal') and hasCondition(cid, CONDITION_FIRE) == true then
 	npcHandler:say('YOU ARE BURNING! THAT\'S FUN, HOW DO YOU DO THAT?')
 	doRemoveCondition(cid, CONDITION_FIRE)
     doSendMagicEffect(getCreaturePosition(cid), 14)
 	
-	elseif msgcontains(msg, 'heal') and hasCondition(cid, CONDITION_POISON) == TRUE then
+	elseif msgcontains(msg, 'heal') and hasCondition(cid, CONDITION_POISON) == true then
 	npcHandler:say('YOU ARE POISONED! HAVE YOU DRUNK THE STUFF IN A GREEN BOTTLE? THAT\'S SUPERGLUE, NOT SUPPER-GLUE, STUPID!')
 	doRemoveCondition(cid, CONDITION_POISON)
 	doSendMagicEffect(getCreaturePosition(cid), 13)

@@ -19,7 +19,7 @@ function creatureSayCallback(cid, type, msg)
 	talk_state = 1
 
 		elseif msgcontains(msg,'yes') and talk_state == 1 then
-		if getTilePzInfo(getPlayerPosition(cid)) == FALSE then
+		if getTilePzInfo(getPlayerPosition(cid)) == false then
 			if getPlayerMoney(cid) >= 10 then
 				selfSay('Have a nice trip!')
 				doPlayerRemoveMoney(cid, 10)
