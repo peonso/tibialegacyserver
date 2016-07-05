@@ -192,9 +192,9 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 	<table>
 		<form action="" method="post">
 		<tr><td colspan="2">Create Account</td></tr>
-		<tr><td width="20%">Account number:</td><td><input type="text" name="username" size="24" maxlength="8" placeholder=" 6-8 digits"></td></tr>
+		<tr><td width="20%">Account Number:</td><td><input type="text" name="username" size="24" maxlength="8" placeholder=" 6-8 digits"></td></tr>
 		<tr><td>Password:</td><td><input type="password" name="password" size="24" maxlength="32" placeholder=" 6-32 characters"></td></tr>
-		<tr><td>Repeat password:</td><td><input type="password" name="password_again" size="24" maxlength="32" placeholder=" 6-32 characters"></td></tr>
+		<tr><td>Repeat Password:</td><td><input type="password" name="password_again" size="24" maxlength="32" placeholder=" 6-32 characters"></td></tr>
 		<tr><td>Email:</td><td><input type="text" size="24" name="email"></td></tr>
 		<tr><td>Character Name:</td><td><input type="text" name="name" size="24" maxlength="20" placeholder=" 4-20 characters"></td></tr>
 		<tr><td>Gender:</td>

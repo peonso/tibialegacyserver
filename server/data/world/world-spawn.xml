@@ -16511,7 +16511,6 @@
 	<spawn centerx="32717" centery="32935" centerz="8" radius="5">
 		<monster name="centipede" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="32524" centery="32966" centerz="8" radius="27" />
 	<spawn centerx="1276" centery="1225" centerz="9" radius="30" />
 	<spawn centerx="31781" centery="31227" centerz="9" radius="5" />
 	<spawn centerx="31787" centery="31231" centerz="9" radius="5" />

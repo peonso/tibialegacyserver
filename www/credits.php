@@ -64,7 +64,7 @@
 						$first_container = false;
 					}
 
-					echo '<td>
+					echo '<td width="16%">
 							<a href="' . $contributor['html_url'] . '">
 								<img src="' . $contributor['avatar_url'] . 'size=80" style="width: 60px; height: 60px" /><br/>
 								<span>' . $contributor['login'] . '</span>
@@ -113,7 +113,7 @@
 						$first_container = false;
 					}
 
-					echo '<td>
+					echo '<td width="16%">
 							<a href="' . $contributor['html_url'] . '">
 								<img src="' . $contributor['avatar_url'] . 'size=80" style="width: 60px; height: 60px" /><br/>
 								<span>' . $contributor['login'] . '</span>
@@ -168,7 +168,7 @@
 						$first_container = false;
 					}
 
-					echo '<td>
+					echo '<td width="16%">
 							<a href="' . $contributor['html_url'] . '">
 								<img src="' . $contributor['avatar_url'] . 'size=80" style="width: 60px; height: 60px" /><br/>
 								<span>' . $contributor['login'] . '</span>

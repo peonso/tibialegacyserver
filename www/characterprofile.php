@@ -331,13 +331,18 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 } else {
 	header('Location: unnamed');
 }?>
-<p><table>
-<tr><td>Search Character</td></tr>
-<tr class="darkborder"><td>
+<p>
+<table>
 	<form type="submit" action="characterprofile.php" method="get">
-		Name: <input type="text" size="25" name="name" class="search">
-		<input type="submit" name="submitName" value="Submit">
+		<tr>
+			<td>Search Character</td>
+		</tr>
+		<tr class="darkborder">
+			<td>
+				Name: <input type="text" size="25" name="name" class="search">
+				<input type="submit" name="submitName" value="Submit">
+			</td>
+		</tr>
 	</form>
-</td></tr>
 </table>
 <?php include 'layout/overall/footer.php'; ?>

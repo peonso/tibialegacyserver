@@ -1,4 +1,4 @@
-local SWITCHES = { {416, 417}, {426, 425}, {446, 447}, {3216, 3217}, {11062, 11063} }
+local SWITCHES = { {416, 417}, {426, 425}, {446, 447}, {3216, 3217} }
 
 local function transformItemKeepingAid(item, newid)
 	local ret = doTransformItem(item.uid, newid)

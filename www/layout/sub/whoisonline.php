@@ -46,7 +46,7 @@ $records = mysql_select_multi('SELECT * FROM `server_record` ORDER BY `record` D
 </table>
 <?php
 $array = online_list();
-if ($array) {
+if (($array) && ($sock)) {
 	?>
 	
 	<table id="onlinelistTable" class="table table-striped table-hover">

@@ -1,7 +1,6 @@
--- by Nottinghster
-
 function onUse(cid, item, frompos, item2, topos)
 	if(item.actionid == 0) then
+		-- This is impossible to happen, but whatever.
 		doTransformItem(item.uid, item.itemid+2)
 		return true
 	end
