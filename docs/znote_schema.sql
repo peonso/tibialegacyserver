@@ -101,6 +101,18 @@ CREATE TABLE `global_storage` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `legacy_storage`
+--
+
+CREATE TABLE `legacy_storage` (
+  `key` int(10) NOT NULL,
+  `value` int(11) NOT NULL,
+  UNIQUE KEY `key` (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `groups`
 --
 

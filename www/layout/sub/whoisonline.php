@@ -40,7 +40,7 @@ $records = mysql_select_multi('SELECT * FROM `server_record` ORDER BY `record` D
 									}
 								}
 ?><br>
-<?php echo $config['site_title'] ?> record of players online was <?php echo $records[0]['record'] ?> players on <?php echo date("M j Y", $records[0]['timestamp']) ?>.
+<?php echo $config['site_title'] ?> record of players online was <?php echo $records[0]['record'] ?> players on <?php echo date("j M Y", $records[0]['timestamp']) ?>.
 
 </td></tr>
 </table>

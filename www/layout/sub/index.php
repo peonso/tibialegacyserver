@@ -58,7 +58,7 @@ Welcome, wanderer, to the fascinating world of <?php echo $config['site_title'];
 			for ($i = $current; $i < $current + $config['news_per_page']; $i++) {
 				if (isset($news[$i])) {
 					?>
-					<tr><td class="zheadline" colspan="2">&nbsp;&nbsp;<span class="znewsdate"><?php echo date('D, M d Y', $news[$i]['date']); ?> - </span><b><?php echo TransformToBBCode($news[$i]['title']); ?></td></tr>
+					<tr><td class="zheadline" colspan="2">&nbsp;&nbsp;<span class="znewsdate"><?php echo date('D, j M Y', $news[$i]['date']); ?> - </span><b><?php echo TransformToBBCode($news[$i]['title']); ?></td></tr>
 					<tr><td class="znewsbody" colspan="2"><?php echo TransformToBBCode(nl2br($news[$i]['text'])); ?></td></tr>
 					<tr><td class="znewsdate"><span style="color:#5a2800">&nbsp;&nbsp;by </span><a href="characterprofile.php?name=<?php echo $news[$i]['name']; ?>"><?php echo $news[$i]['name']; ?></a></td><td class="znewsdate"></td></tr>
 					<tr><td class="znewsdate" colspan="2"></td></tr>

@@ -7,16 +7,19 @@ function onLogin(cid)
 	end
 	local current = i - 1
 	
-	if getGlobalStorageValue(PlayersRecordStorage) == nil then
-		setGlobalStorageValue(PlayersRecordStorage, 0)
+	if getEternalStorageValue(PlayersRecordStorage) == nil then
+		setEternalStorageValue(PlayersRecordStorage, 0)
 	end	
 	
-	oldRecord = getGlobalStorageValue(PlayersRecordStorage)
+	oldRecord = getEternalStorageValue(PlayersRecordStorage)
 	
 	if current > oldRecord then
 		addEvent(doBroadcastMessage, 150, "New record: " .. current .. " players are logged in.", MESSAGE_STATUS_DEFAULT)
-		setGlobalStorageValue(PlayersRecordStorage, current)
+		setEternalStorageValue(PlayersRecordStorage, current)
 		db.executeQuery("INSERT INTO `server_record` (`record`, `timestamp`) VALUES (" .. current .. ", " .. os.time() .. ");")
+		if current >= 2 then
+			print(" - New record. " .. current .. " players. " ..os.date("%d %b %H:%M", (os.time())))
+		end
 	end
 	
 	return true

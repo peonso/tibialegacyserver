@@ -3,7 +3,7 @@ function onThink(interval, lastExecution, thinkInterval)
         for o = 1, table.maxn(PlayersOnline) do
            doSavePlayer(PlayersOnline[o])
         end
-        print(":: Server save: " ..os.date("%X %b %d", (os.time())))
+        print(" - Server saved. " ..os.date("%d %b %H:%M", (os.time())))
 		doBroadcastMessage("Server is saving.")
    return true
 end

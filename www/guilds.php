@@ -194,7 +194,7 @@ if (user_logged_in() === true) {
 		</tr>
 		</tbody></table>
 				<p><?php echo $guild['motd']; ?></p>
-				<p>The guild was founded on <?php echo $config['site_title'];?>  on <?php echo date("M d Y",$guild['creationdate']);?>.</p>
+				<p>The guild was founded on <?php echo $config['site_title'];?>  on <?php echo date("j M Y",$guild['creationdate']);?>.</p>
 	</div>
 </div>
 <table id="guildViewTable" class="table table-striped">

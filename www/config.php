@@ -36,7 +36,7 @@
 	function getClock($time = false, $format = false, $adjust = true) {
 		if ($time === false) $time = time();
 		// Date string representation
-		$date = "d M Y, H:i"; // 15 Jul 2013, 13:50
+		$date = "j M Y, H:i"; // 15 Jul 2013, 13:50
 		if ($adjust) $adjust = (1 * 3600); // Adjust to fit your timezone.
 		else $adjust = 0;
 		if ($format) return date($date, $time+$adjust);
