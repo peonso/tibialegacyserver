@@ -9,7 +9,7 @@
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
-</table><br>
+</table>
 <?php
 
 if ($config['log_ip']) {

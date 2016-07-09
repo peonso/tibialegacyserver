@@ -13,6 +13,7 @@ if(file_exists('spell.php')) { require_once 'spell.php'; ?>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table><br>
+Here you can see the list of all available spells in Tibia. Click on any spell name to get detailed information. Please adjust the search criteria below if you want to see just certain spells. Also, you can sort the spell list by any column of your choice. 
 <form action='spells.php' method='post'>
     <table>
         <tr class="yellow">

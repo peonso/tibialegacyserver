@@ -33,9 +33,9 @@ $start = $time;
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="forum.php">Forum</a></li>
+				<li><a href="guilds.php">Guilds</a></li>
 				<li><a href="sub.php?page=whoisonline">Who is Online</a></li>
-				<li><a href="shop.php">Shop</a></li>
-				<li><a href="buypoints.php">Donate</a></li>
+				<li><a href="support.php">Support</a></li>
 			</ul>
 		</div>
 		
@@ -50,9 +50,15 @@ $start = $time;
 						<li><a href="sub.php?page=charactersearch">Characters</a></li>
 						<li><a href="highscores.php">Highscores</a></li>
 						<li><a href="downloads.php">Downloads</a></li>
-						<li><a href="guilds.php">Guilds</a></li>
-						<li><a href="sub.php?page=library">Library</a></li>
-						<li><a href="support.php">Support</a></li>
+						<!--<li><a href="sub.php?page=library">Library</a></li>-->
+						<li><a href="deaths.php">Latest Deaths</a></li>
+						<li><a href="houses.php">Houses</a></li>
+						<li><a href="spells.php">Magic</a></li>
+						<li><a href="sub.php?page=experiencetable">Experience</a></li>
+						<li><a href="powergamers.php">Powergamers</a></li>
+						<li><a href="insomaniacs.php">Insomaniacs</a></li>
+						<li><a href="shop.php">Shop</a></li>
+						<li><a href="buypoints.php">Donate</a></li>
 					</ul>
 					<div class="line wide"></div>
 					<div class="line"></div>

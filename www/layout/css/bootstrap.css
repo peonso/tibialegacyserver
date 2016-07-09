@@ -1344,7 +1344,7 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #f04124;
+  background-color: #b94a48;
   border-color: #ea2f10;
 }
 .btn-danger:focus,
@@ -1392,11 +1392,11 @@ fieldset[disabled] .btn-danger:focus,
 .btn-danger.disabled.focus,
 .btn-danger[disabled].focus,
 fieldset[disabled] .btn-danger.focus {
-  background-color: #f04124;
+  background-color: #b94a48;
   border-color: #ea2f10;
 }
 .btn-danger .badge {
-  color: #f04124;
+  color: #b94a48;
   background-color: #ffffff;
 }
 .btn-link {
@@ -1857,7 +1857,7 @@ tbody.collapse.in {
   color: #e6e6e6;
 }
 .alert-danger {
-  background-color: #f04124;
+  background-color: #b94a48;
   border-color: #ebccd1;
   color: #ffffff;
 }

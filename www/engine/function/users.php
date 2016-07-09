@@ -308,7 +308,11 @@ function guild_new_leader($new_leader, $gid) {
 function guild_leader_gid($leader) {
 	$leader = (int)$leader;
 	$data = mysql_select_single("SELECT `id` FROM `guilds` WHERE `owner_id`='$leader';");
-	return $data['id'];
+	if (isset($data['id'])) {
+		return $data['id'];
+	} else {
+		return false;
+	}
 }
 
 // Returns guild leader(charID) of a guild. (parameter: guild_ID)

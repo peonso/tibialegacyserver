@@ -56,19 +56,20 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		echo output_errors($errors);
 	}
 	?>
-	<table>
-		<tr><td>Change Email</td></tr>
-		<tr class="darkborder"><td>
-			<form action="" method="post">
-				Email:<br>
-				<input type="text" name="new_email" value="<?php echo $user_data['email']; ?>"><br><br>
+	<table class="table table-striped table-hover">
+		<form action="" method="post">
+		<tr><th colspan="2">Change Email</th></tr>
+		<tr><td width="20%">New Email:</td>
+			<td><input type="text" name="new_email" size="24" placeholder="<?php echo $user_data['email']; ?>"></td>
+		</tr>
+		<tr class="transborder"><td></td><td>
 			<?php
 				/* Form file */
 				Token::create();
 			?>
-				<input type="submit" value="Update settings">
-			</form>
+			<input type="submit" value="Submit">&nbsp;<a class="linkbutton" style="float: right;" href="myaccount.php">Back</a>
 		</td></tr>
+		</form>
 	</table>
 <?php
 }

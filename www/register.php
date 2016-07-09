@@ -189,7 +189,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 	}
 ?>
 	If you already have an account, you might want to <a href="sub.php?page=login">log in</a> instead.
-	<table>
+	<table class="table table-striped table-hover">
 		<form action="" method="post">
 		<tr><td colspan="2">Create Account</td></tr>
 		<tr><td width="20%">Account Number:</td><td><input type="text" name="username" size="24" maxlength="8" placeholder=" 6-8 digits"></td></tr>

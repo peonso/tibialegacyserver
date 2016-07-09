@@ -12,6 +12,7 @@ include 'layout/overall/header.php';?>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table><br>
+Here you can see the list of all available houses, flats or guildhalls. Click on any house to get more information about it or adjust the search criteria and start a new search. 
 <?php
 
 if ($config['log_ip'])

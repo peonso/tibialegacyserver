@@ -1,5 +1,15 @@
 <?php require_once 'engine/init.php'; include 'layout/overall/header.php'; ?>
-		<h2 class="intro-text">Forums</h2>
+<br><table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_forum.png"/>
+<table class="blackline">
+	<tr>
+		<td><img src="layout/images/blank.gif"></td>
+	</tr>
+</table>
 <?php
 protect_page();
 error_reporting(E_ALL ^ E_NOTICE);

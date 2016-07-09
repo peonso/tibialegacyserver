@@ -65,28 +65,31 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		}
 		header('Location: changepassword.php?success');
 	} else if (empty($errors) === false){
-		echo '<font color="red"><b>';
+		echo '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
 		echo output_errors($errors);
-		echo '</b></font>';
+		echo '</div>';
 	}
 	?>
-	<table>
-		<tr><td>Change Password</td></tr>
-		<tr class="darkborder"><td>
-			<form action="" method="post">
-				Current password:<br>
-				<input type="password" name="current_password"><br>
-				New password:<br>
-				<input type="password" name="new_password" placeholder=" 6 - 32 characters long"><br>
-				New password again:<br>
-				<input type="password" name="new_password_again" placeholder=" 6 - 32 characters long"><br><br>
+	<table class="table table-striped table-hover">
+		<form action="" method="post">
+		<tr><th colspan="2">Change Password</th></tr>
+		<tr><td width="20%">Current Password:</td>
+			<td><input type="password" name="current_password" size="24"></td>
+		</tr>
+		<tr><td>New Password:</td>
+			<td><input type="password" name="new_password" size="24" placeholder="6-32 characters"></td>
+		</tr>
+		<tr><td>Repeat New Password:</td>
+			<td><input type="password" name="new_password_again" size="24" placeholder="6-32 characters"></td>
+		</tr>
+		<tr class="transborder"><td></td><td>
 			<?php
 				/* Form file */
 				Token::create();
 			?>
-				<input type="submit" value="Change password">
-			</form>
+			<input type="submit" value="Change password">&nbsp;<script> document.write('<a class="linkbutton" style="float: right;" href="' + document.referrer + '">Back</a>'); </script>
 		</td></tr>
+		</form>
 	</table>
 <?php
 }

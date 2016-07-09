@@ -184,6 +184,26 @@ input[type="submit"] {
 	color:#efefef;
 }
 
+.linkbutton {
+	font-family: Verdana, Tahoma, Helvetica, sans-serif !important;
+	border: none;
+	border-bottom: 1px solid #424242;
+	border-top: 1px solid #848484;
+	text-align: center;
+	border-radius: 7px;
+	font-weight: bold;
+	padding: 3px 20px;
+	width: 110px;
+	cursor: pointer;
+	font-size: 9px;
+	background:#505050;
+	color:#efefef;
+}
+.linkbutton:hover {
+	text-decoration: none;
+	color: #efefef;
+}
+
 /* /////////
 // Header //
 ///////// */

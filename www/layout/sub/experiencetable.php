@@ -11,7 +11,7 @@
 </table><br>
 This is a list of the experience points that are required to advance to the various levels. 
 Remember you can also check the respective skill bar in your skill window of the client to check your progress towards 
-the next level.<br><br>
+the next level.
 <table style="padding: 1px 1px 1px 1px;">
 <tr><td COLSPAN=5><b>Experience Table</b></td></tr>
 <tr class="darkborder"><td><table style="padding: 1px 1px 1px 1px;">
