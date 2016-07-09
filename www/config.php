@@ -316,7 +316,7 @@
 	// IMPORTANT! Write a character name(that exist) that will represent website bans!
 	// Or remember to create character "God Website" character exist.
 	// If you don't do this, bann from admin panel won't work properly.
-	$config['website_char'] = 'GM Peonso';
+	$config['website_char'] = 'GM Legacy';
 
 	//----------------\\
 	// ADVANCED STUFF \\

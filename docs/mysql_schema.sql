@@ -4,7 +4,7 @@
 --
 -- Host: 127.0.0.1:3306
 
--- Generation Time: Jul 26, 2014 at 03:44 AM
+-- Generation Time: Jul 09, 2016 at 02:37 AM
 -- Server version: 5.5.33
 -- PHP Version: 5.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `mysql_schema`
+-- Database: `tls`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,14 @@ CREATE TABLE `accounts` (
   `blocked` tinyint(1) NOT NULL DEFAULT '0',
   `warnings` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1365911 ;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`id`, `password`, `email`, `premend`, `blocked`, `warnings`) VALUES
+(123456, '41da8bef22aaef9d7c5821fa0f0de7cccc4dda4d', 'sampleaccount@gmail.com', 0, 0, 0);
 
 --
 -- Triggers `accounts`
@@ -74,6 +81,12 @@ CREATE TABLE `bans` (
   KEY `admin_id` (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- RELATIONS FOR TABLE `bans`:
+--   `admin_id`
+--       `players` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +99,12 @@ CREATE TABLE `environment_killers` (
   PRIMARY KEY (`kill_id`,`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `environment_killers`:
+--   `kill_id`
+--       `killers` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -97,18 +116,6 @@ CREATE TABLE `global_storage` (
   `value` int(11) NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `legacy_storage`
---
-
-CREATE TABLE `legacy_storage` (
-  `key` int(10) NOT NULL,
-  `value` int(11) NOT NULL,
-  UNIQUE KEY `key` (`key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -149,10 +156,17 @@ CREATE TABLE `guilds` (
   `name` varchar(255) NOT NULL,
   `owner_id` int(10) unsigned NOT NULL,
   `creationdate` int(11) NOT NULL,
+  `motd` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `owner_id` (`owner_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- RELATIONS FOR TABLE `guilds`:
+--   `owner_id`
+--       `players` -> `id`
+--
 
 --
 -- Triggers `guilds`
@@ -181,6 +195,14 @@ CREATE TABLE `guild_invites` (
   KEY `guild_id` (`guild_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `guild_invites`:
+--   `player_id`
+--       `players` -> `id`
+--   `guild_id`
+--       `guilds` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -195,6 +217,30 @@ CREATE TABLE `guild_members` (
   KEY `rank_id` (`rank_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `guild_members`:
+--   `player_id`
+--       `players` -> `id`
+--   `rank_id`
+--       `guild_ranks` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guild_membership`
+--
+
+CREATE TABLE `guild_membership` (
+  `player_id` int(11) NOT NULL,
+  `guild_id` int(11) NOT NULL,
+  `rank_id` int(11) NOT NULL,
+  `nick` varchar(15) NOT NULL DEFAULT '',
+  PRIMARY KEY (`player_id`),
+  KEY `guild_id` (`guild_id`),
+  KEY `rank_id` (`rank_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 -- --------------------------------------------------------
 
 --
@@ -208,6 +254,32 @@ CREATE TABLE `guild_ranks` (
   `level` int(11) NOT NULL COMMENT 'rank level - leader, vice leader, member, maybe something else',
   PRIMARY KEY (`id`),
   KEY `guild_id` (`guild_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- RELATIONS FOR TABLE `guild_ranks`:
+--   `guild_id`
+--       `guilds` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guild_wars`
+--
+
+CREATE TABLE `guild_wars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `guild1` int(11) NOT NULL DEFAULT '0',
+  `guild2` int(11) NOT NULL DEFAULT '0',
+  `name1` varchar(255) NOT NULL,
+  `name2` varchar(255) NOT NULL,
+  `status` tinyint(2) NOT NULL DEFAULT '0',
+  `started` bigint(15) NOT NULL DEFAULT '0',
+  `ended` bigint(15) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `guild1` (`guild1`),
+  KEY `guild2` (`guild2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -230,6 +302,10 @@ CREATE TABLE `houses` (
   `clear` tinyint(1) NOT NULL DEFAULT '0',
   `warnings` int(11) NOT NULL DEFAULT '0',
   `lastwarning` int(10) unsigned NOT NULL DEFAULT '0',
+  `bid` int(11) NOT NULL DEFAULT '0',
+  `bid_end` int(11) NOT NULL DEFAULT '0',
+  `last_bid` int(11) NOT NULL DEFAULT '0',
+  `highest_bidder` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -251,6 +327,14 @@ CREATE TABLE `house_auctions` (
   KEY `player_id` (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- RELATIONS FOR TABLE `house_auctions`:
+--   `house_id`
+--       `houses` -> `id`
+--   `player_id`
+--       `players` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -264,6 +348,12 @@ CREATE TABLE `house_lists` (
   KEY `house_id` (`house_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `house_lists`:
+--   `house_id`
+--       `houses` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -276,7 +366,25 @@ CREATE TABLE `killers` (
   `final_hit` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `death_id` (`death_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- RELATIONS FOR TABLE `killers`:
+--   `death_id`
+--       `player_deaths` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `legacy_storage`
+--
+
+CREATE TABLE `legacy_storage` (
+  `key` int(10) NOT NULL,
+  `value` int(11) NOT NULL,
+  UNIQUE KEY `key` (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -344,7 +452,22 @@ CREATE TABLE `players` (
   KEY `online` (`online`),
   KEY `account_id` (`account_id`),
   KEY `group_id` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+
+--
+-- RELATIONS FOR TABLE `players`:
+--   `account_id`
+--       `accounts` -> `id`
+--   `group_id`
+--       `groups` -> `id`
+--
+
+--
+-- Dumping data for table `players`
+--
+
+INSERT INTO `players` (`id`, `name`, `account_id`, `group_id`, `sex`, `vocation`, `experience`, `level`, `maglevel`, `health`, `healthmax`, `mana`, `manamax`, `manaspent`, `soul`, `direction`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `posx`, `posy`, `posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `save`, `conditions`, `skull_type`, `skull_time`, `loss_experience`, `loss_mana`, `loss_skills`, `loss_items`, `loss_containers`, `town_id`, `balance`, `online`, `rank_id`, `guildnick`) VALUES
+(1, 'GM Legacy', 123456, 5, 1, 0, 100, 2, 2, 185, 185, 35, 35, 1130, 100, 2, 68, 76, 78, 58, 75, 32874, 31952, 11, 10000, 1467754551, 1467754550, 16777343, 1, 0x010001000002000000000338020c001b001c0000000010d7000000110a00000012102700001374850100fe0110000000020000000003b03600001b001c000000000b3e0200000c3333333f0d000060c20e3333333f0f000060c2fe, 0, 0, 100, 100, 100, 10, 100, 5, 0, 0, 0, '');
 
 --
 -- Triggers `players`
@@ -387,7 +510,13 @@ CREATE TABLE `player_deaths` (
   PRIMARY KEY (`id`),
   KEY `player_id` (`player_id`),
   KEY `date` (`date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- RELATIONS FOR TABLE `player_deaths`:
+--   `player_id`
+--       `players` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -405,6 +534,12 @@ CREATE TABLE `player_depotitems` (
   UNIQUE KEY `player_id` (`player_id`,`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `player_depotitems`:
+--   `player_id`
+--       `players` -> `id`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -421,6 +556,32 @@ CREATE TABLE `player_items` (
   UNIQUE KEY `player_id` (`player_id`,`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `player_items`:
+--   `player_id`
+--       `players` -> `id`
+--
+
+--
+-- Dumping data for table `player_items`
+--
+
+INSERT INTO `player_items` (`player_id`, `sid`, `pid`, `itemtype`, `count`, `attributes`) VALUES
+(1, 101, 1, 2475, 1, ''),
+(1, 102, 2, 2133, 1, ''),
+(1, 103, 3, 1988, 1, ''),
+(1, 104, 4, 2489, 1, ''),
+(1, 105, 6, 2414, 1, ''),
+(1, 106, 7, 2477, 1, ''),
+(1, 107, 8, 2195, 1, ''),
+(1, 108, 10, 2239, 1, ''),
+(1, 109, 103, 2032, 1, 0x0f01),
+(1, 110, 103, 2430, 1, ''),
+(1, 111, 103, 2342, 1, ''),
+(1, 112, 103, 2342, 1, ''),
+(1, 113, 103, 2420, 1, ''),
+(1, 114, 103, 2405, 1, '');
+
 -- --------------------------------------------------------
 
 --
@@ -434,6 +595,14 @@ CREATE TABLE `player_killers` (
   PRIMARY KEY (`kill_id`,`player_id`),
   KEY `player_id` (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONS FOR TABLE `player_killers`:
+--   `kill_id`
+--       `killers` -> `id`
+--   `player_id`
+--       `players` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -449,6 +618,25 @@ CREATE TABLE `player_skills` (
   KEY `player_id` (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- RELATIONS FOR TABLE `player_skills`:
+--   `player_id`
+--       `players` -> `id`
+--
+
+--
+-- Dumping data for table `player_skills`
+--
+
+INSERT INTO `player_skills` (`player_id`, `skillid`, `value`, `count`) VALUES
+(1, 0, 10, 0),
+(1, 1, 10, 0),
+(1, 2, 10, 0),
+(1, 3, 10, 0),
+(1, 4, 10, 0),
+(1, 5, 10, 0),
+(1, 6, 10, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -460,6 +648,12 @@ CREATE TABLE `player_spells` (
   `name` varchar(255) NOT NULL,
   KEY `player_id` (`player_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONS FOR TABLE `player_spells`:
+--   `player_id`
+--       `players` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -475,7 +669,9 @@ CREATE TABLE `player_storage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `player_storage`
+-- RELATIONS FOR TABLE `player_storage`:
+--   `player_id`
+--       `players` -> `id`
 --
 
 -- --------------------------------------------------------
@@ -490,6 +686,14 @@ CREATE TABLE `player_viplist` (
   KEY `player_id` (`player_id`),
   KEY `vip_id` (`vip_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONS FOR TABLE `player_viplist`:
+--   `player_id`
+--       `players` -> `id`
+--   `vip_id`
+--       `players` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -513,6 +717,18 @@ INSERT INTO `schema_info` (`name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `server_record`
+--
+
+CREATE TABLE `server_record` (
+  `record` int(11) NOT NULL,
+  `timestamp` bigint(20) NOT NULL,
+  UNIQUE KEY `record` (`record`,`timestamp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tiles`
 --
 
@@ -526,6 +742,12 @@ CREATE TABLE `tiles` (
   KEY `x` (`x`,`y`,`z`),
   KEY `house_id` (`house_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONS FOR TABLE `tiles`:
+--   `house_id`
+--       `houses` -> `id`
+--
 
 -- --------------------------------------------------------
 
@@ -543,6 +765,368 @@ CREATE TABLE `tile_items` (
   KEY `sid` (`sid`),
   KEY `tile_id` (`tile_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- RELATIONS FOR TABLE `tile_items`:
+--   `tile_id`
+--       `tiles` -> `id`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote`
+--
+
+CREATE TABLE `znote` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `version` varchar(30) NOT NULL COMMENT 'Znote AAC version',
+  `installed` int(10) NOT NULL,
+  `cached` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `znote`
+--
+
+INSERT INTO `znote` (`id`, `version`, `installed`, `cached`) VALUES
+(2, '1.5_SVN', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_accounts`
+--
+
+CREATE TABLE `znote_accounts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `ip` int(10) NOT NULL,
+  `created` int(10) NOT NULL,
+  `points` int(10) DEFAULT '0',
+  `cooldown` int(10) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `znote_accounts`
+--
+
+INSERT INTO `znote_accounts` (`id`, `account_id`, `ip`, `created`, `points`, `cooldown`) VALUES
+(1, 123456, 2130706433, 1467577475, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_changelog`
+--
+
+CREATE TABLE `znote_changelog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL,
+  `report_id` int(11) NOT NULL,
+  `status` tinyint(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_deleted_characters`
+--
+
+CREATE TABLE `znote_deleted_characters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `original_account_id` int(11) NOT NULL,
+  `character_name` varchar(255) NOT NULL,
+  `time` datetime NOT NULL,
+  `done` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_forum`
+--
+
+CREATE TABLE `znote_forum` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `access` tinyint(4) NOT NULL,
+  `closed` tinyint(4) NOT NULL,
+  `hidden` tinyint(4) NOT NULL,
+  `guild_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `znote_forum`
+--
+
+INSERT INTO `znote_forum` (`id`, `name`, `access`, `closed`, `hidden`, `guild_id`) VALUES
+(1, 'Staff Board', 4, 0, 0, 0),
+(2, 'Tutors Board', 2, 0, 0, 0),
+(3, 'Discussion', 1, 0, 0, 0),
+(4, 'Feedback', 1, 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_forum_posts`
+--
+
+CREATE TABLE `znote_forum_posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `thread_id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(50) NOT NULL,
+  `text` text NOT NULL,
+  `created` int(11) NOT NULL,
+  `updated` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_forum_threads`
+--
+
+CREATE TABLE `znote_forum_threads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `forum_id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `player_name` varchar(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `text` text NOT NULL,
+  `created` int(11) NOT NULL,
+  `updated` int(11) NOT NULL,
+  `sticky` tinyint(4) NOT NULL,
+  `hidden` tinyint(4) NOT NULL,
+  `closed` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_guild_wars`
+--
+
+CREATE TABLE `znote_guild_wars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `limit` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_images`
+--
+
+CREATE TABLE `znote_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) NOT NULL,
+  `desc` text NOT NULL,
+  `date` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `image` varchar(30) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_news`
+--
+
+CREATE TABLE `znote_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) NOT NULL,
+  `text` text NOT NULL,
+  `date` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_paygol`
+--
+
+CREATE TABLE `znote_paygol` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  `message_id` varchar(255) NOT NULL,
+  `service_id` varchar(255) NOT NULL,
+  `shortcode` varchar(255) NOT NULL,
+  `keyword` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `sender` varchar(255) NOT NULL,
+  `operator` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `currency` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_paypal`
+--
+
+CREATE TABLE `znote_paypal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `txn_id` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `accid` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_players`
+--
+
+CREATE TABLE `znote_players` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `player_id` int(11) NOT NULL,
+  `created` int(11) NOT NULL,
+  `hide_char` tinyint(4) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `exphist_lastexp` bigint(255) NOT NULL DEFAULT '0',
+  `exphist1` bigint(255) NOT NULL DEFAULT '0',
+  `exphist2` bigint(255) NOT NULL DEFAULT '0',
+  `exphist3` bigint(255) NOT NULL DEFAULT '0',
+  `exphist4` bigint(255) NOT NULL DEFAULT '0',
+  `exphist5` bigint(255) NOT NULL DEFAULT '0',
+  `exphist6` bigint(255) NOT NULL DEFAULT '0',
+  `exphist7` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetimetoday` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime1` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime2` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime3` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime4` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime5` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime6` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetime7` bigint(255) NOT NULL DEFAULT '0',
+  `onlinetimeall` bigint(255) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `znote_players`
+--
+
+INSERT INTO `znote_players` (`id`, `player_id`, `created`, `hide_char`, `comment`, `exphist_lastexp`, `exphist1`, `exphist2`, `exphist3`, `exphist4`, `exphist5`, `exphist6`, `exphist7`, `onlinetimetoday`, `onlinetime1`, `onlinetime2`, `onlinetime3`, `onlinetime4`, `onlinetime5`, `onlinetime6`, `onlinetime7`, `onlinetimeall`) VALUES
+(1, 1, 1467577522, 0, '', 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1860, 0, 0, 0, 0, 1860);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_player_reports`
+--
+
+CREATE TABLE `znote_player_reports` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `posx` int(6) NOT NULL,
+  `posy` int(6) NOT NULL,
+  `posz` int(6) NOT NULL,
+  `report_description` varchar(255) NOT NULL,
+  `date` int(11) NOT NULL,
+  `status` tinyint(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_shop`
+--
+
+CREATE TABLE `znote_shop` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) NOT NULL,
+  `itemid` int(11) DEFAULT NULL,
+  `count` int(11) NOT NULL DEFAULT '1',
+  `describtion` varchar(255) NOT NULL,
+  `points` int(11) NOT NULL DEFAULT '10',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_shop_logs`
+--
+
+CREATE TABLE `znote_shop_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_shop_orders`
+--
+
+CREATE TABLE `znote_shop_orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  `time` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_visitors`
+--
+
+CREATE TABLE `znote_visitors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `znote_visitors_details`
+--
+
+CREATE TABLE `znote_visitors_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `type` tinyint(4) NOT NULL,
+  `account_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables

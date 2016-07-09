@@ -1,9 +1,9 @@
 -- by Nottinghster
 --	actions.xml
--- 	<action itemid="2571" script="donate.lua" />
---	<action itemid="2572" script="donate.lua" />
---	<action itemid="2573" script="donate.lua" />
---	<action itemid="2345" script="donate.lua" />
+-- 	<action itemid="2571" script="premium.lua" />
+--	<action itemid="2572" script="premium.lua" />
+--	<action itemid="2573" script="premium.lua" />
+--	<action itemid="2345" script="premium.lua" />
 
 function onUse(cid, item, frompos, item, topos)
 
