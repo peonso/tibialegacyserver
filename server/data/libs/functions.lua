@@ -912,7 +912,7 @@ function doPlayerBuyItemContainer(cid, containerid, itemid, count, cost, charges
 	return doPlayerRemoveMoney(cid, cost) and doPlayerGiveItemContainer(cid, containerid, itemid, count, charges)
 end
 
--- custom Global Storage functions
+-- custom Legacy Global Storage functions
 function getEternalStorageValue(key, parser)
 	local valueQuery = db.storeQuery("SELECT `value` FROM `legacy_storage` WHERE `key` = " .. key .. ";")
 	if not valueQuery then
@@ -934,4 +934,31 @@ function setEternalStorageValue(key, value)
 		db.executeQuery("INSERT INTO `legacy_storage` (`key`, `value`) VALUES (" .. key .. ", " .. value .. ");")
 	end
 	return true
+end
+
+-- gesior powergamers/insomaniacs
+function historyPage(parameters)
+	local historyPage = addEvent(historyPage, 60000, {})
+	-- move this to server save/startup later (do_later)
+    if tonumber(os.date("%d")) ~= getEternalStorageValue(23856) then
+        setEternalStorageValue(23856, (tonumber(os.date("%d"))))
+        db.executeQuery("UPDATE `znote_players` SET `onlinetime7`=`onlinetime6`, `onlinetime6`=`onlinetime5`, `onlinetime5`=`onlinetime4`, `onlinetime4`=`onlinetime3`, `onlinetime3`=`onlinetime2`, `onlinetime2`=`onlinetime1`, `onlinetime1`=`onlinetimetoday`, `onlinetimetoday`=0;")
+        db.executeQuery("UPDATE `znote_players` `z` INNER JOIN `players` `p` ON `p`.`id`=`z`.`player_id` SET `z`.`exphist7`=`z`.`exphist6`,  `z`.`exphist6`=`z`.`exphist5`, `z`.`exphist5`=`z`.`exphist4`, `z`.`exphist4`=`z`.`exphist3`, `z`.`exphist3`=`z`.`exphist2`, `z`.`exphist2`=`z`.`exphist1`, `z`.`exphist1`=`p`.`experience`-`z`.`exphist_lastexp`, `z`.`exphist_lastexp`=`p`.`experience`;")
+    end
+    db.executeQuery("UPDATE `znote_players` SET `onlinetimetoday` = `onlinetimetoday` + 60, `onlinetimeall` = `onlinetimeall` + 60 WHERE `player_id` IN (SELECT `id` FROM `players` WHERE `online` = 1)")
+    return true
+end
+
+function getPlayerOnlineTime(cid)
+	local timeQuery = db.storeQuery("SELECT `onlinetimeall` FROM `znote_players` WHERE `player_id` = " .. getPlayerGUID(cid) .. ";")
+	local onlinetimeall = result.getDataInt(timeQuery, "onlinetimeall")
+    result.free(timeQuery)
+	return tonumber(onlinetimeall) or onlinetimeall
+end
+
+function getCreateDate(cid)
+	local createdQuery = db.storeQuery("SELECT `created` FROM `znote_players` WHERE `player_id` = " .. getPlayerGUID(cid) .. ";")
+	local created = result.getDataInt(createdQuery, "created")
+    result.free(createdQuery)
+	return tonumber(created) or created
 end

@@ -1,3 +1,4 @@
+--	actions.xml
 -- 	<action itemid="2148" script="changegold.lua" />
 --	<action itemid="2152" script="changegold.lua" />
 --	<action itemid="2160" script="changegold.lua" />

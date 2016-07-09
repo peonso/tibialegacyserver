@@ -1,4 +1,11 @@
 function onLogin(cid)
+	-- gesior powergamers/insomaniacs
+	-- move this to server startup later (do_later)
+    if (InitHistory == 0) then
+        local historyPage = addEvent(historyPage, 60000, {})
+        InitHistory = historyPage
+	end
+
 	-- Register the kill/die event
 	registerCreatureEvent(cid, "RemoveBlesses")
 
@@ -10,6 +17,7 @@ function onLogin(cid)
 		registerCreatureEvent(cid, "ExpStage")
 		checkStageChange(cid)
 	end
+	
 	-- add a backpack if it is a relogin after a death
 	if getPlayerStorageValue(cid, STORAGE_DEATH_BAG) == 1 then
 		if getPlayerSlotItem(cid, CONST_SLOT_BACKPACK).uid == 0 then

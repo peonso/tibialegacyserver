@@ -17,7 +17,6 @@ dofile(getDataDir() .. 'libs/db.lua')
 dofile(getDataDir() .. 'libs/compat.lua')
 
 -- Storages consts
-STORAGE_RUM_MACHINE = 100000
 STORAGE_PROMOTION = 15000
 STORAGE_PREMIUM_ACCOUNT = 25000
 -- Storage for blesses - 500000 + blessID
@@ -557,3 +556,6 @@ COLOR_DARKYELLOW = 205
 COLOR_YELLOW = 210
 COLOR_WHITE = 215
 COLOR_NONE = 255
+
+-- gesior powergamers/insomaniacs
+InitHistory = 0

@@ -25,22 +25,28 @@ if ($deaths) {
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table><br>
-<table id="deathsTable" class="table table-striped">
+<table class="table table-striped table-hover">
 	<tr class="yellow">
-		<th>Victim</th>
-		<th>Time</th>
-		<th>Killer</th>
+		<th>Date</th>
+		<th>Death</th>
 	</tr>
-	<?php foreach ($deaths as $death) { 
+	<?php
+	foreach ($deaths as $death) { 
 		echo '<tr>';
-		echo "<td><a href='characterprofile.php?name=". $death['victim'] ."'>". $death['victim'] ."</a> - level ". $death['level'] ."</td>";
-		echo "<td>". getClock($death['time'], true) ."</td>";
-		if ($death['is_player'] == 1) echo "<td>by <a href='characterprofile.php?name=". $death['killed_by'] ."'>". $death['killed_by'] ."</a></td>";
-		else if ($death['is_player'] == 0) {
-			if ($config['TFSVersion'] == 'TFS_03') echo "<td>by ". ucfirst(str_replace("a ", "", $death['killed_by'])) ."</td>";
-			else echo "<td>by ". $death['killed_by'] ."</td>";
+		echo "<td>". date("d M Y, H:i", $death['time']) ."</td>";
+		echo "<td><a href='characterprofile.php?name=". $death['victim'] ."'>". $death['victim'] ."</a> ";
+		$lasthit = ($death['is_player']) ? "<a href='characterprofile.php?name=".$death['killed_by']."'>".$death['killed_by']."</a>" : $death['killed_by'];
+		if ($death['is_player'] > 0) {
+			echo "was killed at Level ".$death['level']." by $lasthit";
+		} else echo "died at Level ".$death['level']." by $lasthit";
+		/* if ($death['unjustified']) echo ' <span class="label label-danger">Unjustified</span>'; */
+		$mostdmg = ($death['mostdamage_by'] !== $death['killed_by']) ? true : false;
+		if (($mostdmg) && ($death['mostdamage_is_player'])) {
+			$mostdmg = "<a href='characterprofile.php?name=".$death['mostdamage_by']."'>".$death['mostdamage_by']."</a>";
+			echo " and $mostdmg";
+			/* if ($death['mostdamage_unjustified']) echo ' <span class="label label-danger">Unjustified</span>'; */
 		}
-		else echo "<td>". $death['killed_by'] ."</td>";
+		echo '</td>';
 		echo '</tr>';
 	} ?>
 </table>
