@@ -13,7 +13,7 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'antidote', 'antidote rune'}, 					ID_antidoterune, 40)
+shopModule:addBuyableItem({'antidote', 'antidote rune'}, 2266, 40)
 
 keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Very well. Thank you."})
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I only sell my antidote runes and I'll be happy to buy some blueberries from you."})
@@ -37,7 +37,7 @@ npcHandler:say("Do you want to sell 5 blueberries for 1 gold?", 1)
 	talk_state = 301
 			
 elseif talk_state == 301 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid,ID_blueberry,5) == true then
+	if doPlayerRemoveItem(cid, 2677, 5) == true then
 	doPlayerAddMoney(cid, 1)
 	talk_state = 0
 	else

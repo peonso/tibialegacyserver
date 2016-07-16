@@ -35,17 +35,19 @@ function onThink() 						npcHandler:onThink() end
 		return true
 	end
 
+--[[
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addSellableItem({'golden mug'}, 					ID_goldenmug, 950)
-shopModule:addSellableItem({'life crystal'}, 					ID_lifecrystal, 450)
-shopModule:addSellableItem({'ankh'}, 					ID_ankh, 100)
-shopModule:addSellableItem({'small oil lamp'}, 					ID_smalloillamp, 270)
-shopModule:addSellableItem({'frozen starlight'}, 					ID_frozenstarlight, 9500)
-shopModule:addSellableItem({'mind stone'}, 					ID_mindstone, 200)
+shopModule:addSellableItem({'golden mug'}, 2033, 950)
+shopModule:addSellableItem({'life crystal'}, 2177, 450)
+shopModule:addSellableItem({'ankh'}, 2193, 100)
+shopModule:addSellableItem({'small oil lamp'}, 2359, 270)
+shopModule:addSellableItem({'frozen starlight'}, 2361, 9500)
+shopModule:addSellableItem({'mind stone'}, 2178, 200)
 shopModule:addSellableItem({'soul orb'}, 					ID_soulorb, 250)
-shopModule:addSellableItem({'gold ring'}, 					ID_goldring, 8000)
+shopModule:addSellableItem({'gold ring'}, 2179, 8000)
+]]--
 
 keywordHandler:addKeyword({'silver guard'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They are our elite forces."})
 keywordHandler:addKeyword({'red guard'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most of the red guards serve as cityguards, some work for the TBI though."})

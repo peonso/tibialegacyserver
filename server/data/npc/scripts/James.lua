@@ -18,11 +18,11 @@ local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
 
-shopModule:addBuyableItem({'bread'}, 					ID_bread, 3)
-shopModule:addBuyableItem({'cheese'}, 					ID_cheese, 5)
-shopModule:addBuyableItem({'meat'}, 					ID_meat, 5)
-shopModule:addBuyableItem({'ham'}, 					ID_ham, 8)
-shopModule:addBuyableItem({'apple'}, 					ID_apple, 3)
+shopModule:addBuyableItem({'bread'}, 2689, 3)
+shopModule:addBuyableItem({'cheese'}, 2696, 5)
+shopModule:addBuyableItem({'meat'}, 2666, 5)
+shopModule:addBuyableItem({'ham'}, 2671, 8)
+shopModule:addBuyableItem({'apple'}, 2674, 3)
  
 
 

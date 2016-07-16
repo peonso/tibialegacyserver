@@ -104,7 +104,7 @@ elseif msgcontains(msg, 'death to noodles') then
 	npcHandler:say("So, I guess you bring me a magic crystal?", 1)
 	talk_state = 3
 elseif talk_state == 3 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_lifecrystal, 1) == true then
+	if doPlayerRemoveItem(cid, 2177, 1) == true then
 	end
 	npcHandler:say("Fine. Now you get what you deserve, you fool! DIE IN AGONY!", 1)
 	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)

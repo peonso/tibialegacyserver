@@ -16,9 +16,9 @@ local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
 
-shopModule:addBuyableItem({'wedding ring'}, 					ID_weddingring, 990)
-shopModule:addBuyableItem({'golden amulet'}, 					ID_goldenamulet, 6600)
-shopModule:addBuyableItem({'ruby necklace'}, 					ID_rubynecklace, 3560)
+shopModule:addBuyableItem({'wedding ring'}, 2121, 990)
+shopModule:addBuyableItem({'golden amulet'}, 2130, 6600)
+shopModule:addBuyableItem({'ruby necklace'}, 2133, 3560)
  
 
 

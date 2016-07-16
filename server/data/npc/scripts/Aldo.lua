@@ -13,12 +13,12 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'leather helmet'}, 					ID_leatherhelmet, 12)
-shopModule:addBuyableItem({'studded helmet'}, 					ID_studdedhelmet, 63)
-shopModule:addBuyableItem({'sandals'}, 					ID_sandals, 2)
-shopModule:addBuyableItem({'leather boots'}, 					ID_leatherboots, 2)
-shopModule:addBuyableItem({'leather legs'}, 					ID_leatherlegs, 10)
-shopModule:addBuyableItem({'studded legs'}, 					ID_studdedlegs, 60)
+shopModule:addBuyableItem({'leather helmet'}, 2461, 12)
+shopModule:addBuyableItem({'studded helmet'}, 2482, 63)
+shopModule:addBuyableItem({'sandals'}, 2642, 2)
+shopModule:addBuyableItem({'leather boots'}, 2643, 2)
+shopModule:addBuyableItem({'leather legs'}, 2649, 10)
+shopModule:addBuyableItem({'studded legs'}, 2468, 60)
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm Aldo. No one calls me 'lucky Aldo' though, guess why!"})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a salesman, I sell headgear ... uhm ... oh well, and shoes."})

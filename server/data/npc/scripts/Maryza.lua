@@ -37,13 +37,13 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'brown bread'}, 					ID_brownbread, 3)
-shopModule:addBuyableItem({'bread'}, 					ID_bread, 4)
-shopModule:addBuyableItem({'cheese'}, 					ID_cheese, 6)
-shopModule:addBuyableItem({'meat'}, 					ID_meat, 5)
-shopModule:addBuyableItem({'ham'}, 					ID_ham, 8)
-shopModule:addBuyableItem({'cookie'}, 					ID_cookie, 2)
-shopModule:addBuyableItem({'roll'}, 					ID_roll, 2)
+shopModule:addBuyableItem({'brown bread'}, 2691, 3)
+shopModule:addBuyableItem({'bread'}, 2689, 4)
+shopModule:addBuyableItem({'cheese'}, 2696, 6)
+shopModule:addBuyableItem({'meat'}, 2666, 5)
+shopModule:addBuyableItem({'ham'}, 2671, 8)
+shopModule:addBuyableItem({'cookie'}, 2687, 2)
+shopModule:addBuyableItem({'roll'}, 2690, 2)
 
 
 

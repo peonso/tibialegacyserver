@@ -31,7 +31,7 @@ keywordHandler:addKeyword({'castle'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'subject'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our people are fine and peaceful."})
 keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I bet they spy on us... not my business, however."})
 keywordHandler:addKeyword({'todd'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I scared this bigmouth so much that he left the town by night. HO, HO, HO!"})
-keywordHandler:addKeyword({'city'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city is is a peaID_ul place, and it's up to me to keep it this way."})
+keywordHandler:addKeyword({'city'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The city is is a peacful place, and it's up to me to keep it this way."})
 keywordHandler:addKeyword({'hain'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "He is the guy responsible to keep the sewers working. Someone has to do such kind of jobs. I can't handle all the garbage of the city myself."})
 keywordHandler:addKeyword({'rowenna'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Rowenna is one of our local smiths. When you look for weapons, look for Rowenna."})
 keywordHandler:addKeyword({'weapon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Rowenna is one of our local smiths. When you look for weapons, look for Rowenna."})

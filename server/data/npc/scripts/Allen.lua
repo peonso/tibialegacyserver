@@ -13,10 +13,10 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'wooden chair'}, 					ID_woodenchair, 15)
-shopModule:addBuyableItem({'sofa chair'}, 					ID_sofachair, 55)
-shopModule:addBuyableItem({'red cushioned chair'}, 					ID_redcushionedchair, 40)
-shopModule:addBuyableItem({'green cushioned chair'}, 					ID_greencushionedchair, 40)
+shopModule:addBuyableItem({'wooden chair'}, 3901, 15)
+shopModule:addBuyableItem({'sofa chair'}, 3902, 55)
+shopModule:addBuyableItem({'red cushioned chair'}, 3903, 40)
+shopModule:addBuyableItem({'green cushioned chair'}, 3904, 40)
 
 keywordHandler:addKeyword({'chair'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell wooden, sofa, red cushioned and green cushioned chairs."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Allen Richardson. I am the owner of this market."})

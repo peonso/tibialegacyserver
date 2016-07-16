@@ -13,7 +13,7 @@ function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg)
 function onThink() 						npcHandler:onThink() end
 
 function greetCallback(cid)
-	if getPlayerItemCount(cid, ID_garlicnecklace) >= 1 then
+	if getPlayerItemCount(cid, 2199) >= 1 then
 	npcHandler:setMessage(MESSAGE_GREET, "Chhhh ... Sorry, I'm busy. <cough>")
 	return false
 	else

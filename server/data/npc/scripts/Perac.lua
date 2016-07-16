@@ -15,10 +15,10 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'crossbow'}, 					ID_crossbow, 500)
-shopModule:addBuyableItem({'bow'}, 					ID_bow, 400)
-shopModule:addBuyableItem({'arrow'}, 					ID_arrow, 2)
-shopModule:addBuyableItem({'bolt'}, 					ID_bolt, 3)
+shopModule:addBuyableItem({'crossbow'}, 2455, 500)
+shopModule:addBuyableItem({'bow'}, 2456, 400)
+shopModule:addBuyableItem({'arrow'}, 2544, 2)
+shopModule:addBuyableItem({'bolt'}, 2543, 3)
 
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the fletcher of Carlin. I am selling bows, crossbows, and ammunition. Do you need anything?"})

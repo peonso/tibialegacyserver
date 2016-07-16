@@ -12,7 +12,7 @@ function onThink() 						npcHandler:onThink() end
 
 function greetCallback(cid)
 	if getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
-		if getPlayerItemCount(cid, ID_snakebiterod) or getPlayerItemCount(cid, ID_moonlightrod) or getPlayerItemCount(cid, ID_volcanicrod) or getPlayerItemCount(cid, ID_quagmirerod) or getPlayerItemCount(cid, ID_tempestrod) then 
+		if getPlayerItemCount(cid, 2182) or getPlayerItemCount(cid, 2186) or getPlayerItemCount(cid, 2185) or getPlayerItemCount(cid, 2181) or getPlayerItemCount(cid, 2183) then 
 		npcHandler:setMessage(MESSAGE_GREET, "Welcome back, ".. getPlayerName(cid) ..". Hey, nice wand you have there!")
 		else
 		npcHandler:setMessage(MESSAGE_GREET, "Welcome to my hut, ".. getPlayerName(cid) .."! It's always nice to see a druid here.")
@@ -119,7 +119,7 @@ elseif msgcontains(msg, 'quest') or msgcontains(msg, 'Quest') then
 	talk_state = 0
 
 elseif msgcontains(msg, 'blood herb') or msgcontains(msg, 'Blood herb') then
-	if getPlayerItemCount(cid, ID_bloodherb) >= 1 then
+	if getPlayerItemCount(cid, 2798) >= 1 then
 	npcHandler:say("Do you have a blood herb for me?", 1)
 	talk_state = 1	
 	else
@@ -128,12 +128,12 @@ elseif msgcontains(msg, 'blood herb') or msgcontains(msg, 'Blood herb') then
 	end
 	
 elseif talk_state == 1 and msgcontains(msg, 'yes') or talk_state == 1 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_bloodherb, 1) == true then
+	if doPlayerRemoveItem(cid, 2798, 1) == true then
 		if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
 		doPlayerAddMoney(cid, 400)
 		npcHandler:say("Hmm, thanks. Take this.", 1)
 		elseif getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
-		doPlayerAddItem(cid, ID_witchesbroom, 1)
+		doPlayerAddItem(cid, 2324, 1)
 		npcHandler:say("Thank you so much! Here, let me give you a reward...", 1)
 		else
 		doPlayerAddMoney(cid, 300)

@@ -16,14 +16,14 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'white mushroom'}, 					ID_whitemushroom, 6)
-shopModule:addBuyableItem({'red mushroom'}, 					ID_redmushroom, 12)
-shopModule:addBuyableItem({'brown mushroom'}, 					ID_brownmushroom, 10)
-shopModule:addBuyableItem({'rose'}, 					ID_rose, 11, 0, 'red rose')
-shopModule:addBuyableItem({'tulip'}, 					ID_tulip, 9)
-shopModule:addBuyableItem({'stone herb'}, 					ID_stoneherb, 28)
-shopModule:addBuyableItem({'star herb'}, 					ID_starherb, 21)
-shopModule:addBuyableItem({'fern'}, 					ID_fern, 24)
+shopModule:addBuyableItem({'white mushroom'}, 2787, 6)
+shopModule:addBuyableItem({'red mushroom'}, 2788, 12)
+shopModule:addBuyableItem({'brown mushroom'}, 2789, 10)
+shopModule:addBuyableItem({'rose'}, 2744, 11, 0, 'red rose')
+shopModule:addBuyableItem({'tulip'}, 2754, 9)
+shopModule:addBuyableItem({'stone herb'}, 2799, 28)
+shopModule:addBuyableItem({'star herb'}, 2800, 21)
+shopModule:addBuyableItem({'fern'}, 2801, 24)
  
 
 

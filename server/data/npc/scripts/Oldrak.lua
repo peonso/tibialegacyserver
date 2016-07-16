@@ -66,8 +66,8 @@ if msgcontains(msg, 'the holy') or msgcontains(msg, 'tible') then
 elseif talk_state == 8596 and msgcontains(msg, 'yes') then
 	if doPlayerRemoveMoney(cid, itemprice) == true then
 		npcHandler:say("Here you are, take good care of it!", 1)
-		THEHOLYTIBLE = doPlayerAddItem(cid, ID_theholytible)
-		THEHOLYTIBLE = doPlayerAddItem(cid, ID_theholytible, 1)
+		THEHOLYTIBLE = doPlayerAddItem(cid, 1970)
+		THEHOLYTIBLE = doPlayerAddItem(cid, 1970, 1)
 		doSetItemText(THEHOLYTIBLE, "Banor I praise your name.\nBe with me in the battle.\nBe my shield, let me be your sword.\nI will honour the godly spark in my soul.\nMay it flourish and grow.")
 	else
 	npcHandler:say("Oh, you do not have enough gold to buy ".. itemname ..".", 1)

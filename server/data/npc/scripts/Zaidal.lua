@@ -17,15 +17,15 @@ local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
 
-shopModule:addSellableItem({'tusk'}, 					ID_tusk, 100)
+shopModule:addSellableItem({'tusk'}, 3956, 100)
 
-shopModule:addBuyableItem({'ivory chair'}, 					ID_ivorychair, 25)
-shopModule:addBuyableItem({'tusk chair'}, 					ID_tuskchair, 25)
-shopModule:addBuyableItem({'bamboo drawer'}, 					ID_bamboodrawer, 25)
-shopModule:addBuyableItem({'bamboo table'}, 					ID_bambootable, 25)
-shopModule:addBuyableItem({'stone table'}, 					ID_stonetable, 30)
-shopModule:addBuyableItem({'tusk table'}, 					ID_tusktable, 25)
-shopModule:addBuyableItem({'christmas tree'}, 					ID_christmastree, 50)
+shopModule:addBuyableItem({'ivory chair'}, 3906, 25)
+shopModule:addBuyableItem({'tusk chair'}, 3905, 25)
+shopModule:addBuyableItem({'bamboo drawer'}, 3936, 25)
+shopModule:addBuyableItem({'bamboo table'}, 3919, 25)
+shopModule:addBuyableItem({'stone table'}, 3913, 30)
+shopModule:addBuyableItem({'tusk table'}, 3914, 25)
+shopModule:addBuyableItem({'christmas tree'}, 3933, 50)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am selling furniture, especially bamboo made furniture. I also buy elephant tusks to create my famous tusk tables and ivory chairs."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am known as Zaidal."})

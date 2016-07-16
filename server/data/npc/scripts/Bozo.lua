@@ -112,7 +112,7 @@ elseif msgcontains(msg, 'weapon') then
 	talk_state = 3
 elseif talk_state == 3 and msgcontains(msg, 'yes') then	
 	if doPlayerRemoveMoney(cid, 250) == true then
-	doPlayerAddItem(cid, ID_rollingpin)
+	doPlayerAddItem(cid, 2570)
 	npcHandler:say("And here it is, it suits you well!", 1)
 	else
 	npcHandler:say("Come back, when you have enough money.", 1)

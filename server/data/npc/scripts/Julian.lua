@@ -15,12 +15,12 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'harp'}, 					ID_harp, 50)
-shopModule:addBuyableItem({'piano'}, 					ID_piano, 200)
-shopModule:addBuyableItem({'lyre'}, 					ID_lyre, 120)
-shopModule:addBuyableItem({'lute'}, 					ID_lute, 195)
-shopModule:addBuyableItem({'drum'}, 					ID_drum, 140)
-shopModule:addBuyableItem({'simple fanfare'}, 					ID_simplefanfare, 150)
+shopModule:addBuyableItem({'harp'}, 3921, 50)
+shopModule:addBuyableItem({'piano'}, 3926, 200)
+shopModule:addBuyableItem({'lyre'}, 2071, 120)
+shopModule:addBuyableItem({'lute'}, 2072, 195)
+shopModule:addBuyableItem({'drum'}, 2073, 140)
+shopModule:addBuyableItem({'simple fanfare'}, 2075, 150)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I make instruments and sometimes I'm wandering through the lands of Tibia as a bard."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Julian."})

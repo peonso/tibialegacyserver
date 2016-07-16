@@ -12,7 +12,7 @@ function onThink() 						npcHandler:onThink() end
 
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
-shopModule:addBuyableItem({'letter'}, 					ID_letter, 5)
+shopModule:addBuyableItem({'letter'}, 2597, 5)
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Chemar Ibn Kalith."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am a licensed carpetpilot and responsible for the Darashian airmail. I can bring you to the Femor Hills, Edron, or you can buy letters and parcels."})
@@ -124,8 +124,8 @@ end
 	talk_state = 3532
 	elseif talk_state == 3532 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
 	if doPlayerRemoveMoney(cid, 15) == true then
-	doPlayerAddItem(cid, ID_parcel, 1)
-	doPlayerAddItem(cid, ID_label, 1)
+	doPlayerAddItem(cid, 2595, 1)
+	doPlayerAddItem(cid, 2599, 1)
 	npcHandler:say("Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.", 1)
 	talk_state = 0
 	else

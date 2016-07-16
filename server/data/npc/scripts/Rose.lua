@@ -15,10 +15,10 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'flower bowl'}, 					ID_flowerbowl, 6)
-shopModule:addBuyableItem({'honey flower'}, 					ID_honeyflower, 5)
-shopModule:addBuyableItem({'potted flower'}, 					ID_pottedflower, 5)
-shopModule:addBuyableItem({'indoor plant'}, 					ID_indoorplant, 8)
+shopModule:addBuyableItem({'flower bowl'}, 2102, 6)
+shopModule:addBuyableItem({'honey flower'}, 2103, 5)
+shopModule:addBuyableItem({'potted flower'}, 2104, 5)
+shopModule:addBuyableItem({'indoor plant'}, 2101, 8)
 
 keywordHandler:addKeyword({'flower'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell flower bowls, honey flowers, potted flowers and indoor plants."})
 keywordHandler:addKeyword({'rose'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "That's me. I am not for sale. <giggles>"})

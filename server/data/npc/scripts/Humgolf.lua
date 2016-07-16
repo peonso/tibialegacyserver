@@ -16,9 +16,9 @@ local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
 
-shopModule:addSellableItem({'meat'}, 					ID_meat, 2)
-shopModule:addSellableItem({'ham'}, 					ID_ham, 4)
-shopModule:addSellableItem({'rat'}, 					2813, 2)
+shopModule:addSellableItem({'meat'}, 2666, 2)
+shopModule:addSellableItem({'ham'}, 2671, 4)
+shopModule:addSellableItem({'rat'}, 2813, 2)
 
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am chief rotwormtamer of Kazordoon. I sell rotworms and buy meat and tasty, fresh rats for my worms."})

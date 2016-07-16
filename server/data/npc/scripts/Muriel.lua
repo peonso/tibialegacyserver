@@ -488,7 +488,7 @@ talk_state = 814
 
 elseif talk_state == 814 and msgcontains(msg, 'yes') or talk_state == 814 and msgcontains(msg, 'Yes') then
 	if doPlayerRemoveMoney(cid, 150) == true then
-	doPlayerAddItem(cid, ID_spellbook, 1)
+	doPlayerAddItem(cid, 2175, 1)
 	npcHandler:say("Here you are.", 1)
 	else
 	npcHandler:say("Come back when you have enough money.", 1)

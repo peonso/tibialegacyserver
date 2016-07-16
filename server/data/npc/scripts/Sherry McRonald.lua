@@ -15,10 +15,10 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'cheese'}, 					ID_cheese, 5)
-shopModule:addBuyableItem({'cherry'}, 					ID_cherry, 1)
-shopModule:addBuyableItem({'melon'}, 					ID_melon, 8)
-shopModule:addBuyableItem({'pumpkin'}, 					ID_pumpkin, 10)
+shopModule:addBuyableItem({'cheese'}, 2696, 5)
+shopModule:addBuyableItem({'cherry'}, 2679, 1)
+shopModule:addBuyableItem({'melon'}, 2682, 8)
+shopModule:addBuyableItem({'pumpkin'}, 2683, 10)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I and my husband run this farm."})
 keywordHandler:addKeyword({'husband'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My husband Donald is busy on the fields almost all night and day."})
@@ -75,9 +75,9 @@ elseif msgcontains(msg, 'sell') and msgcontains(msg, 'bread') or msgcontains(msg
 	talk_state = 3
 
 elseif talk_state == 3 and msgcontains(msg, 'yes') then
-AMOUNTBREAD = getPlayerItemCount(cid,ID_bread)
+AMOUNTBREAD = getPlayerItemCount(cid, 2689)
 if AMOUNTBREAD >= 1 then
-	if doPlayerRemoveItem(cid, ID_bread, AMOUNTBREAD) == true then
+	if doPlayerRemoveItem(cid, 2689, AMOUNTBREAD) == true then
 	doPlayerAddMoney(cid, AMOUNTBREAD*2)
 	npcHandler:say("Here you are ... ".. AMOUNTBREAD*2 .." gold.", 1)
 	end

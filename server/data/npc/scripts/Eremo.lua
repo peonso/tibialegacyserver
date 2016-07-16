@@ -25,9 +25,9 @@ npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'amulet of loss'}, 					ID_amuletofloss, 50000)
-shopModule:addBuyableItem({'protection amulet'}, 					ID_protectionamulet, 700, 250)
-shopModule:addBuyableItem({'broken amulet', 'amulet of life'}, 					ID_brokenamulet, 25000)
+shopModule:addBuyableItem({'amulet of loss'}, 2173, 50000)
+shopModule:addBuyableItem({'protection amulet'}, 2200, 700, 250)
+shopModule:addBuyableItem({'broken amulet', 'amulet of life'}, 2196, 25000)
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Eremo, an old man who has seen many things."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I teach some spells, provide one of the five blessings, and sell some amulets."})

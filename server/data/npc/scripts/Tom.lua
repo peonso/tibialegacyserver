@@ -15,9 +15,9 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addSellableItem({'rat', 'dead rat'}, 					2813, 2)
-shopModule:addSellableItem({'rabbit', 'dead rabbit'}, 					2992, 2)
-shopModule:addSellableItem({'wolf', 'dead wolf'}, 					2826, 5)
+shopModule:addSellableItem({'rat', 'dead rat'}, 2813, 2)
+shopModule:addSellableItem({'rabbit', 'dead rabbit'}, 2992, 2)
+shopModule:addSellableItem({'wolf', 'dead wolf'}, 2826, 5)
  
 keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Much to do, these days."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm the local tanner. I buy fresh animal corpses, tan them, and convert them into fine leather clothes ...","I'm only selling to major customers. But I'm buying fresh corpses of rats, rabbits and wolves from you."})

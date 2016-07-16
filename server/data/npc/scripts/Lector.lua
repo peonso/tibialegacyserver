@@ -13,8 +13,8 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'meat'}, 					ID_meat, 3)
-shopModule:addBuyableItem({'ham'}, 					ID_ham, 6)
+shopModule:addBuyableItem({'meat'}, 2666, 3)
+shopModule:addBuyableItem({'ham'}, 2671, 6)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the butcher. I am selling delicious meat."})
 keywordHandler:addKeyword({'butcher'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the butcher. I am selling delicious meat."})

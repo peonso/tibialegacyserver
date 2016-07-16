@@ -19,11 +19,11 @@ local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
 
-shopModule:addBuyableItem({'staff'}, 					ID_staff, 40)
-shopModule:addBuyableItem({'dagger'}, 					ID_dagger, 5)
-shopModule:addBuyableItem({'mace'}, 					ID_mace, 90)
-shopModule:addBuyableItem({'brass helmet'}, 					ID_brasshelmet, 120)
-shopModule:addBuyableItem({'throwing knife'}, 					ID_throwingknife, 25)
+shopModule:addBuyableItem({'staff'}, 2401, 40)
+shopModule:addBuyableItem({'dagger'}, 2379, 5)
+shopModule:addBuyableItem({'mace'}, 2398, 90)
+shopModule:addBuyableItem({'brass helmet'}, 2460, 120)
+shopModule:addBuyableItem({'throwing knife'}, 2410, 25)
 
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am selling some... things."})
@@ -54,7 +54,7 @@ elseif msgcontains(msg, 'magic') and msgcontains(msg, 'crystal') or msgcontains(
 	talk_state = 4
 
 elseif talk_state == 4 and msgcontains(msg, 'yes') then
-	if getPlayerItemCount(cid, ID_lifecrystal) >= 1 then
+	if getPlayerItemCount(cid, 2177) >= 1 then
 	npcHandler:say("Brilliant! Bring it to the priest Lugri so that he can cast a deathcurse on the king. The password is 'death to noodles'.", 1)
 	else
 	npcHandler:say("Idiot! You don't have the crystal!", 1)

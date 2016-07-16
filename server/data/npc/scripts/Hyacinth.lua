@@ -13,7 +13,7 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'health', 'life'}, 					2006, 60, 10, 'life fluid')
+shopModule:addBuyableItem({'health', 'life'}, 2006, 60, 10, 'life fluid')
 
 keywordHandler:addKeyword({'how are you'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Thanks to the gods, I am fine."})
 keywordHandler:addKeyword({'sell'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I just sell some revitalizing life fluids."})

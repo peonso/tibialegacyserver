@@ -25,7 +25,7 @@ npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
-shopModule:addBuyableItem({'fish'}, 					ID_fish, 5)
+shopModule:addBuyableItem({'fish'}, 2667, 5)
 
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name is Pemaret, the fisherman."})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I'm a fisherman and I take along people to Edron. You can also buy some fresh fish."})

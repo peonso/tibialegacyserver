@@ -34,7 +34,7 @@ function creatureSayCallback(cid, type, msg)
 	end
 	
 if msgcontains(msg, 'letter') then
-	doPlayerAddItem(cid, ID_letter, 1)
+	doPlayerAddItem(cid, 2597, 1)
 	npcHandler:say("Here you are.", 1)
 	talk_state = 0
 

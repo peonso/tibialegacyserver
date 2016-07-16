@@ -50,7 +50,7 @@ elseif talk_state == 1 and msgcontains(msg, 'key') or talk_state == 1 and  msgco
 	talk_state = 2	
 
 elseif talk_state == 2 and msgcontains(msg, 'yes') or talk_state == 1 and  msgcontains(msg, 'Yes') then
-	if doPlayerRemoveItem(cid, ID_roll, 1) == true then
+	if doPlayerRemoveItem(cid, 2690, 1) == true then
 	npcHandler:say("Oh, fine! Here you are.", 1)
 	KEY = doPlayerAddItem(cid, 2088, 1)
 	doSetItemActionId(KEY, 2010)

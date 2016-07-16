@@ -13,8 +13,8 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'vase'}, 					ID_vase, 3, 0)
-shopModule:addBuyableItem({'amphora'}, 					ID_amphora, 4, 0)
+shopModule:addBuyableItem({'vase'}, 2008, 3, 0)
+shopModule:addBuyableItem({'amphora'}, 2023, 4, 0)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I consider myself as a guide, a guardian over the souls who transcend the border to another world."})
 keywordHandler:addKeyword({'crematory'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Such an ugly word for this wonderful place. It is a door, a portal to a better world than this one is."})

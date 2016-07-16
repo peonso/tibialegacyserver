@@ -13,9 +13,9 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'lemonade'}, 					ID_bottle, 5, 5, 'bottle of refreshing lemonade')
-shopModule:addBuyableItem({'milk'}, 					ID_bottle, 4, 6, 'bottle of our revitalizing milk')
-shopModule:addBuyableItem({'water'}, 					ID_bottle, 2, 1, 'bottle of crystal clear water') 
+shopModule:addBuyableItem({'lemonade'}, 2007, 5, 5, 'bottle of refreshing lemonade')
+shopModule:addBuyableItem({'milk'}, 2007, 4, 6, 'bottle of our revitalizing milk')
+shopModule:addBuyableItem({'water'}, 2007, 2, 1, 'bottle of crystal clear water') 
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the owner of this place of relaxation."})
 keywordHandler:addKeyword({'saloon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the owner of this place of relaxation."})

@@ -112,7 +112,7 @@ function creatureSayCallback(cid, type, msg)
 	talk_state = 4
 	
 	elseif talk_state == 4 and msgcontains(msg, 'yes') then
-	if doPlayerRemoveItem(cid, ID_lifering, 1) == true then
+	if doPlayerRemoveItem(cid, 2168, 1) == true then
 	doSendMagicEffect(getPlayerPosition(cid), 12)
 	doCreatureAddHealth(cid, -getCreatureHealth(cid)+1000)
 	npcHandler:say("So be healed!", 1)

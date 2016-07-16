@@ -337,7 +337,7 @@ talk_state = 859
 
 elseif talk_state == 859 and msgcontains(msg, 'yes') or talk_state == 859 and msgcontains(msg, 'Yes') then
 	if doPlayerRemoveMoney(cid, COUNTARROW*2) == true then
-	doPlayerAddItem(cid, ID_arrow, COUNTARROW)
+	doPlayerAddItem(cid, 2544, COUNTARROW)
 	npcHandler:say("Here you are.", 1)
 	else
 	npcHandler:say("Sorry, you don't have enough money.", 1)
@@ -359,9 +359,9 @@ end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'crossbow'}, 					ID_crossbow, 500)
-shopModule:addBuyableItem({'bow'}, 					ID_bow, 400)
-shopModule:addBuyableItem({'bolt'}, 					ID_bolt, 3)
+shopModule:addBuyableItem({'crossbow'}, 2455, 500)
+shopModule:addBuyableItem({'bow'}, 2456, 400)
+shopModule:addBuyableItem({'bolt'}, 2543, 3)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

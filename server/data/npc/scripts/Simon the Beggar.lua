@@ -15,7 +15,7 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'shovel'}, 					ID_shovel, 50)
+shopModule:addBuyableItem({'shovel'}, 2554, 50)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I have no job. I am a beggar."})
 keywordHandler:addKeyword({'beggar'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I have no gold and no job, so I am a beggar."})

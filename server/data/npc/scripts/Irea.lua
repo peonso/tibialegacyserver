@@ -15,9 +15,9 @@ function onThink() 						npcHandler:onThink() end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addBuyableItem({'crossbow'}, 					ID_crossbow, 450)
-shopModule:addBuyableItem({'bow'}, 					ID_bow, 350)
-shopModule:addBuyableItem({'bolt'}, 					ID_bolt, 3)
+shopModule:addBuyableItem({'crossbow'}, 2455, 450)
+shopModule:addBuyableItem({'bow'}, 2456, 350)
+shopModule:addBuyableItem({'bolt'}, 2543, 3)
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I sell bows, arrows, crossbows and bolts. I also teach some spells."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am known as Irea."})
@@ -135,7 +135,7 @@ talk_state = 859
 
 elseif talk_state == 859 and msgcontains(msg, 'yes') or talk_state == 859 and msgcontains(msg, 'Yes') then
 	if doPlayerRemoveMoney(cid, COUNTARROW*2) == true then
-	doPlayerAddItem(cid, ID_arrow, COUNTARROW)
+	doPlayerAddItem(cid, 2544, COUNTARROW)
 	npcHandler:say("Here you are.", 1)
 	else
 	npcHandler:say("Sorry, you don't have enough money.", 1)

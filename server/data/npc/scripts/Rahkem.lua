@@ -89,6 +89,7 @@ if(npcHandler.focus ~= cid) then
 	return false
 end	
 
+--[[
 --Premium Coin--	
 if msgcontains(msg, 'use') then
 	NPCSay("Would you like to add 7 days premium to your account by paying a premium coin?", 1)
@@ -158,6 +159,8 @@ elseif getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
 		return false
 		end
 	end
+]]--
+
 --name the spell--
 if msgcontains(msg, 'find person') or msgcontains(msg, 'Find person') then
 	spellprice = 80
