@@ -51,7 +51,7 @@ end
 	talk_state = 2
 	
 	elseif msgcontains(msg,'yes') and talk_state == 2 then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
+		if getTilePzInfo(getPlayerPosition(cid)) == true then
 			if getPlayerMoney(cid) >= 40 then
 				selfSay('Hold on!')
 				doPlayerRemoveMoney(cid, 40)

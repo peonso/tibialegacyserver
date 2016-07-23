@@ -62,7 +62,7 @@ function creatureSayCallback(cid, type, msg)
 	
 	-- Thais
 if msgcontains(msg, 'thais') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Thais for free?')
 		talk_state = 1
 		town_boat = thais
@@ -75,7 +75,7 @@ if msgcontains(msg, 'thais') then
 
 -- Ab'Dendriel
 elseif msgcontains(msg, 'ab\'dendriel') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Ab\'Dendriel for free?')
 		talk_state = 1
 		town_boat = abdendriel
@@ -88,7 +88,7 @@ elseif msgcontains(msg, 'ab\'dendriel') then
 	
 -- Edron
 elseif msgcontains(msg, 'edron') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Edron for free?')
 		talk_state = 1
 		town_boat = edron
@@ -101,7 +101,7 @@ elseif msgcontains(msg, 'edron') then
 	
 -- Venore
 elseif msgcontains(msg, 'venore') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Venore for free?')
 		talk_state = 1
 		town_boat = venore
@@ -116,8 +116,8 @@ elseif msgcontains(msg, 'venore') then
 elseif msgcontains(msg, 'yes') and talk_state == 1 then
 	if isPremium(cid) == true then
 		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == true then
-				if isPlayerVip(cid) == true then
+			if getPlayerMoney(cid) >= price or isPremium(cid) == true then
+				if isPremium(cid) == true then
 					selfSay('Set the sails!')
 					doTeleportThing(cid, town_boat)
 					doSendMagicEffect(getCreaturePosition(cid), 10)

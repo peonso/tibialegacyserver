@@ -66,7 +66,7 @@ function creatureSayCallback(cid, type, msg)
 	
 -- Thais
 if msgcontains(msg, 'thais') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Thais for free?')
 		talk_state = 1
 		town_boat = thais
@@ -79,7 +79,7 @@ if msgcontains(msg, 'thais') then
 	
 -- Carlin
 elseif msgcontains(msg, 'carlin') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Carlin for free?')
 		talk_state = 1
 		town_boat = carlin
@@ -92,7 +92,7 @@ elseif msgcontains(msg, 'carlin') then
 	
 -- Ab'Dendriel
 elseif msgcontains(msg, 'ab\'dendriel') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Ab\'Dendriel for free?')
 		talk_state = 1
 		town_boat = abdendriel
@@ -105,7 +105,7 @@ elseif msgcontains(msg, 'ab\'dendriel') then
 	
 -- Darashia
 elseif msgcontains(msg, 'darashia') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Darashia for free?')
 		talk_state = 2
 		town_boat = darashia
@@ -118,7 +118,7 @@ elseif msgcontains(msg, 'darashia') then
 
 -- Edron
 elseif msgcontains(msg, 'edron') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Edron for free?')
 		talk_state = 1
 		town_boat = edron
@@ -131,7 +131,7 @@ elseif msgcontains(msg, 'edron') then
 	
 -- Ankrahmun
 elseif msgcontains(msg, 'ankrahmun') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Ankrahmun for free?')
 		talk_state = 1
 		town_boat = ankrahmun
@@ -144,7 +144,7 @@ elseif msgcontains(msg, 'ankrahmun') then
 	
 -- Port Hope
 elseif msgcontains(msg, 'port hope') then
-	if isPlayerVip(cid) == true then
+	if isPremium(cid) == true then
 		npcHandler:say('Do you seek a passage to Port Hope for free?')
 		talk_state = 1
 		town_boat = porthope
@@ -159,8 +159,8 @@ elseif msgcontains(msg, 'port hope') then
 elseif msgcontains(msg, 'yes') and talk_state == 1 then
 	if isPremium(cid) == true then
 		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == true then
-				if isPlayerVip(cid) == true then
+			if getPlayerMoney(cid) >= price or isPremium(cid) == true then
+				if isPremium(cid) == true then
 					selfSay('Set the sails!')
 					doTeleportThing(cid, town_boat)
 					doSendMagicEffect(getCreaturePosition(cid), 10)
@@ -192,7 +192,7 @@ elseif msgcontains(msg, 'no') and talk_state == 1 then
 elseif msgcontains(msg, 'yes') and talk_state == 2 then
 	if isPremium(cid) == true then
 		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPlayerVip(cid) == true then
+			if getPlayerMoney(cid) >= price or isPremium(cid) == true then
 				if math.random(1,10) == 1 then
 					doPlayerRemoveMoney(cid, price)
 					selfSay('Set the sails!')

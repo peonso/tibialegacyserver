@@ -124,8 +124,6 @@ if (!empty($_POST)) {
     
     // Create html form
     ?>
-    <div class="row">
-		<div class="col-md-6 col-sm-6">
 			<div class="well well-sm">
 				<form action="admin_reports.php" method="POST">
 					Player: <a target="_BLANK" href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></a>
@@ -163,8 +161,6 @@ if (!empty($_POST)) {
 					<button type="submit" class="btn btn-default">Update Report</button>
 				</form>
 			</div><!-- ./well -->
-		</div>
-	</div>
     <?php
 }
 
@@ -173,13 +169,12 @@ if ($reportsData !== false) {
     // Render HTML
         foreach ($reports as $statusId => $statusArray) {
             ?>	
-				<div class="row">
-					<div class="col-md-2 col-sm-2">
+				<div>
+
 						<h2 class="statusType"><?php echo $statusTypes[$statusId]; ?></h2>
-					</div>
-					<div class="col-md-2 col-sm-2">
+
 						<button onclick="javascript:toggle('<?php echo $statusId; ?>')" class="btn btn-default">Show/Hide</button>
-					</div>
+
 				</div>
 				<div id="div-<?php echo $statusId; ?>">
 					<table class="table table-striped table-hover">
@@ -200,8 +195,8 @@ if ($reportsData !== false) {
 						?>">
 							<th width="3%">Id</th>
 							<th width="14%">Name</th>
-							<th width="12%">Position</th>
-							<th width="14%">Date</th>
+							<th width="20%">Position</th>
+							<th width="16%">Date</th>
 							<th width="4%">Edit</th>
 							<th>Message</th>
 						</tr>
@@ -212,7 +207,7 @@ if ($reportsData !== false) {
 						<tr>
 							<td>#<?php echo $report['id']; ?></td>
 							<td><a href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></td>
-							<td><span style="font-style: italic;">/pos <?php echo $report['posx'].', '.$report['posy'].', '.$report['posz']; ?></span></td>
+							<td><span style="font-style: italic;">/goto <?php echo $report['posx'].', '.$report['posy'].', '.$report['posz']; ?></span></td>
 							<td><?php echo getClock($report['date'], true, true); ?></td>
 							<td><a href="?action=edit&name=<?php echo $report['name'].'&id='.$report['id']; ?>">Edit</a></td>
 							<th><?php echo $report['report_description']; ?></th>

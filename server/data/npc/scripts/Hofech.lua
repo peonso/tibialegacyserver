@@ -132,7 +132,8 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-	--[[
+-- confirm this should be removed (do_later)
+--[[
 --START of Complete System For Creature Item Mission&Buy--
 if msgcontains(msg, "minotaur leather") then
 	if(npcHandler.focus ~= cid) then

@@ -89,6 +89,7 @@ if(npcHandler.focus ~= cid) then
 	return false
 end	
 
+-- confirm this should be removed (do_later)
 --[[
 --Premium Coin--	
 if msgcontains(msg, 'use') then

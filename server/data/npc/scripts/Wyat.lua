@@ -35,6 +35,7 @@ function onThink() 						npcHandler:onThink() end
 		return true
 	end
 
+-- confirm this should be removed (do_later)
 --[[
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
