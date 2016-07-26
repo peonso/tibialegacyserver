@@ -655,6 +655,7 @@ bool Spell::playerSpellCheck(Player* player) const
 			}
 		}
 
+		if(player->hasCondition(CONDITION_EXHAUST_COMBAT) || player->hasCondition(CONDITION_EXHAUST_HEAL))
 		{
 			player->sendCancelMessage(RET_YOUAREEXHAUSTED);
 
