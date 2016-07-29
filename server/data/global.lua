@@ -550,6 +550,3 @@ COLOR_DARKYELLOW = 205
 COLOR_YELLOW = 210
 COLOR_WHITE = 215
 COLOR_NONE = 255
-
--- gesior powergamers/insomaniacs
-InitHistory = 0

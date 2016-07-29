@@ -12,3 +12,6 @@ STORAGE_DEATH_BAG = 2000000
 
 -- report talkaction command exhaust
 STORAGE_REPORT = 30017
+
+-- gesior powergamers/insomaniacs
+STORAGE_POWERGAMERS = 23856

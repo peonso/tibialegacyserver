@@ -1,10 +1,4 @@
 function onLogin(cid)
-	-- gesior powergamers/insomaniacs
-	-- move this to server startup later (do_later)
-	if (InitHistory == 0) then
-        local historyPage = addEvent(historyPage, 60000, {})
-        InitHistory = historyPage
-	end
 
 	-- Register the kill/die event
 	registerCreatureEvent(cid, "RemoveBlesses")

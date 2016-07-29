@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globalevents>
 
-	<globalevent name="save" interval="120000" event="script" script="save.lua"/>
+	<globalevent name="StartUp" type="startup" script="startup.lua"/>
+	<globalevent name="ServerSave" time="06:00:00" script="serversave.lua"/>
+	<globalevent name="PowerGamers" interval="60000" script="powergamers.lua"/>
 
 </globalevents>
