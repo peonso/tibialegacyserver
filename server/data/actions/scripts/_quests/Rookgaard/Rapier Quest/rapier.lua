@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 Player = Actor.create(cid)
 Item = Item.create(item.uid)

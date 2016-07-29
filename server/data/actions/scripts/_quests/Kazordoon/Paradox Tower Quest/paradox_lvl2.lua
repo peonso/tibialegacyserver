@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 switch1pos = {x=32476, y=31900, z=6, stackpos=1}
 switch2pos = {x=32477, y=31900, z=6, stackpos=1}

@@ -12,13 +12,13 @@ local alavancas = {
 [2] = {x=32104, y=32204, z=8}
 }
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
         if item.itemid == 1945 then
                 doCreateItem(1284,pos_ponte[1])
 				doCreateItem(1284,pos_ponte[2]) 
 				
                 for i=1,#alavancas do
-                        if alavancas[i].x == frompos.x then
+                        if alavancas[i].x == fromPosition.x then
                                 o = i
                         end
                 end
@@ -40,7 +40,7 @@ function onUse(cid, item, frompos, item2, topos)
                 end
                 end	
                 for i=1,#alavancas do
-                    if alavancas[i].x == topos.x then
+                    if alavancas[i].x == toPosition.x then
                         o = i
                     end
                 end

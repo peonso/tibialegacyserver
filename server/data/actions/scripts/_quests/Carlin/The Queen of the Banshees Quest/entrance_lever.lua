@@ -1,5 +1,5 @@
 -- by Nottinghster
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 local magicwallpos = {x=32266, y=31860, z=11, stackpos=1}
 local stairpos = {x=32266, y=31860, z=11, stackpos=1}

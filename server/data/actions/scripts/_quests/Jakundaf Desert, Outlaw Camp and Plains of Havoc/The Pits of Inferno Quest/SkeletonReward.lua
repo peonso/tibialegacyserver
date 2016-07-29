@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	if item.uid == 10282 then
 		queststatus = getPlayerStorageValue(cid,10282)
@@ -8,7 +8,7 @@ function onUse(cid, item, frompos, item2, topos)
 			doAddContainerItem(bp,2143,5) --White Pearls
 			doAddContainerItem(bp,2152,11) --Platinum Coins
 			setPlayerStorageValue(cid,10282,1)
-			doSendMagicEffect(frompos,12)
+			doSendMagicEffect(fromPosition,12)
 			doPlayerSendTextMessage(cid,22,'You have found something in the skeleton.')
 	elseif queststatus == 1 then	
 		doPlayerSendTextMessage(cid,22,'The corpse is empty.')

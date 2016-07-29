@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 if item.uid == 10004 and getPlayerStorageValue(cid, 10004) == -1 then
 doPlayerSendTextMessage(cid,22,"You have found a key.")

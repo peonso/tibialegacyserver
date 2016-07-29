@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 CratePos = {x=32479, y=31900, z=5, stackpos=1}
 

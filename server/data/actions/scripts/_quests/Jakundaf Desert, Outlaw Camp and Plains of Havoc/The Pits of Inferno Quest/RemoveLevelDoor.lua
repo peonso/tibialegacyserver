@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 gatepos = {x=430, y=1396, z=12, stackpos=1}
 getgate = getThingfromPos(gatepos)
 

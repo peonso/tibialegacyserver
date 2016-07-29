@@ -1,5 +1,5 @@
 -- by Nottinghster
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 local gatepos = {x=33314, y=31592, z=15, stackpos=1}
 local telepos = {x=33316, y=31591, z=15, stackpos=1}

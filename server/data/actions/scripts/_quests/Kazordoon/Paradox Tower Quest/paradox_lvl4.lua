@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 	food1 = {x=32476, y=31900, z=4, stackpos=255}
 	food2 = {x=32477, y=31900, z=4, stackpos=255}

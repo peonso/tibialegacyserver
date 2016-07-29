@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 playerpos = getPlayerPosition(cid)
 nplayer1pos = {x=32762, y=32333, z=13}
 

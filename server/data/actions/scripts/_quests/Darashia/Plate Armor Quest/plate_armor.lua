@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 local queststatus = getPlayerStorageValue(cid,10066)
 local itemWeight = getItemWeightById(item.uid, 1)

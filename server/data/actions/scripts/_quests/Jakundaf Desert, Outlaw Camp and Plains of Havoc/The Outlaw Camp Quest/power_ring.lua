@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 local power_ring = {x=32594, y=32214, z=9,stackpos=2}
 local parede = {x=32604, y=32216, z=9, stackpos=1}

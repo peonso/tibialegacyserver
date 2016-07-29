@@ -1,6 +1,6 @@
 local MAX_FOOD = 1200
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if (FOODS[item.itemid] == nil) then
 		return false
 	end

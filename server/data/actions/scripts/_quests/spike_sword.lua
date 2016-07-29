@@ -1,6 +1,6 @@
 -- by Nottinghster
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 if item.uid == 10069 then
   queststatus = getPlayerStorageValue(cid,10069)
   if queststatus == -1 and getPlayerAccess(cid) == 0 then

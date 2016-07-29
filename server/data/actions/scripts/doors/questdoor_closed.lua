@@ -1,6 +1,6 @@
 -- Player with storage value of the item's actionid set to 1 can open
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.actionid == 0) then
 		-- Make it a normal door
 		doTransformItem(item.uid, item.itemid+1)
@@ -14,12 +14,12 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 
 	doTransformItem(item.uid, item.itemid+1)
-	local canGo = (queryTileAddThing(cid, frompos, bit.bor(2, 4)) == RETURNVALUE_NOERROR) --Veryfies if the player can go, ignoring blocking things
+	local canGo = (queryTileAddThing(cid, fromPosition, bit.bor(2, 4)) == RETURNVALUE_NOERROR) --Veryfies if the player can go, ignoring blocking things
 	if not(canGo) then
 		return false
 	end
 
-	local dir = getDirectionTo(getPlayerPosition(cid), frompos)
+	local dir = getDirectionTo(getPlayerPosition(cid), fromPosition)
 	doMoveCreature(cid, dir)
 	return true
 end

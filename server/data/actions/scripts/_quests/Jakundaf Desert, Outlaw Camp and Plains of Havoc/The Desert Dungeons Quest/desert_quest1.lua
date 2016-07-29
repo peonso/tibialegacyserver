@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 --by Rodrigo--
 
 druid_endpos = {x=32672, y=32069, z=8, stackpos=255} --onde o player1 sera teleportado quando a alavanca for puxada

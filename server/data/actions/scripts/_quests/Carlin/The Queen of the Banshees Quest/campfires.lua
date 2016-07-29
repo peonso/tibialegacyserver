@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
  local tabela = {
                     [1] = {A_item = 2451, pos_lever = {x=32309, y=31975, z=13, stackpos=1}}, 

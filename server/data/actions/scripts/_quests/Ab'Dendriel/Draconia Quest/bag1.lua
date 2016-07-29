@@ -1,6 +1,6 @@
 -- by Nottinghster
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 -- Variáveis
 local Player = Actor.create(cid)

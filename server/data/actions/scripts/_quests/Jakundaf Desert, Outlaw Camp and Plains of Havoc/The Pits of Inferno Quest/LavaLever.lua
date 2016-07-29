@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 tile1pos = {x=32929, y=32255, z=15, stackpos=0}
 tile1 = getThingfromPos(tile1pos)

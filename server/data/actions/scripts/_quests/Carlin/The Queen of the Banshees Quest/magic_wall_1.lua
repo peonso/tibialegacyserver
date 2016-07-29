@@ -6,7 +6,7 @@ doCreateItem(1498,1,{x=32259, y=31891, z=10})
 
 end
 
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	wall1 = {x=32259, y=31890, z=10, stackpos=1}
 	wall2 = {x=32259, y=31891, z=10, stackpos=1}
 	lever = {x=32212, y=31888, z=12, stackpos=1}

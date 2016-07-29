@@ -1,7 +1,7 @@
  -- Script by Colandus!
 -- Free to edit!
  
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	-- Item ID and Uniqueid --
 	switchUniqueID = 8890
 	switchID = 1945

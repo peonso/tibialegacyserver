@@ -1,5 +1,5 @@
 -- by Nottinghster
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 gatepos1 = {x=33295, y=31677, z=15, stackpos=1}
 gatepos2 = {x=33296, y=31677, z=15, stackpos=1}
 gatepos3 = {x=33297, y=31677, z=15, stackpos=1}

@@ -37,13 +37,13 @@ setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('minactionexinte
 
 
 
-function onUse(cid, item, frompos, item2, topos)
-	if(topos.x == 0 and topos.y == 0 and topos.z == 0) then
-		item2 = item
-		topos = getThingPos(item.uid)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if(toPosition.x == 0 and toPosition.y == 0 and toPosition.z == 0) then
+		itemEx = item
+		toPosition = getThingPos(item.uid)
 	end
 
-	if(item2.uid == cid) then -- Player is using on himself
+	if(itemEx.uid == cid) then -- Player is using on himself
 		if(item.type == FLUID_NONE) then
 			doPlayerSendCancel(cid, "It is empty.")
 			return true
@@ -59,13 +59,13 @@ function onUse(cid, item, frompos, item2, topos)
 				return false
 			end
 			doCreatureSay(cid, "Aaaah...", TALKTYPE_SAY)
-			doSendMagicEffect(topos, CONST_ME_MAGIC_BLUE)
+			doSendMagicEffect(toPosition, CONST_ME_MAGIC_BLUE)
 		elseif(item.type == FLUID_LIFE) then
 			if not doCombat(cid, lifeFluidCombat, numberToVariant(cid)) then
 				return false
 			end
 			doCreatureSay(cid, "Aaaah...", TALKTYPE_SAY)
-			doSendMagicEffect(topos, CONST_ME_MAGIC_BLUE)
+			doSendMagicEffect(toPosition, CONST_ME_MAGIC_BLUE)
 		elseif(isInArray(alcoholDrinks, item.type) ) then
 			if not doTargetCombatCondition(0, cid, drunk, CONST_ME_NONE) then
 				return false
@@ -83,12 +83,12 @@ function onUse(cid, item, frompos, item2, topos)
 		return true
 	end
 
-	if(isCreature(item2.uid) == false) then
+	if(isCreature(itemEx.uid) == false) then
 		if(item.type == FLUID_NONE) then
-			if(item.itemid == ITEM_RUM_FLASK and isInArray(DISTILLERY, item2.itemid) ) then
-				if(item2.actionid == DISTILLERY_FULL) then
-					doSetItemSpecialDescription(item2.uid, '')
-					doSetItemActionId(item2.uid, 0)
+			if(item.itemid == ITEM_RUM_FLASK and isInArray(DISTILLERY, itemEx.itemid) ) then
+				if(itemEx.actionid == DISTILLERY_FULL) then
+					doSetItemSpecialDescription(itemEx.uid, '')
+					doSetItemActionId(itemEx.uid, 0)
 					doChangeTypeItem(item.uid, TYPE_RUM)
 				else
 					doPlayerSendCancel(cid, "You have to process the bunch into the distillery to get rum.")
@@ -96,13 +96,13 @@ function onUse(cid, item, frompos, item2, topos)
 				return true
 			end
 
-			if(isItemFluidContainer(item2.itemid) and item2.type ~= FLUID_NONE) then
-				doChangeTypeItem(item.uid, item2.type)
-				doChangeTypeItem(item2.uid, FLUID_NONE)
+			if(isItemFluidContainer(itemEx.itemid) and itemEx.type ~= FLUID_NONE) then
+				doChangeTypeItem(item.uid, itemEx.type)
+				doChangeTypeItem(itemEx.uid, FLUID_NONE)
 				return true
 			end
 
-			local fluidSource = getFluidSourceType(item2.itemid)
+			local fluidSource = getFluidSourceType(itemEx.itemid)
 			if(fluidSource ~= -1) then
 				doChangeTypeItem(item.uid, fluidSource)
 				return true
@@ -113,22 +113,22 @@ function onUse(cid, item, frompos, item2, topos)
 			return true
 		end
 
-		if(item.type == FLUID_OIL and oilLamps[item2.itemid] ~= nil) then
-			doTransformItem(item2.uid, oilLamps[item2.itemid])
+		if(item.type == FLUID_OIL and oilLamps[itemEx.itemid] ~= nil) then
+			doTransformItem(itemEx.uid, oilLamps[itemEx.itemid])
 			doChangeTypeItem(item.uid, FLUID_NONE)
 			return true
 		end
 
-		if(hasProperty(item2.uid, CONST_PROP_BLOCKSOLID) ) then
+		if(hasProperty(itemEx.uid, CONST_PROP_BLOCKSOLID) ) then
 			return false
 		end
 	end
 
-	if(topos.x == CONTAINER_POSITION) then
-		topos = getThingPos(cid)
+	if(toPosition.x == CONTAINER_POSITION) then
+		toPosition = getThingPos(cid)
 	end
 
-	local splash = doCreateItem(ITEM_POOL, item.type, topos)
+	local splash = doCreateItem(ITEM_POOL, item.type, toPosition)
 	doDecayItem(splash)
 
 	doChangeTypeItem(item.uid, FLUID_NONE)

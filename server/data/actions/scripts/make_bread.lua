@@ -8,19 +8,19 @@ local ITEM_MILL = {1381, 1382, 1383, 1384}
 local TYPE_EMPTY = 0
 local TYPE_WATER = 1
 	
-function onUse(cid, item, frompos, item2, topos)
-	if(item.itemid == ITEM_WHEAT and isInArray(ITEM_MILL, item2.itemid) == true) then
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	if(item.itemid == ITEM_WHEAT and isInArray(ITEM_MILL, itemEx.itemid) == true) then
 		doPlayerAddItem(cid, ITEM_FLOUR)
 		doRemoveItem(item.uid, 1)
 		return true
 		
-	elseif(item.itemid == ITEM_FLOUR and isItemFluidContainer(item2.itemid) == true and item2.type == TYPE_WATER) then
+	elseif(item.itemid == ITEM_FLOUR and isItemFluidContainer(itemEx.itemid) == true and itemEx.type == TYPE_WATER) then
 		doPlayerAddItem(cid, ITEM_DOUGH)
-		doChangeTypeItem(item2.uid, TYPE_EMPTY)
+		doChangeTypeItem(itemEx.uid, TYPE_EMPTY)
 		doRemoveItem(item.uid, 1)
 		return true
 		
-	elseif(item.itemid == ITEM_DOUGH and isInArray(OVEN_ON, item2.itemid) == true) then
+	elseif(item.itemid == ITEM_DOUGH and isInArray(OVEN_ON, itemEx.itemid) == true) then
 		doPlayerAddItem(cid, ITEM_BREAD)
 		doRemoveItem(item.uid, 1)
 		return true

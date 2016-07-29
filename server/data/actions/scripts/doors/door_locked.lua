@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 	if(item.actionid == 0) then
 		-- This is impossible to happen, but whatever.
 		doTransformItem(item.uid, item.itemid+2)

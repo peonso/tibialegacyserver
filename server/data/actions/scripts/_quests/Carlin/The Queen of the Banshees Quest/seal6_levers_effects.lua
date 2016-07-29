@@ -1,4 +1,4 @@
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
 if item.actionid == 2551 and item.itemid == 1945 then
 doSendMagicEffect({x=32217, y=31845, z=14}, 11)

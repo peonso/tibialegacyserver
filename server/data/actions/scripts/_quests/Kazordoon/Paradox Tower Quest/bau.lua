@@ -1,5 +1,5 @@
 -- by Nottinghster
-function onUse(cid, item, frompos, item2, topos)
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
    	if item.uid == 10035 then
    		queststatus = getPlayerStorageValue(cid,10035)
