@@ -5,38 +5,15 @@ local ITEM_FISH = 2667
 local ITEM_FISHING_ROD = 2580
 local ITEM_NORTHERN_PIKE = 2669
 
-local function calculateWidth(lootList, index)
-	if lootList[index][2] > 0 and lootList[index][3] > 0 then
-		local ret = lootList[index][3] * 100000
-		if lootList[index][1] == 0 then --not drop anything
-			ret = ret / getConfigValue("rate_loot")
-		else
-			ret = ret * (2/(lootList[index][2]+1))
-		end
-		return math.max(math.ceil(ret),1)
-	else
-		return false
-	end
-end
+function onUse(cid, item, fromPosition, itemEx, toPosition)
 
-local function calculateTotalWidth(lootList)
-	local ret = 0
-	local listSize = table.getn(lootList)
-	for aux = 1, listSize do
-		ret = ret + calculateWidth(lootList,aux)
-	end
-	return ret
-end
-
-function onUse(cid, item, frompos, item2, topos)
-
-	if(topos.x == CONTAINER_POSITION) then
+	if(toPosition.x == CONTAINER_POSITION) then
 		doPlayerSendDefaultCancel(cid, RETURNVALUE_NOTPOSSIBLE)
 		return true
 	end
 	
-	if (isInArray(NOFISH_WATER, item2.itemid) ) then
-		doSendMagicEffect(topos, CONST_ME_LOSEENERGY)
+	if (isInArray(NOFISH_WATER, itemEx.itemid) ) then
+		doSendMagicEffect(toPosition, CONST_ME_LOSEENERGY)
 		return true
 	end
 
@@ -46,18 +23,18 @@ function onUse(cid, item, frompos, item2, topos)
 	local canGainSkill = not(getTilePzInfo(getThingPos(cid)) or (getPlayerItemCount(cid, ITEM_WORM) < 1 and item.itemid == ITEM_FISHING_ROD))
 
 	-- First verify the most common case
-	if (isInArray(FISH_WATER, item2.itemid) ) then
+	if (isInArray(FISH_WATER, itemEx.itemid) ) then
 		-- The water has a fish. Verify if the player can gain skills
 		if(canGainSkill) then
 			if(formula > 0.7) then
 				doPlayerAddItem(cid, ITEM_FISH)
 				doPlayerAddSkillTry(cid, CONST_SKILL_FISHING, 1)
-				doTransformItem(item2.uid, item2.itemid + 9)
+				doTransformItem(itemEx.uid, itemEx.itemid + 9)
 				hasFished = true;
 			end
 			doPlayerAddSkillTry(cid, CONST_SKILL_FISHING, 1)
 		end
-		doSendMagicEffect(topos, CONST_ME_LOSEENERGY)
+		doSendMagicEffect(toPosition, CONST_ME_LOSEENERGY)
 	else
 		return false
 	end
@@ -65,7 +42,7 @@ function onUse(cid, item, frompos, item2, topos)
 	if hasFished then
 		doPlayerRemoveItem(cid, ITEM_WORM, 1)
 	end
-	doDecayItem(item2.uid)
+	doDecayItem(itemEx.uid)
 
 	return true
 end

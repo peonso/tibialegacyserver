@@ -1,40 +1,55 @@
--- by Nottinghster
-
-function onUse(cid, item, frompos, item2, topos)
- 
-aID = 777
-ticks = 5 * 60000 -- 5 minutes
-topos = {x=topos.x, y=topos.y, z=topos.z}
-local rand = math.random(1,100)
-
-if item2.itemid == 28 then
-	return false
+local function __doTransformHole__(parameters)
+	local thing = getTileItemById(parameters.pos, MUD_HOLE)
+	local newItem = doTransformItem(thing.uid, parameters.oldType)
+	if parameters.oldaid ~= 0 and newItem then
+		doSetItemActionId(thing.uid, parameters.oldaid)
+	end	
 end
 
-	if item2.itemid == 468 then
-		doTransformItem(item2.uid,469)
-		doDecayItem(item2.uid)
-	elseif item2.itemid == 481 then
-		doTransformItem(item2.uid,482)
-		doDecayItem(item2.uid)
-	elseif item2.itemid == 231 and item2.actionid == aID then -- areia
-		doTransformItem(item2.uid,482) -- areia
-		doDecayItemTo(topos, item2.itemid, ticks) -- areia
-		doSendMagicEffect(topos, CONST_ME_POFF) -- areia
-	elseif item2.itemid == 483 then
-		doTransformItem(item2.uid,484)
-		doDecayItem(item2.uid)
-	elseif item2.itemid == 231 then
-		if rand > 85 and item2.actionid == 0 then
-			doSummonCreature("Scarab", topos)
-	elseif rand == 15 and item2.actionid == 0 then
-		doPlayerAddItem(cid,2159,1)
-		else
-			doSendMagicEffect(topos,2)
-	end
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local TILE_SAND = 231
+	local ITEM_SCARAB_COIN = 2159
+	local TUMB_ENTRANCE = 777
+	local SCARAB_TILE = 101
+	local MUD_HOLE = 489
+	local SCARAB_COIN_TILE = 102
+	local duration = 5 * 60000 -- 5 minutes
+
+	if (isInArray(CLOSED_HOLE, itemEx.itemid) ) then
+		doTransformItem(itemEx.uid, itemEx.itemid + 1)
+	elseif (itemEx.itemid == TILE_SAND) then
+		if (itemEx.actionid == TUMB_ENTRANCE) then
+			if (math.random(1, 5) == 1) then
+				doTransformItem(itemEx.uid, MUD_HOLE)
+				addEvent(__doTransformHole__, duration, {oldType = itemEx.itemid, pos = toPosition, oldaid = itemEx.actionid})
+				if itemEx.actionid ~= 0 then
+					doSetItemActionId(itemEx.uid, itemEx.actionid)
+				end
+			end
+		elseif (itemEx.actionid == SCARAB_TILE) then
+			if (math.random(1, 20) == 1) then
+				doSummonCreature("Scarab", toPosition)
+				doSetItemActionId(itemEx.uid, SCARAB_TILE + 2)
+			end
+		elseif (itemEx.actionid == SCARAB_COIN_TILE) then
+			if (math.random(1, 20) == 1) then
+				doCreateItem(ITEM_SCARAB_COIN, toPosition)
+				doSetItemActionId(itemEx.uid, SCARAB_COIN_TILE + 2)
+			end
+		elseif (itemEx.actionid == SCARAB_TILE + 2) then
+			if (math.random(1, 40) == 1) then
+				doSetItemActionId(itemEx.uid, SCARAB_TILE)
+			end
+		elseif (itemEx.actionid == SCARAB_COIN_TILE + 2) then
+			if (math.random(1, 40) == 1) then
+				doSetItemActionId(itemEx.uid, SCARAB_COIN_TILE)
+			end
+		end
+		doSendMagicEffect(toPosition, CONST_ME_POFF)
 	else
 		return false
 	end
-	
-return true
+
+	doDecayItem(itemEx.uid)
+	return true
 end

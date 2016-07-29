@@ -1,17 +1,14 @@
--- by Nottinghster
+function onUse(cid, item, fromPosition, itemEx, toPosition)
+	local ITEM_PRE_WHEAT = 2739
+	local ITEM_WHEAT = 2737
+	local ITEM_BUNCH_WHEAT = 2694
 
-local ITEM_PRE_WHEAT = 2739
-local ITEM_WHEAT = 2737
-local ITEM_BUNCH_WHEAT = 2694
-
-function onUse(cid, item, frompos, item2, topos)
-	if (item2.itemid == ITEM_PRE_WHEAT) then
-		doTransformItem(item2.uid, ITEM_WHEAT)
-		doCreateItem(ITEM_BUNCH_WHEAT, 1, topos)
-	else
+	if (itemEx.itemid == ITEM_PRE_WHEAT) then
+		doTransformItem(itemEx.uid, ITEM_WHEAT)
+		doCreateItem(ITEM_BUNCH_WHEAT, 1, toPosition)
+	else 
 		return false
 	end
-	
-	doDecayItem(item2.uid)
+	doDecayItem(itemEx.uid)
 	return true
-end 
+end
