@@ -1,9 +1,8 @@
 local FISH_WATER = {4608, 4609, 4610, 4611, 4612, 4613, 4614, 4615, 4616}
-local NOFISH_WATER = {493, 4617, 4618, 4619, 4210, 4621, 4622, 4623, 4624, 4625, 4820, 4821, 4822, 4823, 4824, 4825}
+local NOFISH_WATER = {493, 4617, 4618, 4619, 4620, 4621, 4622, 4623, 4624, 4625, 4820, 4821, 4822, 4823, 4824, 4825}
 local ITEM_WORM = 3976
 local ITEM_FISH = 2667
 local ITEM_FISHING_ROD = 2580
-local ITEM_NORTHERN_PIKE = 2669
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 
@@ -18,8 +17,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local formula = (getPlayerSkill(cid, CONST_SKILL_FISHING) / 200) + (0.85 * math.random())
-	local hasFished = false;
-
 	local canGainSkill = not(getTilePzInfo(getThingPos(cid)) or (getPlayerItemCount(cid, ITEM_WORM) < 1 and item.itemid == ITEM_FISHING_ROD))
 
 	-- First verify the most common case
@@ -30,7 +27,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 				doPlayerAddItem(cid, ITEM_FISH)
 				doPlayerAddSkillTry(cid, CONST_SKILL_FISHING, 1)
 				doTransformItem(itemEx.uid, itemEx.itemid + 9)
-				hasFished = true;
+				doPlayerRemoveItem(cid, ITEM_WORM, 1)
 			end
 			doPlayerAddSkillTry(cid, CONST_SKILL_FISHING, 1)
 		end
@@ -39,9 +36,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
-	if hasFished then
-		doPlayerRemoveItem(cid, ITEM_WORM, 1)
-	end
 	doDecayItem(itemEx.uid)
 
 	return true
