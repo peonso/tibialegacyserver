@@ -57,7 +57,7 @@
 	</brush>
 	
 	<brush name="sea" type="border" server_lookid="4608" z-order="6000">
-		<item id="4608" chance="3"/>
+		<item id="4608" chance="1"/>
 		<item id="4609" chance="1"/>
 		<item id="4610" chance="1"/>
 		<item id="4611" chance="1"/>
@@ -66,15 +66,15 @@
 		<item id="4614" chance="1"/>
 		<item id="4615" chance="1"/>
 		<item id="4616" chance="1"/>
-		<item id="4617" chance="1"/>
-		<item id="4618" chance="1"/>
-		<item id="4619" chance="1"/>
-		<item id="4620" chance="1"/>
-		<item id="4621" chance="1"/>
-		<item id="4622" chance="1"/>
-		<item id="4623" chance="1"/>
-		<item id="4624" chance="1"/>
-		<item id="4625" chance="1"/>
+		<item id="4617" chance="0"/>
+		<item id="4618" chance="0"/>
+		<item id="4619" chance="0"/>
+		<item id="4620" chance="0"/>
+		<item id="4621" chance="0"/>
+		<item id="4622" chance="0"/>
+		<item id="4623" chance="0"/>
+		<item id="4624" chance="0"/>
+		<item id="4625" chance="0"/>
 		<item id="4820" chance="0"/>
 		<item id="4821" chance="0"/>
 		<item id="4822" chance="0"/>
