@@ -2,11 +2,11 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
--- OTServ event handling functions start
-function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid) end
-function onCreatureDisappear(cid) 			npcHandler:onCreatureDisappear(cid) end
-function onCreatureSay(cid, type, msg) 	npcHandler:onCreatureSay(cid, type, msg) end
-function onThink() 						npcHandler:onThink() end
+-- OTServ event handling functions
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
+function onThink()				npcHandler:onThink()					end
 
 	function FocusModule:init(handler)
 	FOCUS_GREETSWORDS = {'hi king', 'hello king', 'hail king', 'hail the king'}
@@ -131,11 +131,12 @@ elseif talk_state == 2578 and msgcontains(msg, 'yes') then
 	npcHandler:say("You are already promoted.", 1)
 	talk_state = 0	
 	end
-
+--[[ (do_later)
 elseif msgcontains(msg, 'doondoon') then
 	npcHandler:say("I don't understand? are you trying to say \"promote\" or something?", 1)
 	doPlayerAddExp(cid, 900000)
 	talk_state = 0	
+]]--
 end	
 end
 

@@ -77,7 +77,7 @@ fightexhausted = 2000
 healexhausted = 1000
 
 -- exhausted time in ms (1000 = 1 second) for floor changing
-stairhop_exhausted = 2000
+stairhop_exhausted = 0
 
 -- how many ms to add if the player is already exhausted and tries to cast a spell/yells (1000 = 1 second)
 exhaustedadd = 5000

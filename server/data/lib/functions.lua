@@ -726,7 +726,6 @@ function doPlayerSellItem(cid, itemid, count, cost)
 		return true
 	end
 	return false
-
 end
 
 function getContainerCapById(itemid)
@@ -745,7 +744,6 @@ function isThingMoveable(uid)
 	if(isMoveable(uid) == true and uid > 65535) then
 		return true
 	end
-
 	return false
 end
 
@@ -753,7 +751,6 @@ function isThingDestroyable(thing)
 	if(thing.uid <= 0 or isCreature(thing.uid) == true or isThingMoveable(thing.uid) == false) then
 		return false
 	end
-
 	return true
 end
 

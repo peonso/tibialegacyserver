@@ -1,23 +1,23 @@
 -- Load Lua-made functions
-dofile(getDataDir() .. 'libs/functions.lua')
+dofile(getDataDir() .. 'lib/functions.lua')
 
 -- Load House class
-dofile(getDataDir() .. 'libs/house.lua')
+dofile(getDataDir() .. 'lib/house.lua')
 
 -- Load Calculator class
-dofile(getDataDir() .. 'libs/calculator.lua')
+dofile(getDataDir() .. 'lib/calculator.lua')
 
 -- Load Exp Stages
-dofile(getDataDir() .. 'libs/exp_stages.lua')
+dofile(getDataDir() .. 'lib/exp_stages.lua')
 
 -- Load db file
-dofile(getDataDir() .. 'libs/db.lua')
+dofile(getDataDir() .. 'lib/db.lua')
 
 -- Load compat file to make new TFS 1.x oop functions work
-dofile(getDataDir() .. 'libs/compat.lua')
+dofile(getDataDir() .. 'lib/compat.lua')
 
 -- Load STORAGES
-dofile(getDataDir() .. 'libs/storages.lua')
+dofile(getDataDir() .. 'lib/storages.lua')
 
 -- Booleans consts
 TRUE = true
