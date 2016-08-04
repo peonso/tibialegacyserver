@@ -1,9 +1,3 @@
--- Author: 		Rodrigo (Nottinghster) - (OTLand, OTFans, XTibia, OTServBR)
--- Country:		Brazil
--- From: 		Tibia World RPG OldSchool
--- Email: 		god.rodrigo@hotmail.com
--- Compiler:	Tibia World Script Maker (Global Scripts)
-
 function FocusModule:init(handler)
 	FOCUS_GREETSWORDS = {'hi', 'hello'}
 	FOCUS_FAREWELLSWORDS = {'bye', 'farewell'}
