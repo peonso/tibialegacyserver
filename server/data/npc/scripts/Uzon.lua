@@ -35,64 +35,15 @@ keywordHandler:addKeyword({'ride'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?"})
 keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's |TIME| right now. The next flight is scheduled soon."})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-	
-	if msgcontains(msg, 'darashia') or msgcontains(msg, 'Darashia') then
-	npcHandler:say('Do you want to get a ride to Darashia on Darama for 60 gold?')
-	talk_state = 1
-	
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-	if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 60 then
-				selfSay('Set the sails!')
-				doPlayerRemoveMoney(cid, 60)
-				doTeleportThing(cid, {x=33269,y=32441,z=6})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
+local function addTravelKeyword(keyword, cost, destination, text, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text, cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-	if msgcontains(msg, 'edron') or msgcontains(msg, 'Edron') then
-	npcHandler:say('Do you want to get a ride to Edron for 60 gold?')
-	talk_state = 2
-	
-	elseif msgcontains(msg,'yes') and talk_state == 2 then
-	if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 60 then
-				selfSay('Set the sails!')
-				doPlayerRemoveMoney(cid, 60)
-				doTeleportThing(cid, {x=33193,y=31784,z=3})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-			else
-				npcHandler:say('You don\'t have enough money.')
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
-end
-	
-	return true
-end
+addTravelKeyword('edron', 60, CARPETPOS_EDRON, 'Do you want to get a ride to Edron for 60 gold?')
+addTravelKeyword('darashia', 60, CARPETPOS_DARASHIA, 'Do you want to get a ride to Darashia on Darama for 60 gold?')
+addTravelKeyword('darama', 60, CARPETPOS_DARASHIA, 'Do you want to get a ride to Darashia on Darama for 60 gold?')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

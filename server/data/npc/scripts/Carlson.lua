@@ -12,13 +12,14 @@ function onThink()				npcHandler:onThink()					end
 
 function greetCallback(cid)
 	if getPlayerSex(cid) == 1 then
-	npcHandler:setMessage(MESSAGE_GREET, "Ahoi, young man ".. getPlayerName(cid) .." and welcome to the Nordic Tibia Ferries.")
-	return true
+		npcHandler:setMessage(MESSAGE_GREET, "Ahoi, young man ".. getPlayerName(cid) .." and welcome to the Nordic Tibia Ferries.")
+		return true
 	else
-	npcHandler:setMessage(MESSAGE_GREET, "Ahoi, young lady ".. getPlayerName(cid) .." and welcome to the Nordic Tibia Ferries.")
-	return true
+		npcHandler:setMessage(MESSAGE_GREET, "Ahoi, young lady ".. getPlayerName(cid) .." and welcome to the Nordic Tibia Ferries.")
+		return true
 	end	
 end	
+
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 
 local shopModule = ShopModule:new()
@@ -44,22 +45,15 @@ keywordHandler:addKeyword({'island'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'route'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We serve the routes to Senja, Folda, and Vega, and back to Tibia."})
 keywordHandler:addKeyword({'vega'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This island is Vega."})
 
-local travelNode = keywordHandler:addKeyword({'folda'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want a round-trip passage to Folda for 10 gold?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 10, destination = {x = 32047, y = 31581, z = 7} })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
-	
-local travelNode = keywordHandler:addKeyword({'senja'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want a round-trip passage to Senja for 10 gold?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 10, destination = {x = 32125, y = 31666, z = 7} })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
-	
-local travelNode = keywordHandler:addKeyword({'vega'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want a round-trip passage to Vega for 10 gold?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 10, destination = {x = 32025, y = 31692, z = 7} })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
-	
-local travelNode = keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want a free passage back to Tibia?'})
-	travelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = 0, destination = {x = 32231, y = 31677, z = 7} })
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, reset = true, text = 'You shouldn\'t miss the experience.'})
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want a round-trip passage to ' .. titleCase(keyword) .. ' for |TRAVELCOST|?', cost = cost})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = cost, destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'You shouldn\'t miss the experience.', reset = true})
+end
 
-keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Where do you want to go today? We serve the routes to Senja, Folda, and Vega, and back to Tibia.'})
+addTravelKeyword('folda', 10, FERRYPOS_FOLDA)
+addTravelKeyword('senja', 10, FERRYPOS_SENJA)
+addTravelKeyword('tibia', 0, FERRYPOS_TIBIA)
 
-        npcHandler:addModule(FocusModule:new())
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+npcHandler:addModule(FocusModule:new())

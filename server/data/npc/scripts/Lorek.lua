@@ -44,89 +44,14 @@ keywordHandler:addKeyword({'destination'}, StdModule.say, {npcHandler = npcHandl
 keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can bring you either to the centre of Port Hope or to the west end of the town, where would you like to go?"})
 keywordHandler:addKeyword({'go'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can bring you either to the centre of Port Hope or to the west end of the town, where would you like to go?"})
 
-function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
-pos = getPlayerPosition(cid)
---Travel in hurry--
-if msgcontains(msg, "bring me to west") then
-	bcprice = 7
-	bcdestination = {x=32558, y=32780, z=7}
-	bcname = ""
-	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == true then
-		doTeleportThing(cid, bcdestination)
-		doSendMagicEffect(bcdestination, 10)
-		npcHandler:say("Here we go!", 1)
-		talk_state = 0
-		else
-		npcHandler:say("You don't have enough money.", 1)
-		talk_state = 0
-		end
-	else
-	npcHandler:say("Get rid of that skull first!", 1)
-	talk_state = 0	
-	end
-elseif msgcontains(msg, "bring me to cent") then
-	bcprice = 7
-	bcdestination = {x=32628, y=32771, z=7}
-	bcname = ""
-	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == true then
-		doTeleportThing(cid, bcdestination)
-		doSendMagicEffect(bcdestination, 10)
-		npcHandler:say("Here we go!", 1)
-		talk_state = 0
-		else
-		npcHandler:say("You don't have enough money.", 1)
-		talk_state = 0
-		end
-	else
-	npcHandler:say("Get rid of that skull first!", 1)
-	talk_state = 0	
-	end
---End of Travel in hurry--
-	
---Give Destination--
-elseif msgcontains(msg, 'west') and npcHandler.focus == cid then
-	bcprice = 7
-	bcdestination = {x=32558, y=32780, z=7}
-	bcname = ""
-	npcHandler:say("Do you seek a passage to the west end of Port Hope for 7 gold?", 1)
-	talk_state = 9166
-	
-elseif msgcontains(msg, "cent") and npcHandler.focus == cid then
-	bcprice = 7
-	bcdestination = {x=32628, y=32771, z=7}
-	bcname = ""
-	npcHandler:say("Do you seek a passage to the centre of Port Hope for 7 gold?", 1)
-	talk_state = 9166
-
---End of Give Destination--
-	
-
-	
-	
---System that does the job after confirm destination--
-elseif talk_state == 9166 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-	if getPlayerSkullType(cid) <= 2 then
-		if doPlayerRemoveMoney(cid, bcprice) == true then
-		doTeleportThing(cid, bcdestination)
-		doSendMagicEffect(bcdestination, 10)
-		npcHandler:say("Here we go!", 1)
-		talk_state = 0
-		else
-		npcHandler:say("You don't have enough money.", 1)
-		talk_state = 0
-		end
-	else
-	npcHandler:say("Get rid of that skull first!", 1)
-	talk_state = 0	
-	end
---End of the System that does the job after confirm destination--
-	
-	
-end		
-    return true
+local function addTravelKeyword(keyword, cost, destination, text, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text, cost = cost})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
+
+addTravelKeyword('west', 7, PORTPOS_WEST, 'Do you seek a passage to the west end of Port Hope for 7 gold?')
+addTravelKeyword('cent', 7, PORTPOS_CENTER, 'Do you seek a passage to the centre of Port Hope for 7 gold?')
 
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)

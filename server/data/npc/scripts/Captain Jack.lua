@@ -7,35 +7,14 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
 function onThink()						npcHandler:onThink()						end
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-	
-	if msgcontains(msg, 'continent') then
-	npcHandler:say('Friends of Dalbrect are my friends too! So you are looking for a passage to the continent for 20 gold?')
-	talk_state = 1
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Friends of Dalbrect are my friends too! So you are looking for a passage to the continent for |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, level = 0, cost = cost, destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
+end
 
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 20 then
-				selfSay('Have a nice trip!')
-				doPlayerRemoveMoney(cid, 20)
-				doTeleportThing(cid, {x=32205,y=31756,z=6})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-	end
-end
-		
-	return true
-end
+addTravelKeyword('continent', 20, BOATPOS_TIBIA)
+addTravelKeyword('tibia', 20, BOATPOS_TIBIA)
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

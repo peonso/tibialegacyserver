@@ -132,7 +132,7 @@ function Player:addItem(itemid, count, canDropOnMap, subtype) return doPlayerAdd
 function Player:addItemEx(uid, canDropOnMap) return doPlayerAddItemEx(self.cid, uid, canDropOnMap or false) end
 function Player:addExperience(amount) doPlayerAddExperience(self.cid, amount) end
 function Player:savePlayer(shallow) doPlayerSave(self.cid, shallow or false) end
-function Player:isPzLocked() return isPlayerPzLocked(self.cid) end
+function Player:isPzLocked() return isPzLocked(self.cid) end
 
 -- Game
 function Game.getStorageValue(key) return getGlobalStorageValue(key) end

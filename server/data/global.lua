@@ -19,6 +19,9 @@ dofile(getDataDir() .. 'lib/compat.lua')
 -- Load STORAGES
 dofile(getDataDir() .. 'lib/storages.lua')
 
+-- Load Tibia map lib
+dofile(getDataDir() .. 'lib/tibia.lua')
+
 -- Booleans consts
 TRUE = true
 FALSE = false

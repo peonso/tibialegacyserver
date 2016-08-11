@@ -48,9 +48,22 @@ if(Modules == nil) then
 		if(cid ~= npcHandler.focus and (parameters.onlyFocus == nil or parameters.onlyFocus == true)) then
 			return false
 		end
+		
+		local cost, costMessage = parameters.cost, '%d gold coins'
+		if cost and cost > 0 then
+			if parameters.discount then
+				cost = cost - StdModule.travelDiscount(cid, parameters.discount)
+			end
+
+			costMessage = cost > 0 and string.format(costMessage, cost) or 'free'
+		else
+			costMessage = 'free'
+		end
+
 		local parseInfo = {
 				[TAG_PLAYERNAME] = getPlayerName(cid),
 				[TAG_TIME] = getTibiaTime(),
+				[TAG_TRAVELCOST] = costMessage,
 			}
 		msgout = npcHandler:parseMessage(parameters.text or parameters.message, parseInfo)
 		npcHandler:say(msgout)
@@ -104,10 +117,24 @@ if(Modules == nil) then
 			return false
 		end
 		
+		local cost = parameters.cost
+		if cost and cost > 0 then
+			if parameters.discount then
+				cost = cost - StdModule.travelDiscount(cid, parameters.discount)
+				if cost < 0 then
+					cost = 0
+				end
+			end
+		else
+			cost = 0
+		end
+		
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium == false) then
 			if(parameters.level ~= nil and getPlayerLevel(cid) < parameters.level) then
 				npcHandler:say('You must reach level ' .. parameters.level .. ' before I can let you go there.')
-			elseif(doPlayerRemoveMoney(cid, parameters.cost) ~= true) then
+			elseif isPzLocked(cid) then
+				npcHandler:say("Get out of there with this blood.")	
+			elseif(doPlayerRemoveMoney(cid, cost) ~= true) then
 				npcHandler:say('You do not have enough money!')
 			else
 				doTeleportThing(cid, parameters.destination)
@@ -349,7 +376,7 @@ if(Modules == nil) then
 		local npcHandler = module.npcHandler
 		
 		
-		local cost = parameters.cost
+		local cost = parentParameters.cost
 		local destination = parameters.destination
 		local premium = parameters.premium
 		
@@ -369,11 +396,18 @@ if(Modules == nil) then
 		
 		local parentParameters = node:getParent():getParameters()
 		local cost = parentParameters.cost
+		if cost and cost > 0 then
+			if parameters.discount then
+				cost = cost - StdModule.travelDiscount(cid, parameters.discount)
+			end
+		end
 		local destination = parentParameters.destination
 		local premium = parentParameters.premium
 		
 		if(isPlayerPremiumCallback == nil or isPlayerPremiumCallback(cid) == true or parameters.premium ~= true) then
-			if(doPlayerRemoveMoney(cid, cost) ~= true) then
+			if isPzLocked(cid) then
+				npcHandler:say("Get out of there with this blood.")	
+			elseif(doPlayerRemoveMoney(cid, cost) ~= true) then
 				npcHandler:say('You do not have enough money!')
 			else
 				npcHandler:say('It was a pleasure doing business with you.', false)

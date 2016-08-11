@@ -3,7 +3,7 @@
 --	Znote Shop v1.0 for Znote AAC on OTHire 0.0.3
 
 function onSay(cid, words, param)
-        local storage = STORAGE_REPORT -- Make sure to select non-used storage. This is used to prevent SQL load attacks.
+        local storage = STORAGE_ZNOTEAAC -- Make sure to select non-used storage. This is used to prevent SQL load attacks.
         local delaytime = 30 -- in seconds.
  
         if getPlayerStorageValue(cid, storage) > os.time() then

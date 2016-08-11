@@ -4,18 +4,22 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-
-
 -- OTServ event handling functions
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+function greetCallback(cid)
+	npcHandler:setMessage(MESSAGE_GREET, "Ahoi.")
+	return true
+end	
+
+npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
  
-
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am the captain of the Poodle, the proudest ship on all oceans."})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's Charles."})
 keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "His majesty himself was present at the day the Poodle was launched."})
@@ -40,136 +44,45 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-if msgcontains(msg, 'major') and npcHandler.focus == cid or msgcontains(msg, 'harbour') and npcHandler.focus == cid then
+	if msgcontains(msg, 'major') and npcHandler.focus == cid or msgcontains(msg, 'harbour') and npcHandler.focus == cid then
 		npcHandler:say("Well the harbours of thais, venore, carlin, edron, darashia and ankrahmun. Do you have any questions about one of those harbours?", 1)
 		talk_state = 921
-elseif talk_state == 921 and msgcontains(msg, 'venore') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'venore') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("The Venorans build fine ships. Enough said about them.", 1)
 		talk_state = 0		
-elseif talk_state == 921 and msgcontains(msg, 'thais') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'thais') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("Thais is the proud capital of the largest kingdom in the known world.", 1)
 		talk_state = 0
-elseif talk_state == 921 and msgcontains(msg, 'carlin') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'carlin') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("Rebellious women might be amusing for a while, but it is time for them to stop this nonsense and return to the kingdom.", 1)
 		talk_state = 0
-elseif talk_state == 921 and msgcontains(msg, 'edron') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'edron') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("The coastline of Edron is treacherous and it takes some skills to sail a ship safely into the harbour.", 1)
 		talk_state = 0
-elseif talk_state == 921 and msgcontains(msg, 'darashia') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'darashia') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("An unremarkable little town with a small harbour and quiet people.", 1)
 		talk_state = 0
-elseif talk_state == 921 and msgcontains(msg, 'ankrahmun') and npcHandler.focus == cid and npcHandler.focus == cid then
+	elseif talk_state == 921 and msgcontains(msg, 'ankrahmun') and npcHandler.focus == cid and npcHandler.focus == cid then
 		npcHandler:say("The city is surely worth a look although its inhabitants are somewhat strange and their customs oddish.", 1)
 		talk_state = 0		
-end		
-
-	local venore = {x=32954,y=32023,z=6, stackpos=0}
-	local thais = {x=32312,y=32211,z=6, stackpos=0}
-	local darashia = {x=33290,y=32481,z=6, stackpos=0}
-	local edron = {x=33175,y=31764,z=6, stackpos=0}
-	local ankrahmun = {x=33091,y=32883,z=6, stackpos=0}
-	
--- Venore
-if msgcontains(msg, 'venore') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Venore for free?')
-		talk_state = 1
-		town_boat = venore
-	else
-		npcHandler:say('Do you seek a passage to Venore for 160 gold?')
-		talk_state = 1
-		town_boat = venore
-		price = 160
 	end
-	
--- Thais
-elseif msgcontains(msg, 'thais') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Thais for free?')
-		talk_state = 1
-		town_boat = thais
-	else
-		npcHandler:say('Do you seek a passage to Thais for 160 gold?')
-		talk_state = 1
-		town_boat = thais
-		price = 160
-	end
-	
--- Darashia
-elseif msgcontains(msg, 'darashia') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Darashia for free?')
-		talk_state = 1
-		town_boat = darashia
-	else
-		npcHandler:say('Do you seek a passage to Darashia for 180 gold?')
-		talk_state = 1
-		town_boat = darashia
-		price = 180
-	end
-	
--- Edron
-elseif msgcontains(msg, 'edron') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Edron for free?')
-		talk_state = 1
-		town_boat = edron
-	else
-		npcHandler:say('Do you seek a passage to Edron for 150 gold?')
-		talk_state = 1
-		town_boat = edron
-		price = 150
-	end
-	
--- Ankrahmun
-elseif msgcontains(msg, 'ankrahmun') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Ankrahmun for free?')
-		talk_state = 1
-		town_boat = ankrahmun
-	else
-		npcHandler:say('Do you seek a passage to Ankrahmun for 110 gold?')
-		talk_state = 1
-		town_boat = ankrahmun
-		price = 110
-	end
-	
--- Confirm Yes or No 
-elseif msgcontains(msg, 'yes') and talk_state == 1 then
-	if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPremium(cid) == true then
-				if isPremium(cid) == true then
-					selfSay('Set the sails!')
-					doTeleportThing(cid, town_boat)
-					doSendMagicEffect(getCreaturePosition(cid), 10)
-					talk_state = 0
-				else
-					selfSay('Set the sails!')
-					doPlayerRemoveMoney(cid, price)
-					doTeleportThing(cid, town_boat)
-					doSendMagicEffect(getCreaturePosition(cid), 10)
-					talk_state = 0
-				end
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
-elseif msgcontains(msg, 'no') and talk_state == 1 then
-	npcHandler:say('We would like to serve you some time.')
-	talk_state = 0	
-end
 	
 	return true
 end
+
+	
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to ' .. titleCase(keyword) .. ' for |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
+end
+
+addTravelKeyword('ankrahmun', 110, BOATPOS_ANKRAHMUN)
+addTravelKeyword('darashia', 180, BOATPOS_DARASHIA)
+addTravelKeyword('edron', 150, BOATPOS_EDRON)
+addTravelKeyword('thais', 160, BOATPOS_THAIS)
+addTravelKeyword('venore', 160, BOATPOS_VENORE)
+
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

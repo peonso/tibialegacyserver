@@ -961,3 +961,7 @@ function getCreateDate(cid)
     result.free(createdQuery)
 	return tonumber(created) or created
 end
+
+function titleCase(str)
+    return (str:gsub("^%l", string.upper))
+end

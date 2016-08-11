@@ -1,5 +1,5 @@
 function onSay(cid, words, param)
-	local storage = STORAGE_REPORT
+	local storage = STORAGE_ZNOTEAAC
 	local delaytime = 30 -- Exhaust In Seconds.
 	if param == '' then
 		doPlayerSendTextMessage(cid,MESSAGE_STATUS_CONSOLE_ORANGE, "Command param required.")

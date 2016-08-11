@@ -12,11 +12,11 @@ function onThink()				npcHandler:onThink()					end
 
 function greetCallback(cid)
 	if getPlayerSex(cid) == 1 then
-	npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, Sir ".. getPlayerName(cid) ..".")
-	return true
+		npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, Sir ".. getPlayerName(cid) ..".")
+		return true
 	else
-	npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, Madam ".. getPlayerName(cid) ..".")
-	return true
+		npcHandler:setMessage(MESSAGE_GREET, "Welcome on board, Madam ".. getPlayerName(cid) ..".")
+		return true
 	end	
 end	
 
@@ -50,104 +50,17 @@ keywordHandler:addKeyword({'darama'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'ghost'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Many people who sailed to Darashia never returned because they were attacked by a ghostship! I'll never sail there!"})
 keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This is Carlin. Where do you want to go?"})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-		
-	local thais = {x=32312,y=32211,z=6, stackpos=0}
-	local abdendriel = {x=32733,y=31668,z=6, stackpos=0}
-	local edron = {x=33175,y=31764,z=6, stackpos=0}
-	local venore = {x=32954,y=32023,z=6, stackpos=0}
-	
-	-- Thais
-if msgcontains(msg, 'thais') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Thais for free?')
-		talk_state = 1
-		town_boat = thais
-	else		
-		npcHandler:say('Do you seek a passage to Thais for 110 gold?')
-		talk_state = 1
-		town_boat = thais
-		price = 110
-	end
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to ' .. titleCase(keyword) .. ' for |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
+end
 
--- Ab'Dendriel
-elseif msgcontains(msg, 'ab\'dendriel') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Ab\'Dendriel for free?')
-		talk_state = 1
-		town_boat = abdendriel
-	else
-		npcHandler:say('Do you seek a passage to Ab\'Dendriel for 80 gold?')
-		talk_state = 1
-		town_boat = abdendriel
-		price = 80
-	end	
-	
--- Edron
-elseif msgcontains(msg, 'edron') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Edron for free?')
-		talk_state = 1
-		town_boat = edron
-	else
-		npcHandler:say('Do you seek a passage to Edron for 110 gold?')
-		talk_state = 1
-		town_boat = edron
-		price = 110
-	end
-	
--- Venore
-elseif msgcontains(msg, 'venore') then
-	if isPremium(cid) == true then
-		npcHandler:say('Do you seek a passage to Venore for free?')
-		talk_state = 1
-		town_boat = venore
-	else
-		npcHandler:say('Do you seek a passage to Venore for 130 gold?')
-		talk_state = 1
-		town_boat = venore
-		price = 130
-	end	
-	
--- Confirm Yes or No 
-elseif msgcontains(msg, 'yes') and talk_state == 1 then
-	if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == 1 then
-			if getPlayerMoney(cid) >= price or isPremium(cid) == true then
-				if isPremium(cid) == true then
-					selfSay('Set the sails!')
-					doTeleportThing(cid, town_boat)
-					doSendMagicEffect(getCreaturePosition(cid), 10)
-					talk_state = 0
-				else
-					selfSay('Set the sails!')
-					doPlayerRemoveMoney(cid, price)
-					doTeleportThing(cid, town_boat)
-					doSendMagicEffect(getCreaturePosition(cid), 10)
-					talk_state = 0
-				end
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
-elseif msgcontains(msg, 'no') and talk_state == 1 then
-	npcHandler:say('We would like to serve you some time.')
-	talk_state = 0	
-end
-	
-	return true
-end
+addTravelKeyword('ab\'dendriel', 80, BOATPOS_AB)
+addTravelKeyword('edron', 110, BOATPOS_EDRON)
+addTravelKeyword('thais', 110, BOATPOS_THAIS)
+addTravelKeyword('venore', 130, BOATPOS_VENORE)
+
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -39,40 +39,15 @@ keywordHandler:addKeyword({'beer'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'dwarf'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Deep inside, we're all dwarfs."})
 keywordHandler:addKeyword({'gurbasch'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah, my brother in Cormaya. He can take you back."})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-	
-	if msgcontains(msg, 'cormaya') or msgcontains(msg, 'passage') or msgcontains(msg, 'Passage') or msgcontains(msg, 'Cormaya') then
-	npcHandler:say('So you want to go to Cormaya? 160 gold?')
-	talk_state = 1
-	
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-	if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 160 then
-				selfSay('Full steam ahead!')
-				doPlayerRemoveMoney(cid, 160)
-				doTeleportThing(cid, {x=33309,y=31989,z=15})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'So you want to go to Cormaya? |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
 
-	return true
-end
+addTravelKeyword('cormaya', 160, STEAMPOS_CORMAYA)
+addTravelKeyword('passage', 160, STEAMPOS_CORMAYA)
+
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -42,35 +42,15 @@ keywordHandler:addKeyword({'brodrosch'}, StdModule.say, {npcHandler = npcHandler
 keywordHandler:addKeyword({'elves'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Have one elf onboard a ship, and you are doomed."})
 keywordHandler:addKeyword({'elf'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Have one elf onboard a ship, and you are doomed."})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-	
-	if msgcontains(msg, 'kazordoon') or msgcontains(msg, 'passage') or msgcontains(msg, 'Passage') or msgcontains(msg, 'Kazordoon') then
-	npcHandler:say('Do you want to go to Kazordoon? And try the beer there? 160 gold?')
-	talk_state = 1
+local function addTravelKeyword(keyword, cost, destination, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Do you want to go to Kazordoon? And try the beer there? |TRAVELCOST|?', cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
+end
 
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 160 then
-				selfSay('Full steam ahead!')
-				doPlayerRemoveMoney(cid, 160)
-				doTeleportThing(cid, {x=32658,y=31957,z=15})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-end
-	
-	return true
-end
+addTravelKeyword('passage', 160, STEAMPOS_KAZORDOON)
+addTravelKeyword('kazordoon', 160, STEAMPOS_KAZORDOON)
+
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

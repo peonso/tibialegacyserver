@@ -10,7 +10,6 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Femor Hills or Darashia if you like. Where do you want to go?"})
 keywordHandler:addKeyword({'go'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Femor Hills or Darashia if you like. Where do you want to go?"})
 keywordHandler:addKeyword({'transport'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Femor Hills or Darashia if you like. Where do you want to go?"})
@@ -19,57 +18,16 @@ keywordHandler:addKeyword({'trip'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can fly you to Femor Hills or Darashia if you like. Where do you want to go?"})
 keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's |TIME| right now."})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
-	
-	if msgcontains(msg, 'hill') or msgcontains(msg, 'femor') then
-	npcHandler:say('Do you want to get a ride to the Femor Hills for 60 gold?')
-	talk_state = 1
-	
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 60 then
-				selfSay('Hold on!')
-				doPlayerRemoveMoney(cid, 60)
-				doTeleportThing(cid, {x=32535,y=31837,z=4})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
+local function addTravelKeyword(keyword, cost, destination, text, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text, cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
 end
-	
-	if msgcontains(msg, 'darashia') or msgcontains(msg, 'Darashia') or msgcontains(msg, 'darama') or msgcontains(msg, 'Darama') then
-	npcHandler:say('Do you want to get a ride to Darashia on Darama for 40 gold?')
-	talk_state = 2
-	
-	elseif msgcontains(msg,'yes') and talk_state == 2 then
-		if getTilePzInfo(getPlayerPosition(cid)) == true then
-			if getPlayerMoney(cid) >= 40 then
-				selfSay('Hold on!')
-				doPlayerRemoveMoney(cid, 40)
-				doTeleportThing(cid, {x=33269,y=32441,z=6})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-end
-	
-	return true
-end
+
+addTravelKeyword('hills', 60, CARPETPOS_FEMOR, 'Do you want to get a ride to the Femor Hills for 60 gold?')
+addTravelKeyword('femor', 60, CARPETPOS_FEMOR, 'Do you want to get a ride to the Femor Hills for 60 gold?')
+addTravelKeyword('darashia', 40, CARPETPOS_DARASHIA, 'Do you want to get a ride to Darashia on Darama for 40 gold?')
+addTravelKeyword('darama', 40, CARPETPOS_DARASHIA, 'Do you want to get a ride to Darashia on Darama for 40 gold?')
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

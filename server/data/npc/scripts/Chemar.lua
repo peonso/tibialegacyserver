@@ -36,106 +36,63 @@ keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, on
 keywordHandler:addKeyword({'femur'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Are you sure that you are not talking about the FEMOR Hills?"})
 keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's |TIME|, precisely."})
 
+local function addTravelKeyword(keyword, cost, destination, text, action)
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text, cost = cost, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, level = 0, cost = cost, discount = 'postman', destination = destination })
+		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'We would like to serve you some time.', reset = true})
+end
+
+addTravelKeyword('hills', 60, CARPETPOS_FEMOR, 'Do you want to get a ride to the Femor Hills for 60 gold?')
+addTravelKeyword('femor', 60, CARPETPOS_FEMOR, 'Do you want to get a ride to the Femor Hills for 60 gold?')
+addTravelKeyword('edron', 40, CARPETPOS_EDRON, 'Do you want to get a ride to Edron for 40 gold?')
 
 function creatureSayCallback(cid, type, msg)
 	if(npcHandler.focus ~= cid) then
 		return false
 	end
 	
-	if msgcontains(msg, 'hill') or msgcontains(msg, 'femor') then
-	npcHandler:say('Do you want to get a ride to the Femor Hills for 60 gold?')
-	talk_state = 1
-	
-	elseif msgcontains(msg,'yes') and talk_state == 1 then
-	 if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 60 then
-				selfSay('Hold on!')
-				doPlayerRemoveMoney(cid, 60)
-				doTeleportThing(cid, {x=32535,y=31837,z=4})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
-end
-	
-	if msgcontains(msg, 'edron') or msgcontains(msg, 'Edron') then
-	npcHandler:say('Do you want to get a ride to Edron for 40 gold?')
-	talk_state = 2
-	
-	elseif msgcontains(msg,'yes') and talk_state == 2 then
-	 if isPremium(cid) == true then
-		if getTilePzInfo(getPlayerPosition(cid)) == false then
-			if getPlayerMoney(cid) >= 40 then
-				selfSay('Hold on!')
-				doPlayerRemoveMoney(cid, 40)
-				doTeleportThing(cid, {x=33193,y=31784,z=3})
-				doSendMagicEffect(getCreaturePosition(cid), 10)
-				talk_state = 0
-			else
-				npcHandler:say('You don\'t have enough money.')
-				talk_state = 0
-			end
-		else
-			npcHandler:say('First get rid of those blood stains! You are not going to ruin my vehicle!')
-			talk_state = 0
-		end
-	else
-		npcHandler:say('I\'m sorry, but you need a premium account in order to travel onboard our ships.')
-		talk_state = 0
-	end
-end
 
 	if msgcontains(msg, 'flying') and npcHandler.focus == cid then	
-	npcHandler:say("Do you want to buy a flying carpet for 5000 platinum coins?", 1)
-	talk_state = 7358
+		npcHandler:say("Do you want to buy a flying carpet for 5000 platinum coins?", 1)
+		talk_state = 7358
 	elseif talk_state == 7358 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-	if getPlayerItemCount(cid,2160) >= 500 then
-	npcHandler:say("Oh, I am sorry, but you have no pilot licence.", 1)
-	talk_state = 0
-	else
-	npcHandler:say("You don't own enough worldly wealth to afford this item.", 1)
-	talk_state = 0
-	end
+		if getPlayerItemCount(cid,2160) >= 500 then
+			npcHandler:say("Oh, I am sorry, but you have no pilot licence.", 1)
+			talk_state = 0
+		else
+			npcHandler:say("You don't own enough worldly wealth to afford this item.", 1)
+			talk_state = 0
+		end
 	
 	elseif talk_state == 7358 and msgcontains(msg, 'no') and npcHandler.focus == cid then
-	npcHandler:say("Maybe another day then, my friend.", 1)
-	talk_state = 0
+		npcHandler:say("Maybe another day then, my friend.", 1)
+		talk_state = 0
 
 	elseif msgcontains(msg, 'mail') and npcHandler.focus == cid then
-	npcHandler:say("Our mail system is unique! And everyone can use it. Do you want to know more about it?", 1)
-	talk_state = 4278	
+		npcHandler:say("Our mail system is unique! And everyone can use it. Do you want to know more about it?", 1)
+		talk_state = 4278	
 	elseif talk_state == 4278 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-	npcHandler:say("The Darashian Airmail System enables you to send and receive letters and parcels. You can buy them here if you want.", 1)
-	talk_state = 0
+		npcHandler:say("The Darashian Airmail System enables you to send and receive letters and parcels. You can buy them here if you want.", 1)
+		talk_state = 0
 
 	elseif msgcontains(msg, 'parcel') and npcHandler.focus == cid then
-	npcHandler:say("Do you want to buy a parcel for 15 gold?", 1)
-	talk_state = 3532
+		npcHandler:say("Do you want to buy a parcel for 15 gold?", 1)
+		talk_state = 3532
 	elseif talk_state == 3532 and msgcontains(msg, 'yes') and npcHandler.focus == cid then
-	if doPlayerRemoveMoney(cid, 15) == true then
-	doPlayerAddItem(cid, 2595, 1)
-	doPlayerAddItem(cid, 2599, 1)
-	npcHandler:say("Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.", 1)
-	talk_state = 0
-	else
-	npcHandler:say("Oh, you have not enough gold to buy a parcel.", 1)
-	talk_state = 0
-	end
+		if doPlayerRemoveMoney(cid, 15) == true then
+			doPlayerAddItem(cid, 2595, 1)
+			doPlayerAddItem(cid, 2599, 1)
+			npcHandler:say("Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.", 1)
+			talk_state = 0
+		else
+			npcHandler:say("Oh, you have not enough gold to buy a parcel.", 1)
+			talk_state = 0
+		end
 	elseif msgcontains(msg, 'fly') and npcHandler.focus == cid then
-	npcHandler:say("I can fly you to Femor Hills or Edron if you like. Where do you want to go?", 1)
-	talk_state = 0	
-end
+		npcHandler:say("I can fly you to Femor Hills or Edron if you like. Where do you want to go?", 1)
+		talk_state = 0	
+	end
+	
 	return true
 end
 

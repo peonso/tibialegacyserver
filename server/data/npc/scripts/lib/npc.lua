@@ -1,8 +1,16 @@
 -- Include external classes.
 dofile(getDataDir() .. 'npc/scripts/lib/npcsystem/npcsystem.lua')
 
+dofile(getDataDir() .. 'npc/scripts/lib/custom modules.lua')
+
 -- Callback for isPremium(cid) so Jiddo's npcsystem works
-isPlayerPremiumCallback = isPremium
+function isPlayerPremiumCallback(cid)
+	if BOATSFORFREE then
+		return true
+	else
+		return isPremium(cid)
+	end
+end
 
 -- get the distance to a creature
 -- deprecated function
