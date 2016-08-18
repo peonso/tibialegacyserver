@@ -20,11 +20,11 @@ function creatureSayCallback(cid, type, msg)
 	end
 	
 	-- The Postman Missions Quest by Rodrigo (Nottinghster)
-	if msgcontains(msg, 'special operations') and getPlayerStorageValue(cid,250) < 4 then
+	if msgcontains(msg, 'special operations') and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < 4 then
 	npcHandler:say('Sorry but I won\'t talk about this matter with someone of your rank.')
 	topic = 0
 	
-	elseif msgcontains(msg, 'special operations') and getPlayerStorageValue(cid,250) > 3 then
+	elseif msgcontains(msg, 'special operations') and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) > 3 then
 	npcHandler:say('We have a secret branch, called \'the stamps of the gods\'. They secretly supervise our members reliability and have an eye on certain groups of interest that want to gain influence over our guild.')
 	topic = 0
 	
@@ -40,36 +40,36 @@ function creatureSayCallback(cid, type, msg)
 	npcHandler:say('You are not a member of our guild yet! We have high standards for our members. To rise in our guild is a difficult but rewarding task. Are you interested in joining?')
 	topic = 1
 	
-	elseif msgcontains(msg, 'advancement') and getPlayerStorageValue(cid,250) < getPlayerStorageValue(cid,249) then
+	elseif msgcontains(msg, 'advancement') and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < getPlayerStorageValue(cid,249) then
 	npcHandler:say('You are worthy indeed. Do you want to advance in our guild?')
 	topic = 23
 	
-	elseif msgcontains(msg, 'advancement') and getPlayerStorageValue(cid,250) >= getPlayerStorageValue(cid,249) then
+	elseif msgcontains(msg, 'advancement') and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) >= getPlayerStorageValue(cid,249) then
 	npcHandler:say('Sorry, but you are not yet ready for advancement.')
 	
 	elseif msgcontains(msg, 'yes') and topic == 23 and getPlayerStorageValue(cid,249) == 2 then
 	npcHandler:say('I grant you the title of postman. You are now a full member of our guild. Here have your own officers hat and wear it with pride.')
-	setPlayerStorageValue(cid,250,2)
+	setPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR,2)
 	doPlayerAddItem(cid,2665,1)
 	topic = 0
 	
 	elseif msgcontains(msg, 'yes') and topic == 23 and getPlayerStorageValue(cid,249) == 3 then
 	npcHandler:say('From now on it shall be known that you are a grand postman. You are now a privileged member until the end of days. Most captains around the world have an agreement with our guild to transport our privileged members, like you, for less gold.')
-	setPlayerStorageValue(cid,250,3)
+	setPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR,3)
 	topic = 0
 	
 	elseif msgcontains(msg, 'yes') and topic == 23 and getPlayerStorageValue(cid,249) == 4 then
 	npcHandler:say('From now on you are a grand postman for special operations. You are an honoured member of our guild and earned the privilege of your own post horn. Here, take it.')
-	setPlayerStorageValue(cid,250,4)
+	setPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR,4)
 	doPlayerAddItem(cid,2332,1)
 	topic = 0
 	
 	elseif msgcontains(msg, 'yes') and topic == 23 and getPlayerStorageValue(cid,249) == 5 then
 	npcHandler:say('I grant you the title of archpostman. You are a legend in our guild. As privilege of your newly aquired status you are allowed to make use of certain mailboxes in dangerous areas. Just look out for them and you\'ll see.')
-	setPlayerStorageValue(cid,250,5)
+	setPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR,5)
 	topic = 0
 	
-	elseif msgcontains(msg, 'mission') and getPlayerStorageValue(cid,248) == 1 and getPlayerStorageValue(cid,250) < getPlayerStorageValue(cid,249) then
+	elseif msgcontains(msg, 'mission') and getPlayerStorageValue(cid,248) == 1 and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < getPlayerStorageValue(cid,249) then
 	npcHandler:say('Your eagerness is a virtue, young one, but first lets talk about advancement.')
 	topic = 0
 	
@@ -132,7 +132,7 @@ function creatureSayCallback(cid, type, msg)
 	npcHandler:say('Too bad, go and look for it.')
 	topic = 0
 	
-	elseif msgcontains(msg, 'yes') and topic == 20 and getPlayerStorageValue(cid,250) < getPlayerStorageValue(cid,249) then
+	elseif msgcontains(msg, 'yes') and topic == 20 and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < getPlayerStorageValue(cid,249) then
 	npcHandler:say('Your eagerness is a virtue, young one, but first lets talk about advancement.')
 	topic = 0
 	
@@ -180,7 +180,7 @@ function creatureSayCallback(cid, type, msg)
 	--[[ getPlayerStorageValue(cid,233) == 10 ]]-- Cheap travels
 	topic = 16
 	
-	elseif msgcontains(msg, 'yes') and topic == 16 and getPlayerStorageValue(cid,250) < getPlayerStorageValue(cid,249) then
+	elseif msgcontains(msg, 'yes') and topic == 16 and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < getPlayerStorageValue(cid,249) then
 	npcHandler:say('Your eagerness is a virtue, young one, but first let\'s talk about advancement.')
 	topic = 0
 	
@@ -240,7 +240,7 @@ function creatureSayCallback(cid, type, msg)
 	npcHandler:say('Too bad, perhaps another time then.')
 	topic = 0
 	
-	elseif msgcontains(msg, 'yes') and getPlayerStorageValue(cid,250) < getPlayerStorageValue(cid,250) and topic == 13 then
+	elseif msgcontains(msg, 'yes') and getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) < getPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR) and topic == 13 then
 	npcHandler:say('Your eagerness is a virtue, young one, but first lets talk about advancement.')
 	topic = 0
 	
@@ -347,7 +347,7 @@ function creatureSayCallback(cid, type, msg)
 	
 	elseif msgcontains(msg, 'yes') and topic == 9 then
 	npcHandler:say('For your noble deeds I grant you the title Assistant Postofficer. All Postofficers will charge you less money from now on. After every second mission ask me for an ADVANCEMENT. Your next task will be a bit more challenging. Do you feel ready for it?')
-	setPlayerStorageValue(cid,250,1) -- cheap parcel
+	setPlayerStorageValue(cid,STORAGE_POSTMAN_DOOR,1) -- cheap parcel
 	setPlayerStorageValue(cid,249,1) -- cheap letter
 	topic = 10
 	

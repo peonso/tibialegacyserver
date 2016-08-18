@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <actions>
-	<!-- Quests System  (based on map editor) -->
+	<!-- Quests System (based on map editor) -->
 	<action actionid="2000" script="system.lua"/>
+	<action actionid="2001" script="system2.lua"/>
 
 	<!-- Helmet of the ancients -->
-	<action itemid="2342" script="enchanting.lua" />
+	<action itemid="2342" script="enchanting.lua"/>
 
     <!-- Tools -->
 	<action itemid="2580" script="tools/fishing_rod.lua" allowfaruse="1"/>
@@ -372,312 +373,73 @@
 	<action itemid="3948" script="decrement.lua"/>
 	<action itemid="3949" script="increment.lua"/>
 	<action itemid="3950" script="decrement.lua"/>
-	
+
 	<!-- Others -->
 	<action itemid="2785" script="blueberry_bush.lua"/>
-	<action itemid="2114" script="piggy_bank.lua" />
-	<action itemid="2566" script="pumpkinhead.lua" />
-	<action itemid="2096" script="pumpkinhead.lua" />
-	
+	<action itemid="2114" script="piggy_bank.lua"/>
+	<action itemid="2566" script="pumpkinhead.lua"/>
+	<action itemid="2096" script="pumpkinhead.lua"/>
+
 	<action default="1" script="default.lua"/>
-			
+
+	<!-- .:: Rookgaard ::. --> 
 	<!-- Switchs -->
-	<action uniqueid="9999" script="_levers/rook_wall.lua" />
-	<action uniqueid="9998" script="_levers/rook_parede1.lua" />
-	<action uniqueid="9997" script="_levers/rook_parede2.lua" />
-	<action uniqueid="9996" script="_levers/rook_parede3.lua" />
-	<action uniqueid="9995" script="_levers/rook_parede4.lua" />
-	<action uniqueid="8887" script="_levers/bright_sword_quest_pedra.lua" />
-	<action actionid="1621" script="_levers/fibula draw well.lua" />
-	<action actionid="1622" script="_levers/scale draw well.lua" />
-	<action uniqueid="4321" script="_levers/mols.lua" />
-	<action uniqueid="2468" script="_levers/edron_orc_pedra.lua" />
-	<action uniqueid="2469" script="_levers/kazz_lever.lua" />
-	<action uniqueid="33210" script="_levers/banuta.lua" />
-	<action actionid="55001" script="_levers/rook_rats.lua" />
+	<action actionid="11005" script="tibia/rookgaard/lever_sewers.lua"/>
+	<action actionid="11006" script="tibia/rookgaard/lever_bear_room.lua"/>
+	<action actionid="11007" script="tibia/rookgaard/lever_wall_1.lua"/>
+	<action actionid="11008" script="tibia/rookgaard/lever_wall_2.lua"/>
+	<action actionid="11009" script="tibia/rookgaard/lever_wall_3.lua"/>
+	<action actionid="11010" script="tibia/rookgaard/lever_wall_4.lua"/>
+	<action actionid="11011" script="tibia/rookgaard/lever_wall_5.lua"/>
+	<action actionid="11012" script="tibia/rookgaard/lever_katana.lua"/>
+	<action actionid="11013" script="tibia/rookgaard/door_katana.lua"/>
 
-	<!-- Quests -->
-	 
-	<!-- .:: Edron ::. --> 
-	<!-- The Annihilator Quest -->
-	<action uniqueid="5006" script="_quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
-	<action uniqueid="5007" script="_quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
-	<action uniqueid="5008" script="_quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
-	<action uniqueid="5009" script="_quests/Edron/The Annihilator Quest/annihilator_chest.lua" />
-	<action uniqueid="7000" script="_quests/Edron/The Annihilator Quest/annihilator_lever.lua" />
-	
-	<!-- Demon Helmet Quest -->
-	<action uniqueid="8550" script="_quests/Edron/Demon Helmet Quest/dh_pedra.lua" />
-	<action uniqueid="1001" script="_quests/Edron/Demon Helmet Quest/dh_steelboots.lua" />
-	<action uniqueid="1002" script="_quests/Edron/Demon Helmet Quest/dh_demonhelmet.lua" />
-	<action uniqueid="1003" script="_quests/Edron/Demon Helmet Quest/dh_demonshield.lua" />
-	
-	<!-- The Behemoth Quest -->
-	<action uniqueid="1011" script="_quests/Edron/The Behemoth Quest/demon shield.lua" />
-	<action uniqueid="1012" script="_quests/Edron/The Behemoth Quest/golden armor.lua" />
-	<action uniqueid="1013" script="_quests/Edron/The Behemoth Quest/guardian halberd.lua" />
-	<action uniqueid="1014" script="_quests/Edron/The Behemoth Quest/platinum amulet.lua" />
-	<action uniqueid="4444" script="_quests/Edron/The Behemoth Quest/behemoth_lever.lua" />
-	
-	<!-- Triple UH Rune Quest -->
-	<action uniqueid="1015" script="_quests/Edron/Triple UH Rune Quest/triple uh.lua" />
-	
-	<!-- Vampire Shield Quest -->
-	<action uniqueid="1016" script="_quests/Edron/Vampire Shield Quest/vampire shield.lua" />
-	<action uniqueid="1017" script="_quests/Edron/Vampire Shield Quest/dragon lance.lua" />
-	
-	<!-- Fire Axe Quest -->
-	<action uniqueid="1018" script="_quests/Edron/Fire Axe Quest/fire axe.lua" />
-    <action uniqueid="1019" script="_quests/Edron/Fire Axe Quest/bag.lua" />
-	
-	<!-- Troll Cave Quest -->
-	<action uniqueid="1026" script="_quests/Edron/Troll Cave Quest/brass legs.lua" />
-	<action uniqueid="1027" script="_quests/Edron/Troll Cave Quest/brass legs.lua" />
-	
-	<!-- Edron Goblin Quest -->
-	<action uniqueid="1028" script="_quests/Edron/Edron Goblin Quest/steel shield.lua" />
-	<action uniqueid="1029" script="_quests/Edron/Edron Goblin Quest/silver amulet.lua" />
-	
-	<!-- Barbarian Axe Quest -->
-	<action uniqueid="1030" script="_quests/Edron/Barbarian Axe Quest/reward.lua" />
-	
-	<!-- Berserker Treasure Quest -->
-	<action uniqueid="1031" script="_quests/Edron/Berserker Treasure Quest/reward.lua" />
-	
-	<!-- Parchment Room Quest -->
-	<action uniqueid="10057" script="_quests/Edron/Parchment Room Quest/bag.lua" />
-	
-	<!-- .:: Jakundaf Desert, Outlaw Camp and Plains of Havoc ::. -->
-	<!-- The Outlaw Camp Quest (Bright Sword) -->
-	<action uniqueid="1000" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Outlaw Camp Quest/bright_sword.lua" />
-	<action uniqueid="8889" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Outlaw Camp Quest/power_ring.lua" />
-	
-	<!-- The Desert Dungeons Quest -->
-	<action uniqueid="8890" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/desert_quest.lua" />
-	<action uniqueid="1020" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/100 platinum coins.lua" />
-	<action uniqueid="1021" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Desert Dungeons Quest/green bag.lua" />
-	
-	<!-- The Pits of Inferno Quest -->
-	<!-- Pits of Inferno -->
-	<action uniqueid="10203" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/Oil.lua" />
-	<action uniqueid="10204" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LeverKnight.lua" />
-	<action uniqueid="10205" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LeverDruid.lua" />
-	<action uniqueid="10206" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LeverPaladin.lua" />
-	<action uniqueid="10207" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LeverSorcerer.lua" />
-	<action uniqueid="10224" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/SmallBridge1.lua" />
-	<action uniqueid="10254" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/SmallBridge2.lua" />
-	<action uniqueid="10255" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/StoneMagicThrowers.lua" />
-	<action uniqueid="10256" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/StoneGoldenKey.lua" />
-	<action uniqueid="10258" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/RemoveStone.lua" />
-	<action uniqueid="10259" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/RemoveLevelDoor.lua" />
-	<action uniqueid="10260" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever1.lua" />
-	<action uniqueid="10261" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever2.lua" />
-	<action uniqueid="10262" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever3.lua" />
-	<action uniqueid="10263" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever4.lua" />
-	<action uniqueid="10264" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever5.lua" />
-	<action uniqueid="10265" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever6.lua" />
-	<action uniqueid="10266" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever7.lua" />
-	<action uniqueid="10267" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever8.lua" />
-	<action uniqueid="10268" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever9.lua" />
-	<action uniqueid="10269" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever10.lua" />
-	<action uniqueid="10270" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/TeleportLever11.lua" />
-	<action uniqueid="10272" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/BazirChest.lua" />
-	<action uniqueid="10273" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/BazirMirror.lua" />
-	<action uniqueid="10282" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/SkeletonReward.lua" />
-	<action uniqueid="10284" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/16Levers.lua" />
-	<action uniqueid="10285" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/LavaLever.lua" />
-	<action uniqueid="10281" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poi_last_door.lua"/>
-	<action uniqueid="10544" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10545" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10546" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10547" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10548" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10549" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10550" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10551" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="10552" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poireward.lua"/>
-	<action uniqueid="42881" script="_quests/Jakundaf Desert, Outlaw Camp and Plains of Havoc/The Pits of Inferno Quest/poi_stone.lua"/>
-	
-	<!-- .:: Kazordoon ::. -->
-	<!-- Paradox Tower Quest -->
-	<action uniqueid="10004" script="_quests/Kazordoon/Paradox Tower Quest/key.lua" />
-	<action actionid="125" script="_quests/Kazordoon/Paradox Tower Quest/paradox_lvl2.lua"/>
-	<action actionid="127" script="_quests/Kazordoon/Paradox Tower Quest/paradox_box.lua"/>
-	<action actionid="129" script="_quests/Kazordoon/Paradox Tower Quest/paradox_lvl4.lua"/>
-	<action actionid="130" script="_quests/Kazordoon/Paradox Tower Quest/paradox_lvl5.lua"/>
-	<action uniqueid="10035" script="_quests/Kazordoon/Paradox Tower Quest/bau.lua" />
-	<action uniqueid="10036" script="_quests/Kazordoon/Paradox Tower Quest/bau.lua" />
-	<action uniqueid="10037" script="_quests/Kazordoon/Paradox Tower Quest/bau.lua" />
-	<action uniqueid="10038" script="_quests/Kazordoon/Paradox Tower Quest/bau.lua" />
-	
-	<!-- Crusader Helmet Quest -->
-	<action uniqueid="10034" script="_quests/Kazordoon/Crusader Helmet Quest/crusader.lua" />
-	
-	<!-- .:: Rookgaard ::. -->
-	<!-- Dragon Corpse Quest -->
-	<action uniqueid="1004" script="_quests/Rookgaard/Dragon Corpse Quest/dragon_reward.lua" />
-	
-	<!-- Katana Sword Quest -->
-	<action uniqueid="1005" script="_quests/Rookgaard/Katana Quest/key.lua" />
-	<action uniqueid="1006" script="_quests/Rookgaard/Katana Quest/viking helmet.lua" />
-	<action uniqueid="1007" script="_quests/Rookgaard/Katana Quest/katana.lua" />
-	
-	<!-- Minotaur Hell Quest -->
-	<action uniqueid="1008" script="_quests/Rookgaard/Minotaur Hell Quest/bag.lua" />
-	<action uniqueid="1009" script="_quests/Rookgaard/Minotaur Hell Quest/carlin sword.lua" />
-	<action uniqueid="1010" script="_quests/Rookgaard/Minotaur Hell Quest/fishing rod.lua" />
-	
-	<!-- Torch Quest -->
-	<action uniqueid="1022" script="_quests/Rookgaard/Torch Quest/torch quest.lua" />
-	
-	<!-- Rapier Quest -->
-	<action uniqueid="1023" script="_quests/Rookgaard/Rapier Quest/rapier.lua" />
-	
-	<!-- Captain Iglues Treasure Quest -->
-	<action uniqueid="1024" script="_quests/Rookgaard/Captain Iglues Treasure Quest/letter.lua" />
-	<action uniqueid="1025" script="_quests/Rookgaard/Captain Iglues Treasure Quest/salmon.lua" />
-	
-	<!-- Present Quest -->
-	<action uniqueid="10020" script="_quests/Rookgaard/Present Quest/backpack.lua" />
-	
-	<!-- Bear Room Quest -->
-	<action uniqueid="10021" script="_levers/bear_room_alavanca.lua" />
-	<action uniqueid="10023" script="_quests/Rookgaard/Bear Room Quest/key.lua" />
-	<action uniqueid="10024" script="_quests/Rookgaard/Bear Room Quest/chain armor.lua" />
-	<action uniqueid="10025" script="_quests/Rookgaard/Bear Room Quest/brass helmet.lua" />
-	<action uniqueid="10026" script="_quests/Rookgaard/Bear Room Quest/arrow_gold.lua" />
-	
-	<!-- Short Sword Quest -->
-	<action uniqueid="10022" script="_quests/Rookgaard/Short Sword Quest/book.lua" />
-	
-	<!-- Doublet Quest -->
-	<action uniqueid="10027" script="_quests/Rookgaard/Doublet Quest/doublet.lua" />
-	
-	<!-- Honey Flower Quest -->
-	<action uniqueid="10028" script="_quests/Rookgaard/Honey Flower Quest/flower.lua" />
-	
-	<!-- Studded Shield Quest -->
-	<action uniqueid="9910" script="_quests/Rookgaard/Studded Shield Quest/banana_tree1.lua" />
-	<action uniqueid="9911" script="_quests/Rookgaard/Studded Shield Quest/banana_tree2.lua" />
-	
-	<!-- .:: Carlin ::. -->
-	<!-- The Queen of the Banshees Quest -->
-	<action uniqueid="10001" script="_quests/Carlin/The Queen of the Banshees Quest/magic_wall_1.lua" />
-	<action uniqueid="10003" script="_quests/Carlin/The Queen of the Banshees Quest/10k_chest.lua" />
-	<action uniqueid="10009" script="_quests/Carlin/The Queen of the Banshees Quest/boh_chest.lua" />
-	<action uniqueid="10005" script="_quests/Carlin/The Queen of the Banshees Quest/gs_chest.lua" />
-	<action uniqueid="10006" script="_quests/Carlin/The Queen of the Banshees Quest/sr_chest.lua" />
-	<action uniqueid="10007" script="_quests/Carlin/The Queen of the Banshees Quest/ssa_chest.lua" />
-	<action uniqueid="10008" script="_quests/Carlin/The Queen of the Banshees Quest/tw_chest.lua" />
-	<action uniqueid="10010" script="_quests/Carlin/The Queen of the Banshees Quest/entrance_lever.lua" />
-	<action actionid="2451" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2452" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2453" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2454" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2455" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2456" script="_quests/Carlin/The Queen of the Banshees Quest/campfires.lua" />
-	<action actionid="2551" script="_quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
-	<action actionid="2552" script="_quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
-	<action actionid="2553" script="_quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
-	<action actionid="2554" script="_quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
-	<action actionid="2555" script="_quests/Carlin/The Queen of the Banshees Quest/seal6_levers_effects.lua" />
+	<!-- .:: Tibia ::. --> 
+	<!-- Switchs -->
+	<action uniqueid="8887" script="tibia/bright_sword_quest_pedra.lua"/>
+	<action actionid="1621" script="tibia/fibula draw well.lua"/>
+	<action actionid="1622" script="tibia/scale draw well.lua"/>
+	<action uniqueid="4321" script="tibia/mols.lua"/>
+	<action uniqueid="2468" script="tibia/edron_orc_pedra.lua"/>
+	<action uniqueid="2469" script="tibia/kazz_lever.lua"/>
+	<action uniqueid="33210" script="tibia/banuta.lua"/>
+	<action uniqueid="7000" script="tibia/lever_annihilator.lua"/>	<!-- The Annihilator Quest -->
+	<action uniqueid="8550" script="tibia/lever_demonhelmet.lua"/>	<!-- Demon Helmet Quest -->
+	<action uniqueid="4444" script="tibia/lever_behemoth.lua"/>		<!-- The Behemoth Quest -->
+	<action uniqueid="8889" script="tibia/lever_power_ring.lua"/>	<!-- The Outlaw Camp Quest/Bright Sword -->
+	<action uniqueid="8890" script="tibia/lever_desertquest.lua"/>	<!-- The Desert Dungeons Quest -->
 
-	<!-- Crystal Wand Quest -->
-	<action uniqueid="10051" script="_quests/Carlin/Crystal Wand Quest/premio.lua" />
-	<action uniqueid="10052" script="_quests/Carlin/Crystal Wand Quest/premio.lua" />
-	
-	<!-- Griffin Shield Quest -->
-	<action uniqueid="10062" script="_quests/Carlin/Griffin Shield Quest/griffin.lua" />
-	<action uniqueid="10063" script="_quests/Carlin/Griffin Shield Quest/dwarven_axe.lua" />
-	<action uniqueid="10064" script="_quests/Carlin/Griffin Shield Quest/obsidian.lua" />
-	
-	<!-- .:: Venore ::. -->
-	<!-- The Black Knight Quest -->
-	<action uniqueid="10011" script="_quests/Venore/The Black Knight Quest/key.lua" />
-	<action uniqueid="10012" script="_quests/Venore/The Black Knight Quest/crown armor.lua" />
-	<action uniqueid="10013" script="_quests/Venore/The Black Knight Quest/crown shield.lua" />
-	
-	<!-- Blood Herb Quest -->
-	<action uniqueid="10032" script="_quests/Venore/Blood Herb Quest/blood_herb.lua" />
-	
-	<!-- Time Ring Quest -->
-	<action uniqueid="10039" script="_quests/Venore/Time Ring Quest/time_ring.lua" />
-	<action uniqueid="10040" script="_quests/Venore/Time Ring Quest/elven_amulet.lua" />
-	<action uniqueid="10041" script="_quests/Venore/Time Ring Quest/crystal_ball.lua" />
-	
-	<!-- .:: Thais ::. -->
-	<!-- Fibula -->
-	<action uniqueid="10014" script="_quests/Thais/Deeper Fibula Quest/key 3980.lua" />
-	<action uniqueid="10015" script="_quests/Thais/Deeper Fibula Quest/tower shield.lua" />
-	<action uniqueid="10016" script="_quests/Thais/Deeper Fibula Quest/warrior helmet.lua" />
-	<action uniqueid="10017" script="_quests/Thais/Deeper Fibula Quest/knight axe.lua" />
-	<action uniqueid="10018" script="_quests/Thais/Deeper Fibula Quest/dwarven ring.lua" />
-	<action uniqueid="10019" script="_quests/Thais/Deeper Fibula Quest/elven amulet.lua" />
-	
-	<!-- Noble Armor Quest -->
-	<action uniqueid="10042" script="_quests/Thais/Noble Armor Quest/crown_helmet.lua" />
-	<action uniqueid="10043" script="_quests/Thais/Noble Armor Quest/noble_armor.lua" />
-	
-	<!-- Battle Axe Quest -->
-	<action uniqueid="1658" script="_quests/Thais/Battle Axe Quest/battle_axe.lua" />
-	
-	<!-- Thais Lighthouse Quest -->
-	<action uniqueid="1659" script="_quests/Thais/Thais Lighthouse Quest/battle_hammer.lua" />
-	<action uniqueid="1660" script="_quests/Thais/Thais Lighthouse Quest/dark_shield.lua" />
-	
-	<!-- Mad Mage Room Quest -->
-	<action uniqueid="10058" script="_quests/Thais/Mad Mage Room Quest/hat.lua" />
-	<action uniqueid="10059" script="_quests/Thais/Mad Mage Room Quest/ssa.lua" />
-	<action uniqueid="10060" script="_quests/Thais/Mad Mage Room Quest/star.lua" />
-	
-	<!-- Scale Armor Quest -->
-	<action uniqueid="10061" script="_quests/Thais/Scale Armor Quest/scale.lua" />
-	
-	<!-- Naginata Quest -->
-	<action uniqueid="10065" script="_quests/Thais/Naginata Quest/naginata.lua" />
-	
-	<!-- The Postman Missions Quest -->
-	<action uniqueid="10067" script="_quests/Thais/The Postman Missions Quest/letter.lua" />
-	<action uniqueid="10068" script="_quests/Thais/The Postman Missions Quest/present.lua" />
-	<action uniqueid="10072" script="_quests/Thais/The Postman Missions Quest/post_horn.lua" />
-	<action uniqueid="10073" script="_quests/Thais/The Postman Missions Quest/crowbar_mail.lua" />
-	<action itemid="2416" script="_quests/Thais/The Postman Missions Quest/crowbar_mail.lua"/>
-	
-	<!-- .:: Ab'Dendriel ::. -->
-	<!-- Orc Fortress Quest -->
-	<action uniqueid="10029" script="_quests/Ab'Dendriel/Orc Fortress Quest/fire_sword.lua" />
-	<action uniqueid="10030" script="_quests/Ab'Dendriel/Orc Fortress Quest/knight_axe.lua" />
-	<action uniqueid="10031" script="_quests/Ab'Dendriel/Orc Fortress Quest/knight_armor.lua" />
-	
 	<!-- Draconia Quest -->
-	<action uniqueid="1654" script="_quests/Ab'Dendriel/Draconia Quest/parede.lua" />
-	<action uniqueid="1655" script="_quests/Ab'Dendriel/Draconia Quest/bag1.lua" />
-	<action uniqueid="1656" script="_quests/Ab'Dendriel/Draconia Quest/bag2.lua" />
-	<action uniqueid="1657" script="_quests/Ab'Dendriel/Draconia Quest/pedra.lua" />
+	<action uniqueid="1654" script="tibia/Draconia Quest/parede.lua"/>
+	<action uniqueid="1657" script="tibia/Draconia Quest/pedra.lua"/>
+
+	<!-- Paradox Tower Quest -->
+	<action actionid="50002" script="tibia/Paradox Tower Quest/paradox_lvl2.lua"/>
+	<action actionid="50005" script="tibia/Paradox Tower Quest/paradox_box.lua"/>
+	<action actionid="50007" script="tibia/Paradox Tower Quest/paradox_lvl4.lua"/>
+	<action actionid="50008" script="tibia/Paradox Tower Quest/paradox_lvl5.lua"/>
+
+	<!-- The Postman Missions Quest -->
+	<action actionid="50018" script="tibia/The Postman Missions Quest/crowbar_mail.lua"/>
+	<action itemid="2416" script="tibia/The Postman Missions Quest/crowbar_mail.lua"/>
 	
-	<!-- Elvenbane Quest -->
-	<action uniqueid="10053" script="_quests/Ab'Dendriel/Elvenbane Quest/bag1.lua" />
-	<action uniqueid="10054" script="_quests/Ab'Dendriel/Elvenbane Quest/bag2.lua" />
-	<action uniqueid="10055" script="_quests/Ab'Dendriel/Elvenbane Quest/morning_star.lua" />
-	<action uniqueid="10056" script="_quests/Ab'Dendriel/Elvenbane Quest/dwarven_shield.lua" />
-	
-	<!-- .::Darashia ::. -->
-	<!-- Medusa Shield Quest -->
-	<action uniqueid="10033" script="_quests/Darashia/Medusa Shield Quest/reward.lua" />
-	
-	<!-- Plate Armor Quest -->
-	<action uniqueid="10066" script="_quests/Darashia/Plate Armor Quest/plate_armor.lua" />
-	
-	<!-- .:: Ankrahmun ::. -->
-	<action uniqueid="10044" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10045" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10046" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10047" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10048" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10049" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	<action uniqueid="10050" script="_quests/Ankrahmun/The Ancient Tombs Quest/premio_tumbas.lua" />
-	
-	<!-- .:: Epic Quests ::. -->
-	<action uniqueid="10069" script="_quests/spike_sword.lua" />
+	<!-- The Queen of the Banshees Quest -->
+	<action actionid="50016" script="tibia/The Queen of the Banshees Quest/magic_wall_1.lua"/>
+	<action actionid="50019" script="tibia/The Queen of the Banshees Quest/entrance_lever.lua"/>
+	<action actionid="2451" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2452" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2453" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2454" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2455" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2456" script="tibia/The Queen of the Banshees Quest/campfires.lua"/>
+	<action actionid="2551" script="tibia/The Queen of the Banshees Quest/seal6_levers_effects.lua"/>
+	<action actionid="2552" script="tibia/The Queen of the Banshees Quest/seal6_levers_effects.lua"/>
+	<action actionid="2553" script="tibia/The Queen of the Banshees Quest/seal6_levers_effects.lua"/>
+	<action actionid="2554" script="tibia/The Queen of the Banshees Quest/seal6_levers_effects.lua"/>
+	<action actionid="2555" script="tibia/The Queen of the Banshees Quest/seal6_levers_effects.lua"/>
+
+	<!-- Pits of Inferno -->
+	<action uniqueid="10203" script="tibia/The Pits of Inferno Quest/oil.lua"/>
+	<action uniqueid="10552" script="tibia/The Pits of Inferno Quest/poireward.lua"/>	
 	
 </actions>

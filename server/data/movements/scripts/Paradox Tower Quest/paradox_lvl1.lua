@@ -3,7 +3,7 @@ function ChangeBack(cid)
 end
 
 function onStepIn(cid, item, pos)
-	if item.actionid == 124 and 
+	if item.actionid == 50003 and 
 		getThingfromPos({x=32478, y=31906, z=7, stackpos=1}).itemid == 2782 and 
 		getThingfromPos({x=32478, y=31902, z=7, stackpos=1}).itemid == 1304 then
 		addEvent(ChangeBack, 45000, cid)

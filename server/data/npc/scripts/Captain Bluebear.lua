@@ -1,4 +1,4 @@
---dofile(getDataDir() .. 'npc/scripts/lib/greeting.lua')
+dofile(getDataDir() .. 'npc/scripts/lib/greeting.lua')
 
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
