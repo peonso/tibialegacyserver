@@ -14,41 +14,26 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-	function FocusModule:init(handler)
+function FocusModule:init(handler)
 	FOCUS_GREETSWORDS = {'hi', 'hello', 'salutations', 'hail'}
 	FOCUS_FAREWELLSWORDS = {'bye', 'farewell', 'see ya'}
-		self.npcHandler = handler
-		for i, word in pairs(FOCUS_GREETSWORDS) do
-			local obj = {}
-			table.insert(obj, word)
-			obj.callback = FOCUS_GREETSWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
-		end
-		
-		for i, word in pairs(FOCUS_FAREWELLSWORDS) do
-			local obj = {}
-			table.insert(obj, word)
-			obj.callback = FOCUS_FAREWELLSWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
-		end
-		
-		return true
+	self.npcHandler = handler
+	for i, word in pairs(FOCUS_GREETSWORDS) do
+		local obj = {}
+		table.insert(obj, word)
+		obj.callback = FOCUS_GREETSWORDS.callback or FocusModule.messageMatcher
+		handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 	end
 
--- confirm this should be removed (do_later)
---[[
-local shopModule = ShopModule:new()
-npcHandler:addModule(shopModule)
-
-shopModule:addSellableItem({'golden mug'}, 2033, 950)
-shopModule:addSellableItem({'life crystal'}, 2177, 450)
-shopModule:addSellableItem({'ankh'}, 2193, 100)
-shopModule:addSellableItem({'small oil lamp'}, 2359, 270)
-shopModule:addSellableItem({'frozen starlight'}, 2361, 9500)
-shopModule:addSellableItem({'mind stone'}, 2178, 200)
-shopModule:addSellableItem({'soul orb'}, 					ID_soulorb, 250)
-shopModule:addSellableItem({'gold ring'}, 2179, 8000)
-]]--
+	for i, word in pairs(FOCUS_FAREWELLSWORDS) do
+		local obj = {}
+		table.insert(obj, word)
+		obj.callback = FOCUS_FAREWELLSWORDS.callback or FocusModule.messageMatcher
+		handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
+	end
+	
+	return true
+end
 
 keywordHandler:addKeyword({'silver guard'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "They are our elite forces."})
 keywordHandler:addKeyword({'red guard'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Most of the red guards serve as cityguards, some work for the TBI though."})

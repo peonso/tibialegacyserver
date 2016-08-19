@@ -62,26 +62,21 @@ addTravelKeyword('port hope', 160, BOATPOS_PORT)
 addTravelKeyword('thais', 170, BOATPOS_THAIS)
 
 -- (do_later)
---[[ Darashia/Ghostship
-local travelNode = keywordHandler:addKeyword({'darashia'}, StdModule.say, {npcHandler = npcHandler, text = 'Do you seek a passage to Darashia for |TRAVELCOST|?', cost = 60, discount = 'postman'})
-	local childTravelNode = travelNode:addChildKeyword({'yes'}, StdModule.say, {npcHandler = npcHandler, text = 'I warn you! This route is haunted by a ghostship. Do you really want to go there?'})
-		childTravelNode:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = 60, discount = 'postman', destination = function(cid) return math.random(10) == 1 and BOATPOS_GHOSTSHIP or BOATPOS_DARASHIA end})
-		childTravelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
-	travelNode:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
-]]--
 function creatureSayCallback(cid, type, msg)
 	if(npcHandler.focus ~= cid) then
 		return false
 	end
 
 	if msgcontains(msg, 'darashia') then
-		npcHandler:say('Do you seek a passage to Darashia for 60 gold?')
+		npcHandler:say('I warn you! This route is haunted by a ghostship. Do you really want to go there?')
 		talk_state = 2
+	elseif msgcontains(msg, 'yes') and talk_state == 2 then
+		npcHandler:say('Do you seek a passage to Darashia for 60 gold?')
+		talk_state = 3
 		town_boat = darashia
 		price = 60
-
 	-- Ghost Ship
-	elseif msgcontains(msg, 'yes') and talk_state == 2 then
+	elseif msgcontains(msg, 'yes') and talk_state == 3 then
 		if isPremium(cid) == true then
 			if isPzLocked(cid) == false then
 				if getPlayerMoney(cid) >= price or isPremium(cid) == true then

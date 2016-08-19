@@ -1,6 +1,6 @@
 function onStepIn(cid, item, pos)
 	BOOK_ID = 1970
-	ACTION_ID = 70001 -- Actionid of the tile that teleport you if you have the Holy Tible
+	ACTION_ID = 50001 -- Actionid of the tile that teleport you if you have the Holy Tible
 	if (item.actionid == ACTION_ID) then
 		if (getPlayerItemCount(cid, BOOK_ID) ~= 1) then
 			doTeleportThing(cid, {x=32805, y=32359, z=10})

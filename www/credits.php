@@ -198,7 +198,7 @@
 	Some notable mentions.<br>
 	<br>#1 <a href="https://otland.net/members/chris.13882/">Chris</a> is the one how ripped off old tibia.com layout.
 	<br>#2 Remere/<a href="https://github.com/hjnilsson">hjnilsson</a> developed and <a href="https://github.com/Mignari">Mignari</a> is maintaining, <a href="https://github.com/hjnilsson/rme">Remere's Map Editor</a>, an imprescindible tool to make it all possible.
-	<br>#3 All the anonymous trackers that made the old Tibia map available.
+	<br>#3 Leaked 7.7 files, <a href="https://otland.net/threads/realots-7-7-cipsoft-files-virgin.244562/">OtLand thread</a>.
 	<br>#4 People that made scripts and compilied datapacks and worked on it, as <a href="https://otland.net/members/nottinghster.3619/">Nottinghster</a>. The Datapacks: <a href="https://otland.net/threads/7-6-tibia-old-full-release.211679/">Tibia old</a>, <a href="https://otland.net/threads/mastercores-com-7-40-complete-release.158489/">MasterCores</a>, <a href="https://otland.net/threads/yet-another-7-6-real-datapack.241055/">Yet Another</a>, <a href="https://otland.net/threads/free-full-reamap-datapack-7-6-7-7-otx.238492/">Free Full ReaMap</a>, <a href="https://otland.net/threads/data-pack-7-6-avesta-real-map-quests.201508">Datapack Avesta</a>.
 	<br><br><!-- end Others credits -->
 	

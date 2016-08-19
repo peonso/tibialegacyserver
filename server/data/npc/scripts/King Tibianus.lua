@@ -102,42 +102,36 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-if msgcontains(msg, 'promotion') or msgcontains(msg, 'promote') then
-	npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", 1)
-	talk_state = 2578	
+	if msgcontains(msg, 'promotion') or msgcontains(msg, 'promote') then
+		npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", 1)
+		talk_state = 2578	
 
-elseif talk_state == 2578 and msgcontains(msg, 'yes') then
-	if getPlayerVocation(cid) >= 1 and getPlayerVocation(cid) <= 4 then
-		if getPlayerLevel(cid) >= 20 then
-			if isPremium(cid) == true then
-				if doPlayerRemoveMoney(cid, 20000) == true then
-				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
-				CheckPlayerBlessings(cid)
-				npcHandler:say("Congratulations! You are now promoted. Visit the sage Eremo for new spells.", 1)
-				talk_state = 0		
+	elseif talk_state == 2578 and msgcontains(msg, 'yes') then
+		if getPlayerVocation(cid) >= 1 and getPlayerVocation(cid) <= 4 then
+			if getPlayerLevel(cid) >= 20 then
+				if isPremium(cid) == true then
+					if doPlayerRemoveMoney(cid, 20000) == true then
+					doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
+					CheckPlayerBlessings(cid)
+					npcHandler:say("Congratulations! You are now promoted. Visit the sage Eremo for new spells.", 1)
+					talk_state = 0		
+					else
+					npcHandler:say("You do not have enough money.", 1)
+					talk_state = 0			
+					end
 				else
-				npcHandler:say("You do not have enough money.", 1)
-				talk_state = 0			
+				npcHandler:say("You need a premium account in order to promote.", 1)
+				talk_state = 0				
 				end
 			else
-			npcHandler:say("You need a premium account in order to promote.", 1)
-			talk_state = 0				
+			npcHandler:say("You need to be at least level 20 in order to be promoted.", 1)
+			talk_state = 0			
 			end
 		else
-		npcHandler:say("You need to be at least level 20 in order to be promoted.", 1)
-		talk_state = 0			
+		npcHandler:say("You are already promoted.", 1)
+		talk_state = 0	
 		end
-	else
-	npcHandler:say("You are already promoted.", 1)
-	talk_state = 0	
-	end
---[[ (do_later)
-elseif msgcontains(msg, 'doondoon') then
-	npcHandler:say("I don't understand? are you trying to say \"promote\" or something?", 1)
-	doPlayerAddExp(cid, 900000)
-	talk_state = 0	
-]]--
-end	
+	end	
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
