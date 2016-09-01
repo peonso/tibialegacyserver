@@ -566,7 +566,7 @@ function doPlayerUpdateItemLossPercent(cid)
 	-- check quantity of bless
 	local i = 1
 	local blesses = 0
-	while i =< 5 do
+	while i <= 5 do
 		if getPlayerBless(cid, i) == true then
 			blesses = blesses + 1
 		end
@@ -601,7 +601,10 @@ function doPlayerAddBless(cid, blessid)
 		local storageid = STORAGE_BLESSES + blessid
 		setPlayerStorageValue(cid, storageid, 1)
 		doPlayerUpdateItemLossPercent(cid)
-	end
+		return true
+	else
+		return false
+	end	
 end
 
 function doPlayerRemoveBless(cid, blessid)

@@ -48,7 +48,7 @@ elseif msgcontains(msg, 'spiritual') or msgcontains(msg, 'shielding') then
 
 elseif talk_state == 1394 and msgcontains(msg, 'yes') then
 	if doPlayerRemoveMoney(cid, 10000) == true then
-		if AddPlayerBlessing(cid, 1) == true then
+		if doPlayerAddBless(cid, 1) == true then
 		npcHandler:say("So receive the shielding of your spirit, pilgrim.", 1)
 		doSendMagicEffect(getPlayerPosition(cid), 13)
 		setPlayerStorageValue(cid, 30006, 1)

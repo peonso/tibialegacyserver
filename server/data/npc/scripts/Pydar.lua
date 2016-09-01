@@ -101,7 +101,7 @@ elseif msgcontains(msg, 'spark') or msgcontains(msg, 'phoenix') then
 elseif talk_state == 1394 and msgcontains(msg, 'yes') then
 	if getPlayerStorageValue(cid, 1339) >= 1 then
 		if doPlayerRemoveMoney(cid, 10000) == true then
-			if AddPlayerBlessing(cid, 5) == true then
+			if doPlayerAddBless(cid, 5) == true then
 			npcHandler:say("So receive the mark of the flame and be blessed by the phoenix, pilgrim.", 1)
 			doSendMagicEffect(getPlayerPosition(cid), 13)
 			setPlayerStorageValue(cid, 30006, 1)

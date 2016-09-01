@@ -62,7 +62,7 @@ elseif msgcontains(msg, 'embrace') or msgcontains(msg, 'of tibia') then
 
 elseif talk_state == 1394 and msgcontains(msg, 'yes') then
 	if doPlayerRemoveMoney(cid, 10000) == true then
-		if AddPlayerBlessing(cid, 2) == true then
+		if doPlayerAddBless(cid, 2) == true then
 		npcHandler:say("So receive the embrace of tibia, pilgrim.", 1)
 		doSendMagicEffect(getPlayerPosition(cid), 13)
 		setPlayerStorageValue(cid, 30006, 1)

@@ -159,7 +159,7 @@ function creatureSayCallback(cid, type, msg)
 
 	elseif talk_state == 1394 and msgcontains(msg, 'yes') then
 		if doPlayerRemoveMoney(cid, 10000) == true then
-			if AddPlayerBlessing(cid, 4) == true then
+			if doPlayerAddBless(cid, 4) == true then
 				npcHandler:say("So receive the wisdom of solitude, pilgrim", 1)
 				doSendMagicEffect(getPlayerPosition(cid), 13)
 				setPlayerStorageValue(cid, 30006, 1)
