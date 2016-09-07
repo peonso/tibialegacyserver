@@ -19,6 +19,9 @@ STORAGE_POWERGAMERS = 31006
 -- report talkaction command exhaust
 STORAGE_ZNOTEAAC = 31007
 
+-- report talkaction command exhaust
+STORAGE_LOOTMESSAGE = 31008
+
 -- quests
 STORAGE_POSTMAN_BOAT = 31666 -- boat discount
 STORAGE_POSTMAN_DOOR = 25003
