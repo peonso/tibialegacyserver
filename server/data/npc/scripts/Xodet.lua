@@ -21,6 +21,7 @@ shopModule:addBuyableItem({'spellbook'}, 2175, 150)
 
 shopModule:addBuyableItem({'antidote rune'}, 2266, 65, 1, 'antidote rune')
 shopModule:addBuyableItem({'blank rune'}, 2260, 10, 'blank rune')
+shopModule:addBuyableItem({'chameleon rune'}, 2291, 210, 1, 'chameleon rune')
 shopModule:addBuyableItem({'convince creature rune'}, 2290, 80, 1, 'convince creature rune')
 shopModule:addBuyableItem({'destroy field rune'}, 2261, 45, 3, 'destroy field rune')
 shopModule:addBuyableItem({'energy field rune'}, 2277, 115, 3, 'energy field rune')
