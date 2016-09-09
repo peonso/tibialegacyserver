@@ -4,7 +4,9 @@
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<div class="titleheader">
+	<h1>My Account</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -85,7 +87,7 @@ if (empty($_POST) === false) {
 }
 
 if (isset($_GET['success']) && empty($_GET['success'])) {
-	echo '<br><center>Congratulations! Your character has been created. See you in-game!</center>';
+	echo '<br><center>Congratulations! Your character has been created. See you in-game!<p><a class="linkbutton" href="myaccount.php">Back to Account</a></center>';
 } else {
 	if (empty($_POST) === false && empty($errors) === true) {
 		if ($config['log_ip']) {
@@ -113,45 +115,43 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		echo '</b></font>';
 	}
 	?>
-	<table>
-	<tr><td>Create Character</td></tr>
+	<table class="table table-striped table-hover">
 		<form action="" method="post">
-			<tr><td>
-				Name:<br>
-				<input type="text" name="name" placeholder=" 4 - 20 characters long">
-				<br>
-				<!-- Available vocations to select from when creating character -->
-				Vocation:<br>
+		<tr><td colspan="2">Create Character</td></tr>
+		<tr><td width="20%">Character Name:</td><td><input type="text" name="name" size="24" maxlength="20" placeholder=" 4-20 characters"></td></tr>
+		<tr><td>Gender:</td>
+			<td><input name="selected_gender" value="1" checked="" type="radio">&nbsp;Male	<input name="selected_gender" value="0" type="radio">&nbsp;Female</td>
+		</tr>
+		<?php if (!($config['available_vocations'] = array(0))) { ?>
+		<tr><td>Vocation:</td>
+			<td>
 				<select name="selected_vocation">
 				<?php foreach ($config['available_vocations'] as $id) { ?>
 				<option value="<?php echo $id; ?>"><?php echo vocation_id_to_name($id); ?></option>
 				<?php } ?>
 				</select>
-				<br>
-				<!-- Available genders to select from when creating character -->
-				Gender:<br>
-				<select name="selected_gender">
-				<option value="1">Male</option>
-				<option value="0">Female</option>
-				</select>
-				<br>
-				<!-- Available towns to select from when creating character -->
-				Town:<br>
-				<select name="selected_town">
+			</td>
+		</tr>
+		<?php } ?>
+		<tr class="transborder"><td></td><td>
+			<?php
+				/* Form file */
+				Token::create();
+			?>
+			<div style="display: none;"><select hidden name="selected_town">
 				<?php foreach ($config['available_towns'] as $tid) { ?>
 				<option value="<?php echo $tid; ?>"><?php echo town_id_to_name($tid); ?></option>
 				<?php } ?>
-				</select>
-				<br>
-				<br>
-				<?php
-				/* Form file */
-				Token::create();
-				?>
-				<input type="submit" value="Create Character">
-			</td></tr>
+			</select></div>
+			<?php if ($config['available_vocations'] = array(0)) { ?>
+				<div style="display: none;">
+					<input name="selected_vocation" value="0" checked=""  type="radio">
+				</div>		
+			<?php } ?>
+			<br><input type="submit" value="Create Character">&nbsp;<a class="linkbutton" href="myaccount.php">Back</a>
+		</td></tr>
 		</form>
 	</table>
-	<?php
+<?php
 }
 include 'layout/overall/footer.php'; ?>

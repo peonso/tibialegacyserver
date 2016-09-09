@@ -25,7 +25,6 @@ if (empty($_POST) === false) {
 		}
 	}
 	
-	print_r($errors);
 }
 ?>
 <br><table class="blackline">
@@ -33,7 +32,9 @@ if (empty($_POST) === false) {
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<div class="titleheader">
+	<h1>My Account</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -53,7 +54,10 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		exit();
 		
 	} else if (empty($errors) === false) {
+		echo '<div class="alert alert-danger alert-dismissible">';
+		echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
 		echo output_errors($errors);
+		echo '</div>';
 	}
 	?>
 	<table class="table table-striped table-hover">
@@ -71,6 +75,20 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		</td></tr>
 		</form>
 	</table>
+	<table class="table table-striped table-hover">
+		<form action="login.php" method="post">
+		<tr><td colspan="2">Account Login</td></tr>
+		<tr><td width="20%">Account number:</td><td><input type="text" name="username" size="24" maxlength="8" placeholder=" 6-8 digits"></td></tr>
+		<tr><td>Password:</td><td><input type="password" name="password" size="24" maxlength="32" placeholder=" 6-32 characters"></td></tr>
+		<tr><td></td><td>
+			<input type="submit" value="Log in">
+		<?php
+			/* Form file */
+			Token::create();
+		?>
+		</td></tr>
+		</form>
+	</table>	
 <?php
 }
 include 'layout/overall/footer.php';

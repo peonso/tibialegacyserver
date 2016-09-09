@@ -7,7 +7,9 @@ include 'layout/overall/header.php'; ?>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_accman.png"/>
+<div class="titleheader">
+	<h1>My Account</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -59,7 +61,7 @@ if (empty($_POST) === false) {
 		}
 	}
 } else {
-	header('Location: index.php');
+	header('Location: sub.php?page=login');
 }
 
 if (empty($errors) === false) {

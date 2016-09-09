@@ -4,7 +4,9 @@
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-<h1>Failed!</h1>
+<div class="titleheader">
+	<h1>Error</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>

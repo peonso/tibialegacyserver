@@ -29,5 +29,18 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="layout/js/bootstrap.min.js"></script>
 	
+	
+	<?php
+	// Don't touch this, 2524608000 is 1 Jan 2050 in seconds (random day in distant future)
+	// *1000 because javascript script (js/serversave.js) works with timestamp in milliseconds
+	$save_timestamp = (2524608000 + (($config['save_hour'] * 60 * 60) + ($config['save_minute'] * 60))) * 1000;
+	?>
+	<script type="text/javascript">
+		var target_date =  <?php echo $save_timestamp; ?>;
+	</script>
+	
+	<!-- Bootstrap Core JavaScript -->
+    <script src="layout/js/serversave.js"></script>
+	
 </body>
 </html>

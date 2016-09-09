@@ -5,7 +5,9 @@
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_credits.png"/>
+<div class="titleheader">
+	<h1>Credits</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -128,7 +130,6 @@
 	<?php } ?>
 	
 	<p>And also:</p>
-	<a href="https://github.com/OskarD">OskarD</a>
 	<br><a href="https://github.com/babymannen">babymannen</a>
 	<br><a href="https://otland.net/members/nottinghster.3619/">Nottinghster</a>
 	

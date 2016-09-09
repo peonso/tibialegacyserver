@@ -13,31 +13,33 @@ if ($paypal['enabled']) {
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_donate.png"/>
+<div class="titleheader">
+	<h1>Shop</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
-</table><br>
-<h2>Buy points using Paypal:</h2>
-<table id="buypointsTable" class="table table-striped table-hover">
+</table>
+<p><span style="padding-left:20px;">Buy tickets using <span style="font-weight: bold;">Paypal</span>.</span></p>
+<table id="buypointsTable" class="table table-striped table-hover" style="width:70%; margin-left:15%; margin-right:15%;">
 	<tr class="yellow">
-		<th>Price:</th>
-		<th>Points:</th>
+		<th>Points</th>
+		<th>Price</th>
 		<?php if ($paypal['showBonus']) { ?>
-			<th>Bonus:</th>
+			<th>Bonus</th>
 		<?php } ?>
-		<th>Action:</th>
+		<th></th>
 	</tr>
 		<?php
 		foreach ($prices as $price => $points) {
 		echo '<tr class="special">';
-		echo '<td>'. $price .'('. $paypal['currency'] .')</td>';
-		echo '<td>'. $points .'</td>';
-		if ($paypal['showBonus']) echo '<td>'. calculate_discount(($paypal['points_per_currency'] * $price), $points) .' bonus</td>';
+		echo '<td><center>'. $points .'</center></td>';
+		echo '<td><center>'. $price .' '. $paypal['currency'] .'</center></td>';
+		if ($paypal['showBonus']) echo '<td><center>'. calculate_discount(($paypal['points_per_currency'] * $price), $points) .' bonus</center></td>';
 		?>
 		<td>
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
+			<center><form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
 				<input type="hidden" name="cmd" value="_xclick">
 				<input type="hidden" name="business" value="<?php echo $paypal['email']; ?>">
 				<input type="hidden" name="item_name" value="<?php echo $points .' shop points on '. $config['site_title']; ?>">
@@ -53,8 +55,8 @@ if ($paypal['enabled']) {
 				<input type="hidden" name="rm" value="2">
 				<input type="hidden" name="notify_url" value="<?php echo $paypal['ipn']; ?>" />
 				<input type="hidden" name="custom" value="<?php echo (int)$_SESSION['user_id']; ?>">
-				<input type="submit" value="  PURCHASE  ">
-			</form>
+				<input type="submit" value="Purchase"  style="margin: 0px 0px -13px;">
+			</form></center>
 		</td>
 		<?php
 		echo '</tr>';
@@ -67,9 +69,9 @@ if ($paypal['enabled']) {
 if ($config['paygol']['enabled'] == true) {
 ?>
 <!-- PayGol Form using Post method -->
-<h2>Buy points using Paygol:</h2>
+<br><p><span style="padding-left:20px;">Buy tickets using <span style="font-weight: bold;">PayGol</span>.</span></p>
 <?php $paygol = $config['paygol']; ?>
-<p><?php echo $paygol['price'] ." ". $paygol['currency'] ."~ for ". $paygol['points'] ." points:"; ?></p>
+<p style="margin-left:2em"><?php echo $paygol['points'] ." points for " . $paygol['price'] ." ". $paygol['currency'] ."."; ?><br>
 <form name="pg_frm" method="post" action="http://www.paygol.com/micropayment/paynow" >
 	<input type="hidden" name="pg_serviceid" value="<?php echo $paygol['serviceID']; ?>">
 	<input type="hidden" name="pg_currency" value="<?php echo $paygol['currency']; ?>">
@@ -80,6 +82,7 @@ if ($config['paygol']['enabled'] == true) {
 	<input type="hidden" name="pg_cancel_url" value="<?php echo $paygol['cancelURL']; ?>">
 	<input type="image" name="pg_button" src="http://www.paygol.com/micropayment/img/buttons/150/black_en_pbm.png" border="0" alt="Make payments with PayGol: the easiest way!" title="Make payments with PayGol: the easiest way!">
 </form>
+</p>
 <?php }
 
 if (!$config['paypal']['enabled'] && !$config['paygol']['enabled']) echo '<h1>Buy Points system disabled.</h1><p>Sorry, this functionality is disabled.</p>';

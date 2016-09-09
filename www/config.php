@@ -42,12 +42,18 @@
 		if ($format) return date($date, $time+$adjust);
 		else return $time+$adjust;
 	}
+	
+	// Server save timer
+	// using GMT time - make sure what your timezone what put what hour will be your server save as GMT time
+	// Brazilian time for exemple is -3 GMT, so if I want my server save at 6 AM, the value I should use is 9
+	$config['save_hour'] = 22;
+	$config['save_minute'] = 0;
 
 	// ------------------- \\
 	// CUSTOM SERVER STUFF \\
 	// ------------------- \\
 	// Enable / disable Questlog function (true / false) 
-	        $config['EnableQuests'] = false;
+	$config['EnableQuests'] = false;
 
 	// array for filling questlog (Questid, max value, name, end of the quest fill 1 for the last part 0 for all others)
 	$config['Quests'] = array(
@@ -180,7 +186,7 @@
 	$config['available_vocations'] = array(0);
 
 	// Available towns (specify town ids, etc: (0, 1, 2); to display 3 town options (town id 0, 1 and 2).
-	$config['available_towns'] = array(1);
+	$config['available_towns'] = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 	$config['level'] = 8;
 	$config['health'] = 185;
@@ -198,7 +204,7 @@
 	// No vocation info (if user select vocation id 0, we force thees configurations on him
 	$config['nvlevel'] = 1;
 	$config['nvHealth'] = 150;
-	$config['nvMana'] = 5;
+	$config['nvMana'] = 0;
 	$config['nvCap'] = 400;
 	$config['nvSoul'] = 100;
 
@@ -272,11 +278,9 @@
 	// Used for the Downloads page.
 	$config['client'] = 772; // 954 = tibia 9.54
 
-	 // Download link to client. Recommended:
-	 // Select download link from remere map editor website!
-	 // See list of clients: http://remeresmapeditor.com/marklar.php?clients
-	$config['client_download'] = 'http://remeresmapeditor.com/rmedl.php?file=tibia'. $config['client'] .'.exe';
-	$config['client_download_linux'] = 'http://tibiaclient.com/files/tibia'. $config['client'] .'.tgz';
+	// Download link to client. Recommended:
+	$config['client_download'] = 'http://clients.halfaway.net/windows.php?tibia='. $config['client'] .'';
+	$config['client_download_linux'] = 'http://clients.halfaway.net/linux.php?tibia='. $config['client'] .'';
 
 	$config['port'] = 7171; // Port number to connect to your OT.
 
@@ -475,7 +479,7 @@
 		'success' => "http://".$_SERVER['HTTP_HOST']."/success.php",
 		'failed' => "http://".$_SERVER['HTTP_HOST']."/failed.php",
 		'ipn' => "http://".$_SERVER['HTTP_HOST']."/ipn.php",
-		'showBonus' => true,
+		'showBonus' => false,
 	);
 
 	// Configure the "buy now" buttons prices, first write price, then how many points you get.
@@ -497,7 +501,7 @@
 	// You can configure paygol to send each month, then they will send money 
 	// to you 1 month after recieving 50+ eur.
 	$config['paygol'] = array(
-		'enabled' => true,
+		'enabled' => false,
 		'serviceID' => 86648,// Service ID from paygol.com
 		'currency' => 'SEK',
 		'price' => 20,

@@ -7,7 +7,9 @@ if(file_exists('spell.php')) { require_once 'spell.php'; ?>
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_spells.png"/>
+<div class="titleheader">
+	<h1>Magic</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>

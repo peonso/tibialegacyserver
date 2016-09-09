@@ -405,7 +405,7 @@ function sanitize($data) {
 }
 
 function output_errors($errors) {
-	return '<ul><li>'. implode('</li><li>', $errors) .'</li></ul>';
+	return ''. implode('', $errors) .'';
 }
 
 // Resize images

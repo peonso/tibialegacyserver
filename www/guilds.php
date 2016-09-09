@@ -7,7 +7,9 @@ include 'layout/overall/header.php';
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_guilds.png"/>
+<div class="titleheader">
+	<h1>Guilds</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>

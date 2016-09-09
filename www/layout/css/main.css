@@ -12,6 +12,13 @@ body {
   padding: 0;
   margin: 0;
 }
+.titleheader h1 {
+  font-family:Martel;
+  font-size:48px;
+  color:#5a0000;
+  margin: -3 0 0 20;
+  -webkit-font-smoothing: antialiased;
+}
 abbr {
   border-bottom: 1px dotted #5a2800;
   cursor: help;

@@ -3,7 +3,9 @@
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_library.png"/>
+<div class="titleheader">
+	<h1>Library</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -18,4 +20,5 @@ Welcome to Library page. Here you will find basic information and statistics abo
 	<li><a href="sub.php?page=experiencetable">Experience</a></li>
 	<li><a href="powergamers.php">Powergamers</a></li>
 	<li><a href="insomaniacs.php">Insomaniacs</a></li>
+	<li><a href="map.php">World Map</a></li>
 </ul>

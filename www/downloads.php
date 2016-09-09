@@ -4,7 +4,9 @@
 		<td><img src="layout/images/blank.gif"></td>
 	</tr>
 </table>
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="layout/images/titles/t_downloads.png"/>
+<div class="titleheader">
+	<h1>Downloads</h1>
+</div>
 <table class="blackline">
 	<tr>
 		<td><img src="layout/images/blank.gif"></td>
@@ -12,35 +14,17 @@
 </table><br>
 
 <p>In order to play, you need an compatible IP changer and a Tibia client.</p>
-
-<p>Download otland IP changer <a href="http://static0.otland.net/ipchanger.exe">HERE</a>.</p>
-<p>Download Tibia client <?php echo ($config['client'] / 100); ?> for windows <a href="<?php echo $config['client_download']; ?>">HERE</a>.</p>
-
-<h2>How to connect and play:</h2>
-<ol>
-	<li>
-		<a href="<?php echo $config['client_download']; ?>">Download</a> and install the tibia client if you havent already.
-	</li>
-	<li>
-		<a href="http://static0.otland.net/ipchanger.exe">Download</a> and run the IP changer.
-	</li>
-	<li>
-		In the IP changer, write this in the IP field: <?php echo $_SERVER['SERVER_NAME']; ?>
-	</li>
-	<li>
-		In the IP changer, click on <strong>Settings</strong> and then <strong>Add new Tibia client.</strong>
-	</li>
-	<li>
-		In the IP changer, in the Version field, write your desired version.
-	</li>
-	<li>
-		In the IP changer, click on <strong>Browse</strong>, navigate to your desired Tibia version folder, select Tibia.exe and click <strong>Add</strong>. Then click <strong>Close</strong>
-	</li>
-	<li>
-		Now you can successfully login on the tibia client and play clicking on <strong>Apply</strong> every time you want.<br>
-		If you do not have an account to login with, you need to register an account <a href="register.php">HERE</a>.
-	</li>
-</ol>
-
+<br>
+<table class="table table-striped table-hover">
+	<tr class="transborder">
+		<td width="10%"></td><td>
+			<center><a href="<?php echo $config['client_download']; ?>"><img src="/layout/images/tibia.png" alt="Tibia Client <?php echo ($config['client'] / 100); ?>">
+			<br><strong>Tibia Client <?php echo ($config['client'] / 100); ?></strong></a><br>9.9 MB</center>
+		</td><td>
+			<center><a href="http://static0.otland.net/ipchanger.exe"><img src="/layout/images/ipchanger.png" alt="OtLand IP Chancer">
+			<br><strong>OtLand IP Changer</strong></a><br>0.1 MB</center>
+		</td><td width="10%"></td>
+	</tr>
+</table>
 <?php 
 include 'layout/overall/footer.php'; ?>

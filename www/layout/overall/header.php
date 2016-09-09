@@ -19,7 +19,7 @@ $start = $time;
 
 		<link rel="stylesheet" type="text/css" href="layout/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="layout/css/main.css" />
-		<link href="layout/favicon.ico" rel="shortcut icon" />
+		<link href="layout/images/favicon.ico" rel="shortcut icon" />
 		
 	</head>
 	
@@ -57,8 +57,8 @@ $start = $time;
 						<li><a href="sub.php?page=experiencetable">Experience</a></li>
 						<li><a href="powergamers.php">Powergamers</a></li>
 						<li><a href="insomaniacs.php">Insomaniacs</a></li>
+						<li><a href="map.php">World Map</a></li>
 						<li><a href="shop.php">Shop</a></li>
-						<li><a href="buypoints.php">Donate</a></li>
 					</ul>
 					<div class="line wide"></div>
 					<div class="line"></div>
@@ -114,7 +114,7 @@ $start = $time;
 
 					<div class="bar"></div>
 					<span style="font-size: 10px; font-weight: bold;">Server Save in
-					<br>12:44:52</span>
+					<br><span id="sshours"></span>:<span id="ssminutes"></span>:<span id="ssseconds"></span></span>
 					<div class="bar"></div>
 				</div>
 			</div>
