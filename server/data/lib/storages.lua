@@ -19,7 +19,7 @@ STORAGE_POWERGAMERS = 31006
 -- report talkaction command exhaust
 STORAGE_ZNOTEAAC = 31007
 
--- report talkaction command exhaust
+-- storage need for loot message to appear
 STORAGE_LOOTMESSAGE = 31008
 
 -- quests
