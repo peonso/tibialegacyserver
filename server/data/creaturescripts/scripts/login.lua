@@ -4,7 +4,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "RemoveBlesses")
 
 	-- Register the Give_Bag_After_Death event
-	registerCreatureEvent(cid, "Give_Bag_After_Death")
+	--[[ registerCreatureEvent(cid, "Give_Bag_After_Death") ]]-- not default
 	
 	-- Register the lootMessage event
 	registerCreatureEvent(cid, "lootMessage")

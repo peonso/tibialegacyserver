@@ -44,6 +44,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		return false
 	end
 
+	for i = 1, #POOLS do
+		local pool = getTileItemById(toPosition, POOLS[i]).uid
+		if pool > 0 then
+			doRemoveItem(pool,1)
+		end
+	end
+
 	doDecayItem(itemEx.uid)
 	return true
 end

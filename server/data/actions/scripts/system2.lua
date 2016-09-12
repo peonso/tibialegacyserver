@@ -9,6 +9,11 @@ local config = {
 			{itemid = 2103} -- honeyflower
 		},
 	},
+	[10018] = {
+		items = {
+			{itemid = 1955, text = "Hardek *\nBozo *\nSam ****\nOswald\nPartos ***\nQuentin *\nTark ***\nHarsky ***\nStutch *\nFerumbras *\nFrodo **\nNoodles ****"} -- amber notebook
+		},
+	},
 	[10019] = {
 		items = {
 			{itemid = 2676} -- banana
@@ -17,6 +22,11 @@ local config = {
 	[10020] = {
 		items = {
 			{itemid = 2676} -- banana
+		},
+	},
+	[10024] = {
+		items = {
+			{itemid = 2559} -- small axe
 		},
 	},
 	[20085] = {

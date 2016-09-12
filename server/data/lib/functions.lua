@@ -869,6 +869,10 @@ function doCopyItem(item, attributes)
 			doSetItemActionId(ret, item.actionid)
 		end
 	end
+	
+	if item.text then
+		doSetItemText(ret, item.text)
+	end
 
 	if(isContainer(item.uid)) then
 		for i = (getContainerSize(item.uid) - 1), 0, -1 do

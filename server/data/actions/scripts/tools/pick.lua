@@ -10,12 +10,18 @@ local function __doTransformHole__(parameters)
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local itemGround = getThingFromPos({x = toPosition.x, y = toPosition.y, z = toPosition.z + 1, stackpos = STACKPOS_GROUND})
-	if(isInArray(ROPE_SPOT, itemGround.itemid) and isMoveable(itemEx.uid) == false and isCorpse(itemEx.uid) == false) then
+	
+	if itemEx.actionid == 100 and isMoveable(itemEx.uid) == false and isCorpse(itemEx.uid) == false then
 		doTransformItem(itemEx.uid, MUD_HOLE)
 		doSendMagicEffect(toPosition, CONST_ME_POFF)
 		if itemEx.actionid ~= 0 then
 			doSetItemActionId(itemEx.uid, itemEx.actionid)
+		end
+		for i = 1, #POOLS do
+			local pool = getTileItemById(toPosition, POOLS[i]).uid
+			if pool > 0 then
+				doRemoveItem(pool,1)
+			end
 		end
 		addEvent(__doTransformHole__, duration, {oldType = itemEx.itemid, pos = toPosition, oldaid = itemEx.actionid})
 		return true

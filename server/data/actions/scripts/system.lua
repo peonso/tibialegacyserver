@@ -44,7 +44,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	end
 
 	local result = ""
-	if reward then
+	if reward ~= 0 then
 		local ret = getItemDescriptions(reward.itemid)
 		if (reward.type > 0 and isItemRune(reward.itemid)) then
 			result = reward.type .. " charges " .. ret.name

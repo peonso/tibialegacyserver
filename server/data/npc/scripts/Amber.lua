@@ -22,12 +22,12 @@ function creatureSayCallback(cid, type, msg)
 	npcHandler:say('Do you bring me my notebook?')
 	talk_state = 1
 	
-	elseif msgcontains(msg, 'yes') and talk_state == 1 and getPlayerItemCount(cid,1950) >= 1 then
+	elseif msgcontains(msg, 'yes') and talk_state == 1 and getPlayerItemCount(cid,1955) >= 1 then
 	npcHandler:say('Excellent. Here, take this short sword, that might serve you well.')
 	doPlayerAddItem(cid, 2406)
-	doPlayerRemoveItem(cid,1950, 1)
+	doPlayerRemoveItem(cid,1955, 1)
 	talk_state = 0
-	elseif msgcontains(msg, 'yes') and talk_state == 1 and getPlayerItemCount(cid,1950) == 0 then
+	elseif msgcontains(msg, 'yes') and talk_state == 1 and getPlayerItemCount(cid,1955) == 0 then
 	npcHandler:say('Hm, you don\'t have it.')
 	talk_state = 0
 	elseif msgcontains(msg, 'no') and talk_state == 1 then
