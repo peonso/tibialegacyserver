@@ -6,7 +6,7 @@
 datadir = "data/"
 
 -- map location
-map = "data/world/map.otbm"
+map = "data/world/world.otbm"
 
 -- Type of map storage,
 -- 'relational' - Slower, but possible to run database queries to change all items to another id for example.
@@ -23,7 +23,7 @@ mapkind = "OTBM"
 servername = "OTServ"
 
 -- server location
-location = "Germany"
+location = "Solar System"
 
 -- server ip (the ip that server listens on)
 ip = "127.0.0.1"
@@ -49,13 +49,13 @@ admin_port = "7171"
 url = "http://otland.net"
 
 -- server owner name
-ownername = "Ezzz"
+ownername = "peonso"
 
 -- server owner email
 owneremail = ""
 
 -- world name
-worldname = "OTHire"
+worldname = "Legacy Server"
 
 -- world type
 -- options: openpvp/pvp, optionalpvp/no-pvp, hardcorepvp/pvp-enforced
@@ -77,7 +77,7 @@ fightexhausted = 2000
 healexhausted = 1000
 
 -- exhausted time in ms (1000 = 1 second) for floor changing
-stairhop_exhausted = 2000
+stairhop_exhausted = 0
 
 -- how many ms to add if the player is already exhausted and tries to cast a spell/yells (1000 = 1 second)
 exhaustedadd = 5000
@@ -108,7 +108,7 @@ houserentperiod = "monthly"
 premonlybeds = true
 
 -- Should the server use account balance system or depot system for paying houses?
-use_balance_house_paying = true
+use_balance_house_paying = false
 
 -- How long time the red skull will last in seconds (default 30 days)
 red_skull_duration = 30*24*60*60
@@ -124,6 +124,8 @@ defensive_pz_lock = true
 kills_per_day_red_skull = 3
 kills_per_week_red_skull = 5
 kills_per_month_red_skull = 10
+-- In Oldschool you would get banned by doubling the needed month unjustified kills for red skull
+kills_to_ban = 20
 
 -- Broadcast violation window banishments
 broadcast_banishments = "no"
@@ -244,7 +246,7 @@ min_pvp_level = 0
 
 --how much % of the total damage players actually receive when attacked by other players?
 --Old Tibia has this in 100%
-pvp_damage = 100
+pvp_damage = 50
 
 --should pvp restrictions apply to summons too?
 -- (experimental code - requires otserv to be compiled with flag __MIN_PVP_LEVEL_APPLIES_TO_SUMMONS__)
@@ -264,11 +266,11 @@ maxmessagebuffer = 4
 lua_excepted_type_errors_enabled = false
 
 -- motd (the message box that you sometimes get before you choose characters)
-motd = "Welcome to OTHire 0.0.1!\n\nThis server is in beta stage, please test as much as you can.\n\nEzzz"
+motd = "Welcome to Tibia Legacy Server."
 motdnum = "1"
 
 -- login message
-loginmsg = "Welcome to OTHire 0.0.1."
+loginmsg = "Welcome to Tibia."
 
 -- how many logins attempts until ip is temporary disabled
 -- set to 0 to disable
@@ -303,7 +305,7 @@ statustimeout = 30 * 1000
 
 -- accounts password type
 -- options: plain, md5, sha1
-passwordtype = "plain"
+passwordtype = "sha1"
 
 -- Password salt
 -- Offers better security against rainbow table attacks etc.
