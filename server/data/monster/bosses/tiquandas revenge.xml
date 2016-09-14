@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Tiquanda's Revenge" nameDescription="Tiquanda's Revenge" race="venom" experience="2635" speed="440" manacost="0">
+<monster name="Tiquandas Revenge" nameDescription="Tiquanda's Revenge" race="venom" experience="2635" speed="440" manacost="0">
 	<health now="1800" max="1800"/>
 	<look type="120" corpse="4280"/>
 	<targetchange interval="1000" chance="5"/>
