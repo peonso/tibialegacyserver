@@ -1600,9 +1600,6 @@
 	<spawn centerx="32805" centery="31782" centerz="6" radius="1">
 		<monster name="orc spearman" x="1" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="32326" centery="31783" centerz="6" radius="1">
-		<npc name="Rashid" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="32806" centery="31783" centerz="6" radius="1">
 		<monster name="orc spearman" x="1" y="0" z="6" spawntime="60" />
 	</spawn>

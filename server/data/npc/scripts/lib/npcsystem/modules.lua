@@ -695,14 +695,20 @@ if(Modules == nil) then
 		local count = module:getCount(message)
 		module.amount = count
 		local tmpName = nil
-		if(parameters.eventType == SHOPMODULE_SELL_ITEM) then
-			tmpName = node:getKeywords()[2]
-		elseif(parameters.eventType == SHOPMODULE_BUY_ITEM) then
-			tmpName = node:getKeywords()[1]
+		local article = nil
+		if count > 1 then
+			tmpName = getItemDescriptions(parameters.itemid).plural
+		else
+			article = getItemDescriptions(parameters.itemid).article
+			if(parameters.eventType == SHOPMODULE_SELL_ITEM) then
+				tmpName = node:getKeywords()[2]
+			elseif(parameters.eventType == SHOPMODULE_BUY_ITEM) then
+				tmpName = node:getKeywords()[1]
+			end
 		end
 		local parseInfo = {
 				[TAG_PLAYERNAME] = getPlayerName(cid),
-				[TAG_ITEMCOUNT] = module.amount,
+				[TAG_ITEMCOUNT] = article or module.amount,
 				[TAG_TOTALCOST] = parameters.cost*module.amount,
 				[TAG_ITEMNAME] = parameters.realname or tmpName
 			}
