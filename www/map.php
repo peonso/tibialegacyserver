@@ -1,5 +1,4 @@
 <?php require_once 'engine/init.php';
-logged_in_redirect();
 include 'layout/overall/header.php'; ?>
 <br><table class="blackline">
 	<tr>
