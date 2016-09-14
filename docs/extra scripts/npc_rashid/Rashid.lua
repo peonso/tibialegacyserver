@@ -58,20 +58,20 @@ shopModule:addSellableItem({'voodoo doll'}, 3955, 400, 'voodoo doll')
 npcHandler:addModule(FocusModule:new())
 
 function greetCallback(cid)
-    if getPlayerStorageValue(cid, 250) == 5 then -- Can buy/sell? Yes (change storage in your server)
-        return true
-    else -- Can't buy
-        npcHandler:say('I\'m sorry, you aren\'t an Arch Postman. I only trade with honoured members of the Tibian Postmaster\'s Guild.')
-        return false
-    end
+	if getPlayerStorageValue(cid, 250) == 5 then -- Can buy/sell? Yes (change storage in your server)
+		return true
+	else -- Can't buy
+		npcHandler:say('I\'m sorry, you aren\'t an Arch Postman. I only trade with honoured members of the Tibian Postmaster\'s Guild.')
+		return false
+	end
 end 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 
 
 function creatureSayCallback(cid, type, msg)
-    if(npcHandler.focus ~= cid) then
-        return false
-    end
+	if(npcHandler.focus ~= cid) then
+		return false
+	end
 
 end
 
