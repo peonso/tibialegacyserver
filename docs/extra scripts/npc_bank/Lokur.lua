@@ -136,7 +136,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
 		end		
-	--[[ // disabling bank accounts
+		
 ----BALANCE-------------------------------------------------------------------------
 	elseif	msgcontains(msg, 'balance') then
 		npcHandler:say("Your account balance is ".. getPlayerBalance(cid) .." gold.", 1)
@@ -317,7 +317,7 @@ function creatureSayCallback(cid, type, msg)
 			doPlayerTransferMoneyTo(cid, UPPERCASETRANSFERTO, TRANSFERAMOUNT)
 			npcHandler:say('Very well. You have transferred ' .. TRANSFERAMOUNT .. ' gold to ' .. UPPERCASETRANSFERTO ..'.', 1)
 			talk_state = 0
-		end	]]-- //disabling bank accounts
+		end
 	end
 
 	return true		

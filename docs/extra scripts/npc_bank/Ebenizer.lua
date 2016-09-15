@@ -10,11 +10,20 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'kevin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah, this human is persistant as a dwarf. A worthy leader indeed, jawoll."})
-keywordHandler:addKeyword({'postner'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah, this human is persistant as a dwarf. A worthy leader indeed, jawoll."})
-keywordHandler:addKeyword({'postmasters guild'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The guild keeps things running. Organized and reliable. I appreciate that, jawoll."})
-keywordHandler:addKeyword({'join'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our members are handpicked by Kevin postner in our headquarter."})
-keywordHandler:addKeyword({'headquarter'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Its south of kazordoon. Just follow that road, can't miss it."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "My name? Ebenizer!"})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am running this Bank"})
+keywordHandler:addKeyword({'king'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Hail to the king!"})
+keywordHandler:addKeyword({'tibianus'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Hail to the king!"})
+keywordHandler:addKeyword({'army'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Soldiers have not that much money that I would care about."})
+keywordHandler:addKeyword({'ferumbras'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "A true threat to wealth and trade."})
+keywordHandler:addKeyword({'excalibug'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "This weapon, if real, might be worth a lot."})
+keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "We are in constant contact with the city of Thais."})
+keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "There are countless ways of profit in this world."})
+keywordHandler:addKeyword({'carlin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It's underdeveloped and economically insignificant."})
+keywordHandler:addKeyword({'edron'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The riches of our isle are its mineral resources."})
+keywordHandler:addKeyword({'new'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I only care about financial news."})
+keywordHandler:addKeyword({'rumo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I only care about financial news."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is |TIME|, precisely."})
 
 function creatureSayCallback(cid, type, msg)
 	if(npcHandler.focus ~= cid) then
@@ -136,7 +145,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
 		end		
-	--[[ // disabling bank accounts
+		
 ----BALANCE-------------------------------------------------------------------------
 	elseif	msgcontains(msg, 'balance') then
 		npcHandler:say("Your account balance is ".. getPlayerBalance(cid) .." gold.", 1)
@@ -317,7 +326,7 @@ function creatureSayCallback(cid, type, msg)
 			doPlayerTransferMoneyTo(cid, UPPERCASETRANSFERTO, TRANSFERAMOUNT)
 			npcHandler:say('Very well. You have transferred ' .. TRANSFERAMOUNT .. ' gold to ' .. UPPERCASETRANSFERTO ..'.', 1)
 			talk_state = 0
-		end	]]-- //disabling bank accounts
+		end
 	end
 
 	return true		

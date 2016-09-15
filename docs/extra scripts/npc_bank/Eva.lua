@@ -10,11 +10,9 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-keywordHandler:addKeyword({'kevin'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah, this human is persistant as a dwarf. A worthy leader indeed, jawoll."})
-keywordHandler:addKeyword({'postner'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Ah, this human is persistant as a dwarf. A worthy leader indeed, jawoll."})
-keywordHandler:addKeyword({'postmasters guild'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "The guild keeps things running. Organized and reliable. I appreciate that, jawoll."})
-keywordHandler:addKeyword({'join'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Our members are handpicked by Kevin postner in our headquarter."})
-keywordHandler:addKeyword({'headquarter'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Its south of kazordoon. Just follow that road, can't miss it."})
+keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I work in this bank. I can change money for you."})
+keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I am Eva."})
+keywordHandler:addKeyword({'time'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is exactly |TIME|."})
 
 function creatureSayCallback(cid, type, msg)
 	if(npcHandler.focus ~= cid) then
@@ -136,7 +134,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
 		end		
-	--[[ // disabling bank accounts
+		
 ----BALANCE-------------------------------------------------------------------------
 	elseif	msgcontains(msg, 'balance') then
 		npcHandler:say("Your account balance is ".. getPlayerBalance(cid) .." gold.", 1)
@@ -317,7 +315,7 @@ function creatureSayCallback(cid, type, msg)
 			doPlayerTransferMoneyTo(cid, UPPERCASETRANSFERTO, TRANSFERAMOUNT)
 			npcHandler:say('Very well. You have transferred ' .. TRANSFERAMOUNT .. ' gold to ' .. UPPERCASETRANSFERTO ..'.', 1)
 			talk_state = 0
-		end	]]-- //disabling bank accounts
+		end
 	end
 
 	return true		
