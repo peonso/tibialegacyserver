@@ -41,7 +41,7 @@ function onLogin(cid)
 	end
 
 	-- Promotes player if necessary
-	if(isPremium(cid) ) then
+	if(isPremium(cid)) then
 		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1 and getPlayerVocation(cid) <= 4) then
 			doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
 			doPlayerRemoveSkillLossPercent(cid, 30)
@@ -54,26 +54,41 @@ function onLogin(cid)
 	end
 
 	-- Player is not premium - remove premium privileges
-	-- Change outfit
 	if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == -1) then
-		local lookType = 128
-		if(getPlayerSex(cid) == 0) then
-			lookType = 136
+
+		-- Change outfit
+		local outfit = getCreatureOutfit(cid)
+		local lookType = outfit.lookType
+		if (getPlayerSex(cid) == 0) then
+			if lookType < 136 or lookType > 139 then 
+				lookType = 136
+			end
+		else
+			if lookType < 128 or lookType > 131 then 
+				lookType = 128
+			end
 		end
+		doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = outfit.lookHead, lookBody = outfit.lookBody, lookLegs = outfit.lookLegs, lookFeet = outfit.lookFeet})
+
+		-- Clean house
 		local house = House.getHouseByOwner(cid)
 		if(house) and getBooleanFromString(getConfigInfo("house_only_premium"), true) then
 			house:setOwner(0) --Remove the house from the player, the server takes care of the rest
 		end
-		doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
+		
+		-- Make sure player moves to free account zone and has a free account temple
+		if getPlayerTown(cid) == 11 then -- Rookgaard
+			doTeleportThing(cid, getTownTemplePosition(11))
+		elseif getPlayerTown(cid) >= 6 and getPlayerTown(cid) <= 9 then -- if player temple is a Premium town
+			doPlayerSetTown(cid, 3) -- Thais
+			doTeleportThing(cid, getTownTemplePosition(3))
+		else
+			doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)))
+		end
+		
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Your premium account expired. You lost your Premium Account privileges.")
 		setPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT, 1)
 	end
-
-	-- Teleport to free town, change here
-	--[[
-	doPlayerSetTown(cid, Z)
-	local masterFreePos = {x=100, y=100, z=7}
-	doTeleportThing(cid, masterFreePos)
-	]]-- Hoster's premium towns changes according to the map
 
 	-- Remove promotion
 	local isPromo = (getPlayerVocation(cid) > 4 and isPremium(cid) == false)
