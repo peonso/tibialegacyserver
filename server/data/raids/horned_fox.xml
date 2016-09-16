@@ -1,4 +1,5 @@
 <raid>
+<announce delay="1000" type="event" message="Horned Fox"/>
 <singlespawn delay="2000" name="Minotaur mage" x="32466" y="31955" z="4" />
 <singlespawn delay="20000" name="The Horned Fox" x="32463" y="31954" z="4" />
 </raid>

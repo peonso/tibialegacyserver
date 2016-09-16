@@ -1,15 +1,21 @@
 <raids>
 
-	<raid name="demodras" file="demodras.xml" interval2="35" margin="1800" />
-	<raid name="elfs" file="elfs.xml" interval2="30" margin="1800" />
-	<raid name="orcs_thais" file="orcs_thais.xml" interval2="30" margin="1800" />
-	<raid name="orshabaal" file="orshabaal.xml" interval2="45" margin="1800" />
-	<raid name="ferumbras" file="ferumbras.xml" interval2="60" margin="1800" />
-	<raid name="rats" file="rats.xml" interval2="30" margin="1800" />
-	<raid name="scarabs" file="scarabs.xml" interval2="30" margin="1800" />
-	<raid name="the_old_widow" file="the_old_widow.xml" interval2="35" margin="1800" />
-	<raid name="undead_darashia" file="undead_darashia.xml" interval2="30" margin="1800" />
-	<raid name="undead_army" file="undead_army.xml" interval2="30" margin="1800" />
-	<raid name="horned_fox" file="horned_fox.xml" interval2="30" margin="1800" />
+	<!--
+		every minute all raids are checked, raids in the top of the list are rolled first
+		margin is a cooldown, in minutes, before the raid can happen after last raid, 30 = 30 minutes, 600 = 10 hours, 1440 = 1 day
+		interval is the avarage amount of minutes needed for it to happen once, 1440 = 1/day, 10080 = 1/week, 20160 = 2/month, 40320 = 1/month
+	-->
+	
+	<raid name="venoreElfInvasion" file="venoreElfInvasion.xml" interval="20160" margin="5" /><!-- big raid, once every six months -->
+	
+	<raid name="demodras" file="demodras.xml" interval="20160" margin="5" />
+	<raid name="orcs_thais" file="orcs_thais.xml" interval="20160" margin="5" />
+	<raid name="orshabaal" file="orshabaal.xml" interval="20160" margin="5" />
+	<raid name="rats" file="rats.xml" interval="20160" margin="5" />
+	<raid name="scarabs" file="scarabs.xml" interval="20160" margin="5" />
+	<raid name="the_old_widow" file="the_old_widow.xml" interval="20160" margin="5" />
+	<raid name="undead_darashia" file="undead_darashia.xml" interval="20160" margin="5" />
+	<raid name="undead_army" file="undead_army.xml" interval="20160" margin="5" />
+	<raid name="horned_fox" file="horned_fox.xml" interval="20160" margin="5" />
 
 </raids>
