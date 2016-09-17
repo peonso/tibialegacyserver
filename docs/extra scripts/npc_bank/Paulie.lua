@@ -153,7 +153,7 @@ function creatureSayCallback(cid, type, msg)
 		DEPOSITAMOUNT = getMoneyCount(msg)
 		if DEPOSITAMOUNT >= 1 then
 			if DEPOSITAMOUNT <= getPlayerMoney(cid) then
-				if DEPOSITAMOUNT+getPlayerMoney(cid) > 1000 then
+				if DEPOSITAMOUNT+getPlayerBalance(cid) > 1000 then
 					npcHandler:say('Sorry, the maximum amount of gold we can store is 1000.', 1)
 					talk_state = 0
 				else
