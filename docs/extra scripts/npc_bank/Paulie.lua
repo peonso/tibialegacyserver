@@ -137,8 +137,13 @@ function creatureSayCallback(cid, type, msg)
 ----DEPOSIT------------------------------------------------------------------------
 	elseif	msgcontains(msg, 'deposit all') then
 		if getPlayerMoney(cid) > 0 then
-			npcHandler:say('Would you like to deposit '.. getPlayerMoney(cid) ..' gold?', 1)
-			talk_state = 205
+			if getPlayerBalance(cid)+getPlayerMoney(cid) > 1000 then
+				npcHandler:say('Sorry, the maximum amount of gold we can store is 1000.', 1)
+				talk_state = 0
+			else
+				npcHandler:say('Would you like to deposit '.. getPlayerMoney(cid) ..' gold?', 1)
+				talk_state = 205
+			end
 		else
 			npcHandler:say('You don\'t have money.', 1)
 			talk_state = 0
@@ -148,8 +153,13 @@ function creatureSayCallback(cid, type, msg)
 		DEPOSITAMOUNT = getMoneyCount(msg)
 		if DEPOSITAMOUNT >= 1 then
 			if DEPOSITAMOUNT <= getPlayerMoney(cid) then
-				npcHandler:say("Would you like to deposit ".. DEPOSITAMOUNT .." gold?", 1)
-				talk_state = 203
+				if DEPOSITAMOUNT+getPlayerMoney(cid) > 1000 then
+					npcHandler:say('Sorry, the maximum amount of gold we can store is 1000.', 1)
+					talk_state = 0
+				else
+					npcHandler:say("Would you like to deposit ".. DEPOSITAMOUNT .." gold?", 1)
+					talk_state = 203
+				end
 			else
 				npcHandler:say("You don't have that money amount!", 1)
 				talk_state = 0
