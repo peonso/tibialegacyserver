@@ -1,14 +1,18 @@
 function onLogin(cid)
 
-	-- Register the kill/die event
-	registerCreatureEvent(cid, "RemoveBlesses")
-
-	-- Register the Give_Bag_After_Death event
-	--[[ registerCreatureEvent(cid, "Give_Bag_After_Death") ]]-- not default
+	local events = {
+		"RemoveBlesses", --Register the kill/die event
+		-- "Give_Bag_After_Death", --Register the Give_Bag_After_Death event not default
+		"lootMessage", --Register loot message
+	}
 	
-	-- Register the lootMessage event
-	registerCreatureEvent(cid, "lootMessage")
-	sendLootMessage = false -- enable//disable
+	-- Register events
+	for i = 1, #events do
+		registerCreatureEvent(cid, events[i])
+	end
+
+	-- enable//disable Loot Message
+	sendLootMessage = false 
 	if sendLootMessage == true then
 		setPlayerStorageValue(cid, STORAGE_LOOTMESSAGE, 1)
 	else
