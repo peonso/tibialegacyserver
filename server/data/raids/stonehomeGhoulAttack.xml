@@ -1,0 +1,7 @@
+<raid>
+	<!-- delay 0 -->
+	<announce delay="0" type="event" message="The undead are hungry for life."/>
+	<areaspawn delay="0" radius="16" centerx="33283" centery="31737" centerz="7">
+		<monster name="ghoul" minamount="6" maxamount="12"/>
+	</areaspawn>
+</raid>

@@ -88,7 +88,6 @@
 	</spawn>
 	<spawn centerx="33075" centery="32170" centerz="2" radius="3">
 		<monster name="elf arcanist" x="0" y="-1" z="2" spawntime="60" />
-		<monster name="Dharalion" x="0" y="1" z="2" spawntime="3600" />
 		<monster name="elf arcanist" x="2" y="1" z="2" spawntime="60" />
 	</spawn>
 	<spawn centerx="32974" centery="32406" centerz="2" radius="5">
@@ -24490,9 +24489,6 @@
 		<monster name="necromancer" x="0" y="-1" z="10" spawntime="60" />
 		<monster name="priestess" x="1" y="1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="33047" centery="32400" centerz="10" radius="1">
-		<monster name="Necropharus" x="0" y="-1" z="10" spawntime="3600" />
-	</spawn>
 	<spawn centerx="33051" centery="32400" centerz="10" radius="1">
 		<monster name="necromancer" x="0" y="-1" z="10" spawntime="60" />
 		<monster name="mummy" x="0" y="0" z="10" spawntime="60" />
@@ -33457,9 +33453,6 @@
 	</spawn>
 	<spawn centerx="32383" centery="32012" centerz="14" radius="4">
 		<monster name="bat" x="2" y="-1" z="14" spawntime="60" />
-	</spawn>
-	<spawn centerx="32402" centery="32014" centerz="14" radius="1">
-		<monster name="Grorlam" x="-1" y="-1" z="14" spawntime="3600" />
 	</spawn>
 	<spawn centerx="32429" centery="32019" centerz="14" radius="4">
 		<monster name="bat" x="1" y="2" z="14" spawntime="60" />
