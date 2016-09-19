@@ -22437,12 +22437,12 @@
 		<monster name="cyclops" x="4" y="2" z="10" spawntime="60" />
 		<monster name="cyclops" x="-2" y="4" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="32047" centery="31635" centerz="10" radius="1">
+		<monster name="rotworm" x="1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="33283" centery="31635" centerz="10" radius="3">
 		<monster name="cyclops" x="-2" y="-1" z="10" spawntime="60" />
 		<monster name="cyclops" x="2" y="3" z="10" spawntime="60" />
-	</spawn>
-	<spawn centerx="32047" centery="31636" centerz="10" radius="1">
-		<monster name="rotworm" x="1" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="33150" centery="31637" centerz="10" radius="5">
 		<monster name="smuggler" x="-1" y="-2" z="10" spawntime="60" />

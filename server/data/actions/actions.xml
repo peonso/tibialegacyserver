@@ -396,6 +396,7 @@
 
 	<!-- .:: Tibia ::. --> 
 	<!-- Switchs -->
+	<action actionid="25004" script="tibia/lever_alawarsvault.lua"/>
 	<action uniqueid="8887" script="tibia/bright_sword_quest_pedra.lua"/>
 	<action actionid="1621" script="tibia/fibula draw well.lua"/>
 	<action actionid="1622" script="tibia/scale draw well.lua"/>
