@@ -397,17 +397,19 @@
 	<!-- .:: Tibia ::. --> 
 	<!-- Switchs -->
 	<action actionid="25004" script="tibia/lever_alawarsvault.lua"/>
-	<action uniqueid="8887" script="tibia/bright_sword_quest_pedra.lua"/>
+	<action actionid="25005" script="tibia/lever_orcsedron.lua"/>
+	<action actionid="25006" script="tibia/lever_behemothquest.lua"/>
+	<action actionid="25007" script="tibia/lever_molsentrance.lua"/>
+	<action actionid="25008" script="tibia/lever_molstrap.lua"/>
+	<action actionid="25009" script="tibia/lever_brightswordoven.lua"/>
+	<action actionid="25010" script="tibia/lever_brightswordring.lua"/>
+	<action actionid="25011" script="tibia/lever_brightswordbarrel.lua"/>
 	<action actionid="1621" script="tibia/fibula draw well.lua"/>
 	<action actionid="1622" script="tibia/scale draw well.lua"/>
-	<action uniqueid="4321" script="tibia/mols.lua"/>
-	<action uniqueid="2468" script="tibia/edron_orc_pedra.lua"/>
 	<action uniqueid="2469" script="tibia/kazz_lever.lua"/>
 	<action uniqueid="33210" script="tibia/banuta.lua"/>
 	<action uniqueid="7000" script="tibia/lever_annihilator.lua"/>	<!-- The Annihilator Quest -->
 	<action uniqueid="8550" script="tibia/lever_demonhelmet.lua"/>	<!-- Demon Helmet Quest -->
-	<action uniqueid="4444" script="tibia/lever_behemoth.lua"/>		<!-- The Behemoth Quest -->
-	<action uniqueid="8889" script="tibia/lever_power_ring.lua"/>	<!-- The Outlaw Camp Quest/Bright Sword -->
 	<action uniqueid="8890" script="tibia/lever_desertquest.lua"/>	<!-- The Desert Dungeons Quest -->
 
 	<!-- Draconia Quest -->

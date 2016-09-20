@@ -1,8 +1,8 @@
-#IDs and STORAGES
-
 ### Generic - actionid
 	  100		|aid|act|pick holes
 	  101		|aid|act|closed doors
+	  102		|aid|act|teleportdrawwell.lua
+	  103		|aid|act|non-decaying splash
 	 1001-1999	|aid|act|level doors
 	 2000		|aid|act|system.lua
 	 2001		|aid|act|system2.lua
@@ -19,10 +19,10 @@
 	 3012		|aid|act|Hellgate key
 	 3033		|aid|act|
 	 3142		|aid|act|
-	 3301		|aid|act|
-	 3302		|aid|act|
-	 3303		|aid|act|
-	 3304		|aid|act|
+	 3301		|aid|act|bright sword quest cooper key
+	 3302		|aid|act|bright sword quest silver key
+	 3303		|aid|act|bright sword quest cooper key
+	 3304		|aid|act|bright sword quest golden key
 	 3350		|aid|act|
 	 3520		|aid|act|
 	 3600		|aid|act|
@@ -54,7 +54,7 @@
 	 4601		|aid|act|Bear room cooper key
 	 4603		|aid|act|Katana room silver key
 	 5000		|aid|act|Wyda silver key
-	 5002		|aid|act|Black knight silver key http://www.tibiawiki.com.br/wiki/Key_5002
+	 5002		|aid|act|Black knight silver key (not available)
 	 5010		|aid|act|Black Knight silver key
 	 5050		|aid|act|Dark Catedral bone key
 	 6010		|aid|act|Demon Quest golden key
@@ -197,11 +197,27 @@
 	20096		|uid|STG|key 4503 - Folda Protected Area
 	20097		|uid|STG|key 4501 - Alawar's Vault Cave
 	20098		|uid|STG|key 4502 - Alawar's Vault Quest
+	20099		|uid|STG|key 5000 - Wyda's house
+	20100		|uid|STG|circle room 1
+	20101		|uid|STG|circle room 2
+	20102		|uid|STG|dark armor
+	20103		|uid|STG|dead archer
+	20104		|uid|STG|key 3301 - bright sword quest
+	20105		|uid|STG|key 3302 - bright sword quest
+	20106		|uid|STG|key 3303 - bright sword quest
+	20107		|uid|STG|key 3304 - bright sword quest
 ### Mainland - actionids
 	25001		|aid|act|Tombs entrances
 	25002		|aid|act|Scarab and coins
 	25003		|aid|act|Postman doors
-	25004		|aid|act|lever - Alawar's Vault Quest
+	25004		|aid|act|lever - Alawar's Vault quest
+	25005		|aid|act|lever - Edron orc cave
+	25006		|aid|act|lever - behemoth quest
+	25007		|aid|act|lever - MoLS entrance
+	25008		|aid|act|lever - MoLS trap
+	25009		|aid|act|lever - bright sword quest oven
+	25010		|aid|act|lever - bright sword quest ring
+	25011		|aid|act|lever - bright sword quest barrel
 	30020-30100	|aid|mov|citizen.lua
 ### General storages
 	30200-30205	|STORAGE_BLESSES|functions.lua

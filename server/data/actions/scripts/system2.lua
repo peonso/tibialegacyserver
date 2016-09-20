@@ -76,9 +76,24 @@ local config = {
 	},
 	[20093] = {
 		items = {
-			{itemid = 2088, actionid = 5010} -- silver key
+			{itemid = 2088, actionid = 5010} -- silver key, bk quest
 		},
-	}
+	},
+	[20104] = {
+		items = {
+			{itemid = 2089, actionid = 3301} -- copper key, bright sword quest
+		},
+	},
+	[20105] = {
+		items = {
+			{itemid = 2088, actionid = 3302} -- silver key, bright sword quest
+		},
+	},
+	[20106] = {
+		items = {
+			{itemid = 2089, actionid = 3303} -- copper key, bright sword quest
+		},
+	},
 }
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
