@@ -13,6 +13,10 @@ The choice of protocol 7.72 instead of the more popular 7.4 version was guided b
 
 For more information check our [Wiki](https://github.com/peonso/tibialegacyserver/wiki).  It has information about compiling, credits, IDs and STORAGES used, using itemeditor, using Remere's Map Editor and more.
 
+##.:: Client ::.
+
+Both default 7.72 client or [Otclient](https://github.com/edubart/otclient) can be used. Special Otclient aimed to 7.72 needs can be found [here](https://github.com/diegorodriguesvieira/otclient772).
+
 ##.:: Issues ::.
 
 We use the [issue tracker on GitHub](https://github.com/peonso/tibialegacyserver/issues).
