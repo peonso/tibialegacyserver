@@ -1,7 +1,7 @@
 ### Generic - actionid
 	  100		|aid|act|pick holes
 	  101		|aid|act|closed doors
-	  102		|aid|act|teleportdrawwell.lua
+	  102		|aid|act|teleport_drawwell.lua
 	  103		|aid|act|non-decaying splash
 	 1001-1999	|aid|act|level doors
 	 2000		|aid|act|system.lua
@@ -25,7 +25,7 @@
 	 3304		|aid|act|bright sword quest golden key
 	 3350		|aid|act|
 	 3520		|aid|act|
-	 3600		|aid|act|
+	 3600		|aid|act|ghoul room quest silver key
 	 3610		|aid|act|
 	 3620		|aid|act|
 	 3650		|aid|act|
@@ -37,10 +37,10 @@
 	 3801		|aid|act|
 	 3802		|aid|act|
 	 3899		|aid|act|Paradox Tower  key
-	 3940		|aid|act|
-	 3950		?
-	 3960		?
-	 3980		|aid|act|
+	 3940		|aid|act|Fibula dungeon wooden/copper key
+	 3950		|aid|act|(not available) Fibula cyclops wooden key
+ 	 3960		|aid|act|(not available) Fibula flute room wooden/bone key
+	 3980		|aid|act|Fibula dungeon golden key
 	 4001		|aid|act|
 	 4009		|aid|act|
 	 4022		|aid|act|
@@ -54,7 +54,7 @@
 	 4601		|aid|act|Bear room cooper key
 	 4603		|aid|act|Katana room silver key
 	 5000		|aid|act|Wyda silver key
-	 5002		|aid|act|Black knight silver key (not available)
+	 5002		|aid|act|(not available) Black knight silver key
 	 5010		|aid|act|Black Knight silver key
 	 5050		|aid|act|Dark Catedral bone key
 	 6010		|aid|act|Demon Quest golden key
@@ -202,10 +202,13 @@
 	20101		|uid|STG|circle room 2
 	20102		|uid|STG|dark armor
 	20103		|uid|STG|dead archer
-	20104		|uid|STG|key 3301 - bright sword quest
-	20105		|uid|STG|key 3302 - bright sword quest
-	20106		|uid|STG|key 3303 - bright sword quest
-	20107		|uid|STG|key 3304 - bright sword quest
+	20104		|uid|STG|key 3301 - bright sword
+	20105		|uid|STG|key 3302 - bright sword
+	20106		|uid|STG|key 3303 - bright sword
+	20107		|uid|STG|key 3304 - bright sword
+	20108		|uid|STG|key 3600 - ghoul room
+	20109		|uid|STG|ghoul room 1
+	20110		|uid|STG|ghoul room 2
 ### Mainland - actionids
 	25001		|aid|act|Tombs entrances
 	25002		|aid|act|Scarab and coins

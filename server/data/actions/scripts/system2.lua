@@ -29,6 +29,11 @@ local config = {
 			{itemid = 2559} -- small axe
 		},
 	},
+	[20040] = {
+		items = {
+			{itemid = 2091, actionid = 3980} -- golden key, deeper fibula
+		},
+	},
 	[20085] = {
 		items = {
 			{itemid = 2463} -- plate armor
@@ -41,7 +46,7 @@ local config = {
 			{itemid = 2229},					-- skull
 			{itemid = 2230},					-- bone
 			{itemid = 2151, type = 2},			-- talon
-			{itemid = 2165}						-- ring	
+			{itemid = 2165}						-- ring
 		},
 	},
 	[20087] = {
@@ -57,11 +62,6 @@ local config = {
 	[20089] = {
 		items = {
 			{itemid = 2798} -- blood herb
-		},
-	},
-	[20090] = {
-		items = {
-			{itemid = 2475} -- warrior helmet, fibula
 		},
 	},
 	[20091] = {
