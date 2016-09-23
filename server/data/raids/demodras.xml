@@ -1,7 +1,0 @@
-<raid>
-<announce delay="1000" type="event" message="Demodras"/>
-  <singlespawn delay="1000" name="Demodras" x="32776" y="32289" z="10" />
-  <areaspawn delay="1000" fromx="32770" fromy="32285" fromz="10" tox="32778" toy="32293" toz="10">
-    <monster name="Dragon Lord" amount="3" />
-  </areaspawn>
-  </raid>

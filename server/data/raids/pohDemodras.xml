@@ -1,0 +1,7 @@
+<raid>
+	<!-- delay 0 -->
+	<singlespawn delay="0" name="demodras" x="32774" y="32292" z="10"/>
+	<areaspawn delay="0" radius="3" centerx="32774" centery="32292" centerz="10">
+		<monster name="dragon lord" amount="2"/>
+	</areaspawn>
+</raid>

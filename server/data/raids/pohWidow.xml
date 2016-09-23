@@ -1,0 +1,7 @@
+<raid>
+	<!-- delay 0 -->
+	<singlespawn delay="0" name="the old widow" x="32778" y="32297" z="7"/>
+	<areaspawn delay="0" radius="3" centerx="32778" centery="32297" centerz="7">
+		<monster name="giant spider" amount="2"/>
+	</areaspawn>
+</raid>

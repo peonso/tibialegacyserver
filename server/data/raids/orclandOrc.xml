@@ -1,0 +1,4 @@
+<raid>
+	<!-- delay 0 -->
+	<singlespawn delay="0" name="orcraid" x="32975" y="31743" z="7"/><!-- orc that drop sam's backpack -->
+</raid>

@@ -7,10 +7,25 @@
 		40320 = 1/month, 80640 = 1/two months, 241920 = 1/six months.
 	-->
 
-	<!-- small raid, once every two weekes, elves should disapear after 8 hours, not happening here though -->
+	<!-- small raid, once a week, orc should disapear after 2 hours, not happening here though -->
+	<raid name="northroadOutlaws" file="northroadOutlaws.xml" interval="10080" margin="5" />
+	
+	<!-- small raid, once every two weeks, orc should disapear after 2 hours, not happening here though -->
+	<raid name="orclandOrc" file="orclandOrc.xml" interval="20160" margin="5" />
+	
+	<!-- small raid, once every two weeks, dragons should disapear after 4 hours, not happening here though -->
+	<raid name="pohDemodras" file="pohDemodras.xml" interval="20160" margin="5" />
+
+	<!-- small raid, once a month, spiders should disapear after 4 hours, not happening here though -->
+	<raid name="pohWidow" file="pohWidow.xml" interval="40320" margin="5" />
+
+	<!-- small raid, once a day, rats should disapear after 2 hours, not happening here though -->
+	<raid name="rookgaardRats" file="rookgaardRats.xml" interval="1440" margin="5" />
+
+	<!-- small raid, once every two weeks, elves should disapear after 8 hours, not happening here though -->
 	<raid name="shadowthornDharalion" file="shadowthornDharalion.xml" interval="20160" margin="5" />
 
-	<!-- small raid, once every two weekes -->
+	<!-- small raid, once every two weeks -->
 	<raid name="stonehomeGhoulAttack" file="stonehomeGhoulAttack.xml" interval="20160" margin="5" />
 
 	<!-- small raid, once a week -->
@@ -28,10 +43,8 @@
 	<!-- small raid, once every two weeks -->
 	<raid name="venoreSwampElves" file="venoreSwampElves.xml" interval="20160" margin="5" />
 
-	<raid name="demodras" file="demodras.xml" interval="20160" margin="5" />
 	<raid name="orshabaal" file="orshabaal.xml" interval="20160" margin="5" />
 	<raid name="scarabs" file="scarabs.xml" interval="20160" margin="5" />
-	<raid name="the_old_widow" file="the_old_widow.xml" interval="20160" margin="5" />
 	<raid name="undead_darashia" file="undead_darashia.xml" interval="20160" margin="5" />
 	<raid name="undead_army" file="undead_army.xml" interval="20160" margin="5" />
 	<raid name="horned_fox" file="horned_fox.xml" interval="20160" margin="5" />

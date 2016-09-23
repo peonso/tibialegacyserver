@@ -1,6 +1,6 @@
 <raid>
 	<!-- delay 0 -->
-	<singlespawn delay="0" name="dharalion" x="32776" y="33034" z="9" />
+	<singlespawn delay="0" name="dharalion" x="32776" y="33034" z="9"/>
 	<areaspawn delay="0" radius="3" centerx="32776" centery="33034" centerz="9">
 		<monster name="elf arcanist" amount="2"/>
 		<monster name="elf scout" minamount="2" maxamount="4"/>
