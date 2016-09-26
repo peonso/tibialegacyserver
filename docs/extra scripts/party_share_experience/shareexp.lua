@@ -1,3 +1,6 @@
+--	talkactions.xml
+--	<talkaction words="!share" access="0" script="shareexp.lua"/>
+
 local settings = {
 	inFightBlock = true,
 	onlyLeader = true

@@ -1,3 +1,6 @@
+--	talkactions.xml
+--	<talkaction words="!canshare" access="0" script="canuseshare.lua"/>
+	
 function onSay(cid, words, param)
 
 	local members = getPartyMembers(cid)
