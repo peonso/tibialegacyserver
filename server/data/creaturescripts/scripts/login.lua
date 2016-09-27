@@ -27,7 +27,7 @@ function onLogin(cid)
 	
 	-- Add a backpack if it is a relogin after a death
 	if getPlayerStorageValue(cid, STORAGE_DEATH_BAG) == 1 then
-		if getPlayerSlotItem(cid, CONST_SLOT_BACKPACK).uid == 0 then
+		if getPlayerSlotItem(cid, CONST_SLOT_BACKPACK).uid == 0 and getPlayerStorageValue(cid, getConfigInfo("storage_sendrook")) ~= 1 then
 			local item_bag = doCreateItemEx(ITEM_BAG, 1)
 			doPlayerAddItemEx(cid, item_bag, false, CONST_SLOT_BACKPACK)
 		end
