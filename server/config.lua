@@ -163,6 +163,13 @@ rate_mag = 1
 rate_loot = 1
 rate_spawn = 1
 
+-- Rookgaard system
+-- level_to_rook if player reach this level he is sento to newbie island at level 1
+level_to_rook = 5
+-- rook_temple_id newbie island temple id
+rook_temple_id = 11
+storage_sendrook = 49786
+
 -- What message should be sent for the player, after its own death? Use "" to disable.
 death_msg = "You are dead."
 
