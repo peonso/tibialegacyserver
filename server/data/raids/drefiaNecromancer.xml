@@ -1,0 +1,8 @@
+<raid>
+	<!-- delay 0 -->
+	<!--<announce delay="0" type="event" message="Necropharus is preparing a ritual."/>-->
+	<singlespawn delay="0" name="necropharus" x="33050" y="32400" z="10"/>
+	<areaspawn delay="0" radius="2" centerx="33050" centery="32399" centerz="10">
+		<monster name="necromancer" minamount="1" maxamount="2"/>
+	</areaspawn>
+</raid>

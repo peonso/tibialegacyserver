@@ -1,0 +1,7 @@
+<raid>
+	<!-- delay 0 -->
+	<!--<announce delay="0" type="event" message="Grorlam is looking for food."/>-->
+	<areaspawn delay="0" radius="32" centerx="32392" centery="32029" centerz="11">
+		<monster name="grorlam" amount="1"/>
+	</areaspawn>
+</raid>

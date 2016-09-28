@@ -1,0 +1,11 @@
+<raid>
+	<!-- delay 0 -->
+	<!--<announce delay="0" type="event" message="Its full moon again and Fernfang is out for new prey."/>-->
+	<singlespawn delay="0" name="fernfang" x="32851" y="32340" z="6"/>
+	<areaspawn delay="0" radius="3" centerx="32851" centery="32340" centerz="6">
+		<monster name="war wolf" minamount="2" maxamount="4"/>
+	</areaspawn>
+	<areaspawn delay="0" radius="3" centerx="32855" centery="32333" centerz="7">
+		<monster name="war wolf" minamount="4" maxamount="6"/>
+	</areaspawn>
+</raid>

@@ -1,0 +1,6 @@
+<raid>
+	<!-- delay 0 -->
+	<announce delay="0" type="event" message="Beware, beware the halloween hare."/>
+	<singlespawn delay="0" name="the halloween hare" x="32624" y="32017" z="7"/>
+	<singlespawn delay="0" name="the halloween hare" x="32071" y="32215" z="7"/>
+</raid>

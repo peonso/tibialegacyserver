@@ -147,6 +147,7 @@
 	<monster name="Fernfang" file="bosses/fernfang.xml"/>
 	<monster name="General Murius" file="bosses/general murius.xml"/>
 	<monster name="Grorlam" file="bosses/grorlam.xml"/>
+	<monster name="The Halloween Hare" file="bosses/the halloween hare.xml"/>
 	<monster name="Mahrdis" file="bosses/mahrdis.xml"/>
 	<monster name="Morguthis" file="bosses/morguthis.xml"/>
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>

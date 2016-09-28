@@ -1,0 +1,12 @@
+<raid>
+	<!-- delay 0 -->
+	<!--<announce delay="0" type="event" message="The horned fox is in his lair."/>-->
+	<areaspawn delay="0" radius="2" centerx="32462" centery="31954" centerz="4">
+		<monster name="the horned fox" amount="1"/>
+	</areaspawn>
+	<areaspawn delay="0" radius="3" centerx="32462" centery="31954" centerz="4">
+		<monster name="minotaur guard" amount="2"/>
+		<monster name="minotaur archer" amount="2"/>
+		<monster name="minotaur mage" amount="1"/>
+	</areaspawn>
+</raid>

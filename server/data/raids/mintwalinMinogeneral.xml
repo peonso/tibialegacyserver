@@ -1,0 +1,12 @@
+<raid>
+	<!-- delay 0 -->
+	<!--<announce delay="0" type="event" message="General Murius is patroling Mintwalin."/>-->
+	<areaspawn delay="0" radius="2" centerx="32418" centery="32121" centerz="15">
+		<monster name="general murius" amount="1"/>
+	</areaspawn>
+	<areaspawn delay="0" radius="5" centerx="32418" centery="32121" centerz="15">
+		<monster name="minotaur guard" minamount="3" maxamount="7"/>
+		<monster name="minotaur archer" minamount="5" maxamount="9"/>
+		<monster name="minotaur mage" minamount="1" maxamount="2"/>
+	</areaspawn>
+</raid>
