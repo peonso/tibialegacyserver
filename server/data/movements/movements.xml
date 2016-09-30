@@ -205,7 +205,10 @@
 	<moveevent event="StepIn" actionid="11003" script="rookgaard/sword_of_fury.lua"/>
 	<moveevent event="StepIn" actionid="11004" script="rookgaard/sword_of_fury.lua"/>
 	
-	<!-- .:: Tibia ::. --> 	
+	<!-- .:: Tibia ::. -->
+	<moveevent event="RemoveItem" actionid="25012" script="tibia/parchment.lua"/><!-- Parchment Room Quest -->
+	<movevent event="StepIn" actionid="25013" script="tibia/edrondemons_walls.lua" /><!-- Demon Helmet Quest -->
+	<movevent event="StepOut" actionid="25013" script="tibia/edrondemons_walls.lua" /><!-- Demon Helmet Quest -->
 	<!-- Draconia Quest by Nottinghster -->
 	<moveevent event="StepIn" actionid="988" script="Draconia Quest/4 levers.lua"/>
 	<moveevent event="StepIn" uniqueid="5678" script="Draconia Quest/piso_parede1.lua"/>
@@ -243,10 +246,7 @@
 	<!-- Pits of Inferno -->
 	<moveevent event="AddItem" tileitem="1" uniqueid="10200" script="The Pits of Inferno Quest/GraveEntrance.lua"/>
 	<moveevent event="StepIn" actionid="50001" script="The Pits of Inferno Quest/MagicWallEntrance.lua"/>
-	<moveevent event="StepIn" uniqueid="10202" script="The Pits of Inferno Quest/MagicWallExit.lua"/>
-	
-	<!-- Parchment Room Quest -->
-	<moveevent event="RemoveItem" tileitem="0" itemid="4857" script="Parchment Room Quest/parchment.lua"/>
+	<moveevent event="StepIn" uniqueid="10202" script="The Pits of Inferno Quest/MagicWallExit.lua"/>	
 	
 	<!-- The Postman Missions Quest -->
 	<moveevent event="AddItem" tileitem="1" actionid="50015" script="The Postman Missions Quest/letter_mail.lua"/>
