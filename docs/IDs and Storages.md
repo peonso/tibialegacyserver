@@ -221,6 +221,9 @@
 	25009		|aid|act|lever - bright sword quest oven
 	25010		|aid|act|lever - bright sword quest ring
 	25011		|aid|act|lever - bright sword quest barrel
+	25012		|aid|act|parchment
+	25013		|aid|act|demons edrons
+	25014		|aid|act|lever - demon helmet
 	30020-30100	|aid|mov|citizen.lua
 ### General storages
 	30200-30205	|STORAGE_BLESSES|functions.lua
@@ -232,5 +235,6 @@
 	31006		|STORAGE_POWERGAMERS|powergamers.lua
 	31007		|STORAGE_ZNOTEAAC|report.lua
 	31008		|STORAGE_LOOTMESSAGE|lootmessage.lua
+	31009		|STORAGE_SENDROOK|config.lua
 ### placeholder ids
 	50000+		ids that need to be sorted
