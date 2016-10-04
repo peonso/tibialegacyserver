@@ -1,5 +1,5 @@
 --	creaturescripts.xml
---	<event type="login" name="addPremium" script="freepremmium.lua" />
+--	<event type="login" name="addPremium" script="freepremium.lua" />
 
 function onLogin(cid)
 	if getPlayerPremiumDays(cid) <= 15 then
