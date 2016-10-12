@@ -19,7 +19,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		newPos.y = newPos.y + 1
 		local downPos = {x = toPosition.x, y = toPosition.y, z = toPosition.z + 1, stackpos = 255}
 		local downItem
-        	if getBooleanFromString(getConfigValue("can_hope_creatures"), true) then
+        	if getBooleanFromString(getConfigValue("can_rope_creatures"), true) then
 			downItem = getThingFromPos(downPos)
 		else
 			local topCreature = getTopCreature(downPos)
