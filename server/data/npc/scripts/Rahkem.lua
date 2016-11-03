@@ -95,7 +95,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 		spellname = "find person"
 		spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -108,7 +108,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 5}
 		spellname = "sudden death"
 		spellmagiclevel = 25
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -121,7 +121,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 5}
 		spellname = "energy wave"
 		spellmagiclevel = 20
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -134,7 +134,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 5}
 		spellname = "great energy beam"
 		spellmagiclevel = 14
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -147,7 +147,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 5}
 		spellname = "energy beam"
 		spellmagiclevel = 10
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -160,7 +160,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 5}
 		spellname = "fire wave"
 		spellmagiclevel = 7
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -173,7 +173,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "energy wall"
 		spellmagiclevel = 18
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -186,7 +186,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "summon creature"
 		spellmagiclevel = 16
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -199,7 +199,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "invisible "
 		spellmagiclevel = 15
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -212,7 +212,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "fire wall"
 		spellmagiclevel = 13
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -225,7 +225,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "explosion"
 		spellmagiclevel = 12
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -238,7 +238,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "poison wall"
 		spellmagiclevel = 11
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -251,7 +251,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 6}
 		spellname = "chameleon"
 		spellmagiclevel = 11
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -264,7 +264,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 6}
 		spellname = "ultimate healing rune"
 		spellmagiclevel = 11
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -277,7 +277,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 6}
 		spellname = "convince creature"
 		spellmagiclevel = 10
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -290,7 +290,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "creature illusion"
 		spellmagiclevel = 10
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -303,7 +303,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "firebomb"
 		spellmagiclevel = 9
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -316,7 +316,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "great fireball"
 		spellmagiclevel = 9
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -329,7 +329,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "ultimate healing"
 		spellmagiclevel = 8
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -342,7 +342,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "destroy field"
 		spellmagiclevel = 6
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -355,7 +355,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "energy field"
 		spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -368,7 +368,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "fireball"
 		spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -381,7 +381,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 6}
 		spellname = "antidote rune"
 		spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -394,7 +394,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 6}
 		spellname = "intense healing rune"
 		spellmagiclevel = 4
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -407,7 +407,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "magic shield"
 		spellmagiclevel = 4
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -420,7 +420,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "heavy magic missile"
 		spellmagiclevel = 3
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -433,7 +433,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "fire field"
 		spellmagiclevel = 3
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -446,7 +446,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 		spellname = "great light"
 		spellmagiclevel = 3
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -459,7 +459,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 5, 6}
 		spellname = "poison field"
 		spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -472,7 +472,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "intense healing"
 		spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -485,7 +485,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 		spellname = "antidote"
 		spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -498,7 +498,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 5, 6, 7}
 		spellname = "light magic missile"
 		spellmagiclevel = 1
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -511,7 +511,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 		spellname = "light healing"
 		spellmagiclevel = 1
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -524,7 +524,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {2, 3, 6, 7}
 		spellname = "create food"
 		spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -537,7 +537,7 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 		spellname = "light"
 		spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			NPCSay("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -548,9 +548,9 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 		
 	--System that does the job after confirm spell--
 	elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			if getPlayerMagLevel(cid) >= spellmagiclevel then
-				if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+				if not getPlayerLearnedInstantSpell(cid, spellname) then
 					if doPlayerRemoveMoney(cid, spellprice) == true then
 					playerLearnInstantSpell(cid, spellname)
 					doSendMagicEffect(getPlayerPosition(cid), 14)

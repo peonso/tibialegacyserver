@@ -72,7 +72,7 @@ if msgcontains(msg, 'light healing') or msgcontains(msg, 'Light healing') then
 	spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 	spellname = "light healing"
 	spellmagiclevel = 1
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -85,7 +85,7 @@ elseif msgcontains(msg, 'ultimate healing rune') or msgcontains(msg, 'Ultimate h
 	spellvoc = {2, 6}
 	spellname = "ultimate healing rune"
 	spellmagiclevel = 11
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -98,7 +98,7 @@ elseif msgcontains(msg, 'ultimate healing') or msgcontains(msg, 'Ultimate healin
 	spellvoc = {1, 2, 3, 5, 6, 7}
 	spellname = "ultimate healing"
 	spellmagiclevel = 8
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -111,7 +111,7 @@ elseif msgcontains(msg, 'antidote rune') or msgcontains(msg, 'Antidote rune') th
 	spellvoc = {2, 6}
 	spellname = "antidote rune"
 	spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -124,7 +124,7 @@ elseif msgcontains(msg, 'intense healing rune') or msgcontains(msg, 'intense hea
 	spellvoc = {2, 6}
 	spellname = "intense healing rune"
 	spellmagiclevel = 4
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -137,7 +137,7 @@ elseif msgcontains(msg, 'intense healing') or msgcontains(msg, 'Intense healing'
 	spellvoc = {1, 2, 3, 5, 6, 7}
 	spellname = "intense healing"
 	spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -150,7 +150,7 @@ elseif msgcontains(msg, 'antidote') or msgcontains(msg, 'Antidote') then
 	spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 	spellname = "antidote"
 	spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -161,9 +161,9 @@ elseif msgcontains(msg, 'antidote') or msgcontains(msg, 'Antidote') then
 	
 --System that does the job after confirm spell--
 elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+	if isInArray(spellvoc, getPlayerVocation(cid)) then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
-			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+			if not getPlayerLearnedInstantSpell(cid, spellname) then
 				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)

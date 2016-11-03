@@ -61,7 +61,7 @@ if msgcontains(msg, 'find person') or msgcontains(msg, 'Find person') then
 	spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 	spellname = "find person"
 	spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -74,7 +74,7 @@ elseif msgcontains(msg, 'great light') or msgcontains(msg, 'Great light') then
 	spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 	spellname = "great light"
 	spellmagiclevel = 3
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -87,7 +87,7 @@ elseif msgcontains(msg, 'light') or msgcontains(msg, 'Light') then
 	spellvoc = {1, 2, 3, 4, 5, 6, 7, 8}
 	spellname = "light"
 	spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -100,7 +100,7 @@ elseif msgcontains(msg, 'create food') or msgcontains(msg, 'Create food') then
 	spellvoc = {2, 3, 6, 7}
 	spellname = "create food"
 	spellmagiclevel = 0
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -115,9 +115,9 @@ elseif msgcontains(msg, 'create food') or msgcontains(msg, 'Create food') then
 	
 --System that does the job after confirm spell--
 elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+	if isInArray(spellvoc, getPlayerVocation(cid)) then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
-			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+			if not getPlayerLearnedInstantSpell(cid, spellname) then
 				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)

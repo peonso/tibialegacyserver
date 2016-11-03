@@ -120,7 +120,7 @@ if msgcontains(msg, 'poison field') or msgcontains(msg, 'Poison field') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "poison field"
 	spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -133,7 +133,7 @@ elseif msgcontains(msg, 'energy wall') or msgcontains(msg, 'Energy wall') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "energy wall"
 	spellmagiclevel = 18
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -146,7 +146,7 @@ elseif msgcontains(msg, 'fire wall') or msgcontains(msg, 'fire wall') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "fire wall"
 	spellmagiclevel = 13
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -159,7 +159,7 @@ elseif msgcontains(msg, 'poison wall') or msgcontains(msg, 'poison wall') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "poison wall"
 	spellmagiclevel = 11
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -172,7 +172,7 @@ elseif msgcontains(msg, 'energy field') or msgcontains(msg, 'Energy field') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "energy field"
 	spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -185,7 +185,7 @@ elseif msgcontains(msg, 'fire field') or msgcontains(msg, 'Fire field') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "fire field"
 	spellmagiclevel = 3
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -200,9 +200,9 @@ elseif msgcontains(msg, 'fire field') or msgcontains(msg, 'Fire field') then
 --System that does the job after confirm spell--
 elseif talk_state == 8754 and msgcontains(msg, 'yes') then
 if getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
-	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+	if isInArray(spellvoc, getPlayerVocation(cid)) then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
-			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+			if not getPlayerLearnedInstantSpell(cid, spellname) then
 				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)

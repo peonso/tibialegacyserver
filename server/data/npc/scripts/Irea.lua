@@ -53,7 +53,7 @@ if msgcontains(msg, 'conjure arrow') or msgcontains(msg, 'Conjure arrow') then
 	spellvoc = {3, 7}
 	spellname = "conjure arrow"
 	spellmagiclevel = 2
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -66,7 +66,7 @@ elseif msgcontains(msg, 'explosive arrow') or msgcontains(msg, 'Explosive arrow'
 	spellvoc = {3, 7}
 	spellname = "explosive arrow"
 	spellmagiclevel = 10
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -79,7 +79,7 @@ elseif msgcontains(msg, 'poison arrow') or msgcontains(msg, 'Poison arrow') then
 	spellvoc = {3, 7}
 	spellname = "poison arrow"
 	spellmagiclevel = 5
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -93,9 +93,9 @@ elseif msgcontains(msg, 'poison arrow') or msgcontains(msg, 'Poison arrow') then
 	
 --System that does the job after confirm spell--
 elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+	if isInArray(spellvoc, getPlayerVocation(cid)) then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
-			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+			if not getPlayerLearnedInstantSpell(cid, spellname) then
 				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)

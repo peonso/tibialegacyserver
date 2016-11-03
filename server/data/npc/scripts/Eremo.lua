@@ -59,7 +59,7 @@ function creatureSayCallback(cid, type, msg)
 		spellvoc = {5}
 		spellname = "Enchant Staff"
 		spellmagiclevel = 22
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -72,7 +72,7 @@ function creatureSayCallback(cid, type, msg)
 		spellvoc = {8}
 		spellname = "challenge"
 		spellmagiclevel = 4
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -85,7 +85,7 @@ function creatureSayCallback(cid, type, msg)
 		spellvoc = {6}
 		spellname = "wild growth"
 		spellmagiclevel = 13
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -98,7 +98,7 @@ function creatureSayCallback(cid, type, msg)
 		spellvoc = {7}
 		spellname = "conjure power bolt"
 		spellmagiclevel = 14
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 			talk_state = 8754
 		else
@@ -109,9 +109,9 @@ function creatureSayCallback(cid, type, msg)
 
 -- confirm spells
 	elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 			if getPlayerMagLevel(cid) >= spellmagiclevel then
-				if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+				if not getPlayerLearnedInstantSpell(cid, spellname) then
 					if doPlayerRemoveMoney(cid, spellprice) == true then
 						playerLearnInstantSpell(cid, spellname)
 						doSendMagicEffect(getPlayerPosition(cid), 14)

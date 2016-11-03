@@ -40,7 +40,7 @@ if msgcontains(msg, 'ultimate light') or msgcontains(msg, 'Ultimate light') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "ultimate light"
 	spellmagiclevel = 12
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -53,7 +53,7 @@ elseif msgcontains(msg, 'undead legion') or msgcontains(msg, 'undead legion') th
 	spellvoc = {2, 6}
 	spellname = "undead legion"
 	spellmagiclevel = 15
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -66,7 +66,7 @@ elseif msgcontains(msg, 'cancel invisibility') or msgcontains(msg, 'Cancel invis
 	spellvoc = {1, 5}
 	spellname = "cancel invisibility"
 	spellmagiclevel = 12
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -79,7 +79,7 @@ elseif msgcontains(msg, 'magic wall') or msgcontains(msg, 'Magic wall') then
 	spellvoc = {1, 5}
 	spellname = "magic wall"
 	spellmagiclevel = 14
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -92,7 +92,7 @@ elseif msgcontains(msg, 'soul fire') or msgcontains(msg, 'Soul fire') then
 	spellvoc = {1, 2, 5, 6}
 	spellname = "soul fire"
 	spellmagiclevel = 13
-		if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+		if isInArray(spellvoc, getPlayerVocation(cid)) then
 		npcHandler:say("Do you want to learn the spell '".. spellname .."' for ".. spellprice .." gold?", 1)
 		talk_state = 8754
 		else
@@ -106,9 +106,9 @@ elseif msgcontains(msg, 'soul fire') or msgcontains(msg, 'Soul fire') then
 	
 --System that does the job after confirm spell--
 elseif talk_state == 8754 and msgcontains(msg, 'yes') then
-	if isInArray(spellvoc, getPlayerVocation(cid)) == 1 then
+	if isInArray(spellvoc, getPlayerVocation(cid)) then
 		if getPlayerMagLevel(cid) >= spellmagiclevel then
-			if getPlayerLearnedInstantSpell(cid, spellname) < 1 then
+			if not getPlayerLearnedInstantSpell(cid, spellname) then
 				if doPlayerRemoveMoney(cid, spellprice) == true then
 				playerLearnInstantSpell(cid, spellname)
 				doSendMagicEffect(getPlayerPosition(cid), 14)
