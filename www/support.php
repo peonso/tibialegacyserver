@@ -36,6 +36,7 @@ if ($cache->hasExpired()) {
 	$srtGrp = $cache->load();
 }
 $writeHeader = true;
+$rankcolor = null;
 if (!empty($srtGrp)) {
 			?>
 		<table id="supportTable" class="table table-striped">

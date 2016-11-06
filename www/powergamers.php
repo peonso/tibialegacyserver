@@ -14,6 +14,7 @@
 </table><br>
 <?php 
 $limit = 25;
+$type = null;
 $type = $_GET['type'];
 
 function coloured_value($valuein)
