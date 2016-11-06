@@ -42,46 +42,8 @@ keywordHandler:addKeyword({'undea'}, StdModule.say, {npcHandler = npcHandler, on
 keywordHandler:addKeyword({'mourn'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You mortals are all to be mourned for your miserable existance."})
 keywordHandler:addKeyword({'eremo'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "It is said that he lives on a small island near Edron. Maybe the people there know more about him."})
 
-function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
+local node1 = keywordHandler:addKeyword({'promot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to be promoted in your vocation for 20000 gold?'})
+	node1:addChildKeyword({'yes'}, StdModule.promotePlayer, {npcHandler = npcHandler, promotions = {[1] = 5, [2] = 6, [3] = 7, [4] = 8}, cost = 20000, level = 20, text = 'Congratulations! You are now promoted.'})
+	node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ok, then not.', reset = true})
 
-if msgcontains(msg, 'promotion') or msgcontains(msg, 'promote') then
-	npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", 1)
-	talk_state = 2578	
-
-elseif talk_state == 2578 and msgcontains(msg, 'yes') then
-	if getPlayerVocation(cid) >= 1 and getPlayerVocation(cid) <= 4 then
-		if getPlayerLevel(cid) >= 20 then
-			if isPremium(cid) == true then
-				if doPlayerRemoveMoney(cid, 20000) == true then
-				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
-				CheckPlayerBlessings(cid)
-				npcHandler:say("Congratulations! You are now promoted. Visit the sage Eremo for new spells.", 1)
-				talk_state = 0		
-				else
-				npcHandler:say("You do not have enough money.", 1)
-				talk_state = 0			
-				end
-			else
-			npcHandler:say("You need a premium account in order to promote.", 1)
-			talk_state = 0				
-			end
-		else
-		npcHandler:say("You need to be at least level 20 in order to be promoted.", 1)
-		talk_state = 0			
-		end
-	else
-	npcHandler:say("You are already promoted.", 1)
-	talk_state = 0	
-	end
-
-elseif msgcontains(msg, '') then
-	npcHandler:say("I don't understand? are you trying to say \"promote\" or something?", 1)
-	talk_state = 0	
-end	
-end
-
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

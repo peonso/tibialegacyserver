@@ -28,6 +28,6 @@ PORTPOS_CENTER		= {x=32628, y=32771, z=7}
 PORTPOS_EAST		= {x=32679, y=32777, z=7}
 PORTPOS_WEST		= {x=32558, y=32780, z=7}
 
--- Free Accounts can use boats?
-BOATSFORFREE = false
+-- Boats and Promotion for free accounts?
+EVERYONE_PREMIUM_FOR_NPCS = false
 

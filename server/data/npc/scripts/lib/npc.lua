@@ -5,7 +5,7 @@ dofile(getDataDir() .. 'npc/scripts/lib/custom modules.lua')
 
 -- Callback for isPremium(cid) so Jiddo's npcsystem works
 function isPlayerPremiumCallback(cid)
-	if BOATSFORFREE then
+	if EVERYONE_PREMIUM_FOR_NPCS then
 		return true
 	else
 		return isPremium(cid)

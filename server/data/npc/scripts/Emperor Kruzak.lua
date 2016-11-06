@@ -8,26 +8,26 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-	function FocusModule:init(handler)
+function FocusModule:init(handler)
 	FOCUS_GREETSWORDS = {'hi emperor', 'hello emperor', 'hail emperor', 'salutations emperor'}
 	FOCUS_FAREWELLSWORDS = {'bye', 'farewell'}
-		self.npcHandler = handler
-		for i, word in pairs(FOCUS_GREETSWORDS) do
-			local obj = {}
-			table.insert(obj, word)
-			obj.callback = FOCUS_GREETSWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
-		end
-		
-		for i, word in pairs(FOCUS_FAREWELLSWORDS) do
-			local obj = {}
-			table.insert(obj, word)
-			obj.callback = FOCUS_FAREWELLSWORDS.callback or FocusModule.messageMatcher
-			handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
-		end
-		
-		return true
+	self.npcHandler = handler
+	for i, word in pairs(FOCUS_GREETSWORDS) do
+		local obj = {}
+		table.insert(obj, word)
+		obj.callback = FOCUS_GREETSWORDS.callback or FocusModule.messageMatcher
+		handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 	end
+
+	for i, word in pairs(FOCUS_FAREWELLSWORDS) do
+		local obj = {}
+		table.insert(obj, word)
+		obj.callback = FOCUS_FAREWELLSWORDS.callback or FocusModule.messageMatcher
+		handler.keywordHandler:addKeyword(obj, FocusModule.onFarewell, {module = self})
+	end
+		
+	return true
+end
 
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well, I am the emperor of the dwarfs. It's my duty to protect my folk and give them justice."})
 keywordHandler:addKeyword({'justice'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well, justice is a difficult thing. Can one be just to all at once, and if not, to whom should he be just?"})
@@ -90,46 +90,8 @@ keywordHandler:addKeyword({'reward'}, StdModule.say, {npcHandler = npcHandler, o
 keywordHandler:addKeyword({'tbi'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well, I don't think our southern allies have agents in our town."})
 keywordHandler:addKeyword({'t.b.i'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Well, I don't think our southern allies have agents in our town."})
 
-function creatureSayCallback(cid, type, msg)
-	if(npcHandler.focus ~= cid) then
-		return false
-	end
+local node1 = keywordHandler:addKeyword({'promot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Do you want to be promoted in your vocation for 20000 gold?'})
+	node1:addChildKeyword({'yes'}, StdModule.promotePlayer, {npcHandler = npcHandler, promotions = {[1] = 5, [2] = 6, [3] = 7, [4] = 8}, cost = 20000, level = 20, text = 'Congratulations! You are now promoted.'})
+	node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Ok, then not.', reset = true})
 
-if msgcontains(msg, 'promotion') or msgcontains(msg, 'promote') then
-	npcHandler:say("Do you want to be promoted in your vocation for 20000 gold?", 1)
-	talk_state = 2578	
-
-elseif talk_state == 2578 and msgcontains(msg, 'yes') then
-	if getPlayerVocation(cid) >= 1 and getPlayerVocation(cid) <= 4 then
-		if getPlayerLevel(cid) >= 20 then
-			if isPremium(cid) == true then
-				if doPlayerRemoveMoney(cid, 20000) == true then
-				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
-				--CheckPlayerBlessings(cid)
-				npcHandler:say("Congratulations! You are now promoted. Visit the sage Eremo for new spells.", 1)
-				talk_state = 0		
-				else
-				npcHandler:say("You do not have enough money.", 1)
-				talk_state = 0			
-				end
-			else
-			npcHandler:say("You need a premium account in order to promote.", 1)
-			talk_state = 0				
-			end
-		else
-		npcHandler:say("You need to be at least level 20 in order to be promoted.", 1)
-		talk_state = 0			
-		end
-	else
-	npcHandler:say("You are already promoted.", 1)
-	talk_state = 0	
-	end
-
-elseif msgcontains(msg, '') then
-	npcHandler:say("I don't understand? are you trying to say \"promote\" or something?", 1)
-	talk_state = 0	
-end	
-end
-
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
