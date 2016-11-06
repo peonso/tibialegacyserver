@@ -13,7 +13,6 @@ function onThink()				npcHandler:onThink()					end
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
 
-shopModule:addSellableItem({'vial', 'potion', 'flask'}, 2006, 5)
 shopModule:addSellableItem({'rope'}, 2120, 8)
 shopModule:addBuyableItem({'torch'}, 2050, 2)
 shopModule:addBuyableItem({'candelab'}, 2041, 8)
@@ -66,4 +65,26 @@ keywordHandler:addKeyword({'have'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'offer'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff."})
 keywordHandler:addKeyword({'stuff'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Water hoses, pitchforks, presents, buckets, bottles, and the like."})
 
+function creatureSayCallback(cid, type, msg)
+	if(npcHandler.focus ~= cid) then
+		return false
+	end
+
+	if msgcontains(msg, 'vial') or msgcontains(msg, 'deposit') or msgcontains(msg, 'flask') then
+		npcHandler:say("I will pay you 5 gold for every empty vial. Ok?", 1)
+		talk_state = 857
+	elseif talk_state == 857 and msgcontains(msg, 'yes') then
+		if sellPlayerEmptyVials(cid) == true then
+			npcHandler:say("Here's your money!", 1)
+			talk_state = 0
+		else
+			npcHandler:say("You don't have any empty vials!", 1)
+			talk_state = 0
+		end
+	end
+
+	return true
+end	
+	
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

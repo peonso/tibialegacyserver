@@ -62,60 +62,62 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 	if(npcHandler.focus ~= cid) then
 		return false
 	end
-if msgcontains(msg, 'vial') then
-npcHandler:say("I will give you 5 gold for every empty vial of yours, accept?", 1)
-talk_state = 857
-elseif talk_state == 857 and msgcontains(msg, 'yes') then
-	if SellPlayerEmptyVials(cid) == true then
-	npcHandler:say("Here's your money!", 1)
-	talk_state = 0
-	else
-	npcHandler:say("You don't have any empty vials!", 1)
-	talk_state = 0
+
+	if msgcontains(msg, 'vial') or msgcontains(msg, 'deposit') or msgcontains(msg, 'flask') then
+		npcHandler:say("I will pay you 5 gold for every empty vial. Ok?", 1)
+		talk_state = 857
+	elseif talk_state == 857 and msgcontains(msg, 'yes') then
+		if sellPlayerEmptyVials(cid) == true then
+			npcHandler:say("Here's your money!", 1)
+			talk_state = 0
+		else
+			npcHandler:say("You don't have any empty vials!", 1)
+			talk_state = 0
+		end
 	end
-end
-if getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'wand') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Wand') then	
-	if getPlayerStorageValue(cid, 999) == -1 then
-	if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
-    doPlayerAddItem(cid,2190,1)
-	npcHandler:say('Here\'s your wand!', 1)
-	setPlayerStorageValue(cid, 999, 1)
-	elseif getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
-    doPlayerAddItem(cid,2182,1)
-	npcHandler:say('Here\'s your rod!', 1)
-	setPlayerStorageValue(cid, 999, 1)
-	elseif getPlayerVocation(cid) < 1 or getPlayerVocation(cid) > 6 then
-	npcHandler:say('I\'m sorry, but you\'re neither sorcerer nor druid!', 1)
-	setPlayerStorageValue(cid, 999, 1)
-	elseif getPlayerVocation(cid) == 3 or getPlayerVocation(cid) == 4 then
-	npcHandler:say('I\'m sorry, but you\'re neither sorcerer nor druid!', 1)
-	setPlayerStorageValue(cid, 999, 1)	
-	end	
-	talk_state = 0
-end
 
-elseif msgcontains(msg, 'rod') or msgcontains(msg, 'Rod') then
-	npcHandler:say("Rods can be wielded by druids only and have a certain level requirement. There are five different rods, would you like to hear about them?", 1)
-	talk_state = 7613
-			
-elseif talk_state == 7613 and msgcontains(msg, 'yes') or talk_state == 7613 and msgcontains(msg, 'Yes') then
-	npcHandler:say("The names of the rods are 'Snakebite Rod', 'Moonlight Rod', 'Volcanic Rod', 'Quagmire Rod', and 'Tempest Rod'. Which one would you like to buy?", 1)
-	talk_state = 7613
+	if getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'wand') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Wand') then	
+		if getPlayerStorageValue(cid, 999) == -1 then
+			if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
+			doPlayerAddItem(cid,2190,1)
+			npcHandler:say('Here\'s your wand!', 1)
+			setPlayerStorageValue(cid, 999, 1)
+			elseif getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
+			doPlayerAddItem(cid,2182,1)
+			npcHandler:say('Here\'s your rod!', 1)
+			setPlayerStorageValue(cid, 999, 1)
+			elseif getPlayerVocation(cid) < 1 or getPlayerVocation(cid) > 6 then
+			npcHandler:say('I\'m sorry, but you\'re neither sorcerer nor druid!', 1)
+			setPlayerStorageValue(cid, 999, 1)
+			elseif getPlayerVocation(cid) == 3 or getPlayerVocation(cid) == 4 then
+			npcHandler:say('I\'m sorry, but you\'re neither sorcerer nor druid!', 1)
+			setPlayerStorageValue(cid, 999, 1)	
+			end	
+			talk_state = 0
+		end
 
-elseif msgcontains(msg, 'wand') or msgcontains(msg, 'Wand') then
-	npcHandler:say("Wands can be wielded by sorcerers only and have a certain level requirement. There are five different wands, would you like to hear about them?", 1)
-	talk_state = 7624
-			
-elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and msgcontains(msg, 'Yes') then
-	npcHandler:say("The names of the wands are 'Wand of Vortex', 'Wand of Dragonbreath', 'Wand of Plague', 'Wand of Cosmic Energy' and 'Wand of Inferno'. Which one would you like to buy?", 1)
-	talk_state = 7624
+	elseif msgcontains(msg, 'rod') or msgcontains(msg, 'Rod') then
+		npcHandler:say("Rods can be wielded by druids only and have a certain level requirement. There are five different rods, would you like to hear about them?", 1)
+		talk_state = 7613
+				
+	elseif talk_state == 7613 and msgcontains(msg, 'yes') or talk_state == 7613 and msgcontains(msg, 'Yes') then
+		npcHandler:say("The names of the rods are 'Snakebite Rod', 'Moonlight Rod', 'Volcanic Rod', 'Quagmire Rod', and 'Tempest Rod'. Which one would you like to buy?", 1)
+		talk_state = 7613
 
-elseif  msgcontains(msg, 'darama') or msgcontains(msg, 'Darama') then
-    npcHandler:say('Although our people, spoken in cosmological terms, have setteled here just recently, there is already much history hidden here. ...', 1)
-	npcHandler:say("Not only mysteries and magical secrets but also many treasures are here to be explored by that person that is equipped with enough runes and fluids to master all dangers.", 5)
-    talk_state = 0 
+	elseif msgcontains(msg, 'wand') or msgcontains(msg, 'Wand') then
+		npcHandler:say("Wands can be wielded by sorcerers only and have a certain level requirement. There are five different wands, would you like to hear about them?", 1)
+		talk_state = 7624
+				
+	elseif talk_state == 7624 and msgcontains(msg, 'yes') or talk_state == 7624 and msgcontains(msg, 'Yes') then
+		npcHandler:say("The names of the wands are 'Wand of Vortex', 'Wand of Dragonbreath', 'Wand of Plague', 'Wand of Cosmic Energy' and 'Wand of Inferno'. Which one would you like to buy?", 1)
+		talk_state = 7624
 
-        end
+	elseif  msgcontains(msg, 'darama') or msgcontains(msg, 'Darama') then
+		npcHandler:say('Although our people, spoken in cosmological terms, have setteled here just recently, there is already much history hidden here. ...', 1)
+		npcHandler:say("Not only mysteries and magical secrets but also many treasures are here to be explored by that person that is equipped with enough runes and fluids to master all dangers.", 5)
+		talk_state = 0 
+	end
+
     return true
 end
 

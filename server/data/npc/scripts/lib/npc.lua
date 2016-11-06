@@ -107,3 +107,16 @@ function getVocationByPlayerGUID(guid)
 	result.free(vocationQuery)
 	return tonumber(vocation) or vocation
 end
+
+function sellPlayerEmptyVials(cid)
+    local emptyvialmoney = 0
+    while doPlayerRemoveItem(cid, 2006, 1, 0) == true do
+        emptyvialmoney = 5 + emptyvialmoney
+    end
+    if emptyvialmoney > 0 then
+        doPlayerAddMoney(cid, emptyvialmoney)
+        return true
+    else
+        return false
+    end
+end

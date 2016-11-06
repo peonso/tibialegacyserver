@@ -63,18 +63,20 @@ function creatureSayCallback(cid, type, msg) msg = string.lower(msg)
 	if(npcHandler.focus ~= cid) then
 		return false
 	end
-if msgcontains(msg, 'vial') then
-npcHandler:say("I will give you 5 gold for every empty vial of yours, accept?", 1)
-talk_state = 857
-elseif talk_state == 857 and msgcontains(msg, 'yes') then
-	if SellPlayerEmptyVials(cid) == true then
-	npcHandler:say("Here's your money!", 1)
-	talk_state = 0
-	else
-	npcHandler:say("You don't have any empty vials!", 1)
-	talk_state = 0
+
+	if msgcontains(msg, 'vial') or msgcontains(msg, 'deposit') or msgcontains(msg, 'flask') then
+		npcHandler:say("I will pay you 5 gold for every empty vial. Ok?", 1)
+		talk_state = 857
+	elseif talk_state == 857 and msgcontains(msg, 'yes') then
+		if sellPlayerEmptyVials(cid) == true then
+			npcHandler:say("Here's your money!", 1)
+			talk_state = 0
+		else
+			npcHandler:say("You don't have any empty vials!", 1)
+			talk_state = 0
+		end
 	end
-end
+
 if getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Rod') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'wand') or getPlayerStorageValue(cid, 999) == -1 and msgcontains(msg, 'Wand') then	
 	if getPlayerStorageValue(cid, 999) == -1 then
 	if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then

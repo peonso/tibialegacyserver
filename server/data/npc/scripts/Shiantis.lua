@@ -4,8 +4,6 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-
-
 -- OTServ event handling functions
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
@@ -14,7 +12,6 @@ function onThink()				npcHandler:onThink()					end
 
 local shopModule = ShopModule:new()
 npcHandler:addModule(shopModule)
-shopModule:addSellableItem({'vial', 'potion', 'flask'}, 2006, 5)
 
 shopModule:addBuyableItem({'torch'}, 2050, 2)
 shopModule:addBuyableItem({'candelabrum'}, 2041, 8)
@@ -64,5 +61,26 @@ keywordHandler:addKeyword({'book'}, StdModule.say, {npcHandler = npcHandler, onl
 keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You will have to visit that spooky magic market for that stuff."})
 keywordHandler:addKeyword({'fluid'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You will have to visit that spooky magic market for that stuff."})
 
+function creatureSayCallback(cid, type, msg)
+	if(npcHandler.focus ~= cid) then
+		return false
+	end
+
+	if msgcontains(msg, 'vial') or msgcontains(msg, 'deposit') or msgcontains(msg, 'flask') then
+		npcHandler:say("I will pay you 5 gold for every empty vial. Ok?", 1)
+		talk_state = 857
+	elseif talk_state == 857 and msgcontains(msg, 'yes') then
+		if sellPlayerEmptyVials(cid) == true then
+			npcHandler:say("Here's your money!", 1)
+			talk_state = 0
+		else
+			npcHandler:say("You don't have any empty vials!", 1)
+			talk_state = 0
+		end
+	end
+
+	return true
+end	
+	
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

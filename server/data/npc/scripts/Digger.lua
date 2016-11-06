@@ -39,18 +39,20 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 	
-if msgcontains(msg, 'vial') then
-npcHandler:say("I will give you 5 gold for every empty vial of yours, accept?", 1)
-talk_state = 857
-elseif talk_state == 857 and msgcontains(msg, 'yes') then
-	if SellPlayerEmptyVials(cid) == true then
-	npcHandler:say("Here's your money!", 1)
-	talk_state = 0
-	else
-	npcHandler:say("You don't have any empty vials!", 1)
-	talk_state = 0
+	if msgcontains(msg, 'vial') or msgcontains(msg, 'deposit') or msgcontains(msg, 'flask') then
+		npcHandler:say("I will pay you 5 gold for every empty vial. Ok?", 1)
+		talk_state = 857
+	elseif talk_state == 857 and msgcontains(msg, 'yes') then
+		if sellPlayerEmptyVials(cid) == true then
+		npcHandler:say("Here's your money!", 1)
+		talk_state = 0
+		else
+		npcHandler:say("You don't have any empty vials!", 1)
+		talk_state = 0
+		end
 	end
-end
+	
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
