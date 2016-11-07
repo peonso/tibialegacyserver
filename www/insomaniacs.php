@@ -51,22 +51,22 @@ echo '<br><table class="table table-striped table-hover"><th>Rank</th><th width=
 if($type == "sum")
 	echo '<th>Total</th>';
 else
-	echo '<th><a href="?subtopic=onlinetime&type=sum">Total</a></th>';
+	echo '<th><a href="?subtopic=onlinetime&type=sum" style="color: #fff;">Total</a></th>';
 for($i = 3; $i >= 2; $i--)
 {
 	if($type == $i)
 		echo '<th>'.$i.' Days Ago</th>';
 	else
-		echo '<th><a href="?subtopic=onlinetime&type='.$i.'">'.$i.' Days Ago</a></th>';
+		echo '<th><a href="?subtopic=onlinetime&type='.$i.'" style="color: #fff;">'.$i.' Days Ago</a></th>';
 }
 if($type == 1)
 	echo '<th>1 Day Ago</th>';
 else
-	echo '<th><a href="?subtopic=onlinetime&type=1">1 Day Ago</a></th>';
+	echo '<th><a href="?subtopic=onlinetime&type=1" style="color: #fff;">1 Day Ago</a></th>';
 if(empty($type))
 	echo '<th>Today</th>';
 else
-	echo '<th><a href="?subtopic=onlinetime">Today</a></th>';
+	echo '<th><a href="?subtopic=onlinetime" style="color: #fff;">Today</a></th>';
 echo '</tr>';
 $number_of_rows = 1;
 if($znotePlayers)

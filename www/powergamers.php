@@ -47,9 +47,9 @@ echo '
 		<th>Total</th>';
 
 for($i = 3; $i >= 2; $i--)
-	echo ($type == $i) ? '<th width="16%">'.$i.' Days Ago</th>' : '<th width="16%"><a href="powergamers.php?type='.$i.'">'.$i.' Days Ago</a></th>';
-	echo ($type == 1) ? '<th width="16%">1 Day Ago</th>' : '<th width="16%"><a href="powergamers.php?type=1">1 Day Ago</a></th>';
-	echo (empty($type)) ? '<th>Today</th>' : '<th><a href="powergamers.php">Today</a></th>';
+	echo ($type == $i) ? '<th width="16%">'.$i.' Days Ago</th>' : '<th width="16%"><a href="powergamers.php?type='.$i.'" style="color: #fff;">'.$i.' Days Ago</a></th>';
+	echo ($type == 1) ? '<th width="16%">1 Day Ago</th>' : '<th width="16%"><a href="powergamers.php?type=1" style="color: #fff;">1 Day Ago</a></th>';
+	echo (empty($type)) ? '<th>Today</th>' : '<th><a href="powergamers.php" style="color: #fff;">Today</a></th>';
 	echo '</tr>';
 
 $number_of_rows = 1;
