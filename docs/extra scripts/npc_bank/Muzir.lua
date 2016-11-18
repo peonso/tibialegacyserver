@@ -24,28 +24,29 @@ function creatureSayCallback(cid, type, msg)
 		return false
 	end
 
-----MESSAGES------------------------------------------------------------------------------			
+----MESSAGES------------------------------------------------------------------------------
 	if msgcontains(msg, 'change gold') then
 		npcHandler:say('How many platinum coins do you want to get?')
 		talkState = 8
-				
+
 	elseif msgcontains(msg, 'change platinum') then
 		npcHandler:say('Do you want to change your platinum coins to gold or crystal?')
 		talkState = 10
-				
+
 	elseif msgcontains(msg, 'change crystal') then
 		npcHandler:say('How many crystal coins do you want to change to platinum?')
 		talkState = 15
 
 ----CHANGE GOLD---------------------------------------------------------------------------------
-	elseif talkState == 8 and (getMoneyCount(msg) == 0 or getMoneyCount(msg) >= 999) then
-		npcHandler:say('How many platinum coins do you want to get?')
+	elseif talkState == 8 and (getMoneyCount(msg) <= 0 or getMoneyCount(msg) >= 999) then
+    npcHandler:say('Well, can I help you with something else?')
+    talkState = 0
 	elseif talkState == 8 then
 		n = getMoneyCount(msg)
 		b = n * 100
 		npcHandler:say('So I should change '..b..' of your gold coins to '..n..' platinum coins for you?')
 		talkState = 9
-				
+
 	elseif talkState == 9 then
 		if msgcontains(msg, 'yes') then
 			if doPlayerRemoveItem(cid, 2148, b) == true then
@@ -68,17 +69,18 @@ function creatureSayCallback(cid, type, msg)
 			talkState = 11
 		elseif msgcontains(msg, 'crystal') then
 			npcHandler:say('How many crystal coins do you want to get?')
-			talkState = 13								
+			talkState = 13
 		end
-				
-	elseif talkState == 11 and (getMoneyCount(msg) == 0 or getMoneyCount(msg) >= 999) then
-		npcHandler:say('How many platinum coins do you want to change to gold?')	
+
+	elseif talkState == 11 and (getMoneyCount(msg) <= 0 or getMoneyCount(msg) >= 999) then
+		npcHandler:say('Well, can I help you with something else?')
+    talkState = 0
 	elseif talkState == 11 then
 		n = getMoneyCount(msg)
 		b = n * 100
 		npcHandler:say('So I should change '..n..' of your platinum coins to '..b..' gold coins for you?')
 		talkState = 12
-				
+
 	elseif talkState == 12 then
 		if msgcontains(msg, 'yes') then
 			if doPlayerRemoveItem(cid, 2152, n) == true then
@@ -93,14 +95,15 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
 		end
-	elseif talkState == 13 and (getMoneyCount(msg) == 0 or getMoneyCount(msg) >= 999) then
-		npcHandler:say('How many crystal coins do you want to get?')	
+	elseif talkState == 13 and (getMoneyCount(msg) <= 0 or getMoneyCount(msg) >= 999) then
+    npcHandler:say('Well, can I help you with something else?')
+    talkState = 0
 	elseif talkState == 13 then
 		n = getMoneyCount(msg)
 		b = n * 100
 		npcHandler:say('So I should change '..b..' of your platinum coins to '..n..' crystal coins for you?')
 		talkState = 14
-				
+
 	elseif talkState == 14 then
 		if msgcontains(msg, 'yes') then
 			if doPlayerRemoveItem(cid, 2152, b) == true then
@@ -115,16 +118,17 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
 		end
-				
-----CHANGE CRYSTAL-------------------------------------------------------------------------------				
-	elseif talkState == 15 and (getMoneyCount(msg) == 0 or getMoneyCount(msg) >= 999) then
-		npcHandler:say('How many crystal coins do you want to change to platinum?')	
+
+----CHANGE CRYSTAL-------------------------------------------------------------------------------
+	elseif talkState == 15 and (getMoneyCount(msg) <= 0 or getMoneyCount(msg) >= 999) then
+    npcHandler:say('Well, can I help you with something else?')
+    talkState = 0
 	elseif talkState == 15 then
 		n = getMoneyCount(msg)
 		b = n * 100
 		npcHandler:say('So I should change '..n..' of your crystal coins to '..b..' platinum coins for you?')
 		talkState = 16
-				
+
 	elseif talkState == 16 then
 		if msgcontains(msg, 'yes') then
 			if doPlayerRemoveItem(cid, 2160, n) == true then
@@ -138,8 +142,8 @@ function creatureSayCallback(cid, type, msg)
 		else
 			npcHandler:say('Ok. We cancel.')
 			talkState = 0
-		end		
-		
+		end
+
 ----BALANCE-------------------------------------------------------------------------
 	elseif	msgcontains(msg, 'balance') then
 		npcHandler:say("Your account balance is ".. getPlayerBalance(cid) .." gold.", 1)
@@ -154,7 +158,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('You don\'t have money.', 1)
 			talk_state = 0
 		end
-	
+
 	elseif	msgcontains(msg, 'deposit') then
 		DEPOSITAMOUNT = getMoneyCount(msg)
 		if DEPOSITAMOUNT >= 1 then
@@ -167,7 +171,7 @@ function creatureSayCallback(cid, type, msg)
 			end
 		else
 			npcHandler:say('How much would you like to deposit?', 1)
-			talk_state = 201 
+			talk_state = 201
 		end
 
 	elseif talk_state == 201 then
@@ -237,7 +241,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say('How much would you like to withdraw?', 1)
 			talk_state = 301
 		end
-	
+
 	elseif talk_state == 301 then
 		WITHDRAWMONEY = getMoneyCount(msg)
 		if WITHDRAWMONEY >= 1 then
@@ -252,7 +256,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("I'm sorry, but you must give me a valid amount of how much you would like to withdraw.", 1)
 			talk_state = 0
 		end
-		
+
 	elseif talk_state == 303 and msgcontains(msg, 'yes') then
 		if doPlayerWithdrawMoney(cid, WITHDRAWMONEY) == true then
 			npcHandler:say("Here you are.", 1)
@@ -266,7 +270,7 @@ function creatureSayCallback(cid, type, msg)
 		npcHandler:say('Ok then.')
 		talk_state = 0
 
-----TRANSFER-------------------------------------------------------------------------		
+----TRANSFER-------------------------------------------------------------------------
 	elseif msgcontains(msg, 'transfer') then
 		TRANSFERAMOUNT = getMoneyCount(msg)
 		if TRANSFERAMOUNT >= 1 then
@@ -306,16 +310,16 @@ function creatureSayCallback(cid, type, msg)
 
 	elseif talk_state == 505 and msgcontains(msg, 'no') then
 		npcHandler:say('Ok then.')
-		talk_state = 0	
+		talk_state = 0
 
 	elseif talk_state == 505 and msgcontains(msg, 'yes') then
 		receiver = getPlayerGUIDByName(UPPERCASETRANSFERTO)
 		if (getVocationByPlayerGUID(getPlayerGUIDByName(UPPERCASETRANSFERTO)) <= 0) or (getVocationByPlayerGUID(getPlayerGUIDByName(UPPERCASETRANSFERTO)) >= 9) then
 			npcHandler:say("You can not send money to Rookgaard!", 1)
 			talk_state = 0
-		elseif receiver == getPlayerGUIDByName(getPlayerName(cid)) then 
-			npcHandler:say("You can not send money to yourself.", 1)	
-			talk_state = 0	
+		elseif receiver == getPlayerGUIDByName(getPlayerName(cid)) then
+			npcHandler:say("You can not send money to yourself.", 1)
+			talk_state = 0
 		else
 			doPlayerTransferMoneyTo(cid, UPPERCASETRANSFERTO, TRANSFERAMOUNT)
 			npcHandler:say('Very well. You have transferred ' .. TRANSFERAMOUNT .. ' gold to ' .. UPPERCASETRANSFERTO ..'.', 1)
@@ -323,7 +327,7 @@ function creatureSayCallback(cid, type, msg)
 		end
 	end
 
-	return true		
+	return true
 end
 
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
