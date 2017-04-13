@@ -7,25 +7,27 @@ NpcSystem.parseParameters(npcHandler)
 
 
 -- OTServ event handling functions
-function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
-function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
-function onThink()				npcHandler:onThink()					end
+function onThink()							npcHandler:onThink()					end
 
 function greetCallback(cid)
-	if getPlayerLevel(cid) <= 14 then
-	npcHandler:setMessage(MESSAGE_GREET, "I don't talk to little children!!")
-	return false
-	
-	elseif getPlayerLevel(cid) >= 15 then
+	if getPlayerLevel(cid) < 15 then
+		--npcHandler:setMessage(MESSAGE_GREET, "I don't talk to little children!!")
+		npcHandler:say("I don't talk to little children!!", 1)
+		npcHandler:releaseFocus()
+		npcHandler:resetNpc()
+		return false		
+	else
 		if getPlayerVocation(cid) == 1 or getPlayerVocation(cid) == 5 then
-		npcHandler:setMessage(MESSAGE_GREET, "It's good to see somebody who has chosen the path of wisdom. What do you want?")
+			npcHandler:setMessage(MESSAGE_GREET, "It's good to see somebody who has chosen the path of wisdom. What do you want?")
 		elseif getPlayerVocation(cid) == 2 or getPlayerVocation(cid) == 6 then
-		npcHandler:setMessage(MESSAGE_GREET, "Hail, friend of nature! How may I help you?")
+			npcHandler:setMessage(MESSAGE_GREET, "Hail, friend of nature! How may I help you?")
 		elseif getPlayerVocation(cid) == 3 or getPlayerVocation(cid) == 7 then
-		npcHandler:setMessage(MESSAGE_GREET, "Neither strong enough to be a knight nor wise enough to be a real mage. You like it easy, don't you? Why are you disturbing me?")
+			npcHandler:setMessage(MESSAGE_GREET, "Neither strong enough to be a knight nor wise enough to be a real mage. You like it easy, don't you? Why are you disturbing me?")
 		elseif getPlayerVocation(cid) == 4 or getPlayerVocation(cid) == 8 then
-		npcHandler:setMessage(MESSAGE_GREET, "Another creature who believes thinks physical strength is more important than wisdom! Why are you disturbing me?")
+			npcHandler:setMessage(MESSAGE_GREET, "Another creature who believes thinks physical strength is more important than wisdom! Why are you disturbing me?")
 		end
 		return true
 	end	
@@ -118,145 +120,34 @@ elseif talk_state == 5 and msgcontains(msg, '') then
 	
 elseif talk_state == 6 and msgcontains(msg, 'yes') or talk_state == 6 and msgcontains(msg, 'Yes') then
 	NOBLEARMORKEY = doPlayerAddItem(cid, 2089, 1)
-	doSetItemActionId(NOBLEARMORKEY, 2015)
+	doSetItemActionId(NOBLEARMORKEY, 3142)
 	doSetItemSpecialDescription(NOBLEARMORKEY, "(Key: 3142)")
 	npcHandler:say("Here you are.", 1)
 	talk_state = 0
+	
 elseif talk_state == 6 and msgcontains(msg, '') then
 	npcHandler:say("It is always a wise decision to leave the dead alone.", 1)
 	talk_state = 0	
 	
+elseif msgcontains(msg, "idiot") then
+	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
+	doSendMagicEffect(getPlayerPosition(cid), 15)
+	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
+	npcHandler:say("Take this for your words!", 1)
+	npcHandler:releaseFocus()
+	npcHandler:resetNpc()
+	talk_state = 0
 	
+elseif msgcontains(msg, "asshole") then
+	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
+	doSendMagicEffect(getPlayerPosition(cid), 15)
+	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
+	npcHandler:say("Take this for your words!", 1)
+	npcHandler:releaseFocus()
+	npcHandler:resetNpc()
+	talk_state = 0
 	
-	elseif msgcontains(msg, "idiot") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "asshole") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "retard") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "sucker") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "fag") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "fuck") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "shut up") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "shit") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0		
-	elseif msgcontains(msg, "ugly") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "smell") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "blow") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "cock") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "dick") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "pussy") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0	
-	elseif msgcontains(msg, "vagina") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-	elseif msgcontains(msg, "bitch") then
-	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
-	doSendMagicEffect(getPlayerPosition(cid), 15)
-	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)
-	npcHandler:say("Take this for your words!", 1)
-	npcHandler:releaseFocus()
-	npcHandler:resetNpc()
-	talk_state = 0
-			elseif msgcontains(msg, "nigger") then
+elseif msgcontains(msg, "fuck") then
 	doSendMagicEffect(getCreaturePosition(getNpcCid(  )), 13)
 	doSendMagicEffect(getPlayerPosition(cid), 15)
 	doCreatureAddHealth(cid, -getCreatureHealth(cid) +1)

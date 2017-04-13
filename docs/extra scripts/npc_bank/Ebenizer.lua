@@ -221,7 +221,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif	msgcontains(msg, 'withdraw all') then
 		WITHDRAWMONEY = getPlayerBalance(cid)
 		if WITHDRAWMONEY >= 1 then
-			if getPlayerBalance(cid) > WITHDRAWMONEY then
+			if getPlayerBalance(cid) >= WITHDRAWMONEY then
 				npcHandler:say("Would you like to withdraw ".. WITHDRAWMONEY .." gold?", 1)
 				talk_state = 303
 			else
@@ -236,7 +236,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif msgcontains(msg, 'withdraw') then
 		WITHDRAWMONEY = getMoneyCount(msg)
 		if WITHDRAWMONEY >= 1 then
-			if getPlayerBalance(cid) > WITHDRAWMONEY then
+			if getPlayerBalance(cid) >= WITHDRAWMONEY then
 				npcHandler:say("Would you like to withdraw ".. WITHDRAWMONEY .." gold?", 1)
 				talk_state = 303
 			else
@@ -251,7 +251,7 @@ function creatureSayCallback(cid, type, msg)
 	elseif talk_state == 301 then
 		WITHDRAWMONEY = getMoneyCount(msg)
 		if WITHDRAWMONEY >= 1 then
-			if getPlayerBalance(cid) > WITHDRAWMONEY then
+			if getPlayerBalance(cid) >= WITHDRAWMONEY then
 				npcHandler:say("Would you like to withdraw ".. WITHDRAWMONEY .." gold?", 1)
 				talk_state = 303
 			else

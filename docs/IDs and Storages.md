@@ -18,7 +18,7 @@
 	 3008		|aid|act|Draconia silver key
 	 3012		|aid|act|Hellgate key
 	 3033		|aid|act|
-	 3142		|aid|act|
+	 3142		|aid|act|Noble armor quest key
 	 3301		|aid|act|bright sword quest cooper key
 	 3302		|aid|act|bright sword quest silver key
 	 3303		|aid|act|bright sword quest cooper key
