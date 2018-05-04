@@ -14,16 +14,16 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="20"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-100" max="-300"/>
-		<attack name="energy" interval="2000" chance="25" radius="3" target="0" min="-150" max="-250">
+		<attack name="melee" min="-100" max="-300"/>
+		<attack name="energy" chance="25" radius="3" target="0" min="-150" max="-250">
 			<attribute key="areaEffect" value="yellowspark"/>
 		</attack>
 	</attacks>
-	<defenses armor="199" defense="199"/>
+	<defenses armor="199" defense="1094">
 		<elements>
 		<element physicalPercent="100"/><element deathPercent="100"/>
 		<element energyPercent="100"/>

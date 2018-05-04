@@ -14,19 +14,19 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="19" attack="11"/>
+		<attack name="melee" skill="19" attack="11"/>
 	</attacks>
-	<defenses armor="7" defense="9">
+	<defenses armor="7" defense="8">
 	</defenses>
 	<elements>
 	</elements>
 	<immunities>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Brrrr"/>
 		<voice sentence="Broar!"/>
 	</voices>

@@ -14,23 +14,23 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="8"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="25" attack="17"/>
-		<attack name="physical" interval="2000" checkshield="1" chance="9" range="7" min="-5" max="-15">
+		<attack name="melee" skill="25" attack="17"/>
+		<attack name="physical" checkshield="1" chance="9" range="7" min="-5" max="-15">
 			<attribute key="shootEffect" value="throwingknife"/>
 		</attack>
 	</attacks>
-	<defenses armor="3" defense="8">
+	<defenses armor="3" defense="10">
 	</defenses>
 	<elements>
 		<element earthPercent="100"/>
 	</elements>
 	<immunities>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Grak brrretz!"/>
 		<voice sentence="Grow truk grrrrr."/>
 		<voice sentence="Prek tars, dekklep zurk."/>

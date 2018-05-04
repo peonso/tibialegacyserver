@@ -14,16 +14,16 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="52" attack="48"/>
-		<attack name="physical" interval="2000" checkshield="1" chance="17" range="7" min="-50" max="-70">
+		<attack name="melee" skill="52" attack="48"/>
+		<attack name="physical" checkshield="1" chance="17" range="7" min="-50" max="-70">
 			<attribute key="shootEffect" value="throwingknife"/>
 		</attack>
 	</attacks>
-	<defenses armor="20" defense="45">
+	<defenses armor="20" defense="117">
 	</defenses>
 	<elements>
 		<element firePercent="100"/>
@@ -31,7 +31,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Ulderek futgyr human!"/>
 	</voices>
 	<loot>

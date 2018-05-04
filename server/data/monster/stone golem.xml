@@ -14,13 +14,13 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="52" attack="38"/>
+		<attack name="melee" skill="52" attack="38"/>
 	</attacks>
-	<defenses armor="30" defense="25">
+	<defenses armor="30" defense="65">
 	</defenses>
 	<elements>
 		<element firePercent="100"/>
@@ -29,7 +29,7 @@
 	<immunities>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 	</voices>
 	<loot>
 		<item id="2148" chance="16000" countmax="15"/><!-- 15 16% gold coin -->

@@ -5,16 +5,12 @@ setCombatParam(combat, COMBAT_PARAM_AGGRESSIVE, 0)
 setCombatParam(combat, COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 
 function onGetFormulaValues(cid, level, maglevel)
-	if (((level * 2) + (maglevel * 3)) * 1) < 200 then
-		min = 200
-	else
-		min = ((level * 2) + (maglevel * 3)) * 1
-	end
-	if (((level * 2) + (maglevel * 3)) * 1.35) < 250 then
-		max = 250
-	else
-		max = ((level * 2) + (maglevel * 3)) * 1.35
-	end
+	local base = 120
+	local variation = 40
+
+	local min = math.max((base - variation), ((3 * maglevel + 2 * level) * (base - variation) / 100))
+	local max = math.max((base + variation), ((3 * maglevel + 2 * level) * (base + variation) / 100))
+
 	return min, max
 end
 

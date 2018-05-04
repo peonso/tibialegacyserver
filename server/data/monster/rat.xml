@@ -14,19 +14,19 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="5"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="15" attack="7"/>
+		<attack name="melee" skill="15" attack="7"/>
 	</attacks>
-	<defenses armor="1" defense="3">
+	<defenses armor="1" defense="2">
 	</defenses>
 	<elements>
 	</elements>
 	<immunities>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 	</voices>
 	<loot>
 		<item id="3976" chance="50000" countmax="3"/><!-- 3 50% worm -->

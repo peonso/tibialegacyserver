@@ -14,23 +14,23 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="4"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="25" attack="18"/>
-		<attack name="physical" interval="1000" checkshield="1" chance="25" range="7" min="-30" max="-60">
+		<attack name="melee" skill="25" attack="18"/>
+		<attack name="physical" checkshield="1" chance="25" range="7" min="-30" max="-60">
 			<attribute key="shootEffect" value="arrow"/>
 		</attack>
 	</attacks>
-	<defenses armor="7" defense="18">
+	<defenses armor="7" defense="22">
 	</defenses>
 	<elements>
 	</elements>
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Tha'shi Ab'Dendriel!"/>
 		<voice sentence="Feel the sting of my arrows!"/>
 		<voice sentence="Thy blood will quench the soil's thirst!"/>

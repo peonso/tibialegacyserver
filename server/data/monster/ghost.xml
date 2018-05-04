@@ -14,14 +14,14 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="45" attack="28"/>
-		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-25" max="-45"/>
+		<attack name="melee" skill="45" attack="28"/>
+		<attack name="lifedrain" chance="15" range="1" min="-25" max="-45"/>
 	</attacks>
-	<defenses armor="10" defense="20">
+	<defenses armor="10" defense="45">
 	</defenses>
 	<elements>
 		<element physicalPercent="100"/><element deathPercent="100"/>
@@ -31,7 +31,7 @@
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Huh!"/>
 		<voice sentence="Shhhhhh"/>
 		<voice sentence="Buuuuuh"/>

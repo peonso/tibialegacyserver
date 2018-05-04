@@ -14,19 +14,19 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="4"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="30"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="18" attack="18"/>
-		<attack name="fire" interval="1000" chance="20" range="7" min="-25" max="-55">
+		<attack name="melee" skill="18" attack="18"/>
+		<attack name="fire" chance="20" range="7" min="-25" max="-55">
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
-		<attack name="firefield" interval="1000" chance="13" range="7" radius="1" target="1">
+		<attack name="firefield" chance="13" range="7" radius="1" target="1">
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
 	</attacks>
-	<defenses armor="8" defense="12">
+	<defenses armor="8" defense="10">
 	</defenses>
 	<elements>
 		<element earthPercent="100"/>
@@ -35,7 +35,7 @@
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Horax pokti!"/>
 		<voice sentence="Hihihihi!"/>
 		<voice sentence="Herba budinia ex!"/>  

@@ -14,20 +14,20 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="44" attack="30"/>
+		<attack name="melee" skill="44" attack="30"/>
 	</attacks>
-	<defenses armor="26" defense="20">
+	<defenses armor="26" defense="44">
 	</defenses>
 	<elements>
 		<element earthPercent="100"/>
 	</elements>
 	<immunities>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Hissss!"/>
 	</voices>
 	<loot>

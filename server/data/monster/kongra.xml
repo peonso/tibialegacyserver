@@ -14,20 +14,20 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="10"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="40" attack="30"/>
+		<attack name="melee" skill="40" attack="30"/>
 	</attacks>
-	<defenses armor="18" defense="14">
-		<defense name="haste_kongra" interval="2000" chance="7"/>
+	<defenses armor="18" defense="28">
+		<defense name="haste_kongra" chance="7"/>
 	</defenses>
 	<elements>
 	</elements>
 	<immunities>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Hugah!"/>
 		<voice sentence="Ungh! Ungh!"/>
 		<voice sentence="Huaauaauaauaa!"/>

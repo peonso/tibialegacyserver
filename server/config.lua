@@ -119,6 +119,9 @@ unjust_skull_duration = 15*60*1000
 -- Enable this and players will get pzlocked regardless of being the aggressor or not (<8.5 this was set to true)
 defensive_pz_lock = true
 
+-- Enable this so items with height as parcels and boxes block players movement when stacked, as in 7.4
+parcel_block = false
+
 -- How many players you need to kill to gain a red skull per day/week/month
 -- Set 0 to disable
 kills_per_day_red_skull = 3
@@ -290,7 +293,7 @@ retrytimeout = 5000
 logintimeout = 60 * 1000
 
 -- What is the maximum number of packages the client can send per second?
-max_packets_per_second = 25
+max_packets_per_second = 35
 
 -- how deep queryDestination should look for free slots (default -1, infinite)
 player_querydestination_deepness = -1

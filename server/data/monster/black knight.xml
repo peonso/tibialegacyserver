@@ -14,16 +14,16 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="88" attack="60"/>
-		<attack name="physical" interval="2000" checkshield="1" chance="15" range="7" min="-145" max="-185">
+		<attack name="melee" skill="88" attack="60"/>
+		<attack name="physical" checkshield="1" chance="15" range="7" min="-145" max="-185">
 			<attribute key="shootEffect" value="spear"/>
 		</attack>
 	</attacks>
-	<defenses armor="42" defense="60">
+	<defenses armor="42" defense="264">
 	</defenses>
 	<elements>
 		<element firePercent="100"/>
@@ -34,7 +34,7 @@
 		<immunity paralyze="1"/>
 		<immunity invisible="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="By Bolg's Blood!"/>
 		<voice sentence="You're no match for me!"/>
 		<voice sentence="NO MERCY!" yell="1"/>

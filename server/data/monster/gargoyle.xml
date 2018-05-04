@@ -14,14 +14,14 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="30"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="45" attack="24"/>
+		<attack name="melee" skill="45" attack="24"/>
 	</attacks>
-	<defenses armor="26" defense="30">
-	    <defense name="healing" interval="2000" chance="10" min="5" max="15">
+	<defenses armor="26" defense="67">
+	    <defense name="healing" chance="10" min="5" max="15">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
@@ -32,7 +32,7 @@
 	<immunities>
 		<immunity lifedrain="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 		<voice sentence="Harrrr Harrrr!"/>
 		<voice sentence="Stone sweet stone."/>
 		<voice sentence="Feel my claws, softskin."/>

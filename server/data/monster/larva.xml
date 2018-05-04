@@ -14,13 +14,13 @@
 		<flag canpushitems="0"/>
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="30" attack="20" poison="15"/>
+		<attack name="melee" skill="30" attack="20" poison="15"/>
 	</attacks>
-	<defenses armor="5" defense="11">
+	<defenses armor="5" defense="16">
 	</defenses>
 	<elements>
 		<element earthPercent="100"/>
@@ -28,7 +28,7 @@
 	<immunities>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
+	<voices interval="1000" chance="5">
 	</voices>
 	<loot>
 		<item id="2666" chance="30000"/><!-- 30% meat -->

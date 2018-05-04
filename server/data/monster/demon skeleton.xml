@@ -14,14 +14,14 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
+		<flag staticattack="80"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="45"/>
-		<attack name="lifedrain" interval="2000" chance="10" range="1" min="-30" max="-50"/>
+		<attack name="melee" skill="70" attack="45"/>
+		<attack name="lifedrain" chance="10" range="1" min="-30" max="-50"/>
 	</attacks>
-	<defenses armor="25" defense="35">
+	<defenses armor="25" defense="122">
 	</defenses>
 	<elements>
 		<element firePercent="100"/>
@@ -31,8 +31,6 @@
 		<immunity lifedrain="1"/>
 		<immunity paralyze="1"/>
 	</immunities>
-	<voices interval="2000" chance="5">
-	</voices>
 	<loot>
 		<item id="2148" chance="40000" countmax="20"/><!-- 20 40% gold coin -->
 		<item id="2148" chance="30000" countmax="25"/><!-- 25 30% gold coin -->

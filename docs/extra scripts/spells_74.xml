@@ -231,6 +231,7 @@
 	<conjure name="Heavy Magic Missile" words="adori gran" needlearn="0" maglv="3" mana="70" soul="0" reagentId="2260" conjureId="2311" conjureCount="5" function="conjureRune">
 		<vocation name="Sorcerer"/>	<vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>	<vocation name="Elder Druid"/>
+		<vocation name="Paladin"/>	<vocation name="Royal Paladin"/>
 	</conjure>
 	<conjure name="Conjure Explosive Arrow" words="exevo con flam" needlearn="0" maglv="10" mana="120" soul="0" conjureId="2546" conjureCount="5" function="conjureItem">
 		<vocation name="Paladin"/>	<vocation name="Royal Paladin"/>
@@ -262,6 +263,7 @@
 	</conjure>
 	<conjure name="Great Fireball" words="adori gran flam" needlearn="0" maglv="9" mana="120" soul="0" reagentId="2260" conjureId="2304" conjureCount="2" function="conjureRune">
 		<vocation name="Sorcerer"/>	<vocation name="Master Sorcerer"/>
+		<vocation name="Druid"/>	<vocation name="Elder Druid"/>
 	</conjure>
 	<conjure name="Explosion" words="adevo mas hur" needlearn="0" maglv="12" mana="180" soul="0" reagentId="2260" conjureId="2313" conjureCount="3" function="conjureRune">
 		<vocation name="Sorcerer"/>	<vocation name="Master Sorcerer"/>
