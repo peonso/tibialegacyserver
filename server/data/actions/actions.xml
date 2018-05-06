@@ -347,9 +347,7 @@
 	<action itemid="2067" script="decrement.lua"/>
 	<action itemid="2068" script="increment.lua"/>
 	<action itemid="2069" script="decrement.lua"/>
-	<action itemid="2162" script="increment.lua"/>
 
-	<action itemid="2163" script="decrement.lua"/>
 	<action itemid="2578" script="increment.lua"/>
 	<action itemid="2579" script="decrement.lua"/>
 	<action itemid="3697" script="increment.lua"/>
